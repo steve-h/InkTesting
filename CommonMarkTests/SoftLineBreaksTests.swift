@@ -37,12 +37,13 @@ final class SoftLineBreaksTests: XCTestCase {
         baz
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <p>foo
-        baz</p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<p>foo
+baz</p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -60,12 +61,13 @@ final class SoftLineBreaksTests: XCTestCase {
          baz
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <p>foo
-        baz</p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<p>foo
+baz</p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
 }
 

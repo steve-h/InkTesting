@@ -39,11 +39,12 @@ final class TextualContentTests: XCTestCase {
         hello $.;'there
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <p>hello $.;'there</p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<p>hello $.;'there</p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -57,11 +58,12 @@ final class TextualContentTests: XCTestCase {
         Foo χρῆν
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <p>Foo χρῆν</p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<p>Foo χρῆν</p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -77,11 +79,12 @@ final class TextualContentTests: XCTestCase {
         Multiple     spaces
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <p>Multiple     spaces</p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<p>Multiple     spaces</p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
 }
 

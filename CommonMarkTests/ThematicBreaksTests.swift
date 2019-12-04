@@ -58,11 +58,14 @@ final class ThematicBreaksTests: XCTestCase {
         ___
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <hr><hr><hr>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<hr>
+<hr>
+<hr>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -78,11 +81,12 @@ final class ThematicBreaksTests: XCTestCase {
         +++
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <p>+++</p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<p>+++</p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -96,11 +100,12 @@ final class ThematicBreaksTests: XCTestCase {
         ===
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <p>===</p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<p>===</p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -118,13 +123,14 @@ final class ThematicBreaksTests: XCTestCase {
         __
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <p>--
-        **
-        __</p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<p>--
+**
+__</p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -142,11 +148,14 @@ final class ThematicBreaksTests: XCTestCase {
            ***
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <hr><hr><hr>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<hr>
+<hr>
+<hr>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -162,12 +171,13 @@ final class ThematicBreaksTests: XCTestCase {
             ***
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <pre><code>***
-        </code></pre>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<pre><code>***
+</code></pre>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -182,12 +192,13 @@ final class ThematicBreaksTests: XCTestCase {
             ***
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <p>Foo
-        ***</p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<p>Foo
+***</p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -203,11 +214,12 @@ final class ThematicBreaksTests: XCTestCase {
         _____________________________________
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <hr>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<hr>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -223,11 +235,12 @@ final class ThematicBreaksTests: XCTestCase {
          - - -
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <hr>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<hr>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -241,11 +254,12 @@ final class ThematicBreaksTests: XCTestCase {
          **  * ** * ** * **
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <hr>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<hr>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -259,11 +273,12 @@ final class ThematicBreaksTests: XCTestCase {
         -     -      -      -
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <hr>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<hr>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -279,11 +294,12 @@ final class ThematicBreaksTests: XCTestCase {
         - - - -    
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <hr>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<hr>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -303,11 +319,14 @@ final class ThematicBreaksTests: XCTestCase {
         ---a---
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <p>_ _ _ _ a</p><p>a------</p><p>---a---</p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<p>_ _ _ _ a</p>
+<p>a------</p>
+<p>---a---</p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -324,11 +343,12 @@ final class ThematicBreaksTests: XCTestCase {
          *-*
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <p><em>-</em></p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<p><em>-</em></p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -346,11 +366,18 @@ final class ThematicBreaksTests: XCTestCase {
         - bar
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <ul><li>foo</li></ul><hr><ul><li>bar</li></ul>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<ul>
+<li>foo</li>
+</ul>
+<hr>
+<ul>
+<li>bar</li>
+</ul>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -368,11 +395,14 @@ final class ThematicBreaksTests: XCTestCase {
         bar
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <p>Foo</p><hr><p>bar</p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<p>Foo</p>
+<hr>
+<p>bar</p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -394,11 +424,13 @@ final class ThematicBreaksTests: XCTestCase {
         bar
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <h2>Foo</h2><p>bar</p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<h2>Foo</h2>
+<p>bar</p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -417,11 +449,18 @@ final class ThematicBreaksTests: XCTestCase {
         * Bar
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <ul><li>Foo</li></ul><hr><ul><li>Bar</li></ul>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<ul>
+<li>Foo</li>
+</ul>
+<hr>
+<ul>
+<li>Bar</li>
+</ul>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -438,11 +477,17 @@ final class ThematicBreaksTests: XCTestCase {
         - * * *
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <ul><li>Foo</li><li><hr></li></ul>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<ul>
+<li>Foo</li>
+<li>
+<hr>
+</li>
+</ul>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
 }
 

@@ -52,11 +52,12 @@ final class AutolinksTests: XCTestCase {
         <http://foo.bar.baz>
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <p><a href="http://foo.bar.baz">http://foo.bar.baz</a></p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<p><a href="http://foo.bar.baz">http://foo.bar.baz</a></p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -70,11 +71,12 @@ final class AutolinksTests: XCTestCase {
         <http://foo.bar.baz/test?q=hello&id=22&boolean>
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <p><a href="http://foo.bar.baz/test?q=hello&amp;id=22&amp;boolean">http://foo.bar.baz/test?q=hello&amp;id=22&amp;boolean</a></p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<p><a href="http://foo.bar.baz/test?q=hello&amp;id=22&amp;boolean">http://foo.bar.baz/test?q=hello&amp;id=22&amp;boolean</a></p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -88,11 +90,12 @@ final class AutolinksTests: XCTestCase {
         <irc://foo.bar:2233/baz>
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <p><a href="irc://foo.bar:2233/baz">irc://foo.bar:2233/baz</a></p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<p><a href="irc://foo.bar:2233/baz">irc://foo.bar:2233/baz</a></p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -108,11 +111,12 @@ final class AutolinksTests: XCTestCase {
         <MAILTO:FOO@BAR.BAZ>
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <p><a href="MAILTO:FOO@BAR.BAZ">MAILTO:FOO@BAR.BAZ</a></p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<p><a href="MAILTO:FOO@BAR.BAZ">MAILTO:FOO@BAR.BAZ</a></p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -131,11 +135,12 @@ final class AutolinksTests: XCTestCase {
         <a+b+c:d>
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <p><a href="a+b+c:d">a+b+c:d</a></p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<p><a href="a+b+c:d">a+b+c:d</a></p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -149,11 +154,12 @@ final class AutolinksTests: XCTestCase {
         <made-up-scheme://foo,bar>
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <p><a href="made-up-scheme://foo,bar">made-up-scheme://foo,bar</a></p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<p><a href="made-up-scheme://foo,bar">made-up-scheme://foo,bar</a></p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -167,11 +173,12 @@ final class AutolinksTests: XCTestCase {
         <http://../>
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <p><a href="http://../">http://../</a></p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<p><a href="http://../">http://../</a></p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -185,11 +192,12 @@ final class AutolinksTests: XCTestCase {
         <localhost:5001/foo>
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <p><a href="localhost:5001/foo">localhost:5001/foo</a></p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<p><a href="localhost:5001/foo">localhost:5001/foo</a></p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -205,11 +213,12 @@ final class AutolinksTests: XCTestCase {
         <http://foo.bar/baz bim>
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <p>&lt;http://foo.bar/baz bim&gt;</p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<p>&lt;http://foo.bar/baz bim&gt;</p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -225,11 +234,12 @@ final class AutolinksTests: XCTestCase {
         <http://example.com/\[\>
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <p><a href="http://example.com/%5C%5B%5C">http://example.com/\[\</a></p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<p><a href="http://example.com/%5C%5B%5C">http://example.com/\[\</a></p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -258,11 +268,12 @@ final class AutolinksTests: XCTestCase {
         <foo@bar.example.com>
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <p><a href="mailto:foo@bar.example.com">foo@bar.example.com</a></p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<p><a href="mailto:foo@bar.example.com">foo@bar.example.com</a></p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -276,11 +287,12 @@ final class AutolinksTests: XCTestCase {
         <foo+special@Bar.baz-bar0.com>
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <p><a href="mailto:foo+special@Bar.baz-bar0.com">foo+special@Bar.baz-bar0.com</a></p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<p><a href="mailto:foo+special@Bar.baz-bar0.com">foo+special@Bar.baz-bar0.com</a></p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -296,11 +308,12 @@ final class AutolinksTests: XCTestCase {
         <foo\+@bar.example.com>
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <p>&lt;foo+@bar.example.com&gt;</p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<p>&lt;foo+@bar.example.com&gt;</p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -316,11 +329,12 @@ final class AutolinksTests: XCTestCase {
         <>
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <p>&lt;&gt;</p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<p>&lt;&gt;</p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -334,11 +348,12 @@ final class AutolinksTests: XCTestCase {
         < http://foo.bar >
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <p>&lt; http://foo.bar &gt;</p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<p>&lt; http://foo.bar &gt;</p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -352,11 +367,12 @@ final class AutolinksTests: XCTestCase {
         <m:abc>
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <p>&lt;m:abc&gt;</p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<p>&lt;m:abc&gt;</p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -370,11 +386,12 @@ final class AutolinksTests: XCTestCase {
         <foo.bar.baz>
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <p>&lt;foo.bar.baz&gt;</p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<p>&lt;foo.bar.baz&gt;</p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -388,11 +405,12 @@ final class AutolinksTests: XCTestCase {
         http://example.com
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <p>http://example.com</p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<p>http://example.com</p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
     // 
     // 
@@ -406,11 +424,12 @@ final class AutolinksTests: XCTestCase {
         foo@bar.example.com
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\n<", with: "><")
-        XCTAssertEqual(html,#####"""
-        <p>foo@bar.example.com</p>
-        """#####
-        )
+        let html = MarkdownParser().html(from: markdownTest)
+        let normalizedCM = #####"""
+<p>foo@bar.example.com</p>
+"""#####
+        XCTAssertEqual(normalize(html: html),normalizedCM)
+
     }
 }
 

@@ -125,6 +125,8 @@ func outputTestCase(_ test: Test) {
 //    let htmlsegment = test.html.components(separatedBy: "\n").joined(separator:"\\n").components(separatedBy: "\"").joined(separator:"\\\"")
     let normalizedhtml = test.html.replacingOccurrences(of: ">\n<", with: "><").replacingOccurrences(of: "<hr />", with: "<hr>")
     let htmlsegments = normalizedhtml.components(separatedBy: "\n").dropLast()
+    var soupedhtml = normalize(html: test.html)
+    if soupedhtml.last == "\n" {soupedhtml.removeLast()}
     let htmlsegment = htmlsegments.joined(separator:sepstr)
 //    let poststr = "curl -X POST -s --data-urlencode 'input=" + htmlsegments.joined() + "' https://html-minifier.com/raw"
 //    let minifiedHTML = run(bash: poststr).stdout
@@ -139,12 +141,14 @@ func outputTestCase(_ test: Test) {
             \(markdownsegment)
             \"\"\"#####
             markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-            let html = MarkdownParser().html(from: markdownTest).replacingOccurrences(of: ">\\n<", with: "><")
-            XCTAssertEqual(html,#####\"\"\"
-            \(htmlsegment)
-            \"\"\"#####
+            let html = MarkdownParser().html(from: markdownTest)
+            let normalizedCM = #####\"\"\"
+    \(soupedhtml)
+    \"\"\"#####
+            XCTAssertEqual(normalize(html: html),normalizedCM)
+    
     """
-    + "\n        )\n    }"
+    + "\n    }"
     try? currentFile?.append(testCase)
 }
  

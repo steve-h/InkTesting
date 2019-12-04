@@ -20,12 +20,30 @@
         }
       },
       {
+        "package": "Regex",
+        "repositoryURL": "https://github.com/crossroadlabs/Regex.git",
+        "state": {
+          "branch": null,
+          "revision": "166728756082a9cac6e4aed3ebbce8e41cb3a945",
+          "version": "1.2.0"
+        }
+      },
+      {
         "package": "SwiftShell",
         "repositoryURL": "https://github.com/kareman/SwiftShell",
         "state": {
           "branch": null,
           "revision": "fb7fc2c9ad8811caf324431a508fb79e3fb74f99",
           "version": "5.0.1"
+        }
+      },
+      {
+        "package": "SwiftSoup",
+        "repositoryURL": "https://github.com/scinfu/SwiftSoup.git",
+        "state": {
+          "branch": null,
+          "revision": "34a24b6e27fe6302c5b5630325b64adc3e3b5bca",
+          "version": "2.2.2"
         }
       }
     ]

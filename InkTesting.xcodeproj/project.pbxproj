@@ -12,6 +12,11 @@
 		B72375362398156B00DA9257 /* BuildTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72375352398156B00DA9257 /* BuildTests.swift */; };
 		B72375382398182000DA9257 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72375372398182000DA9257 /* Helpers.swift */; };
 		B744D11423982B30006890A1 /* Ink in Frameworks */ = {isa = PBXBuildFile; productRef = B744D11323982B30006890A1 /* Ink */; };
+		B75DB6AB2398513900200029 /* Regex in Frameworks */ = {isa = PBXBuildFile; productRef = B75DB6AA2398513900200029 /* Regex */; };
+		B75DB6AD2398516900200029 /* NormalizeHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DB6AC2398516900200029 /* NormalizeHTML.swift */; };
+		B75DB6B02398540D00200029 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = B75DB6AF2398540D00200029 /* SwiftSoup */; };
+		B75DB6B223986C2A00200029 /* NormalizeHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DB6B123986C2900200029 /* NormalizeHTML.swift */; };
+		B75DB6B423986F5900200029 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = B75DB6B323986F5900200029 /* SwiftSoup */; };
 		B7C1CD7C2398245400681266 /* AtxHeadingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C1CD732398245300681266 /* AtxHeadingsTests.swift */; };
 		B7C1CD7D2398245400681266 /* ListsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C1CD632398245200681266 /* ListsTests.swift */; };
 		B7C1CD7E2398245400681266 /* SoftLineBreaksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C1CD762398245400681266 /* SoftLineBreaksTests.swift */; };
@@ -67,6 +72,8 @@
 		B72375372398182000DA9257 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		B72B8C5223983A3F0000997B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B72B8C5323983FE10000997B /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		B75DB6AC2398516900200029 /* NormalizeHTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalizeHTML.swift; sourceTree = "<group>"; };
+		B75DB6B123986C2900200029 /* NormalizeHTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalizeHTML.swift; sourceTree = "<group>"; };
 		B7C1CD47239822D200681266 /* LinuxMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
 		B7C1CD592398244100681266 /* CommonMarkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommonMarkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C1CD5D2398244100681266 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -111,6 +118,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B744D11423982B30006890A1 /* Ink in Frameworks */,
+				B75DB6B423986F5900200029 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,9 +126,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B75DB6AB2398513900200029 /* Regex in Frameworks */,
 				B7ED8C8F238F248A003A1158 /* Files in Frameworks */,
 				B7224D902395ACBF007655A3 /* SwiftShell in Frameworks */,
 				B7ED8C9523906588003A1158 /* Ink in Frameworks */,
+				B75DB6B02398540D00200029 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +144,7 @@
 				B7C1CD6A2398245300681266 /* AutolinksTests.swift */,
 				B7C1CD662398245200681266 /* BackslashEscapesTests.swift */,
 				B7C1CD6C2398245300681266 /* BlankLinesTests.swift */,
+				B75DB6B123986C2900200029 /* NormalizeHTML.swift */,
 				B7C1CD7A2398245400681266 /* BlockQuotesTests.swift */,
 				B7C1CD702398245300681266 /* CodeSpansTests.swift */,
 				B7C1CD722398245300681266 /* EmphasisAndStrongEmphasisTests.swift */,
@@ -193,6 +204,7 @@
 			children = (
 				B7ED8C82238E1015003A1158 /* main.swift */,
 				B7237533239812B700DA9257 /* Tests.swift */,
+				B75DB6AC2398516900200029 /* NormalizeHTML.swift */,
 				B72375352398156B00DA9257 /* BuildTests.swift */,
 				B72375372398182000DA9257 /* Helpers.swift */,
 			);
@@ -224,6 +236,7 @@
 			name = CommonMarkTests;
 			packageProductDependencies = (
 				B744D11323982B30006890A1 /* Ink */,
+				B75DB6B323986F5900200029 /* SwiftSoup */,
 			);
 			productName = CommonMarkTests;
 			productReference = B7C1CD592398244100681266 /* CommonMarkTests.xctest */;
@@ -248,6 +261,8 @@
 				B7ED8C8E238F248A003A1158 /* Files */,
 				B7ED8C9423906588003A1158 /* Ink */,
 				B7224D8F2395ACBF007655A3 /* SwiftShell */,
+				B75DB6AA2398513900200029 /* Regex */,
+				B75DB6AF2398540D00200029 /* SwiftSoup */,
 			);
 			productName = MakeTestCode;
 			productReference = B7ED8C80238E1015003A1158 /* MakeTestCode */;
@@ -284,6 +299,8 @@
 				B7ED8C6D238CB0E7003A1158 /* XCRemoteSwiftPackageReference "Files" */,
 				B7ED8C91238F580B003A1158 /* XCRemoteSwiftPackageReference "Ink" */,
 				B7224D8C2395ACA6007655A3 /* XCRemoteSwiftPackageReference "SwiftShell" */,
+				B75DB6A92398513900200029 /* XCRemoteSwiftPackageReference "Regex" */,
+				B75DB6AE2398540D00200029 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 			);
 			productRefGroup = B7ED8C61238CB01C003A1158 /* Products */;
 			projectDirPath = "";
@@ -322,6 +339,7 @@
 				B7C1CD7C2398245400681266 /* AtxHeadingsTests.swift in Sources */,
 				B7C1CD902398245400681266 /* LinksTests.swift in Sources */,
 				B7C1CD7D2398245400681266 /* ListsTests.swift in Sources */,
+				B75DB6B223986C2A00200029 /* NormalizeHTML.swift in Sources */,
 				B7C1CD842398245400681266 /* CodeSpansTests.swift in Sources */,
 				B7C1CD822398245400681266 /* LinkReferenceDefinitionsTests.swift in Sources */,
 				B7C1CD9A239825A200681266 /* LinuxCompatibility.swift in Sources */,
@@ -351,6 +369,7 @@
 				B7C1CD9E2398274300681266 /* Package.swift in Sources */,
 				B7ED8C83238E1015003A1158 /* main.swift in Sources */,
 				B7C1CD9F239827F500681266 /* LinuxMain.swift in Sources */,
+				B75DB6AD2398516900200029 /* NormalizeHTML.swift in Sources */,
 				B7237534239812B700DA9257 /* Tests.swift in Sources */,
 				B72375382398182000DA9257 /* Helpers.swift in Sources */,
 			);
@@ -584,6 +603,22 @@
 				minimumVersion = 5.0.1;
 			};
 		};
+		B75DB6A92398513900200029 /* XCRemoteSwiftPackageReference "Regex" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/crossroadlabs/Regex.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+		B75DB6AE2398540D00200029 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.2;
+			};
+		};
 		B7ED8C6D238CB0E7003A1158 /* XCRemoteSwiftPackageReference "Files" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/JohnSundell/Files";
@@ -622,6 +657,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B7ED8C91238F580B003A1158 /* XCRemoteSwiftPackageReference "Ink" */;
 			productName = Ink;
+		};
+		B75DB6AA2398513900200029 /* Regex */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B75DB6A92398513900200029 /* XCRemoteSwiftPackageReference "Regex" */;
+			productName = Regex;
+		};
+		B75DB6AF2398540D00200029 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B75DB6AE2398540D00200029 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+		B75DB6B323986F5900200029 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B75DB6AE2398540D00200029 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
 		};
 		B7ED8C8E238F248A003A1158 /* Files */ = {
 			isa = XCSwiftPackageProductDependency;
