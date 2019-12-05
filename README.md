@@ -12,15 +12,19 @@ If you instead "Test" (run testcases) on the MakeTestCode it will actually run t
 
 The testcases mostly fail and can act as a base to explore any improvements to Ink.
  
+## Normalizer
+
+I am now using SwiftSoup, an HTML Parser, to act as a normalizer.  The Ink output and the CommonMark spec expected result are both parsed and then re-emitted to try and normalize the whitespace.
+
 ## **Missing**
- - a normalizer for the test result from the spec.  Things like whitespace differences will cause test failures.  So in a meta-way I am using the tests to improve the normalizer first.
+ 
  - truly failing tests can be seen though
  - the tool is linking my fork of Ink (master) that may not be always up-to-date
  
  The code is pretty ugly but it is a one-shot tool to be run every spec upgrade.
  
 ## **ToDo**
- - an html normalizer
+ - verify the normalizer
  
  I will close the issues on GitHub.  Use a Pull Request to suggest improvements.  The code may be highly fluid.
  
