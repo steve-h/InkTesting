@@ -14,8 +14,8 @@
         "package": "Ink",
         "repositoryURL": "https://github.com/steve-h/Ink",
         "state": {
-          "branch": null,
-          "revision": "357eda98d70d15d3684cec4651942ca4cb15598f",
+          "branch": "master",
+          "revision": "2c5018d4782a38ea74dfab01e1cb543319a5623d",
           "version": null
         }
       },

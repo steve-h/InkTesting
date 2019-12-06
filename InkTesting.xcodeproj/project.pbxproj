@@ -631,8 +631,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/steve-h/Ink";
 			requirement = {
-				kind = revision;
-				revision = 357eda98d70d15d3684cec4651942ca4cb15598f;
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
