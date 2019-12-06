@@ -16,8 +16,11 @@ The testcases mostly fail and can act as a base to explore any improvements to I
 
 I am now using SwiftSoup, an HTML Parser, to act as a normalizer.  The Ink output and the CommonMark spec expected result are both parsed and then re-emitted to try and normalize the whitespace.
 
+A problem emerges with all the badly formed fragments. SwiftSoup "fixes" them to get a good parse. I get the fixes in my output.
+
 ## **Missing**
  
+ -normalizer is still not preserving all test cases **!!!!!!!**
  - truly failing tests can be seen though
  - the tool is linking my fork of Ink (master) that may not be always up-to-date
  
