@@ -43,9 +43,9 @@ final class ImagesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p><img src="/url" alt="foo" title="title"></p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p><img src="/url" alt="foo" title="title" /></p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -64,9 +64,9 @@ final class ImagesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p><img src="train.jpg" alt="foo bar" title="train &amp; tracks"></p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p><img src="train.jpg" alt="foo bar" title="train &amp; tracks" /></p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -83,9 +83,9 @@ final class ImagesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p><img src="/url2" alt="foo bar"></p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p><img src="/url2" alt="foo bar" /></p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -102,9 +102,9 @@ final class ImagesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p><img src="/url2" alt="foo bar"></p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p><img src="/url2" alt="foo bar" /></p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -130,9 +130,9 @@ final class ImagesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p><img src="train.jpg" alt="foo bar" title="train &amp; tracks"></p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p><img src="train.jpg" alt="foo bar" title="train &amp; tracks" /></p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -151,9 +151,9 @@ final class ImagesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p><img src="train.jpg" alt="foo bar" title="train &amp; tracks"></p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p><img src="train.jpg" alt="foo bar" title="train &amp; tracks" /></p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -170,9 +170,9 @@ final class ImagesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p><img src="train.jpg" alt="foo"></p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p><img src="train.jpg" alt="foo" /></p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -189,9 +189,9 @@ final class ImagesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p>My <img src="/path/to/train.jpg" alt="foo bar" title="title"></p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p>My <img src="/path/to/train.jpg" alt="foo bar" title="title" /></p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -208,9 +208,9 @@ final class ImagesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p><img src="url" alt="foo"></p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p><img src="url" alt="foo" /></p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -227,9 +227,9 @@ final class ImagesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p><img src="/url" alt=""></p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p><img src="/url" alt="" /></p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -250,9 +250,9 @@ final class ImagesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p><img src="/url" alt="foo"></p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p><img src="/url" alt="foo" /></p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -271,9 +271,9 @@ final class ImagesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p><img src="/url" alt="foo"></p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p><img src="/url" alt="foo" /></p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -294,9 +294,9 @@ final class ImagesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p><img src="/url" alt="foo" title="title"></p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p><img src="/url" alt="foo" title="title" /></p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -315,9 +315,9 @@ final class ImagesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p><img src="/url" alt="foo bar" title="title"></p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p><img src="/url" alt="foo bar" title="title" /></p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -338,9 +338,9 @@ final class ImagesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p><img src="/url" alt="Foo" title="title"></p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p><img src="/url" alt="Foo" title="title" /></p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -363,10 +363,10 @@ final class ImagesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p><img src="/url" alt="foo" title="title">
-[]</p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p><img src="/url" alt="foo" title="title" />
+        []</p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -387,9 +387,9 @@ final class ImagesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p><img src="/url" alt="foo" title="title"></p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p><img src="/url" alt="foo" title="title" /></p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -408,9 +408,9 @@ final class ImagesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p><img src="/url" alt="foo bar" title="title"></p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p><img src="/url" alt="foo bar" title="title" /></p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -431,10 +431,9 @@ final class ImagesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p>![[foo]]</p>
-<p>[[foo]]: /url "title"</p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p>![[foo]]</p><p>[[foo]]: /url &quot;title&quot;</p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -455,9 +454,9 @@ final class ImagesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p><img src="/url" alt="Foo" title="title"></p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p><img src="/url" alt="Foo" title="title" /></p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -479,9 +478,9 @@ final class ImagesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p>![foo]</p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p>![foo]</p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -503,9 +502,9 @@ final class ImagesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p>!<a href="/url" title="title">foo</a></p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p>!<a href="/url" title="title">foo</a></p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
 }

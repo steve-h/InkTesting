@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "cmark",
+        "repositoryURL": "https://github.com/brokenhandsio/cmark-gfm.git",
+        "state": {
+          "branch": null,
+          "revision": "351e5cb1bc6a43567b8ff9b9b3f7357c58bdda83",
+          "version": "1.0.1"
+        }
+      },
+      {
         "package": "Files",
         "repositoryURL": "https://github.com/JohnSundell/Files",
         "state": {
@@ -14,9 +23,18 @@
         "package": "Ink",
         "repositoryURL": "https://github.com/steve-h/Ink",
         "state": {
-          "branch": "master",
-          "revision": "2c5018d4782a38ea74dfab01e1cb543319a5623d",
+          "branch": "backslashescapes",
+          "revision": "83be299afedc93115aaed6d2abe878c59451c031",
           "version": null
+        }
+      },
+      {
+        "package": "SwiftMarkdown",
+        "repositoryURL": "https://github.com/vapor-community/markdown",
+        "state": {
+          "branch": null,
+          "revision": "eb3137b9122c84ac1b86e4a203b4804f63d35470",
+          "version": "0.5.0"
         }
       },
       {

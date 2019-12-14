@@ -17,6 +17,7 @@
 		B75DB6B02398540D00200029 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = B75DB6AF2398540D00200029 /* SwiftSoup */; };
 		B75DB6B223986C2A00200029 /* NormalizeHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DB6B123986C2900200029 /* NormalizeHTML.swift */; };
 		B75DB6B423986F5900200029 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = B75DB6B323986F5900200029 /* SwiftSoup */; };
+		B77E585B23A5789400A804FE /* SwiftMarkdown in Frameworks */ = {isa = PBXBuildFile; productRef = B77E585A23A5789400A804FE /* SwiftMarkdown */; };
 		B7C1CD7C2398245400681266 /* AtxHeadingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C1CD732398245300681266 /* AtxHeadingsTests.swift */; };
 		B7C1CD7D2398245400681266 /* ListsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C1CD632398245200681266 /* ListsTests.swift */; };
 		B7C1CD7E2398245400681266 /* SoftLineBreaksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C1CD762398245400681266 /* SoftLineBreaksTests.swift */; };
@@ -127,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B75DB6AB2398513900200029 /* Regex in Frameworks */,
+				B77E585B23A5789400A804FE /* SwiftMarkdown in Frameworks */,
 				B7ED8C8F238F248A003A1158 /* Files in Frameworks */,
 				B7224D902395ACBF007655A3 /* SwiftShell in Frameworks */,
 				B7ED8C9523906588003A1158 /* Ink in Frameworks */,
@@ -263,6 +265,7 @@
 				B7224D8F2395ACBF007655A3 /* SwiftShell */,
 				B75DB6AA2398513900200029 /* Regex */,
 				B75DB6AF2398540D00200029 /* SwiftSoup */,
+				B77E585A23A5789400A804FE /* SwiftMarkdown */,
 			);
 			productName = MakeTestCode;
 			productReference = B7ED8C80238E1015003A1158 /* MakeTestCode */;
@@ -301,6 +304,7 @@
 				B7224D8C2395ACA6007655A3 /* XCRemoteSwiftPackageReference "SwiftShell" */,
 				B75DB6A92398513900200029 /* XCRemoteSwiftPackageReference "Regex" */,
 				B75DB6AE2398540D00200029 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+				B77E585923A5789400A804FE /* XCRemoteSwiftPackageReference "markdown" */,
 			);
 			productRefGroup = B7ED8C61238CB01C003A1158 /* Products */;
 			projectDirPath = "";
@@ -619,6 +623,14 @@
 				minimumVersion = 2.2.2;
 			};
 		};
+		B77E585923A5789400A804FE /* XCRemoteSwiftPackageReference "markdown" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vapor-community/markdown";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.0;
+			};
+		};
 		B7ED8C6D238CB0E7003A1158 /* XCRemoteSwiftPackageReference "Files" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/JohnSundell/Files";
@@ -631,7 +643,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/steve-h/Ink";
 			requirement = {
-				branch = master;
+				branch = backslashescapes;
 				kind = branch;
 			};
 		};
@@ -672,6 +684,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B75DB6AE2398540D00200029 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
 			productName = SwiftSoup;
+		};
+		B77E585A23A5789400A804FE /* SwiftMarkdown */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B77E585923A5789400A804FE /* XCRemoteSwiftPackageReference "markdown" */;
+			productName = SwiftMarkdown;
 		};
 		B7ED8C8E238F248A003A1158 /* Files */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -41,9 +41,9 @@ final class TextualContentTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p>hello $.;'there</p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p>hello $.;'there</p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -60,9 +60,9 @@ final class TextualContentTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p>Foo χρῆν</p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p>Foo χρῆν</p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -81,9 +81,9 @@ final class TextualContentTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p>Multiple     spaces</p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p>Multiple     spaces</p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
 }

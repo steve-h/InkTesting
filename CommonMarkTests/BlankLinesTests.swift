@@ -45,10 +45,9 @@ final class BlankLinesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p>aaa</p>
-<h1>aaa</h1>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p>aaa</p><h1>aaa</h1>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
 }

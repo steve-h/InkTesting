@@ -74,15 +74,11 @@ final class ListItemsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p>A paragraph
-with two lines.</p>
-<pre><code>indented code
-</code></pre>
-<blockquote>
-<p>A block quote.</p>
-</blockquote>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p>A paragraph
+        with two lines.</p><pre><code>indented code
+        </code></pre><blockquote><p>A block quote.</p></blockquote>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -108,19 +104,11 @@ with two lines.</p>
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ol>
-<li>
-<p>A paragraph
-with two lines.</p>
-<pre><code>indented code
-</code></pre>
-<blockquote>
-<p>A block quote.</p>
-</blockquote>
-</li>
-</ol>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ol><li><p>A paragraph
+        with two lines.</p><pre><code>indented code
+        </code></pre><blockquote><p>A block quote.</p></blockquote></li></ol>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -150,12 +138,9 @@ with two lines.</p>
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ul>
-<li>one</li>
-</ul>
-<p>two</p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ul><li>one</li></ul><p>two</p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -174,14 +159,9 @@ with two lines.</p>
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ul>
-<li>
-<p>one</p>
-<p>two</p>
-</li>
-</ul>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ul><li><p>one</p><p>two</p></li></ul>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -200,13 +180,10 @@ with two lines.</p>
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ul>
-<li>one</li>
-</ul>
-<pre><code> two
-</code></pre>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ul><li>one</li></ul><pre><code> two
+        </code></pre>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -225,14 +202,9 @@ with two lines.</p>
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ul>
-<li>
-<p>one</p>
-<p>two</p>
-</li>
-</ul>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ul><li><p>one</p><p>two</p></li></ul>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -259,18 +231,9 @@ with two lines.</p>
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<blockquote>
-<blockquote>
-<ol>
-<li>
-<p>one</p>
-<p>two</p>
-</li>
-</ol>
-</blockquote>
-</blockquote>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <blockquote><blockquote><ol><li><p>one</p><p>two</p></li></ol></blockquote></blockquote>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -298,16 +261,9 @@ with two lines.</p>
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<blockquote>
-<blockquote>
-<ul>
-<li>one</li>
-</ul>
-<p>two</p>
-</blockquote>
-</blockquote>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <blockquote><blockquote><ul><li>one</li></ul><p>two</p></blockquote></blockquote>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -329,10 +285,9 @@ with two lines.</p>
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p>-one</p>
-<p>2.two</p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p>-one</p><p>2.two</p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -355,14 +310,9 @@ with two lines.</p>
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ul>
-<li>
-<p>foo</p>
-<p>bar</p>
-</li>
-</ul>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ul><li><p>foo</p><p>bar</p></li></ul>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -389,19 +339,10 @@ with two lines.</p>
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ol>
-<li>
-<p>foo</p>
-<pre><code>bar
-</code></pre>
-<p>baz</p>
-<blockquote>
-<p>bam</p>
-</blockquote>
-</li>
-</ol>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ol><li><p>foo</p><pre><code>bar
+        </code></pre><p>baz</p><blockquote><p>bam</p></blockquote></li></ol>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -426,18 +367,13 @@ with two lines.</p>
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ul>
-<li>
-<p>Foo</p>
-<pre><code>bar
-
-
-baz
-</code></pre>
-</li>
-</ul>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ul><li><p>Foo</p><pre><code>bar
+        
+        
+        baz
+        </code></pre></li></ul>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -455,11 +391,9 @@ baz
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ol start="123456789">
-<li>ok</li>
-</ol>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ol start="123456789"><li>ok</li></ol>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -476,9 +410,9 @@ baz
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p>1234567890. not ok</p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p>1234567890. not ok</p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -497,11 +431,9 @@ baz
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ol start="0">
-<li>ok</li>
-</ol>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ol start="0"><li>ok</li></ol>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -518,11 +450,9 @@ baz
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ol start="3">
-<li>ok</li>
-</ol>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ol start="3"><li>ok</li></ol>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -541,9 +471,9 @@ baz
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p>-1. not ok</p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p>-1. not ok</p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -578,15 +508,10 @@ baz
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ul>
-<li>
-<p>foo</p>
-<pre><code>bar
-</code></pre>
-</li>
-</ul>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ul><li><p>foo</p><pre><code>bar
+        </code></pre></li></ul>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -607,15 +532,10 @@ baz
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ol start="10">
-<li>
-<p>foo</p>
-<pre><code>bar
-</code></pre>
-</li>
-</ol>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ol start="10"><li><p>foo</p><pre><code>bar
+        </code></pre></li></ol>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -640,13 +560,11 @@ baz
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<pre><code>indented code
-</code></pre>
-<p>paragraph</p>
-<pre><code>more code
-</code></pre>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <pre><code>indented code
+        </code></pre><p>paragraph</p><pre><code>more code
+        </code></pre>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -667,17 +585,11 @@ baz
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ol>
-<li>
-<pre><code>indented code
-</code></pre>
-<p>paragraph</p>
-<pre><code>more code
-</code></pre>
-</li>
-</ol>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ol><li><pre><code>indented code
+        </code></pre><p>paragraph</p><pre><code>more code
+        </code></pre></li></ol>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -701,17 +613,11 @@ baz
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ol>
-<li>
-<pre><code> indented code
-</code></pre>
-<p>paragraph</p>
-<pre><code>more code
-</code></pre>
-</li>
-</ol>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ol><li><pre><code> indented code
+        </code></pre><p>paragraph</p><pre><code>more code
+        </code></pre></li></ol>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -738,10 +644,9 @@ baz
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p>foo</p>
-<p>bar</p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p>foo</p><p>bar</p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -760,12 +665,9 @@ baz
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ul>
-<li>foo</li>
-</ul>
-<p>bar</p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ul><li>foo</li></ul><p>bar</p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -789,14 +691,9 @@ baz
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ul>
-<li>
-<p>foo</p>
-<p>bar</p>
-</li>
-</ul>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ul><li><p>foo</p><p>bar</p></li></ul>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -834,19 +731,11 @@ baz
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ul>
-<li>foo</li>
-<li>
-<pre><code>bar
-</code></pre>
-</li>
-<li>
-<pre><code>baz
-</code></pre>
-</li>
-</ul>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ul><li>foo</li><li><pre><code>bar
+        </code></pre></li><li><pre><code>baz
+        </code></pre></li></ul>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -866,11 +755,9 @@ baz
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ul>
-<li>foo</li>
-</ul>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ul><li>foo</li></ul>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -893,12 +780,9 @@ baz
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ul>
-<li></li>
-</ul>
-<p>foo</p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ul><li></li></ul><p>foo</p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -919,13 +803,9 @@ baz
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ul>
-<li>foo</li>
-<li></li>
-<li>bar</li>
-</ul>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ul><li>foo</li><li></li><li>bar</li></ul>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -946,13 +826,9 @@ baz
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ul>
-<li>foo</li>
-<li></li>
-<li>bar</li>
-</ul>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ul><li>foo</li><li></li><li>bar</li></ul>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -973,13 +849,9 @@ baz
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ol>
-<li>foo</li>
-<li></li>
-<li>bar</li>
-</ol>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ol><li>foo</li><li></li><li>bar</li></ol>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -998,11 +870,9 @@ baz
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ul>
-<li></li>
-</ul>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ul><li></li></ul>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -1024,12 +894,11 @@ baz
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<p>foo
-*</p>
-<p>foo
-1.</p>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <p>foo
+        *</p><p>foo
+        1.</p>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -1059,19 +928,11 @@ baz
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ol>
-<li>
-<p>A paragraph
-with two lines.</p>
-<pre><code>indented code
-</code></pre>
-<blockquote>
-<p>A block quote.</p>
-</blockquote>
-</li>
-</ol>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ol><li><p>A paragraph
+        with two lines.</p><pre><code>indented code
+        </code></pre><blockquote><p>A block quote.</p></blockquote></li></ol>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -1095,19 +956,11 @@ with two lines.</p>
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ol>
-<li>
-<p>A paragraph
-with two lines.</p>
-<pre><code>indented code
-</code></pre>
-<blockquote>
-<p>A block quote.</p>
-</blockquote>
-</li>
-</ol>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ol><li><p>A paragraph
+        with two lines.</p><pre><code>indented code
+        </code></pre><blockquote><p>A block quote.</p></blockquote></li></ol>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -1131,19 +984,11 @@ with two lines.</p>
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ol>
-<li>
-<p>A paragraph
-with two lines.</p>
-<pre><code>indented code
-</code></pre>
-<blockquote>
-<p>A block quote.</p>
-</blockquote>
-</li>
-</ol>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ol><li><p>A paragraph
+        with two lines.</p><pre><code>indented code
+        </code></pre><blockquote><p>A block quote.</p></blockquote></li></ol>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -1167,15 +1012,15 @@ with two lines.</p>
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<pre><code>1.  A paragraph
-    with two lines.
-
-        indented code
-
-    &gt; A block quote.
-</code></pre>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <pre><code>1.  A paragraph
+            with two lines.
+        
+                indented code
+        
+            &gt; A block quote.
+        </code></pre>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -1209,19 +1054,11 @@ with two lines.</p>
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ol>
-<li>
-<p>A paragraph
-with two lines.</p>
-<pre><code>indented code
-</code></pre>
-<blockquote>
-<p>A block quote.</p>
-</blockquote>
-</li>
-</ol>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ol><li><p>A paragraph
+        with two lines.</p><pre><code>indented code
+        </code></pre><blockquote><p>A block quote.</p></blockquote></li></ol>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -1241,12 +1078,10 @@ with two lines.</p>
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ol>
-<li>A paragraph
-with two lines.</li>
-</ol>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ol><li>A paragraph
+        with two lines.</li></ol>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -1266,18 +1101,10 @@ with two lines.</li>
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<blockquote>
-<ol>
-<li>
-<blockquote>
-<p>Blockquote
-continued here.</p>
-</blockquote>
-</li>
-</ol>
-</blockquote>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <blockquote><ol><li><blockquote><p>Blockquote
+        continued here.</p></blockquote></li></ol></blockquote>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -1295,18 +1122,10 @@ continued here.</p>
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<blockquote>
-<ol>
-<li>
-<blockquote>
-<p>Blockquote
-continued here.</p>
-</blockquote>
-</li>
-</ol>
-</blockquote>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <blockquote><ol><li><blockquote><p>Blockquote
+        continued here.</p></blockquote></li></ol></blockquote>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -1337,23 +1156,12 @@ continued here.</p>
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ul>
-<li>foo
-<ul>
-<li>bar
-<ul>
-<li>baz
-<ul>
-<li>boo</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ul><li>foo
+        <ul><li>bar
+        <ul><li>baz
+        <ul><li>boo</li></ul></li></ul></li></ul></li></ul>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -1375,14 +1183,9 @@ continued here.</p>
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ul>
-<li>foo</li>
-<li>bar</li>
-<li>baz</li>
-<li>boo</li>
-</ul>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ul><li>foo</li><li>bar</li><li>baz</li><li>boo</li></ul>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -1402,15 +1205,10 @@ continued here.</p>
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ol start="10">
-<li>foo
-<ul>
-<li>bar</li>
-</ul>
-</li>
-</ol>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ol start="10"><li>foo
+        <ul><li>bar</li></ul></li></ol>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -1430,14 +1228,9 @@ continued here.</p>
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ol start="10">
-<li>foo</li>
-</ol>
-<ul>
-<li>bar</li>
-</ul>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ol start="10"><li>foo</li></ol><ul><li>bar</li></ul>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -1456,15 +1249,9 @@ continued here.</p>
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ul>
-<li>
-<ul>
-<li>foo</li>
-</ul>
-</li>
-</ul>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ul><li><ul><li>foo</li></ul></li></ul>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -1481,19 +1268,9 @@ continued here.</p>
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ol>
-<li>
-<ul>
-<li>
-<ol start="2">
-<li>foo</li>
-</ol>
-</li>
-</ul>
-</li>
-</ol>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ol><li><ul><li><ol start="2"><li>foo</li></ol></li></ul></li></ol>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
     // 
@@ -1515,16 +1292,10 @@ continued here.</p>
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-<ul>
-<li>
-<h1>Foo</h1>
-</li>
-<li>
-<h2>Bar</h2>
-baz</li>
-</ul>
-"""#####
-        XCTAssertEqual(normalize(html: html),normalizedCM)
+        <ul><li><h1>Foo</h1></li><li><h2>Bar</h2>
+        baz</li></ul>
+        """#####
+        XCTAssertEqual(html,normalizedCM)
 
     }
 }

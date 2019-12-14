@@ -128,8 +128,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1347"
             endingLineNumber = "1347"
-            landmarkName = "LinksTests"
-            landmarkType = "3">
+            landmarkName = "testExample537()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -178,38 +178,6 @@
                   offsetFromSymbolStart = "2376">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0099DA92-EB65-4477-BB0D-DE8CD31FF135"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MakeTestCode/BuildTests.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "outputTestCase(_:)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "288B9857-32AB-4A87-AD5C-CD561054E3A6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MakeTestCode/BuildTests.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
-            landmarkName = "outputTestCase(_:)"
-            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
