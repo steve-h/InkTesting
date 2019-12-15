@@ -583,8 +583,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>*foo bar
-        *</p>
+        <p>*foo bar *</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -951,8 +950,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>__
-        foo bar__</p>
+        <p>__ foo bar__</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -1167,8 +1165,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p><strong>Gomphocarpus (<em>Gomphocarpus physocarpus</em>, syn.
-        <em>Asclepias physocarpa</em>)</strong></p>
+        <p><strong>Gomphocarpus (<em>Gomphocarpus physocarpus</em>, syn. <em>Asclepias physocarpa</em>)</strong></p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -1402,8 +1399,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p><em>foo
-        bar</em></p>
+        <p><em>foo bar</em></p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -1784,8 +1780,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p><strong>foo
-        bar</strong></p>
+        <p><strong>foo bar</strong></p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -1962,8 +1957,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p><strong>foo <em>bar <strong>baz</strong>
-        bim</em> bop</strong></p>
+        <p><strong>foo <em>bar <strong>baz</strong> bim</em> bop</strong></p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -2814,7 +2808,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>*<!-- raw HTML omitted --></p>
+        <p>*<img src="foo" title="*"/></p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -2833,7 +2827,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>**<!-- raw HTML omitted --></p>
+        <p>**<a href="**"></p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -2852,7 +2846,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>__<!-- raw HTML omitted --></p>
+        <p>__<a href="__"></p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 

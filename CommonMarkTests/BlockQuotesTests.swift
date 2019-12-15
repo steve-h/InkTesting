@@ -83,8 +83,7 @@ final class BlockQuotesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <blockquote><h1>Foo</h1><p>bar
-        baz</p></blockquote>
+        <blockquote><h1>Foo</h1><p>bar baz</p></blockquote>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -107,8 +106,7 @@ final class BlockQuotesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <blockquote><h1>Foo</h1><p>bar
-        baz</p></blockquote>
+        <blockquote><h1>Foo</h1><p>bar baz</p></blockquote>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -131,8 +129,7 @@ final class BlockQuotesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <blockquote><h1>Foo</h1><p>bar
-        baz</p></blockquote>
+        <blockquote><h1>Foo</h1><p>bar baz</p></blockquote>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -182,8 +179,7 @@ final class BlockQuotesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <blockquote><h1>Foo</h1><p>bar
-        baz</p></blockquote>
+        <blockquote><h1>Foo</h1><p>bar baz</p></blockquote>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -207,9 +203,7 @@ final class BlockQuotesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <blockquote><p>bar
-        baz
-        foo</p></blockquote>
+        <blockquote><p>bar baz foo</p></blockquote>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -338,8 +332,7 @@ final class BlockQuotesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <blockquote><p>foo
-        - bar</p></blockquote>
+        <blockquote><p>foo - bar</p></blockquote>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -466,8 +459,7 @@ final class BlockQuotesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <blockquote><p>foo
-        bar</p></blockquote>
+        <blockquote><p>foo bar</p></blockquote>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -559,8 +551,7 @@ final class BlockQuotesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <blockquote><p>bar
-        baz</p></blockquote>
+        <blockquote><p>bar baz</p></blockquote>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -626,8 +617,7 @@ final class BlockQuotesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <blockquote><blockquote><blockquote><p>foo
-        bar</p></blockquote></blockquote></blockquote>
+        <blockquote><blockquote><blockquote><p>foo bar</p></blockquote></blockquote></blockquote>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -648,9 +638,7 @@ final class BlockQuotesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <blockquote><blockquote><blockquote><p>foo
-        bar
-        baz</p></blockquote></blockquote></blockquote>
+        <blockquote><blockquote><blockquote><p>foo bar baz</p></blockquote></blockquote></blockquote>
         """#####
         XCTAssertEqual(html,normalizedCM)
 

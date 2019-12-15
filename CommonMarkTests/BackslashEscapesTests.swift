@@ -92,15 +92,7 @@ final class BackslashEscapesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>*not emphasized*
-        &lt;br/&gt; not a tag
-        [not a link](/foo)
-        `not code`
-        1. not a list
-        * not a list
-        # not a heading
-        [foo]: /url &quot;not a reference&quot;
-        &amp;ouml; not a character entity</p>
+        <p>*not emphasized* &lt;br/&gt; not a tag [not a link](/foo) `not code` 1. not a list * not a list # not a heading [foo]: /url &quot;not a reference&quot; &amp;ouml; not a character entity</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -143,7 +135,7 @@ final class BackslashEscapesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>foo<br />
+        <p>foo<br>
         bar</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
@@ -246,7 +238,7 @@ final class BackslashEscapesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <!-- raw HTML omitted -->
+        <a href="/bar\/)">
         """#####
         XCTAssertEqual(html,normalizedCM)
 

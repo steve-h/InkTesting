@@ -363,8 +363,7 @@ final class ImagesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p><img src="/url" alt="foo" title="title" />
-        []</p>
+        <p><img src="/url" alt="foo" title="title" /> []</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 

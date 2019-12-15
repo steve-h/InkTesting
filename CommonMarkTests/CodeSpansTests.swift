@@ -183,7 +183,7 @@ final class CodeSpansTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p><code> </code><code></code></p>
+        <p><code> </code> <code></code></p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -407,7 +407,7 @@ final class CodeSpansTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p><!-- raw HTML omitted -->`</p>
+        <p><a href="`">`</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 

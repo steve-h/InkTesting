@@ -38,7 +38,7 @@ final class HardLineBreaksTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>foo<br />
+        <p>foo<br>
         baz</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
@@ -62,7 +62,7 @@ final class HardLineBreaksTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>foo<br />
+        <p>foo<br>
         baz</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
@@ -85,7 +85,7 @@ final class HardLineBreaksTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>foo<br />
+        <p>foo<br>
         baz</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
@@ -108,7 +108,7 @@ final class HardLineBreaksTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>foo<br />
+        <p>foo<br>
         bar</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
@@ -129,7 +129,7 @@ final class HardLineBreaksTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>foo<br />
+        <p>foo<br>
         bar</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
@@ -153,7 +153,7 @@ final class HardLineBreaksTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p><em>foo<br />
+        <p><em>foo<br>
         bar</em></p>
         """#####
         XCTAssertEqual(html,normalizedCM)
@@ -174,7 +174,7 @@ final class HardLineBreaksTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p><em>foo<br />
+        <p><em>foo<br>
         bar</em></p>
         """#####
         XCTAssertEqual(html,normalizedCM)
@@ -239,7 +239,8 @@ final class HardLineBreaksTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p><!-- raw HTML omitted --></p>
+        <p><a href="foo  
+        bar"></p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -259,7 +260,8 @@ final class HardLineBreaksTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p><!-- raw HTML omitted --></p>
+        <p><a href="foo\
+        bar"></p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 

@@ -549,8 +549,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p><code></code>
-        aaa</p>
+        <p><code></code> aaa</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -729,8 +728,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p><code>aa</code>
-        foo</p>
+        <p><code>aa</code> foo</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -753,8 +751,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>~~~ aa ``` ~~~
-        foo</p><pre><code></code></pre>
+        <p>~~~ aa ``` ~~~ foo</p><pre><code></code></pre>
         """#####
         XCTAssertEqual(html,normalizedCM)
 

@@ -68,9 +68,7 @@ final class ParagraphsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>aaa
-        bbb</p><p>ccc
-        ddd</p>
+        <p>aaa bbb</p><p>ccc ddd</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -116,8 +114,7 @@ final class ParagraphsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>aaa
-        bbb</p>
+        <p>aaa bbb</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -141,9 +138,7 @@ final class ParagraphsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>aaa
-        bbb
-        ccc</p>
+        <p>aaa bbb ccc</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -166,8 +161,7 @@ final class ParagraphsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>aaa
-        bbb</p>
+        <p>aaa bbb</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -212,7 +206,7 @@ final class ParagraphsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>aaa<br />
+        <p>aaa<br>
         bbb</p>
         """#####
         XCTAssertEqual(html,normalizedCM)

@@ -74,8 +74,7 @@ final class ListItemsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>A paragraph
-        with two lines.</p><pre><code>indented code
+        <p>A paragraph with two lines.</p><pre><code>indented code
         </code></pre><blockquote><p>A block quote.</p></blockquote>
         """#####
         XCTAssertEqual(html,normalizedCM)
@@ -104,8 +103,7 @@ final class ListItemsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <ol><li><p>A paragraph
-        with two lines.</p><pre><code>indented code
+        <ol><li><p>A paragraph with two lines.</p><pre><code>indented code
         </code></pre><blockquote><p>A block quote.</p></blockquote></li></ol>
         """#####
         XCTAssertEqual(html,normalizedCM)
@@ -894,9 +892,7 @@ final class ListItemsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>foo
-        *</p><p>foo
-        1.</p>
+        <p>foo *</p><p>foo 1.</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -928,8 +924,7 @@ final class ListItemsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <ol><li><p>A paragraph
-        with two lines.</p><pre><code>indented code
+        <ol><li><p>A paragraph with two lines.</p><pre><code>indented code
         </code></pre><blockquote><p>A block quote.</p></blockquote></li></ol>
         """#####
         XCTAssertEqual(html,normalizedCM)
@@ -956,8 +951,7 @@ final class ListItemsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <ol><li><p>A paragraph
-        with two lines.</p><pre><code>indented code
+        <ol><li><p>A paragraph with two lines.</p><pre><code>indented code
         </code></pre><blockquote><p>A block quote.</p></blockquote></li></ol>
         """#####
         XCTAssertEqual(html,normalizedCM)
@@ -984,8 +978,7 @@ final class ListItemsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <ol><li><p>A paragraph
-        with two lines.</p><pre><code>indented code
+        <ol><li><p>A paragraph with two lines.</p><pre><code>indented code
         </code></pre><blockquote><p>A block quote.</p></blockquote></li></ol>
         """#####
         XCTAssertEqual(html,normalizedCM)
@@ -1054,8 +1047,7 @@ final class ListItemsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <ol><li><p>A paragraph
-        with two lines.</p><pre><code>indented code
+        <ol><li><p>A paragraph with two lines.</p><pre><code>indented code
         </code></pre><blockquote><p>A block quote.</p></blockquote></li></ol>
         """#####
         XCTAssertEqual(html,normalizedCM)
@@ -1078,8 +1070,7 @@ final class ListItemsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <ol><li>A paragraph
-        with two lines.</li></ol>
+        <ol><li>A paragraph with two lines.</li></ol>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -1101,8 +1092,7 @@ final class ListItemsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <blockquote><ol><li><blockquote><p>Blockquote
-        continued here.</p></blockquote></li></ol></blockquote>
+        <blockquote><ol><li><blockquote><p>Blockquote continued here.</p></blockquote></li></ol></blockquote>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -1122,8 +1112,7 @@ final class ListItemsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <blockquote><ol><li><blockquote><p>Blockquote
-        continued here.</p></blockquote></li></ol></blockquote>
+        <blockquote><ol><li><blockquote><p>Blockquote continued here.</p></blockquote></li></ol></blockquote>
         """#####
         XCTAssertEqual(html,normalizedCM)
 

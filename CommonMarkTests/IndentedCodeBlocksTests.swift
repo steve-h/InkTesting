@@ -209,8 +209,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>Foo
-        bar</p>
+        <p>Foo bar</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 

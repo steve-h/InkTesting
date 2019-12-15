@@ -123,9 +123,7 @@ final class ThematicBreaksTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>--
-        **
-        __</p>
+        <p>-- ** __</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -190,8 +188,7 @@ final class ThematicBreaksTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>Foo
-        ***</p>
+        <p>Foo ***</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 

@@ -381,8 +381,7 @@ final class ListsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>The number of windows in my house is
-        14.  The number of doors is 6.</p>
+        <p>The number of windows in my house is 14.  The number of doors is 6.</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -485,7 +484,7 @@ final class ListsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <ul><li>foo</li><li>bar</li></ul><!-- raw HTML omitted --><ul><li>baz</li><li>bim</li></ul>
+        <ul><li>foo</li><li>bar</li></ul><!-- --><ul><li>baz</li><li>bim</li></ul>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -512,7 +511,7 @@ final class ListsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <ul><li><p>foo</p><p>notcode</p></li><li><p>foo</p></li></ul><!-- raw HTML omitted --><pre><code>code
+        <ul><li><p>foo</p><p>notcode</p></li><li><p>foo</p></li></ul><!-- --><pre><code>code
         </code></pre>
         """#####
         XCTAssertEqual(html,normalizedCM)

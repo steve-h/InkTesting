@@ -229,8 +229,7 @@ final class LinksTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>[link](foo
-        bar)</p>
+        <p>[link](foo bar)</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -249,7 +248,8 @@ final class LinksTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>[link](<!-- raw HTML omitted -->)</p>
+        <p>[link](<foo
+        bar>)</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -313,9 +313,7 @@ final class LinksTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>[a](&lt;b)c
-        [a](&lt;b)c&gt;
-        [a](<!-- raw HTML omitted -->c)</p>
+        <p>[a](&lt;b)c [a](&lt;b)c&gt; [a](<b>c)</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -558,7 +556,7 @@ final class LinksTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p><a href="/url" title="title">link</a><a href="/url" title="title">link</a><a href="/url" title="title">link</a></p>
+        <p><a href="/url" title="title">link</a> <a href="/url" title="title">link</a> <a href="/url" title="title">link</a></p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -966,7 +964,7 @@ final class LinksTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>[foo <!-- raw HTML omitted --></p>
+        <p>[foo <bar attr="](baz)"></p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -1263,7 +1261,7 @@ final class LinksTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>[foo <!-- raw HTML omitted --></p>
+        <p>[foo <bar attr="][ref]"></p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -1422,8 +1420,7 @@ final class LinksTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>[foo]
-        <a href="/url" title="title">bar</a></p>
+        <p>[foo] <a href="/url" title="title">bar</a></p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -1657,9 +1654,7 @@ final class LinksTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>[
-        ]</p><p>[
-        ]: /uri</p>
+        <p>[ ]</p><p>[ ]: /uri</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -1759,8 +1754,7 @@ final class LinksTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p><a href="/url" title="title">foo</a>
-        []</p>
+        <p><a href="/url" title="title">foo</a> []</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 

@@ -123,9 +123,7 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>[Foo bar]:
-        <!-- raw HTML omitted -->
-        'title'</p><p>[Foo bar]</p>
+        <p>[Foo bar]: <my url> 'title'</p><p>[Foo bar]</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -557,8 +555,7 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>Foo
-        [bar]: /baz</p><p>[bar]</p>
+        <p>Foo [bar]: /baz</p><p>[bar]</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -603,8 +600,7 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <h1>[foo]: /url
-        bar</h1><p>[foo]</p>
+        <h1>[foo]: /url bar</h1><p>[foo]</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -653,9 +649,7 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p><a href="/foo-url" title="foo">foo</a>,
-        <a href="/bar-url" title="bar">bar</a>,
-        <a href="/baz-url">baz</a></p>
+        <p><a href="/foo-url" title="foo">foo</a>, <a href="/bar-url" title="bar">bar</a>, <a href="/baz-url">baz</a></p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 

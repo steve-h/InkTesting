@@ -89,8 +89,7 @@ final class SetextHeadingsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <h1>Foo <em>bar
-        baz</em></h1>
+        <h1>Foo <em>bar baz</em></h1>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -115,8 +114,7 @@ final class SetextHeadingsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <h1>Foo <em>bar
-        baz</em></h1>
+        <h1>Foo <em>bar baz</em></h1>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -244,8 +242,7 @@ final class SetextHeadingsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>Foo
-        ---</p>
+        <p>Foo ---</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -270,8 +267,7 @@ final class SetextHeadingsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>Foo
-        = =</p><p>Foo</p><hr>
+        <p>Foo = =</p><p>Foo</p><hr>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -387,9 +383,7 @@ final class SetextHeadingsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <blockquote><p>foo
-        bar
-        ===</p></blockquote>
+        <blockquote><p>foo bar ===</p></blockquote>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -434,8 +428,7 @@ final class SetextHeadingsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <h2>Foo
-        Bar</h2>
+        <h2>Foo Bar</h2>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -665,8 +658,7 @@ final class SetextHeadingsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>Foo
-        bar</p><hr><p>baz</p>
+        <p>Foo bar</p><hr><p>baz</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -691,8 +683,7 @@ final class SetextHeadingsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>Foo
-        bar</p><hr><p>baz</p>
+        <p>Foo bar</p><hr><p>baz</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -716,10 +707,7 @@ final class SetextHeadingsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>Foo
-        bar
-        ---
-        baz</p>
+        <p>Foo bar --- baz</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 

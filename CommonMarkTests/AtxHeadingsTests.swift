@@ -229,8 +229,7 @@ final class AtxHeadingsTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>foo
-        # bar</p>
+        <p>foo # bar</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 

@@ -58,9 +58,7 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>  &amp; © Æ Ď
-        ¾ ℋ ⅆ
-        ∲ ≧̸</p>
+        <p>  &amp; © Æ Ď ¾ ℋ ⅆ ∲ ≧̸</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -136,10 +134,7 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>&amp;nbsp &amp;x; &amp;#; &amp;#x;
-        �
-        &amp;#abcdef0;
-        &amp;ThisIsNotDefined; &amp;hi?;</p>
+        <p>&amp;nbsp &amp;x; &amp;#; &amp;#x; � &amp;#abcdef0; &amp;ThisIsNotDefined; &amp;hi?;</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -207,7 +202,7 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <!-- raw HTML omitted -->
+        <a href="&ouml;&ouml;.html">
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -335,8 +330,7 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         let normalizedCM = #####"""
-        <p>*foo*
-        <em>foo</em></p>
+        <p>*foo* <em>foo</em></p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 

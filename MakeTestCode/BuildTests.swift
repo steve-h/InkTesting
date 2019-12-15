@@ -126,8 +126,8 @@ func outputTestCase(_ test: Test) {
 //    let htmlsegment = test.html.components(separatedBy: "\n").joined(separator:"\\n").components(separatedBy: "\"").joined(separator:"\\\"")
 //    let normalizedhtml = test.html.replacingOccurrences(of: ">\n<", with: "><").replacingOccurrences(of: "<hr />", with: "<hr>")
 //    let htmlsegments = normalizedhtml.components(separatedBy: "\n").dropLast()
-    let cMarkhtml = try! markdownToHTML(test.markdown)
-    let normalizedcMark = cMarkhtml.replacingOccurrences(of: ">\n<", with: "><").replacingOccurrences(of: "<hr />", with: "<hr>")
+    let cMarkhtml = try! markdownToHTML(test.markdown, options: [.normalize, .noBreaks])
+    let normalizedcMark = cMarkhtml.replacingOccurrences(of: ">\n<", with: "><").replacingOccurrences(of: "<hr />", with: "<hr>").replacingOccurrences(of: "<br />", with: "<br>")
     
     let htmlsegments = normalizedcMark.components(separatedBy: "\n").dropLast()
     let htmlsegment = htmlsegments.joined(separator:sepstr)
