@@ -106,6 +106,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/uri" title="title">link</a></p>
         let normalizedCM = #####"""
         <p><a href="/uri" title="title">link</a></p>
         """#####
@@ -127,6 +129,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/uri">link</a></p>
         let normalizedCM = #####"""
         <p><a href="/uri">link</a></p>
         """#####
@@ -148,6 +152,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="">link</a></p>
         let normalizedCM = #####"""
         <p><a href="">link</a></p>
         """#####
@@ -167,6 +173,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="">link</a></p>
         let normalizedCM = #####"""
         <p><a href="">link</a></p>
         """#####
@@ -188,6 +196,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[link](/my uri)</p>
         let normalizedCM = #####"""
         <p>[link](/my uri)</p>
         """#####
@@ -206,6 +216,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/my%20uri">link</a></p>
         let normalizedCM = #####"""
         <p>[link](&lt;/my uri&gt;)</p>
         """#####
@@ -228,6 +240,9 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[link](foo
+      //bar)</p>
         let normalizedCM = #####"""
         <p>[link](foo bar)</p>
         """#####
@@ -247,6 +262,9 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[link](<foo
+      //bar>)</p>
         let normalizedCM = #####"""
         <p>[link](<foo
         bar>)</p>
@@ -269,6 +287,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="b)c">a</a></p>
         let normalizedCM = #####"""
         <p><a href="b)c">a</a></p>
         """#####
@@ -289,6 +309,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[link](&lt;foo&gt;)</p>
         let normalizedCM = #####"""
         <p>[link](&lt;foo&gt;)</p>
         """#####
@@ -312,6 +334,10 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[a](&lt;b)c
+      //[a](&lt;b)c&gt;
+      //[a](<b>c)</p>
         let normalizedCM = #####"""
         <p>[a](&lt;b)c [a](&lt;b)c&gt; [a](<b>c)</p>
         """#####
@@ -332,6 +358,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="(foo)">link</a></p>
         let normalizedCM = #####"""
         <p><a href="(foo)">link</a></p>
         """#####
@@ -353,6 +381,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="foo(and(bar))">link</a></p>
         let normalizedCM = #####"""
         <p><a href="foo(and(bar))">link</a></p>
         """#####
@@ -374,6 +404,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[link](foo(and(bar))</p>
         let normalizedCM = #####"""
         <p>[link](foo(and(bar))</p>
         """#####
@@ -393,6 +425,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="foo(and(bar)">link</a></p>
         let normalizedCM = #####"""
         <p><a href="foo(and(bar)">link</a></p>
         """#####
@@ -412,6 +446,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="foo(and(bar)">link</a></p>
         let normalizedCM = #####"""
         <p><a href="foo(and(bar)">link</a></p>
         """#####
@@ -434,6 +470,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="foo):">link</a></p>
         let normalizedCM = #####"""
         <p><a href="foo):">link</a></p>
         """#####
@@ -459,6 +497,10 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="#fragment">link</a></p>
+      //<p><a href="http://example.com#fragment">link</a></p>
+      //<p><a href="http://example.com?foo=3#frag">link</a></p>
         let normalizedCM = #####"""
         <p><a href="#fragment">link</a></p><p><a href="http://example.com#fragment">link</a></p><p><a href="http://example.com?foo=3#frag">link</a></p>
         """#####
@@ -481,6 +523,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="foo%5Cbar">link</a></p>
         let normalizedCM = #####"""
         <p><a href="foo%5Cbar">link</a></p>
         """#####
@@ -509,6 +553,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="foo%20b%C3%A4">link</a></p>
         let normalizedCM = #####"""
         <p><a href="foo%20b%C3%A4">link</a></p>
         """#####
@@ -532,6 +578,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="%22title%22">link</a></p>
         let normalizedCM = #####"""
         <p><a href="%22title%22">link</a></p>
         """#####
@@ -555,6 +603,10 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/url" title="title">link</a>
+      //<a href="/url" title="title">link</a>
+      //<a href="/url" title="title">link</a></p>
         let normalizedCM = #####"""
         <p><a href="/url" title="title">link</a> <a href="/url" title="title">link</a> <a href="/url" title="title">link</a></p>
         """#####
@@ -577,6 +629,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/url" title="title &quot;&quot;">link</a></p>
         let normalizedCM = #####"""
         <p><a href="/url" title="title &quot;&quot;">link</a></p>
         """#####
@@ -599,6 +653,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/url%C2%A0%22title%22">link</a></p>
         let normalizedCM = #####"""
         <p><a href="/url%C2%A0%22title%22">link</a></p>
         """#####
@@ -620,6 +676,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[link](/url &quot;title &quot;and&quot; title&quot;)</p>
         let normalizedCM = #####"""
         <p>[link](/url &quot;title &quot;and&quot; title&quot;)</p>
         """#####
@@ -641,6 +699,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/url" title="title &quot;and&quot; title">link</a></p>
         let normalizedCM = #####"""
         <p><a href="/url" title="title &quot;and&quot; title">link</a></p>
         """#####
@@ -678,6 +738,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/uri" title="title">link</a></p>
         let normalizedCM = #####"""
         <p><a href="/uri" title="title">link</a></p>
         """#####
@@ -700,6 +762,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[link] (/uri)</p>
         let normalizedCM = #####"""
         <p>[link] (/uri)</p>
         """#####
@@ -722,6 +786,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/uri">link [foo [bar]]</a></p>
         let normalizedCM = #####"""
         <p><a href="/uri">link [foo [bar]]</a></p>
         """#####
@@ -741,6 +807,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[link] bar](/uri)</p>
         let normalizedCM = #####"""
         <p>[link] bar](/uri)</p>
         """#####
@@ -760,6 +828,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[link <a href="/uri">bar</a></p>
         let normalizedCM = #####"""
         <p>[link <a href="/uri">bar</a></p>
         """#####
@@ -779,6 +849,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/uri">link [bar</a></p>
         let normalizedCM = #####"""
         <p><a href="/uri">link [bar</a></p>
         """#####
@@ -800,6 +872,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/uri">link <em>foo <strong>bar</strong> <code>#</code></em></a></p>
         let normalizedCM = #####"""
         <p><a href="/uri">link <em>foo <strong>bar</strong> <code>#</code></em></a></p>
         """#####
@@ -819,6 +893,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/uri"><img src="moon.jpg" alt="moon" /></a></p>
         let normalizedCM = #####"""
         <p><a href="/uri"><img src="moon.jpg" alt="moon" /></a></p>
         """#####
@@ -840,6 +916,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[foo <a href="/uri">bar</a>](/uri)</p>
         let normalizedCM = #####"""
         <p>[foo <a href="/uri">bar</a>](/uri)</p>
         """#####
@@ -859,6 +937,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[foo <em>[bar <a href="/uri">baz</a>](/uri)</em>](/uri)</p>
         let normalizedCM = #####"""
         <p>[foo <em>[bar <a href="/uri">baz</a>](/uri)</em>](/uri)</p>
         """#####
@@ -878,6 +958,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><img src="uri3" alt="[foo](uri2)" /></p>
         let normalizedCM = #####"""
         <p><img src="uri3" alt="[foo](uri2)" /></p>
         """#####
@@ -900,6 +982,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>*<a href="/uri">foo*</a></p>
         let normalizedCM = #####"""
         <p>*<a href="/uri">foo*</a></p>
         """#####
@@ -919,6 +1003,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="baz*">foo *bar</a></p>
         let normalizedCM = #####"""
         <p><a href="baz*">foo *bar</a></p>
         """#####
@@ -941,6 +1027,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><em>foo [bar</em> baz]</p>
         let normalizedCM = #####"""
         <p><em>foo [bar</em> baz]</p>
         """#####
@@ -963,6 +1051,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[foo <bar attr="](baz)"></p>
         let normalizedCM = #####"""
         <p>[foo <bar attr="](baz)"></p>
         """#####
@@ -982,6 +1072,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[foo<code>](/uri)</code></p>
         let normalizedCM = #####"""
         <p>[foo<code>](/uri)</code></p>
         """#####
@@ -1001,6 +1093,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[foo<a href="http://example.com/?search=%5D(uri)">http://example.com/?search=](uri)</a></p>
         let normalizedCM = #####"""
         <p>[foo<a href="http://example.com/?search=%5D(uri)">http://example.com/?search=](uri)</a></p>
         """#####
@@ -1052,6 +1146,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/url" title="title">foo</a></p>
         let normalizedCM = #####"""
         <p><a href="/url" title="title">foo</a></p>
         """#####
@@ -1079,6 +1175,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/uri">link [foo [bar]]</a></p>
         let normalizedCM = #####"""
         <p><a href="/uri">link [foo [bar]]</a></p>
         """#####
@@ -1100,6 +1198,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/uri">link [bar</a></p>
         let normalizedCM = #####"""
         <p><a href="/uri">link [bar</a></p>
         """#####
@@ -1123,6 +1223,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/uri">link <em>foo <strong>bar</strong> <code>#</code></em></a></p>
         let normalizedCM = #####"""
         <p><a href="/uri">link <em>foo <strong>bar</strong> <code>#</code></em></a></p>
         """#####
@@ -1144,6 +1246,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/uri"><img src="moon.jpg" alt="moon" /></a></p>
         let normalizedCM = #####"""
         <p><a href="/uri"><img src="moon.jpg" alt="moon" /></a></p>
         """#####
@@ -1167,6 +1271,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[foo <a href="/uri">bar</a>]<a href="/uri">ref</a></p>
         let normalizedCM = #####"""
         <p>[foo <a href="/uri">bar</a>]<a href="/uri">ref</a></p>
         """#####
@@ -1188,6 +1294,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[foo <em>bar <a href="/uri">baz</a></em>]<a href="/uri">ref</a></p>
         let normalizedCM = #####"""
         <p>[foo <em>bar <a href="/uri">baz</a></em>]<a href="/uri">ref</a></p>
         """#####
@@ -1215,6 +1323,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>*<a href="/uri">foo*</a></p>
         let normalizedCM = #####"""
         <p>*<a href="/uri">foo*</a></p>
         """#####
@@ -1236,6 +1346,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/uri">foo *bar</a>*</p>
         let normalizedCM = #####"""
         <p><a href="/uri">foo *bar</a>*</p>
         """#####
@@ -1260,6 +1372,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[foo <bar attr="][ref]"></p>
         let normalizedCM = #####"""
         <p>[foo <bar attr="][ref]"></p>
         """#####
@@ -1281,6 +1395,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[foo<code>][ref]</code></p>
         let normalizedCM = #####"""
         <p>[foo<code>][ref]</code></p>
         """#####
@@ -1302,6 +1418,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[foo<a href="http://example.com/?search=%5D%5Bref%5D">http://example.com/?search=][ref]</a></p>
         let normalizedCM = #####"""
         <p>[foo<a href="http://example.com/?search=%5D%5Bref%5D">http://example.com/?search=][ref]</a></p>
         """#####
@@ -1325,6 +1443,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/url" title="title">foo</a></p>
         let normalizedCM = #####"""
         <p><a href="/url" title="title">foo</a></p>
         """#####
@@ -1348,6 +1468,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/url">ẞ</a></p>
         let normalizedCM = #####"""
         <p><a href="/url">ẞ</a></p>
         """#####
@@ -1373,6 +1495,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/url">Baz</a></p>
         let normalizedCM = #####"""
         <p><a href="/url">Baz</a></p>
         """#####
@@ -1397,6 +1521,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[foo] <a href="/url" title="title">bar</a></p>
         let normalizedCM = #####"""
         <p>[foo] <a href="/url" title="title">bar</a></p>
         """#####
@@ -1419,6 +1545,9 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[foo]
+      //<a href="/url" title="title">bar</a></p>
         let normalizedCM = #####"""
         <p>[foo] <a href="/url" title="title">bar</a></p>
         """#####
@@ -1472,6 +1601,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/url1">bar</a></p>
         let normalizedCM = #####"""
         <p><a href="/url1">bar</a></p>
         """#####
@@ -1497,6 +1628,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[bar][foo!]</p>
         let normalizedCM = #####"""
         <p>[bar][foo!]</p>
         """#####
@@ -1521,6 +1654,9 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[foo][ref[]</p>
+      //<p>[ref[]: /uri</p>
         let normalizedCM = #####"""
         <p>[foo][ref[]</p><p>[ref[]: /uri</p>
         """#####
@@ -1542,6 +1678,9 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[foo][ref[bar]]</p>
+      //<p>[ref[bar]]: /uri</p>
         let normalizedCM = #####"""
         <p>[foo][ref[bar]]</p><p>[ref[bar]]: /uri</p>
         """#####
@@ -1563,6 +1702,9 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[[[foo]]]</p>
+      //<p>[[[foo]]]: /url</p>
         let normalizedCM = #####"""
         <p>[[[foo]]]</p><p>[[[foo]]]: /url</p>
         """#####
@@ -1584,6 +1726,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/uri">foo</a></p>
         let normalizedCM = #####"""
         <p><a href="/uri">foo</a></p>
         """#####
@@ -1607,6 +1751,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/uri">bar\</a></p>
         let normalizedCM = #####"""
         <p><a href="/uri">bar\</a></p>
         """#####
@@ -1630,6 +1776,9 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[]</p>
+      //<p>[]: /uri</p>
         let normalizedCM = #####"""
         <p>[]</p><p>[]: /uri</p>
         """#####
@@ -1653,6 +1802,11 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[
+      //]</p>
+      //<p>[
+      //]: /uri</p>
         let normalizedCM = #####"""
         <p>[ ]</p><p>[ ]: /uri</p>
         """#####
@@ -1683,6 +1837,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/url" title="title">foo</a></p>
         let normalizedCM = #####"""
         <p><a href="/url" title="title">foo</a></p>
         """#####
@@ -1704,6 +1860,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/url" title="title"><em>foo</em> bar</a></p>
         let normalizedCM = #####"""
         <p><a href="/url" title="title"><em>foo</em> bar</a></p>
         """#####
@@ -1727,6 +1885,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/url" title="title">Foo</a></p>
         let normalizedCM = #####"""
         <p><a href="/url" title="title">Foo</a></p>
         """#####
@@ -1753,6 +1913,9 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/url" title="title">foo</a>
+      //[]</p>
         let normalizedCM = #####"""
         <p><a href="/url" title="title">foo</a> []</p>
         """#####
@@ -1783,6 +1946,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/url" title="title">foo</a></p>
         let normalizedCM = #####"""
         <p><a href="/url" title="title">foo</a></p>
         """#####
@@ -1804,6 +1969,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/url" title="title"><em>foo</em> bar</a></p>
         let normalizedCM = #####"""
         <p><a href="/url" title="title"><em>foo</em> bar</a></p>
         """#####
@@ -1825,6 +1992,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[<a href="/url" title="title"><em>foo</em> bar</a>]</p>
         let normalizedCM = #####"""
         <p>[<a href="/url" title="title"><em>foo</em> bar</a>]</p>
         """#####
@@ -1846,6 +2015,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[[bar <a href="/url">foo</a></p>
         let normalizedCM = #####"""
         <p>[[bar <a href="/url">foo</a></p>
         """#####
@@ -1869,6 +2040,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/url" title="title">Foo</a></p>
         let normalizedCM = #####"""
         <p><a href="/url" title="title">Foo</a></p>
         """#####
@@ -1892,6 +2065,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/url">foo</a> bar</p>
         let normalizedCM = #####"""
         <p><a href="/url">foo</a> bar</p>
         """#####
@@ -1916,6 +2091,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[foo]</p>
         let normalizedCM = #####"""
         <p>[foo]</p>
         """#####
@@ -1940,6 +2117,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>*<a href="/url">foo*</a></p>
         let normalizedCM = #####"""
         <p>*<a href="/url">foo*</a></p>
         """#####
@@ -1965,6 +2144,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/url2">foo</a></p>
         let normalizedCM = #####"""
         <p><a href="/url2">foo</a></p>
         """#####
@@ -1985,6 +2166,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/url1">foo</a></p>
         let normalizedCM = #####"""
         <p><a href="/url1">foo</a></p>
         """#####
@@ -2007,6 +2190,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="">foo</a></p>
         let normalizedCM = #####"""
         <p><a href="">foo</a></p>
         """#####
@@ -2027,6 +2212,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/url1">foo</a>(not a link)</p>
         let normalizedCM = #####"""
         <p><a href="/url1">foo</a>(not a link)</p>
         """#####
@@ -2050,6 +2237,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[foo]<a href="/url">bar</a></p>
         let normalizedCM = #####"""
         <p>[foo]<a href="/url">bar</a></p>
         """#####
@@ -2075,6 +2264,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/url2">foo</a><a href="/url1">baz</a></p>
         let normalizedCM = #####"""
         <p><a href="/url2">foo</a><a href="/url1">baz</a></p>
         """#####
@@ -2100,6 +2291,8 @@ final class LinksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[foo]<a href="/url1">bar</a></p>
         let normalizedCM = #####"""
         <p>[foo]<a href="/url1">bar</a></p>
         """#####

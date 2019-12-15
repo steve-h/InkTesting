@@ -35,6 +35,8 @@ final class InlinesTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><code>hi</code>lo`</p>
         let normalizedCM = #####"""
         <p><code>hi</code>lo`</p>
         """#####

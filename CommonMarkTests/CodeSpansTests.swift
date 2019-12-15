@@ -54,6 +54,8 @@ final class CodeSpansTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><code>foo</code></p>
         let normalizedCM = #####"""
         <p><code>foo</code></p>
         """#####
@@ -77,6 +79,8 @@ final class CodeSpansTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><code>foo ` bar</code></p>
         let normalizedCM = #####"""
         <p><code>foo ` bar</code></p>
         """#####
@@ -99,6 +103,8 @@ final class CodeSpansTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><code>``</code></p>
         let normalizedCM = #####"""
         <p><code>``</code></p>
         """#####
@@ -119,6 +125,8 @@ final class CodeSpansTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><code> `` </code></p>
         let normalizedCM = #####"""
         <p><code>``</code></p>
         """#####
@@ -140,6 +148,8 @@ final class CodeSpansTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><code> a</code></p>
         let normalizedCM = #####"""
         <p><code>a</code></p>
         """#####
@@ -161,6 +171,8 @@ final class CodeSpansTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><code> b </code></p>
         let normalizedCM = #####"""
         <p><code> b </code></p>
         """#####
@@ -182,6 +194,9 @@ final class CodeSpansTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><code> </code>
+      //<code>  </code></p>
         let normalizedCM = #####"""
         <p><code> </code> <code></code></p>
         """#####
@@ -207,6 +222,8 @@ final class CodeSpansTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><code>foo bar   baz</code></p>
         let normalizedCM = #####"""
         <p><code>foo bar baz</code></p>
         """#####
@@ -227,6 +244,8 @@ final class CodeSpansTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><code>foo </code></p>
         let normalizedCM = #####"""
         <p><code>foo</code></p>
         """#####
@@ -249,6 +268,8 @@ final class CodeSpansTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><code>foo   bar  baz</code></p>
         let normalizedCM = #####"""
         <p><code>foo bar baz</code></p>
         """#####
@@ -277,6 +298,8 @@ final class CodeSpansTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><code>foo\</code>bar`</p>
         let normalizedCM = #####"""
         <p><code>foo\</code>bar`</p>
         """#####
@@ -300,6 +323,8 @@ final class CodeSpansTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><code>foo`bar</code></p>
         let normalizedCM = #####"""
         <p><code>foo`bar</code></p>
         """#####
@@ -318,6 +343,8 @@ final class CodeSpansTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><code>foo `` bar</code></p>
         let normalizedCM = #####"""
         <p><code>foo `` bar</code></p>
         """#####
@@ -342,6 +369,8 @@ final class CodeSpansTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>*foo<code>*</code></p>
         let normalizedCM = #####"""
         <p>*foo<code>*</code></p>
         """#####
@@ -363,6 +392,8 @@ final class CodeSpansTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[not a <code>link](/foo</code>)</p>
         let normalizedCM = #####"""
         <p>[not a <code>link](/foo</code>)</p>
         """#####
@@ -385,6 +416,8 @@ final class CodeSpansTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><code>&lt;a href=&quot;</code>&quot;&gt;`</p>
         let normalizedCM = #####"""
         <p><code>&lt;a href=&quot;</code>&quot;&gt;`</p>
         """#####
@@ -406,6 +439,8 @@ final class CodeSpansTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="`">`</p>
         let normalizedCM = #####"""
         <p><a href="`">`</p>
         """#####
@@ -427,6 +462,8 @@ final class CodeSpansTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><code>&lt;http://foo.bar.</code>baz&gt;`</p>
         let normalizedCM = #####"""
         <p><code>&lt;http://foo.bar.</code>baz&gt;`</p>
         """#####
@@ -448,6 +485,8 @@ final class CodeSpansTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="http://foo.bar.%60baz">http://foo.bar.`baz</a>`</p>
         let normalizedCM = #####"""
         <p><a href="http://foo.bar.%60baz">http://foo.bar.`baz</a>`</p>
         """#####
@@ -470,6 +509,8 @@ final class CodeSpansTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>```foo``</p>
         let normalizedCM = #####"""
         <p>```foo``</p>
         """#####
@@ -489,6 +530,8 @@ final class CodeSpansTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>`foo</p>
         let normalizedCM = #####"""
         <p>`foo</p>
         """#####
@@ -510,6 +553,8 @@ final class CodeSpansTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>`foo<code>bar</code></p>
         let normalizedCM = #####"""
         <p>`foo<code>bar</code></p>
         """#####

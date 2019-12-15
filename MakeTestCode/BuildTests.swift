@@ -120,20 +120,18 @@ func outputTestCase(_ test: Test) {
     let testCaseName = "testExample\(test.example)"
     testNamesInSection.append(testCaseName)
     let sepstr:String = "\n        "
+    let sepstrForComments:String = "\n      //"
     
     let markdownsegment = test.markdown.components(separatedBy: "\n").dropLast().joined(separator:sepstr)
         
-//    let htmlsegment = test.html.components(separatedBy: "\n").joined(separator:"\\n").components(separatedBy: "\"").joined(separator:"\\\"")
-//    let normalizedhtml = test.html.replacingOccurrences(of: ">\n<", with: "><").replacingOccurrences(of: "<hr />", with: "<hr>")
-//    let htmlsegments = normalizedhtml.components(separatedBy: "\n").dropLast()
+    let htmlFromTestcase = sepstrForComments + test.html.components(separatedBy: "\n").dropLast().joined(separator:sepstrForComments)
+    
     let cMarkhtml = try! markdownToHTML(test.markdown, options: [.normalize, .noBreaks])
-    let normalizedcMark = cMarkhtml.replacingOccurrences(of: ">\n<", with: "><").replacingOccurrences(of: "<hr />", with: "<hr>").replacingOccurrences(of: "<br />", with: "<br>")
+    let normalizedcMark = cMarkhtml.replacingOccurrences(of: ">\n<", with: "><").replacingOccurrences(of: "<hr />", with: "<hr>").replacingOccurrences(of: "<br />\n", with: "<br>")
     
     let htmlsegments = normalizedcMark.components(separatedBy: "\n").dropLast()
     let htmlsegment = htmlsegments.joined(separator:sepstr)
-//    let poststr = "curl -X POST -s --data-urlencode 'input=" + htmlsegments.joined() + "' https://html-minifier.com/raw"
-//    let minifiedHTML = run(bash: poststr).stdout
-    
+
     let testCase = """
         
         // spec.txt lines \(test.startLine)-\(test.endLine)
@@ -145,6 +143,7 @@ func outputTestCase(_ test: Test) {
             \"\"\"#####
             markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
             let html = MarkdownParser().html(from: markdownTest)
+            \(htmlFromTestcase)
             let normalizedCM = #####\"\"\"
             \(htmlsegment)
             \"\"\"#####

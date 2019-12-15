@@ -57,6 +57,10 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>  &amp; © Æ Ď
+      //¾ ℋ ⅆ
+      //∲ ≧̸</p>
         let normalizedCM = #####"""
         <p>  &amp; © Æ Ď ¾ ℋ ⅆ ∲ ≧̸</p>
         """#####
@@ -84,6 +88,8 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p># Ӓ Ϡ �</p>
         let normalizedCM = #####"""
         <p># Ӓ Ϡ �</p>
         """#####
@@ -109,6 +115,8 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>&quot; ആ ಫ</p>
         let normalizedCM = #####"""
         <p>&quot; ആ ಫ</p>
         """#####
@@ -133,6 +141,11 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>&amp;nbsp &amp;x; &amp;#; &amp;#x;
+      //&amp;#87654321;
+      //&amp;#abcdef0;
+      //&amp;ThisIsNotDefined; &amp;hi?;</p>
         let normalizedCM = #####"""
         <p>&amp;nbsp &amp;x; &amp;#; &amp;#x; � &amp;#abcdef0; &amp;ThisIsNotDefined; &amp;hi?;</p>
         """#####
@@ -156,6 +169,8 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>&amp;copy</p>
         let normalizedCM = #####"""
         <p>&amp;copy</p>
         """#####
@@ -178,6 +193,8 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>&amp;MadeUpEntity;</p>
         let normalizedCM = #####"""
         <p>&amp;MadeUpEntity;</p>
         """#####
@@ -201,6 +218,8 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<a href="&ouml;&ouml;.html">
         let normalizedCM = #####"""
         <a href="&ouml;&ouml;.html">
         """#####
@@ -220,6 +239,8 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/f%C3%B6%C3%B6" title="föö">foo</a></p>
         let normalizedCM = #####"""
         <p><a href="/f%C3%B6%C3%B6" title="föö">foo</a></p>
         """#####
@@ -241,6 +262,8 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/f%C3%B6%C3%B6" title="föö">foo</a></p>
         let normalizedCM = #####"""
         <p><a href="/f%C3%B6%C3%B6" title="föö">foo</a></p>
         """#####
@@ -262,6 +285,9 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<pre><code class="language-föö">foo
+      //</code></pre>
         let normalizedCM = #####"""
         <pre><code class="language-föö">foo
         </code></pre>
@@ -285,6 +311,8 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><code>f&amp;ouml;&amp;ouml;</code></p>
         let normalizedCM = #####"""
         <p><code>f&amp;ouml;&amp;ouml;</code></p>
         """#####
@@ -304,6 +332,9 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<pre><code>f&amp;ouml;f&amp;ouml;
+      //</code></pre>
         let normalizedCM = #####"""
         <pre><code>f&amp;ouml;f&amp;ouml;
         </code></pre>
@@ -329,6 +360,9 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>*foo*
+      //<em>foo</em></p>
         let normalizedCM = #####"""
         <p>*foo* <em>foo</em></p>
         """#####
@@ -349,6 +383,11 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>* foo</p>
+      //<ul>
+      //<li>foo</li>
+      //</ul>
         let normalizedCM = #####"""
         <p>* foo</p><ul><li>foo</li></ul>
         """#####
@@ -367,6 +406,10 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>foo
+      //
+      //bar</p>
         let normalizedCM = #####"""
         <p>foo
         
@@ -387,6 +430,8 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>	foo</p>
         let normalizedCM = #####"""
         <p>	foo</p>
         """#####
@@ -406,6 +451,8 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>[a](url &quot;tit&quot;)</p>
         let normalizedCM = #####"""
         <p>[a](url &quot;tit&quot;)</p>
         """#####

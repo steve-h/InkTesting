@@ -643,7 +643,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/steve-h/Ink";
 			requirement = {
-				branch = paragraphwhitespace;
+				branch = backslashescapes;
 				kind = branch;
 			};
 		};

@@ -45,6 +45,10 @@ final class IndentedCodeBlocksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<pre><code>a simple
+      //  indented code block
+      //</code></pre>
         let normalizedCM = #####"""
         <pre><code>a simple
           indented code block
@@ -72,6 +76,13 @@ final class IndentedCodeBlocksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ul>
+      //<li>
+      //<p>foo</p>
+      //<p>bar</p>
+      //</li>
+      //</ul>
         let normalizedCM = #####"""
         <ul><li><p>foo</p><p>bar</p></li></ul>
         """#####
@@ -93,6 +104,15 @@ final class IndentedCodeBlocksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ol>
+      //<li>
+      //<p>foo</p>
+      //<ul>
+      //<li>bar</li>
+      //</ul>
+      //</li>
+      //</ol>
         let normalizedCM = #####"""
         <ol><li><p>foo</p><ul><li>bar</li></ul></li></ol>
         """#####
@@ -119,6 +139,12 @@ final class IndentedCodeBlocksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<pre><code>&lt;a/&gt;
+      //*hi*
+      //
+      //- one
+      //</code></pre>
         let normalizedCM = #####"""
         <pre><code>&lt;a/&gt;
         *hi*
@@ -150,6 +176,15 @@ final class IndentedCodeBlocksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<pre><code>chunk1
+      //
+      //chunk2
+      //
+      //
+      //
+      //chunk3
+      //</code></pre>
         let normalizedCM = #####"""
         <pre><code>chunk1
         
@@ -181,6 +216,11 @@ final class IndentedCodeBlocksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<pre><code>chunk1
+      //  
+      //  chunk2
+      //</code></pre>
         let normalizedCM = #####"""
         <pre><code>chunk1
           
@@ -208,6 +248,9 @@ final class IndentedCodeBlocksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>Foo
+      //bar</p>
         let normalizedCM = #####"""
         <p>Foo bar</p>
         """#####
@@ -232,6 +275,10 @@ final class IndentedCodeBlocksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<pre><code>foo
+      //</code></pre>
+      //<p>bar</p>
         let normalizedCM = #####"""
         <pre><code>foo
         </code></pre><p>bar</p>
@@ -260,6 +307,14 @@ final class IndentedCodeBlocksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<h1>Heading</h1>
+      //<pre><code>foo
+      //</code></pre>
+      //<h2>Heading</h2>
+      //<pre><code>foo
+      //</code></pre>
+      //<hr />
         let normalizedCM = #####"""
         <h1>Heading</h1><pre><code>foo
         </code></pre><h2>Heading</h2><pre><code>foo
@@ -284,6 +339,10 @@ final class IndentedCodeBlocksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<pre><code>    foo
+      //bar
+      //</code></pre>
         let normalizedCM = #####"""
         <pre><code>    foo
         bar
@@ -312,6 +371,9 @@ final class IndentedCodeBlocksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<pre><code>foo
+      //</code></pre>
         let normalizedCM = #####"""
         <pre><code>foo
         </code></pre>
@@ -334,6 +396,9 @@ final class IndentedCodeBlocksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<pre><code>foo  
+      //</code></pre>
         let normalizedCM = #####"""
         <pre><code>foo  
         </code></pre>

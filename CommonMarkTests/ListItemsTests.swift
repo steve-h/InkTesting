@@ -73,6 +73,14 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>A paragraph
+      //with two lines.</p>
+      //<pre><code>indented code
+      //</code></pre>
+      //<blockquote>
+      //<p>A block quote.</p>
+      //</blockquote>
         let normalizedCM = #####"""
         <p>A paragraph with two lines.</p><pre><code>indented code
         </code></pre><blockquote><p>A block quote.</p></blockquote>
@@ -102,6 +110,18 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ol>
+      //<li>
+      //<p>A paragraph
+      //with two lines.</p>
+      //<pre><code>indented code
+      //</code></pre>
+      //<blockquote>
+      //<p>A block quote.</p>
+      //</blockquote>
+      //</li>
+      //</ol>
         let normalizedCM = #####"""
         <ol><li><p>A paragraph with two lines.</p><pre><code>indented code
         </code></pre><blockquote><p>A block quote.</p></blockquote></li></ol>
@@ -135,6 +155,11 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ul>
+      //<li>one</li>
+      //</ul>
+      //<p>two</p>
         let normalizedCM = #####"""
         <ul><li>one</li></ul><p>two</p>
         """#####
@@ -156,6 +181,13 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ul>
+      //<li>
+      //<p>one</p>
+      //<p>two</p>
+      //</li>
+      //</ul>
         let normalizedCM = #####"""
         <ul><li><p>one</p><p>two</p></li></ul>
         """#####
@@ -177,6 +209,12 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ul>
+      //<li>one</li>
+      //</ul>
+      //<pre><code> two
+      //</code></pre>
         let normalizedCM = #####"""
         <ul><li>one</li></ul><pre><code> two
         </code></pre>
@@ -199,6 +237,13 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ul>
+      //<li>
+      //<p>one</p>
+      //<p>two</p>
+      //</li>
+      //</ul>
         let normalizedCM = #####"""
         <ul><li><p>one</p><p>two</p></li></ul>
         """#####
@@ -228,6 +273,17 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<blockquote>
+      //<blockquote>
+      //<ol>
+      //<li>
+      //<p>one</p>
+      //<p>two</p>
+      //</li>
+      //</ol>
+      //</blockquote>
+      //</blockquote>
         let normalizedCM = #####"""
         <blockquote><blockquote><ol><li><p>one</p><p>two</p></li></ol></blockquote></blockquote>
         """#####
@@ -258,6 +314,15 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<blockquote>
+      //<blockquote>
+      //<ul>
+      //<li>one</li>
+      //</ul>
+      //<p>two</p>
+      //</blockquote>
+      //</blockquote>
         let normalizedCM = #####"""
         <blockquote><blockquote><ul><li>one</li></ul><p>two</p></blockquote></blockquote>
         """#####
@@ -282,6 +347,9 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>-one</p>
+      //<p>2.two</p>
         let normalizedCM = #####"""
         <p>-one</p><p>2.two</p>
         """#####
@@ -307,6 +375,13 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ul>
+      //<li>
+      //<p>foo</p>
+      //<p>bar</p>
+      //</li>
+      //</ul>
         let normalizedCM = #####"""
         <ul><li><p>foo</p><p>bar</p></li></ul>
         """#####
@@ -336,6 +411,18 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ol>
+      //<li>
+      //<p>foo</p>
+      //<pre><code>bar
+      //</code></pre>
+      //<p>baz</p>
+      //<blockquote>
+      //<p>bam</p>
+      //</blockquote>
+      //</li>
+      //</ol>
         let normalizedCM = #####"""
         <ol><li><p>foo</p><pre><code>bar
         </code></pre><p>baz</p><blockquote><p>bam</p></blockquote></li></ol>
@@ -364,6 +451,17 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ul>
+      //<li>
+      //<p>Foo</p>
+      //<pre><code>bar
+      //
+      //
+      //baz
+      //</code></pre>
+      //</li>
+      //</ul>
         let normalizedCM = #####"""
         <ul><li><p>Foo</p><pre><code>bar
         
@@ -388,6 +486,10 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ol start="123456789">
+      //<li>ok</li>
+      //</ol>
         let normalizedCM = #####"""
         <ol start="123456789"><li>ok</li></ol>
         """#####
@@ -407,6 +509,8 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>1234567890. not ok</p>
         let normalizedCM = #####"""
         <p>1234567890. not ok</p>
         """#####
@@ -428,6 +532,10 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ol start="0">
+      //<li>ok</li>
+      //</ol>
         let normalizedCM = #####"""
         <ol start="0"><li>ok</li></ol>
         """#####
@@ -447,6 +555,10 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ol start="3">
+      //<li>ok</li>
+      //</ol>
         let normalizedCM = #####"""
         <ol start="3"><li>ok</li></ol>
         """#####
@@ -468,6 +580,8 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>-1. not ok</p>
         let normalizedCM = #####"""
         <p>-1. not ok</p>
         """#####
@@ -505,6 +619,14 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ul>
+      //<li>
+      //<p>foo</p>
+      //<pre><code>bar
+      //</code></pre>
+      //</li>
+      //</ul>
         let normalizedCM = #####"""
         <ul><li><p>foo</p><pre><code>bar
         </code></pre></li></ul>
@@ -529,6 +651,14 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ol start="10">
+      //<li>
+      //<p>foo</p>
+      //<pre><code>bar
+      //</code></pre>
+      //</li>
+      //</ol>
         let normalizedCM = #####"""
         <ol start="10"><li><p>foo</p><pre><code>bar
         </code></pre></li></ol>
@@ -557,6 +687,12 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<pre><code>indented code
+      //</code></pre>
+      //<p>paragraph</p>
+      //<pre><code>more code
+      //</code></pre>
         let normalizedCM = #####"""
         <pre><code>indented code
         </code></pre><p>paragraph</p><pre><code>more code
@@ -582,6 +718,16 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ol>
+      //<li>
+      //<pre><code>indented code
+      //</code></pre>
+      //<p>paragraph</p>
+      //<pre><code>more code
+      //</code></pre>
+      //</li>
+      //</ol>
         let normalizedCM = #####"""
         <ol><li><pre><code>indented code
         </code></pre><p>paragraph</p><pre><code>more code
@@ -610,6 +756,16 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ol>
+      //<li>
+      //<pre><code> indented code
+      //</code></pre>
+      //<p>paragraph</p>
+      //<pre><code>more code
+      //</code></pre>
+      //</li>
+      //</ol>
         let normalizedCM = #####"""
         <ol><li><pre><code> indented code
         </code></pre><p>paragraph</p><pre><code>more code
@@ -641,6 +797,9 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>foo</p>
+      //<p>bar</p>
         let normalizedCM = #####"""
         <p>foo</p><p>bar</p>
         """#####
@@ -662,6 +821,11 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ul>
+      //<li>foo</li>
+      //</ul>
+      //<p>bar</p>
         let normalizedCM = #####"""
         <ul><li>foo</li></ul><p>bar</p>
         """#####
@@ -688,6 +852,13 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ul>
+      //<li>
+      //<p>foo</p>
+      //<p>bar</p>
+      //</li>
+      //</ul>
         let normalizedCM = #####"""
         <ul><li><p>foo</p><p>bar</p></li></ul>
         """#####
@@ -728,6 +899,18 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ul>
+      //<li>foo</li>
+      //<li>
+      //<pre><code>bar
+      //</code></pre>
+      //</li>
+      //<li>
+      //<pre><code>baz
+      //</code></pre>
+      //</li>
+      //</ul>
         let normalizedCM = #####"""
         <ul><li>foo</li><li><pre><code>bar
         </code></pre></li><li><pre><code>baz
@@ -752,6 +935,10 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ul>
+      //<li>foo</li>
+      //</ul>
         let normalizedCM = #####"""
         <ul><li>foo</li></ul>
         """#####
@@ -777,6 +964,11 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ul>
+      //<li></li>
+      //</ul>
+      //<p>foo</p>
         let normalizedCM = #####"""
         <ul><li></li></ul><p>foo</p>
         """#####
@@ -800,6 +992,12 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ul>
+      //<li>foo</li>
+      //<li></li>
+      //<li>bar</li>
+      //</ul>
         let normalizedCM = #####"""
         <ul><li>foo</li><li></li><li>bar</li></ul>
         """#####
@@ -823,6 +1021,12 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ul>
+      //<li>foo</li>
+      //<li></li>
+      //<li>bar</li>
+      //</ul>
         let normalizedCM = #####"""
         <ul><li>foo</li><li></li><li>bar</li></ul>
         """#####
@@ -846,6 +1050,12 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ol>
+      //<li>foo</li>
+      //<li></li>
+      //<li>bar</li>
+      //</ol>
         let normalizedCM = #####"""
         <ol><li>foo</li><li></li><li>bar</li></ol>
         """#####
@@ -867,6 +1077,10 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ul>
+      //<li></li>
+      //</ul>
         let normalizedCM = #####"""
         <ul><li></li></ul>
         """#####
@@ -891,6 +1105,11 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>foo
+      //*</p>
+      //<p>foo
+      //1.</p>
         let normalizedCM = #####"""
         <p>foo *</p><p>foo 1.</p>
         """#####
@@ -923,6 +1142,18 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ol>
+      //<li>
+      //<p>A paragraph
+      //with two lines.</p>
+      //<pre><code>indented code
+      //</code></pre>
+      //<blockquote>
+      //<p>A block quote.</p>
+      //</blockquote>
+      //</li>
+      //</ol>
         let normalizedCM = #####"""
         <ol><li><p>A paragraph with two lines.</p><pre><code>indented code
         </code></pre><blockquote><p>A block quote.</p></blockquote></li></ol>
@@ -950,6 +1181,18 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ol>
+      //<li>
+      //<p>A paragraph
+      //with two lines.</p>
+      //<pre><code>indented code
+      //</code></pre>
+      //<blockquote>
+      //<p>A block quote.</p>
+      //</blockquote>
+      //</li>
+      //</ol>
         let normalizedCM = #####"""
         <ol><li><p>A paragraph with two lines.</p><pre><code>indented code
         </code></pre><blockquote><p>A block quote.</p></blockquote></li></ol>
@@ -977,6 +1220,18 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ol>
+      //<li>
+      //<p>A paragraph
+      //with two lines.</p>
+      //<pre><code>indented code
+      //</code></pre>
+      //<blockquote>
+      //<p>A block quote.</p>
+      //</blockquote>
+      //</li>
+      //</ol>
         let normalizedCM = #####"""
         <ol><li><p>A paragraph with two lines.</p><pre><code>indented code
         </code></pre><blockquote><p>A block quote.</p></blockquote></li></ol>
@@ -1004,6 +1259,14 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<pre><code>1.  A paragraph
+      //    with two lines.
+      //
+      //        indented code
+      //
+      //    &gt; A block quote.
+      //</code></pre>
         let normalizedCM = #####"""
         <pre><code>1.  A paragraph
             with two lines.
@@ -1046,6 +1309,18 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ol>
+      //<li>
+      //<p>A paragraph
+      //with two lines.</p>
+      //<pre><code>indented code
+      //</code></pre>
+      //<blockquote>
+      //<p>A block quote.</p>
+      //</blockquote>
+      //</li>
+      //</ol>
         let normalizedCM = #####"""
         <ol><li><p>A paragraph with two lines.</p><pre><code>indented code
         </code></pre><blockquote><p>A block quote.</p></blockquote></li></ol>
@@ -1069,6 +1344,11 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ol>
+      //<li>A paragraph
+      //with two lines.</li>
+      //</ol>
         let normalizedCM = #####"""
         <ol><li>A paragraph with two lines.</li></ol>
         """#####
@@ -1091,6 +1371,17 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<blockquote>
+      //<ol>
+      //<li>
+      //<blockquote>
+      //<p>Blockquote
+      //continued here.</p>
+      //</blockquote>
+      //</li>
+      //</ol>
+      //</blockquote>
         let normalizedCM = #####"""
         <blockquote><ol><li><blockquote><p>Blockquote continued here.</p></blockquote></li></ol></blockquote>
         """#####
@@ -1111,6 +1402,17 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<blockquote>
+      //<ol>
+      //<li>
+      //<blockquote>
+      //<p>Blockquote
+      //continued here.</p>
+      //</blockquote>
+      //</li>
+      //</ol>
+      //</blockquote>
         let normalizedCM = #####"""
         <blockquote><ol><li><blockquote><p>Blockquote continued here.</p></blockquote></li></ol></blockquote>
         """#####
@@ -1144,6 +1446,22 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ul>
+      //<li>foo
+      //<ul>
+      //<li>bar
+      //<ul>
+      //<li>baz
+      //<ul>
+      //<li>boo</li>
+      //</ul>
+      //</li>
+      //</ul>
+      //</li>
+      //</ul>
+      //</li>
+      //</ul>
         let normalizedCM = #####"""
         <ul><li>foo
         <ul><li>bar
@@ -1171,6 +1489,13 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ul>
+      //<li>foo</li>
+      //<li>bar</li>
+      //<li>baz</li>
+      //<li>boo</li>
+      //</ul>
         let normalizedCM = #####"""
         <ul><li>foo</li><li>bar</li><li>baz</li><li>boo</li></ul>
         """#####
@@ -1193,6 +1518,14 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ol start="10">
+      //<li>foo
+      //<ul>
+      //<li>bar</li>
+      //</ul>
+      //</li>
+      //</ol>
         let normalizedCM = #####"""
         <ol start="10"><li>foo
         <ul><li>bar</li></ul></li></ol>
@@ -1216,6 +1549,13 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ol start="10">
+      //<li>foo</li>
+      //</ol>
+      //<ul>
+      //<li>bar</li>
+      //</ul>
         let normalizedCM = #####"""
         <ol start="10"><li>foo</li></ol><ul><li>bar</li></ul>
         """#####
@@ -1237,6 +1577,14 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ul>
+      //<li>
+      //<ul>
+      //<li>foo</li>
+      //</ul>
+      //</li>
+      //</ul>
         let normalizedCM = #####"""
         <ul><li><ul><li>foo</li></ul></li></ul>
         """#####
@@ -1256,6 +1604,18 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ol>
+      //<li>
+      //<ul>
+      //<li>
+      //<ol start="2">
+      //<li>foo</li>
+      //</ol>
+      //</li>
+      //</ul>
+      //</li>
+      //</ol>
         let normalizedCM = #####"""
         <ol><li><ul><li><ol start="2"><li>foo</li></ol></li></ul></li></ol>
         """#####
@@ -1280,6 +1640,15 @@ final class ListItemsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ul>
+      //<li>
+      //<h1>Foo</h1>
+      //</li>
+      //<li>
+      //<h2>Bar</h2>
+      //baz</li>
+      //</ul>
         let normalizedCM = #####"""
         <ul><li><h1>Foo</h1></li><li><h2>Bar</h2>
         baz</li></ul>

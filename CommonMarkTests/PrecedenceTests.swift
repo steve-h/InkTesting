@@ -46,6 +46,11 @@ final class PrecedenceTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ul>
+      //<li>`one</li>
+      //<li>two`</li>
+      //</ul>
         let normalizedCM = #####"""
         <ul><li>`one</li><li>two`</li></ul>
         """#####

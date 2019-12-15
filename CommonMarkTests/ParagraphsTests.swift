@@ -42,6 +42,9 @@ final class ParagraphsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>aaa</p>
+      //<p>bbb</p>
         let normalizedCM = #####"""
         <p>aaa</p><p>bbb</p>
         """#####
@@ -67,6 +70,11 @@ final class ParagraphsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>aaa
+      //bbb</p>
+      //<p>ccc
+      //ddd</p>
         let normalizedCM = #####"""
         <p>aaa bbb</p><p>ccc ddd</p>
         """#####
@@ -91,6 +99,9 @@ final class ParagraphsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>aaa</p>
+      //<p>bbb</p>
         let normalizedCM = #####"""
         <p>aaa</p><p>bbb</p>
         """#####
@@ -113,6 +124,9 @@ final class ParagraphsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>aaa
+      //bbb</p>
         let normalizedCM = #####"""
         <p>aaa bbb</p>
         """#####
@@ -137,6 +151,10 @@ final class ParagraphsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>aaa
+      //bbb
+      //ccc</p>
         let normalizedCM = #####"""
         <p>aaa bbb ccc</p>
         """#####
@@ -160,6 +178,9 @@ final class ParagraphsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>aaa
+      //bbb</p>
         let normalizedCM = #####"""
         <p>aaa bbb</p>
         """#####
@@ -180,6 +201,10 @@ final class ParagraphsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<pre><code>aaa
+      //</code></pre>
+      //<p>bbb</p>
         let normalizedCM = #####"""
         <pre><code>aaa
         </code></pre><p>bbb</p>
@@ -205,9 +230,11 @@ final class ParagraphsTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>aaa<br />
+      //bbb</p>
         let normalizedCM = #####"""
-        <p>aaa<br>
-        bbb</p>
+        <p>aaa<br>bbb</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 

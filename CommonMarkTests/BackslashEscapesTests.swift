@@ -39,6 +39,8 @@ final class BackslashEscapesTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>!&quot;#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</p>
         let normalizedCM = #####"""
         <p>!&quot;#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</p>
         """#####
@@ -61,6 +63,8 @@ final class BackslashEscapesTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>\	\A\a\ \3\φ\«</p>
         let normalizedCM = #####"""
         <p>\	\A\a\ \3\φ\«</p>
         """#####
@@ -91,6 +95,16 @@ final class BackslashEscapesTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>*not emphasized*
+      //&lt;br/&gt; not a tag
+      //[not a link](/foo)
+      //`not code`
+      //1. not a list
+      //* not a list
+      //# not a heading
+      //[foo]: /url &quot;not a reference&quot;
+      //&amp;ouml; not a character entity</p>
         let normalizedCM = #####"""
         <p>*not emphasized* &lt;br/&gt; not a tag [not a link](/foo) `not code` 1. not a list * not a list # not a heading [foo]: /url &quot;not a reference&quot; &amp;ouml; not a character entity</p>
         """#####
@@ -112,6 +126,8 @@ final class BackslashEscapesTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>\<em>emphasis</em></p>
         let normalizedCM = #####"""
         <p>\<em>emphasis</em></p>
         """#####
@@ -134,9 +150,11 @@ final class BackslashEscapesTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>foo<br />
+      //bar</p>
         let normalizedCM = #####"""
-        <p>foo<br>
-        bar</p>
+        <p>foo<br>bar</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -157,6 +175,8 @@ final class BackslashEscapesTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><code>\[\`</code></p>
         let normalizedCM = #####"""
         <p><code>\[\`</code></p>
         """#####
@@ -176,6 +196,9 @@ final class BackslashEscapesTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<pre><code>\[\]
+      //</code></pre>
         let normalizedCM = #####"""
         <pre><code>\[\]
         </code></pre>
@@ -198,6 +221,9 @@ final class BackslashEscapesTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<pre><code>\[\]
+      //</code></pre>
         let normalizedCM = #####"""
         <pre><code>\[\]
         </code></pre>
@@ -218,6 +244,8 @@ final class BackslashEscapesTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="http://example.com?find=%5C*">http://example.com?find=\*</a></p>
         let normalizedCM = #####"""
         <p><a href="http://example.com?find=%5C*">http://example.com?find=\*</a></p>
         """#####
@@ -237,6 +265,8 @@ final class BackslashEscapesTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<a href="/bar\/)">
         let normalizedCM = #####"""
         <a href="/bar\/)">
         """#####
@@ -259,6 +289,8 @@ final class BackslashEscapesTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/bar*" title="ti*tle">foo</a></p>
         let normalizedCM = #####"""
         <p><a href="/bar*" title="ti*tle">foo</a></p>
         """#####
@@ -280,6 +312,8 @@ final class BackslashEscapesTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><a href="/bar*" title="ti*tle">foo</a></p>
         let normalizedCM = #####"""
         <p><a href="/bar*" title="ti*tle">foo</a></p>
         """#####
@@ -301,6 +335,9 @@ final class BackslashEscapesTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<pre><code class="language-foo+bar">foo
+      //</code></pre>
         let normalizedCM = #####"""
         <pre><code class="language-foo+bar">foo
         </code></pre>

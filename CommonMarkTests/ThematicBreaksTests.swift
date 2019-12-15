@@ -59,6 +59,10 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<hr />
+      //<hr />
+      //<hr />
         let normalizedCM = #####"""
         <hr><hr><hr>
         """#####
@@ -80,6 +84,8 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>+++</p>
         let normalizedCM = #####"""
         <p>+++</p>
         """#####
@@ -99,6 +105,8 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>===</p>
         let normalizedCM = #####"""
         <p>===</p>
         """#####
@@ -122,6 +130,10 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>--
+      //**
+      //__</p>
         let normalizedCM = #####"""
         <p>-- ** __</p>
         """#####
@@ -145,6 +157,10 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<hr />
+      //<hr />
+      //<hr />
         let normalizedCM = #####"""
         <hr><hr><hr>
         """#####
@@ -166,6 +182,9 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<pre><code>***
+      //</code></pre>
         let normalizedCM = #####"""
         <pre><code>***
         </code></pre>
@@ -187,6 +206,9 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>Foo
+      //***</p>
         let normalizedCM = #####"""
         <p>Foo ***</p>
         """#####
@@ -208,6 +230,8 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<hr />
         let normalizedCM = #####"""
         <hr>
         """#####
@@ -229,6 +253,8 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<hr />
         let normalizedCM = #####"""
         <hr>
         """#####
@@ -248,6 +274,8 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<hr />
         let normalizedCM = #####"""
         <hr>
         """#####
@@ -267,6 +295,8 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<hr />
         let normalizedCM = #####"""
         <hr>
         """#####
@@ -288,6 +318,8 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<hr />
         let normalizedCM = #####"""
         <hr>
         """#####
@@ -313,6 +345,10 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>_ _ _ _ a</p>
+      //<p>a------</p>
+      //<p>---a---</p>
         let normalizedCM = #####"""
         <p>_ _ _ _ a</p><p>a------</p><p>---a---</p>
         """#####
@@ -335,6 +371,8 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p><em>-</em></p>
         let normalizedCM = #####"""
         <p><em>-</em></p>
         """#####
@@ -358,6 +396,14 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ul>
+      //<li>foo</li>
+      //</ul>
+      //<hr />
+      //<ul>
+      //<li>bar</li>
+      //</ul>
         let normalizedCM = #####"""
         <ul><li>foo</li></ul><hr><ul><li>bar</li></ul>
         """#####
@@ -381,6 +427,10 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<p>Foo</p>
+      //<hr />
+      //<p>bar</p>
         let normalizedCM = #####"""
         <p>Foo</p><hr><p>bar</p>
         """#####
@@ -408,6 +458,9 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<h2>Foo</h2>
+      //<p>bar</p>
         let normalizedCM = #####"""
         <h2>Foo</h2><p>bar</p>
         """#####
@@ -432,6 +485,14 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ul>
+      //<li>Foo</li>
+      //</ul>
+      //<hr />
+      //<ul>
+      //<li>Bar</li>
+      //</ul>
         let normalizedCM = #####"""
         <ul><li>Foo</li></ul><hr><ul><li>Bar</li></ul>
         """#####
@@ -454,6 +515,13 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
+        
+      //<ul>
+      //<li>Foo</li>
+      //<li>
+      //<hr />
+      //</li>
+      //</ul>
         let normalizedCM = #####"""
         <ul><li>Foo</li><li><hr></li></ul>
         """#####
