@@ -35,8 +35,8 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1751-1758
-    func testExample107() {
+    // spec.txt lines 1408-1415
+    func testExample77() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -65,8 +65,8 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1765-1776
-    func testExample108() {
+    // spec.txt lines 1422-1433
+    func testExample78() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -93,8 +93,8 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1779-1792
-    func testExample109() {
+    // spec.txt lines 1436-1449
+    func testExample79() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -127,8 +127,8 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1799-1810
-    func testExample110() {
+    // spec.txt lines 1456-1467
+    func testExample80() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -161,8 +161,8 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1815-1832
-    func testExample111() {
+    // spec.txt lines 1472-1489
+    func testExample81() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -205,8 +205,8 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1838-1847
-    func testExample112() {
+    // spec.txt lines 1495-1504
+    func testExample82() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -237,8 +237,8 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1853-1860
-    func testExample113() {
+    // spec.txt lines 1510-1517
+    func testExample83() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -265,8 +265,8 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1867-1874
-    func testExample114() {
+    // spec.txt lines 1524-1531
+    func testExample84() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -293,8 +293,8 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1880-1895
-    func testExample115() {
+    // spec.txt lines 1537-1552
+    func testExample85() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -329,8 +329,8 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1900-1907
-    func testExample116() {
+    // spec.txt lines 1557-1564
+    func testExample86() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -358,8 +358,8 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1913-1922
-    func testExample117() {
+    // spec.txt lines 1570-1579
+    func testExample87() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -387,8 +387,8 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1927-1932
-    func testExample118() {
+    // spec.txt lines 1584-1589
+    func testExample88() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -411,18 +411,18 @@ final class IndentedCodeBlocksTests: XCTestCase {
 extension IndentedCodeBlocksTests {
     static var allTests: Linux.TestList<IndentedCodeBlocksTests> {
         return [
-        ("testExample107", testExample107),
-        ("testExample108", testExample108),
-        ("testExample109", testExample109),
-        ("testExample110", testExample110),
-        ("testExample111", testExample111),
-        ("testExample112", testExample112),
-        ("testExample113", testExample113),
-        ("testExample114", testExample114),
-        ("testExample115", testExample115),
-        ("testExample116", testExample116),
-        ("testExample117", testExample117),
-        ("testExample118", testExample118)
+        ("testExample77", testExample77),
+        ("testExample78", testExample78),
+        ("testExample79", testExample79),
+        ("testExample80", testExample80),
+        ("testExample81", testExample81),
+        ("testExample82", testExample82),
+        ("testExample83", testExample83),
+        ("testExample84", testExample84),
+        ("testExample85", testExample85),
+        ("testExample86", testExample86),
+        ("testExample87", testExample87),
+        ("testExample88", testExample88)
         ]
     }
 }

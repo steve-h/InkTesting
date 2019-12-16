@@ -28,8 +28,8 @@ final class SoftLineBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 9326-9332
-    func testExample646() {
+    // spec.txt lines 9317-9323
+    func testExample645() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -54,8 +54,8 @@ final class SoftLineBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 9338-9344
-    func testExample647() {
+    // spec.txt lines 9329-9335
+    func testExample646() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -78,8 +78,8 @@ final class SoftLineBreaksTests: XCTestCase {
 extension SoftLineBreaksTests {
     static var allTests: Linux.TestList<SoftLineBreaksTests> {
         return [
-        ("testExample646", testExample646),
-        ("testExample647", testExample647)
+        ("testExample645", testExample645),
+        ("testExample646", testExample646)
         ]
     }
 }

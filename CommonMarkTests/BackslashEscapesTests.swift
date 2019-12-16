@@ -17,11 +17,8 @@ import Foundation
 final class BackslashEscapesTests: XCTestCase {
 
     // 
-    // 
-    // ## Insecure characters
-    // 
-    // For security reasons, the Unicode character `U+0000` must be replaced
-    // with the REPLACEMENT CHARACTER (`U+FFFD`).
+    // `hi` is parsed as code, leaving the backtick at the end as a literal
+    // backtick.
     // 
     // 
     // ## Backslash escapes
@@ -30,8 +27,8 @@ final class BackslashEscapesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 488-492
-    func testExample12() {
+    // spec.txt lines 5513-5517
+    func testExample298() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -54,8 +51,8 @@ final class BackslashEscapesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 498-502
-    func testExample13() {
+    // spec.txt lines 5523-5527
+    func testExample299() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -78,8 +75,8 @@ final class BackslashEscapesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 508-528
-    func testExample14() {
+    // spec.txt lines 5533-5553
+    func testExample300() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -117,8 +114,8 @@ final class BackslashEscapesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 533-537
-    func testExample15() {
+    // spec.txt lines 5558-5562
+    func testExample301() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -140,8 +137,8 @@ final class BackslashEscapesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 542-548
-    func testExample16() {
+    // spec.txt lines 5567-5573
+    func testExample302() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -166,8 +163,8 @@ final class BackslashEscapesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 554-558
-    func testExample17() {
+    // spec.txt lines 5579-5583
+    func testExample303() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -187,8 +184,8 @@ final class BackslashEscapesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 561-566
-    func testExample18() {
+    // spec.txt lines 5586-5591
+    func testExample304() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -210,8 +207,8 @@ final class BackslashEscapesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 569-576
-    func testExample19() {
+    // spec.txt lines 5594-5601
+    func testExample305() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -235,8 +232,8 @@ final class BackslashEscapesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 579-583
-    func testExample20() {
+    // spec.txt lines 5604-5608
+    func testExample306() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -256,8 +253,8 @@ final class BackslashEscapesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 586-590
-    func testExample21() {
+    // spec.txt lines 5611-5615
+    func testExample307() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -280,8 +277,8 @@ final class BackslashEscapesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 596-600
-    func testExample22() {
+    // spec.txt lines 5621-5625
+    func testExample308() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -301,8 +298,8 @@ final class BackslashEscapesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 603-609
-    func testExample23() {
+    // spec.txt lines 5628-5634
+    func testExample309() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -324,8 +321,8 @@ final class BackslashEscapesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 612-619
-    func testExample24() {
+    // spec.txt lines 5637-5644
+    func testExample310() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -350,19 +347,19 @@ final class BackslashEscapesTests: XCTestCase {
 extension BackslashEscapesTests {
     static var allTests: Linux.TestList<BackslashEscapesTests> {
         return [
-        ("testExample12", testExample12),
-        ("testExample13", testExample13),
-        ("testExample14", testExample14),
-        ("testExample15", testExample15),
-        ("testExample16", testExample16),
-        ("testExample17", testExample17),
-        ("testExample18", testExample18),
-        ("testExample19", testExample19),
-        ("testExample20", testExample20),
-        ("testExample21", testExample21),
-        ("testExample22", testExample22),
-        ("testExample23", testExample23),
-        ("testExample24", testExample24)
+        ("testExample298", testExample298),
+        ("testExample299", testExample299),
+        ("testExample300", testExample300),
+        ("testExample301", testExample301),
+        ("testExample302", testExample302),
+        ("testExample303", testExample303),
+        ("testExample304", testExample304),
+        ("testExample305", testExample305),
+        ("testExample306", testExample306),
+        ("testExample307", testExample307),
+        ("testExample308", testExample308),
+        ("testExample309", testExample309),
+        ("testExample310", testExample310)
         ]
     }
 }

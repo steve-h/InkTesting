@@ -27,8 +27,8 @@ final class HardLineBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 9175-9181
-    func testExample631() {
+    // spec.txt lines 9166-9172
+    func testExample630() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -53,8 +53,8 @@ final class HardLineBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 9187-9193
-    func testExample632() {
+    // spec.txt lines 9178-9184
+    func testExample631() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -78,8 +78,8 @@ final class HardLineBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 9198-9204
-    func testExample633() {
+    // spec.txt lines 9189-9195
+    func testExample632() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -103,8 +103,8 @@ final class HardLineBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 9209-9215
-    func testExample634() {
+    // spec.txt lines 9200-9206
+    func testExample633() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -126,8 +126,8 @@ final class HardLineBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 9218-9224
-    func testExample635() {
+    // spec.txt lines 9209-9215
+    func testExample634() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -152,8 +152,8 @@ final class HardLineBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 9230-9236
-    func testExample636() {
+    // spec.txt lines 9221-9227
+    func testExample635() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -175,8 +175,8 @@ final class HardLineBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 9239-9245
-    func testExample637() {
+    // spec.txt lines 9230-9236
+    func testExample636() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -200,8 +200,8 @@ final class HardLineBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 9250-9255
-    func testExample638() {
+    // spec.txt lines 9241-9246
+    func testExample637() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -222,8 +222,8 @@ final class HardLineBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 9258-9263
-    func testExample639() {
+    // spec.txt lines 9249-9254
+    func testExample638() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -246,8 +246,8 @@ final class HardLineBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 9268-9274
-    func testExample640() {
+    // spec.txt lines 9259-9265
+    func testExample639() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -270,8 +270,8 @@ final class HardLineBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 9277-9283
-    func testExample641() {
+    // spec.txt lines 9268-9274
+    func testExample640() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -298,8 +298,8 @@ final class HardLineBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 9290-9294
-    func testExample642() {
+    // spec.txt lines 9281-9285
+    func testExample641() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -319,8 +319,8 @@ final class HardLineBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 9297-9301
-    func testExample643() {
+    // spec.txt lines 9288-9292
+    func testExample642() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -340,8 +340,8 @@ final class HardLineBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 9304-9308
-    func testExample644() {
+    // spec.txt lines 9295-9299
+    func testExample643() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -361,8 +361,8 @@ final class HardLineBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 9311-9315
-    func testExample645() {
+    // spec.txt lines 9302-9306
+    func testExample644() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -383,6 +383,7 @@ final class HardLineBreaksTests: XCTestCase {
 extension HardLineBreaksTests {
     static var allTests: Linux.TestList<HardLineBreaksTests> {
         return [
+        ("testExample630", testExample630),
         ("testExample631", testExample631),
         ("testExample632", testExample632),
         ("testExample633", testExample633),
@@ -396,8 +397,7 @@ extension HardLineBreaksTests {
         ("testExample641", testExample641),
         ("testExample642", testExample642),
         ("testExample643", testExample643),
-        ("testExample644", testExample644),
-        ("testExample645", testExample645)
+        ("testExample644", testExample644)
         ]
     }
 }

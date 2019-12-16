@@ -17,10 +17,6 @@ import Foundation
 final class CodeSpansTests: XCTestCase {
 
     // 
-    // `hi` is parsed as code, leaving the backtick at the end as a literal
-    // backtick.
-    // 
-    // 
     // 
     // ## Code spans
     // 
@@ -30,7 +26,7 @@ final class CodeSpansTests: XCTestCase {
     // 
     // A [code span](@) begins with a backtick string and ends with
     // a backtick string of equal length.  The contents of the code span are
-    // the characters between these two backtick strings, normalized in the
+    // the characters between the two backtick strings, normalized in the
     // following ways:
     // 
     // - First, [line endings] are converted to [spaces].
@@ -45,7 +41,7 @@ final class CodeSpansTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 5874-5878
+    // spec.txt lines 5870-5874
     func testExample328() {
         let newlineChar = "\n"
         var markdownTest =
@@ -70,7 +66,7 @@ final class CodeSpansTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 5885-5889
+    // spec.txt lines 5881-5885
     func testExample329() {
         let newlineChar = "\n"
         var markdownTest =
@@ -94,7 +90,7 @@ final class CodeSpansTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 5895-5899
+    // spec.txt lines 5891-5895
     func testExample330() {
         let newlineChar = "\n"
         var markdownTest =
@@ -116,7 +112,7 @@ final class CodeSpansTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 5903-5907
+    // spec.txt lines 5899-5903
     func testExample331() {
         let newlineChar = "\n"
         var markdownTest =
@@ -139,7 +135,7 @@ final class CodeSpansTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 5912-5916
+    // spec.txt lines 5908-5912
     func testExample332() {
         let newlineChar = "\n"
         var markdownTest =
@@ -162,19 +158,19 @@ final class CodeSpansTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 5921-5925
+    // spec.txt lines 5917-5921
     func testExample333() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
-        ` b `
+        ` b `
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         
-      //<p><code> b </code></p>
+      //<p><code> b </code></p>
         let normalizedCM = #####"""
-        <p><code> b </code></p>
+        <p><code>b</code></p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -184,21 +180,21 @@ final class CodeSpansTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 5929-5935
+    // spec.txt lines 5925-5931
     func testExample334() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
-        ` `
+        ` `
         `  `
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         
-      //<p><code> </code>
+      //<p><code> </code>
       //<code>  </code></p>
         let normalizedCM = #####"""
-        <p><code> </code> <code></code></p>
+        <p><code></code> <code></code></p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -209,7 +205,7 @@ final class CodeSpansTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 5940-5948
+    // spec.txt lines 5936-5944
     func testExample335() {
         let newlineChar = "\n"
         var markdownTest =
@@ -233,7 +229,7 @@ final class CodeSpansTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 5950-5956
+    // spec.txt lines 5946-5952
     func testExample336() {
         let newlineChar = "\n"
         var markdownTest =
@@ -258,7 +254,7 @@ final class CodeSpansTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 5961-5966
+    // spec.txt lines 5957-5962
     func testExample337() {
         let newlineChar = "\n"
         var markdownTest =
@@ -289,7 +285,7 @@ final class CodeSpansTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 5978-5982
+    // spec.txt lines 5974-5978
     func testExample338() {
         let newlineChar = "\n"
         var markdownTest =
@@ -314,7 +310,7 @@ final class CodeSpansTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 5989-5993
+    // spec.txt lines 5985-5989
     func testExample339() {
         let newlineChar = "\n"
         var markdownTest =
@@ -334,7 +330,7 @@ final class CodeSpansTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 5995-5999
+    // spec.txt lines 5991-5995
     func testExample340() {
         let newlineChar = "\n"
         var markdownTest =
@@ -360,7 +356,7 @@ final class CodeSpansTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6007-6011
+    // spec.txt lines 6003-6007
     func testExample341() {
         let newlineChar = "\n"
         var markdownTest =
@@ -383,7 +379,7 @@ final class CodeSpansTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6016-6020
+    // spec.txt lines 6012-6016
     func testExample342() {
         let newlineChar = "\n"
         var markdownTest =
@@ -407,7 +403,7 @@ final class CodeSpansTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6026-6030
+    // spec.txt lines 6022-6026
     func testExample343() {
         let newlineChar = "\n"
         var markdownTest =
@@ -430,7 +426,7 @@ final class CodeSpansTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6035-6039
+    // spec.txt lines 6031-6035
     func testExample344() {
         let newlineChar = "\n"
         var markdownTest =
@@ -453,7 +449,7 @@ final class CodeSpansTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6044-6048
+    // spec.txt lines 6040-6044
     func testExample345() {
         let newlineChar = "\n"
         var markdownTest =
@@ -476,7 +472,7 @@ final class CodeSpansTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6053-6057
+    // spec.txt lines 6049-6053
     func testExample346() {
         let newlineChar = "\n"
         var markdownTest =
@@ -500,7 +496,7 @@ final class CodeSpansTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6063-6067
+    // spec.txt lines 6059-6063
     func testExample347() {
         let newlineChar = "\n"
         var markdownTest =
@@ -521,7 +517,7 @@ final class CodeSpansTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6070-6074
+    // spec.txt lines 6066-6070
     func testExample348() {
         let newlineChar = "\n"
         var markdownTest =
@@ -544,7 +540,7 @@ final class CodeSpansTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6079-6083
+    // spec.txt lines 6075-6079
     func testExample349() {
         let newlineChar = "\n"
         var markdownTest =

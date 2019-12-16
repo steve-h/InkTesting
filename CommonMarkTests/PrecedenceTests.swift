@@ -18,6 +18,10 @@ final class PrecedenceTests: XCTestCase {
 
     // 
     // 
+    // ## Insecure characters
+    // 
+    // For security reasons, the Unicode character `U+0000` must be replaced
+    // with the REPLACEMENT CHARACTER (`U+FFFD`).
     // 
     // # Blocks and inlines
     // 
@@ -36,8 +40,8 @@ final class PrecedenceTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 839-847
-    func testExample42() {
+    // spec.txt lines 496-504
+    func testExample12() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -62,7 +66,7 @@ final class PrecedenceTests: XCTestCase {
 extension PrecedenceTests {
     static var allTests: Linux.TestList<PrecedenceTests> {
         return [
-        ("testExample42", testExample42)
+        ("testExample12", testExample12)
         ]
     }
 }

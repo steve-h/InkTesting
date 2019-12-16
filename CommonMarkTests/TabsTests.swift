@@ -21,8 +21,9 @@ final class TabsTests: XCTestCase {
     // author: John MacFarlane
     // version: 0.29
     // date: '2019-04-06'
-    // license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
-    // ---
+    // license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/)'
+    // ...
+    // 
     // # Introduction
     // 
     // ## What is Markdown?
@@ -343,9 +344,6 @@ final class TabsTests: XCTestCase {
     // A [non-whitespace character](@) is any character
     // that is not a [whitespace character].
     // 
-    // An [ASCII control character](@) is a character between `U+0000–1F` (both
-    // including) or `U+007F`.
-    // 
     // An [ASCII punctuation character](@)
     // is `!`, `"`, `#`, `$`, `%`, `&`, `'`, `(`, `)`,
     // `*`, `+`, `,`, `-`, `.`, `/` (U+0021–2F), 
@@ -371,7 +369,7 @@ final class TabsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 354-359
+    // spec.txt lines 352-357
     func testExample1() {
         let newlineChar = "\n"
         var markdownTest =
@@ -393,7 +391,7 @@ final class TabsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 361-366
+    // spec.txt lines 359-364
     func testExample2() {
         let newlineChar = "\n"
         var markdownTest =
@@ -415,7 +413,7 @@ final class TabsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 368-375
+    // spec.txt lines 366-373
     func testExample3() {
         let newlineChar = "\n"
         var markdownTest =
@@ -444,7 +442,7 @@ final class TabsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 381-392
+    // spec.txt lines 379-390
     func testExample4() {
         let newlineChar = "\n"
         var markdownTest =
@@ -471,7 +469,7 @@ final class TabsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 394-406
+    // spec.txt lines 392-404
     func testExample5() {
         let newlineChar = "\n"
         var markdownTest =
@@ -509,7 +507,7 @@ final class TabsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 417-424
+    // spec.txt lines 415-422
     func testExample6() {
         let newlineChar = "\n"
         var markdownTest =
@@ -533,7 +531,7 @@ final class TabsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 426-435
+    // spec.txt lines 424-433
     func testExample7() {
         let newlineChar = "\n"
         var markdownTest =
@@ -560,7 +558,7 @@ final class TabsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 438-445
+    // spec.txt lines 436-443
     func testExample8() {
         let newlineChar = "\n"
         var markdownTest =
@@ -585,7 +583,7 @@ final class TabsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 447-463
+    // spec.txt lines 445-461
     func testExample9() {
         let newlineChar = "\n"
         var markdownTest =
@@ -619,7 +617,7 @@ final class TabsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 465-469
+    // spec.txt lines 463-467
     func testExample10() {
         let newlineChar = "\n"
         var markdownTest =
@@ -639,7 +637,7 @@ final class TabsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 471-475
+    // spec.txt lines 469-473
     func testExample11() {
         let newlineChar = "\n"
         var markdownTest =

@@ -48,7 +48,7 @@ final class HtmlBlocksTests: XCTestCase {
     // **End condition:** line contains the string `?>`.
     // 
     // 4.  **Start condition:** line begins with the string `<!`
-    // followed by an ASCII letter.\
+    // followed by an uppercase ASCII letter.\
     // **End condition:** line contains the character `>`.
     // 
     // 5.  **Start condition:**  line begins with the string
@@ -89,8 +89,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2430-2445
-    func testExample148() {
+    // spec.txt lines 2087-2102
+    func testExample118() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -134,8 +134,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2459-2478
-    func testExample149() {
+    // spec.txt lines 2116-2135
+    func testExample119() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -175,8 +175,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2481-2489
-    func testExample150() {
+    // spec.txt lines 2138-2146
+    func testExample120() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -204,8 +204,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2494-2500
-    func testExample151() {
+    // spec.txt lines 2151-2157
+    func testExample121() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -230,8 +230,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2505-2515
-    func testExample152() {
+    // spec.txt lines 2162-2172
+    func testExample122() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -260,8 +260,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2521-2529
-    func testExample153() {
+    // spec.txt lines 2178-2186
+    func testExample123() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -286,8 +286,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2532-2540
-    func testExample154() {
+    // spec.txt lines 2189-2197
+    func testExample124() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -313,8 +313,8 @@ final class HtmlBlocksTests: XCTestCase {
     // An open tag need not be closed:
     // 
     //     
-    // spec.txt lines 2544-2553
-    func testExample155() {
+    // spec.txt lines 2201-2210
+    func testExample125() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -345,8 +345,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2560-2566
-    func testExample156() {
+    // spec.txt lines 2217-2223
+    func testExample126() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -369,8 +369,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2569-2575
-    func testExample157() {
+    // spec.txt lines 2226-2232
+    func testExample127() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -396,8 +396,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2581-2587
-    func testExample158() {
+    // spec.txt lines 2238-2244
+    func testExample128() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -423,8 +423,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2593-2597
-    func testExample159() {
+    // spec.txt lines 2250-2254
+    func testExample129() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -444,8 +444,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2600-2608
-    func testExample160() {
+    // spec.txt lines 2257-2265
+    func testExample130() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -477,8 +477,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2617-2627
-    func testExample161() {
+    // spec.txt lines 2274-2284
+    func testExample131() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -511,8 +511,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2634-2642
-    func testExample162() {
+    // spec.txt lines 2291-2299
+    func testExample132() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -540,8 +540,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2647-2655
-    func testExample163() {
+    // spec.txt lines 2304-2312
+    func testExample133() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -567,8 +567,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2658-2666
-    func testExample164() {
+    // spec.txt lines 2315-2323
+    func testExample134() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -594,8 +594,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2669-2675
-    func testExample165() {
+    // spec.txt lines 2326-2332
+    func testExample135() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -624,8 +624,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2684-2692
-    func testExample166() {
+    // spec.txt lines 2341-2349
+    func testExample136() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -655,8 +655,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2699-2709
-    func testExample167() {
+    // spec.txt lines 2356-2366
+    func testExample137() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -687,8 +687,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2717-2721
-    func testExample168() {
+    // spec.txt lines 2374-2378
+    func testExample138() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -717,8 +717,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2733-2749
-    func testExample169() {
+    // spec.txt lines 2390-2406
+    func testExample139() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -757,8 +757,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2754-2768
-    func testExample170() {
+    // spec.txt lines 2411-2425
+    func testExample140() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -794,8 +794,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2773-2789
-    func testExample171() {
+    // spec.txt lines 2430-2446
+    func testExample141() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -836,8 +836,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2796-2806
-    func testExample172() {
+    // spec.txt lines 2453-2463
+    func testExample142() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -866,8 +866,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2809-2820
-    func testExample173() {
+    // spec.txt lines 2466-2477
+    func testExample143() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -896,8 +896,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2823-2833
-    func testExample174() {
+    // spec.txt lines 2480-2490
+    func testExample144() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -925,8 +925,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2838-2844
-    func testExample175() {
+    // spec.txt lines 2495-2501
+    func testExample145() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -948,8 +948,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2847-2853
-    func testExample176() {
+    // spec.txt lines 2504-2510
+    func testExample146() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -975,8 +975,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2859-2867
-    func testExample177() {
+    // spec.txt lines 2516-2524
+    func testExample147() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1004,8 +1004,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2872-2884
-    func testExample178() {
+    // spec.txt lines 2529-2541
+    func testExample148() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1039,8 +1039,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2890-2904
-    func testExample179() {
+    // spec.txt lines 2547-2561
+    func testExample149() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1076,8 +1076,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2909-2913
-    func testExample180() {
+    // spec.txt lines 2566-2570
+    func testExample150() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1099,8 +1099,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2918-2946
-    func testExample181() {
+    // spec.txt lines 2575-2603
+    func testExample151() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1157,8 +1157,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2951-2959
-    func testExample182() {
+    // spec.txt lines 2608-2616
+    func testExample152() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1183,8 +1183,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2962-2970
-    func testExample183() {
+    // spec.txt lines 2619-2627
+    func testExample153() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1212,8 +1212,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2976-2986
-    func testExample184() {
+    // spec.txt lines 2633-2643
+    func testExample154() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1245,8 +1245,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2993-3003
-    func testExample185() {
+    // spec.txt lines 2650-2660
+    func testExample155() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1277,8 +1277,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3008-3016
-    func testExample186() {
+    // spec.txt lines 2665-2673
+    func testExample156() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1332,8 +1332,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3049-3059
-    func testExample187() {
+    // spec.txt lines 2706-2716
+    func testExample157() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1359,8 +1359,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3062-3070
-    func testExample188() {
+    // spec.txt lines 2719-2727
+    func testExample158() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1397,8 +1397,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3084-3104
-    func testExample189() {
+    // spec.txt lines 2741-2761
+    func testExample159() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1440,8 +1440,8 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3111-3132
-    func testExample190() {
+    // spec.txt lines 2768-2789
+    func testExample160() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1484,6 +1484,36 @@ final class HtmlBlocksTests: XCTestCase {
 extension HtmlBlocksTests {
     static var allTests: Linux.TestList<HtmlBlocksTests> {
         return [
+        ("testExample118", testExample118),
+        ("testExample119", testExample119),
+        ("testExample120", testExample120),
+        ("testExample121", testExample121),
+        ("testExample122", testExample122),
+        ("testExample123", testExample123),
+        ("testExample124", testExample124),
+        ("testExample125", testExample125),
+        ("testExample126", testExample126),
+        ("testExample127", testExample127),
+        ("testExample128", testExample128),
+        ("testExample129", testExample129),
+        ("testExample130", testExample130),
+        ("testExample131", testExample131),
+        ("testExample132", testExample132),
+        ("testExample133", testExample133),
+        ("testExample134", testExample134),
+        ("testExample135", testExample135),
+        ("testExample136", testExample136),
+        ("testExample137", testExample137),
+        ("testExample138", testExample138),
+        ("testExample139", testExample139),
+        ("testExample140", testExample140),
+        ("testExample141", testExample141),
+        ("testExample142", testExample142),
+        ("testExample143", testExample143),
+        ("testExample144", testExample144),
+        ("testExample145", testExample145),
+        ("testExample146", testExample146),
+        ("testExample147", testExample147),
         ("testExample148", testExample148),
         ("testExample149", testExample149),
         ("testExample150", testExample150),
@@ -1496,37 +1526,7 @@ extension HtmlBlocksTests {
         ("testExample157", testExample157),
         ("testExample158", testExample158),
         ("testExample159", testExample159),
-        ("testExample160", testExample160),
-        ("testExample161", testExample161),
-        ("testExample162", testExample162),
-        ("testExample163", testExample163),
-        ("testExample164", testExample164),
-        ("testExample165", testExample165),
-        ("testExample166", testExample166),
-        ("testExample167", testExample167),
-        ("testExample168", testExample168),
-        ("testExample169", testExample169),
-        ("testExample170", testExample170),
-        ("testExample171", testExample171),
-        ("testExample172", testExample172),
-        ("testExample173", testExample173),
-        ("testExample174", testExample174),
-        ("testExample175", testExample175),
-        ("testExample176", testExample176),
-        ("testExample177", testExample177),
-        ("testExample178", testExample178),
-        ("testExample179", testExample179),
-        ("testExample180", testExample180),
-        ("testExample181", testExample181),
-        ("testExample182", testExample182),
-        ("testExample183", testExample183),
-        ("testExample184", testExample184),
-        ("testExample185", testExample185),
-        ("testExample186", testExample186),
-        ("testExample187", testExample187),
-        ("testExample188", testExample188),
-        ("testExample189", testExample189),
-        ("testExample190", testExample190)
+        ("testExample160", testExample160)
         ]
     }
 }

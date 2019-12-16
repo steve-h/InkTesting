@@ -67,8 +67,8 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1982-1991
-    func testExample119() {
+    // spec.txt lines 1639-1648
+    func testExample89() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -97,8 +97,8 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1996-2005
-    func testExample120() {
+    // spec.txt lines 1653-1662
+    func testExample90() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -126,8 +126,8 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2009-2015
-    func testExample121() {
+    // spec.txt lines 1666-1672
+    func testExample91() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -151,8 +151,8 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2020-2029
-    func testExample122() {
+    // spec.txt lines 1677-1686
+    func testExample92() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -179,8 +179,8 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2032-2041
-    func testExample123() {
+    // spec.txt lines 1689-1698
+    func testExample93() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -209,8 +209,8 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2046-2055
-    func testExample124() {
+    // spec.txt lines 1703-1712
+    func testExample94() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -237,8 +237,8 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2058-2067
-    func testExample125() {
+    // spec.txt lines 1715-1724
+    func testExample95() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -268,8 +268,8 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2073-2077
-    func testExample126() {
+    // spec.txt lines 1730-1734
+    func testExample96() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -289,8 +289,8 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2080-2090
-    func testExample127() {
+    // spec.txt lines 1737-1747
+    func testExample97() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -319,8 +319,8 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2093-2104
-    func testExample128() {
+    // spec.txt lines 1750-1761
+    func testExample98() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -350,8 +350,8 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2109-2118
-    func testExample129() {
+    // spec.txt lines 1766-1775
+    func testExample99() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -380,8 +380,8 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2123-2128
-    func testExample130() {
+    // spec.txt lines 1780-1785
+    func testExample100() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -406,8 +406,8 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2135-2144
-    func testExample131() {
+    // spec.txt lines 1792-1801
+    func testExample101() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -434,8 +434,8 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2147-2158
-    func testExample132() {
+    // spec.txt lines 1804-1815
+    func testExample102() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -465,8 +465,8 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2161-2172
-    func testExample133() {
+    // spec.txt lines 1818-1829
+    func testExample103() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -498,8 +498,8 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2177-2186
-    func testExample134() {
+    // spec.txt lines 1834-1843
+    func testExample104() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -530,8 +530,8 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2192-2199
-    func testExample135() {
+    // spec.txt lines 1849-1856
+    func testExample105() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -555,8 +555,8 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2202-2209
-    func testExample136() {
+    // spec.txt lines 1859-1866
+    func testExample106() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -582,8 +582,8 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2214-2222
-    func testExample137() {
+    // spec.txt lines 1871-1879
+    func testExample107() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -612,8 +612,8 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2228-2234
-    func testExample138() {
+    // spec.txt lines 1885-1891
+    func testExample108() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -635,8 +635,8 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2237-2245
-    func testExample139() {
+    // spec.txt lines 1894-1902
+    func testExample109() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -665,8 +665,8 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2251-2262
-    func testExample140() {
+    // spec.txt lines 1908-1919
+    func testExample110() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -697,8 +697,8 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2268-2280
-    func testExample141() {
+    // spec.txt lines 1925-1937
+    func testExample111() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -734,8 +734,8 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2290-2301
-    func testExample142() {
+    // spec.txt lines 1947-1958
+    func testExample112() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -765,8 +765,8 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2304-2315
-    func testExample143() {
+    // spec.txt lines 1961-1972
+    func testExample113() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -796,8 +796,8 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2318-2323
-    func testExample144() {
+    // spec.txt lines 1975-1980
+    func testExample114() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -820,8 +820,8 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2328-2334
-    func testExample145() {
+    // spec.txt lines 1985-1991
+    func testExample115() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -845,8 +845,8 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2339-2346
-    func testExample146() {
+    // spec.txt lines 1996-2003
+    func testExample116() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -871,8 +871,8 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 2351-2358
-    func testExample147() {
+    // spec.txt lines 2008-2015
+    func testExample117() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -897,35 +897,35 @@ final class FencedCodeBlocksTests: XCTestCase {
 extension FencedCodeBlocksTests {
     static var allTests: Linux.TestList<FencedCodeBlocksTests> {
         return [
-        ("testExample119", testExample119),
-        ("testExample120", testExample120),
-        ("testExample121", testExample121),
-        ("testExample122", testExample122),
-        ("testExample123", testExample123),
-        ("testExample124", testExample124),
-        ("testExample125", testExample125),
-        ("testExample126", testExample126),
-        ("testExample127", testExample127),
-        ("testExample128", testExample128),
-        ("testExample129", testExample129),
-        ("testExample130", testExample130),
-        ("testExample131", testExample131),
-        ("testExample132", testExample132),
-        ("testExample133", testExample133),
-        ("testExample134", testExample134),
-        ("testExample135", testExample135),
-        ("testExample136", testExample136),
-        ("testExample137", testExample137),
-        ("testExample138", testExample138),
-        ("testExample139", testExample139),
-        ("testExample140", testExample140),
-        ("testExample141", testExample141),
-        ("testExample142", testExample142),
-        ("testExample143", testExample143),
-        ("testExample144", testExample144),
-        ("testExample145", testExample145),
-        ("testExample146", testExample146),
-        ("testExample147", testExample147)
+        ("testExample89", testExample89),
+        ("testExample90", testExample90),
+        ("testExample91", testExample91),
+        ("testExample92", testExample92),
+        ("testExample93", testExample93),
+        ("testExample94", testExample94),
+        ("testExample95", testExample95),
+        ("testExample96", testExample96),
+        ("testExample97", testExample97),
+        ("testExample98", testExample98),
+        ("testExample99", testExample99),
+        ("testExample100", testExample100),
+        ("testExample101", testExample101),
+        ("testExample102", testExample102),
+        ("testExample103", testExample103),
+        ("testExample104", testExample104),
+        ("testExample105", testExample105),
+        ("testExample106", testExample106),
+        ("testExample107", testExample107),
+        ("testExample108", testExample108),
+        ("testExample109", testExample109),
+        ("testExample110", testExample110),
+        ("testExample111", testExample111),
+        ("testExample112", testExample112),
+        ("testExample113", testExample113),
+        ("testExample114", testExample114),
+        ("testExample115", testExample115),
+        ("testExample116", testExample116),
+        ("testExample117", testExample117)
         ]
     }
 }

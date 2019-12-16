@@ -28,8 +28,8 @@ final class BlankLinesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3621-3633
-    func testExample227() {
+    // spec.txt lines 3278-3290
+    func testExample197() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -58,7 +58,7 @@ final class BlankLinesTests: XCTestCase {
 extension BlankLinesTests {
     static var allTests: Linux.TestList<BlankLinesTests> {
         return [
-        ("testExample227", testExample227)
+        ("testExample197", testExample197)
         ]
     }
 }

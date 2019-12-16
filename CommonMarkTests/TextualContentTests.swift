@@ -31,8 +31,8 @@ final class TextualContentTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 9358-9362
-    func testExample648() {
+    // spec.txt lines 9349-9353
+    func testExample647() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -52,8 +52,8 @@ final class TextualContentTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 9365-9369
-    func testExample649() {
+    // spec.txt lines 9356-9360
+    func testExample648() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -75,8 +75,8 @@ final class TextualContentTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 9374-9378
-    func testExample650() {
+    // spec.txt lines 9365-9369
+    func testExample649() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -97,9 +97,9 @@ final class TextualContentTests: XCTestCase {
 extension TextualContentTests {
     static var allTests: Linux.TestList<TextualContentTests> {
         return [
+        ("testExample647", testExample647),
         ("testExample648", testExample648),
-        ("testExample649", testExample649),
-        ("testExample650", testExample650)
+        ("testExample649", testExample649)
         ]
     }
 }

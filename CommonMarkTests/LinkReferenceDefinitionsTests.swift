@@ -44,8 +44,8 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3159-3165
-    func testExample191() {
+    // spec.txt lines 2816-2822
+    func testExample161() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -67,8 +67,8 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3168-3176
-    func testExample192() {
+    // spec.txt lines 2825-2833
+    func testExample162() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -92,8 +92,8 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3179-3185
-    func testExample193() {
+    // spec.txt lines 2836-2842
+    func testExample163() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -115,8 +115,8 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3188-3196
-    func testExample194() {
+    // spec.txt lines 2845-2853
+    func testExample164() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -142,8 +142,8 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3201-3215
-    func testExample195() {
+    // spec.txt lines 2858-2872
+    func testExample165() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -179,8 +179,8 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3220-3230
-    func testExample196() {
+    // spec.txt lines 2877-2887
+    func testExample166() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -208,8 +208,8 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3235-3242
-    func testExample197() {
+    // spec.txt lines 2892-2899
+    func testExample167() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -234,8 +234,8 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3247-3254
-    func testExample198() {
+    // spec.txt lines 2904-2911
+    func testExample168() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -260,8 +260,8 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3259-3265
-    func testExample199() {
+    // spec.txt lines 2916-2922
+    func testExample169() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -285,8 +285,8 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3270-3277
-    func testExample200() {
+    // spec.txt lines 2927-2934
+    func testExample170() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -312,8 +312,8 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3283-3289
-    func testExample201() {
+    // spec.txt lines 2940-2946
+    func testExample171() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -337,8 +337,8 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3294-3300
-    func testExample202() {
+    // spec.txt lines 2951-2957
+    func testExample172() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -363,8 +363,8 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3306-3313
-    func testExample203() {
+    // spec.txt lines 2963-2970
+    func testExample173() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -390,8 +390,8 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3319-3325
-    func testExample204() {
+    // spec.txt lines 2976-2982
+    func testExample174() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -413,8 +413,8 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3328-3334
-    func testExample205() {
+    // spec.txt lines 2985-2991
+    func testExample175() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -439,8 +439,8 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3340-3343
-    func testExample206() {
+    // spec.txt lines 2997-3000
+    func testExample176() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -462,8 +462,8 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3348-3355
-    func testExample207() {
+    // spec.txt lines 3005-3012
+    func testExample177() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -489,8 +489,8 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3361-3365
-    func testExample208() {
+    // spec.txt lines 3018-3022
+    func testExample178() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -512,8 +512,8 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3370-3375
-    func testExample209() {
+    // spec.txt lines 3027-3032
+    func testExample179() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -537,8 +537,8 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3381-3389
-    func testExample210() {
+    // spec.txt lines 3038-3046
+    func testExample180() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -566,8 +566,8 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3395-3405
-    func testExample211() {
+    // spec.txt lines 3052-3062
+    func testExample181() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -596,8 +596,8 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3410-3419
-    func testExample212() {
+    // spec.txt lines 3067-3076
+    func testExample182() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -625,8 +625,8 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3425-3434
-    func testExample213() {
+    // spec.txt lines 3082-3091
+    func testExample183() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -650,8 +650,8 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3436-3444
-    func testExample214() {
+    // spec.txt lines 3093-3101
+    func testExample184() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -674,8 +674,8 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3446-3453
-    func testExample215() {
+    // spec.txt lines 3103-3110
+    func testExample185() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -701,8 +701,8 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3459-3472
-    func testExample216() {
+    // spec.txt lines 3116-3129
+    func testExample186() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -736,8 +736,8 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3480-3488
-    func testExample217() {
+    // spec.txt lines 3137-3145
+    func testExample187() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -767,8 +767,8 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3497-3500
-    func testExample218() {
+    // spec.txt lines 3154-3157
+    func testExample188() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -789,34 +789,34 @@ final class LinkReferenceDefinitionsTests: XCTestCase {
 extension LinkReferenceDefinitionsTests {
     static var allTests: Linux.TestList<LinkReferenceDefinitionsTests> {
         return [
-        ("testExample191", testExample191),
-        ("testExample192", testExample192),
-        ("testExample193", testExample193),
-        ("testExample194", testExample194),
-        ("testExample195", testExample195),
-        ("testExample196", testExample196),
-        ("testExample197", testExample197),
-        ("testExample198", testExample198),
-        ("testExample199", testExample199),
-        ("testExample200", testExample200),
-        ("testExample201", testExample201),
-        ("testExample202", testExample202),
-        ("testExample203", testExample203),
-        ("testExample204", testExample204),
-        ("testExample205", testExample205),
-        ("testExample206", testExample206),
-        ("testExample207", testExample207),
-        ("testExample208", testExample208),
-        ("testExample209", testExample209),
-        ("testExample210", testExample210),
-        ("testExample211", testExample211),
-        ("testExample212", testExample212),
-        ("testExample213", testExample213),
-        ("testExample214", testExample214),
-        ("testExample215", testExample215),
-        ("testExample216", testExample216),
-        ("testExample217", testExample217),
-        ("testExample218", testExample218)
+        ("testExample161", testExample161),
+        ("testExample162", testExample162),
+        ("testExample163", testExample163),
+        ("testExample164", testExample164),
+        ("testExample165", testExample165),
+        ("testExample166", testExample166),
+        ("testExample167", testExample167),
+        ("testExample168", testExample168),
+        ("testExample169", testExample169),
+        ("testExample170", testExample170),
+        ("testExample171", testExample171),
+        ("testExample172", testExample172),
+        ("testExample173", testExample173),
+        ("testExample174", testExample174),
+        ("testExample175", testExample175),
+        ("testExample176", testExample176),
+        ("testExample177", testExample177),
+        ("testExample178", testExample178),
+        ("testExample179", testExample179),
+        ("testExample180", testExample180),
+        ("testExample181", testExample181),
+        ("testExample182", testExample182),
+        ("testExample183", testExample183),
+        ("testExample184", testExample184),
+        ("testExample185", testExample185),
+        ("testExample186", testExample186),
+        ("testExample187", testExample187),
+        ("testExample188", testExample188)
         ]
     }
 }

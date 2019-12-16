@@ -75,6 +75,7 @@
 		B72B8C5323983FE10000997B /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		B75DB6AC2398516900200029 /* NormalizeHTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalizeHTML.swift; sourceTree = "<group>"; };
 		B75DB6B123986C2900200029 /* NormalizeHTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalizeHTML.swift; sourceTree = "<group>"; };
+		B77E585C23A83D7400A804FE /* spec.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = spec.txt; sourceTree = "<group>"; };
 		B7C1CD47239822D200681266 /* LinuxMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
 		B7C1CD592398244100681266 /* CommonMarkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommonMarkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C1CD5D2398244100681266 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,7 +111,6 @@
 		B7C1CDA22398290100681266 /* CommonMarkTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonMarkTests.swift; path = ../../../.Trash/CommonMarkTests.swift; sourceTree = "<group>"; };
 		B7ED8C80238E1015003A1158 /* MakeTestCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MakeTestCode; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7ED8C82238E1015003A1158 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		B7ED8C88238E13C2003A1158 /* spec.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = spec.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,7 +182,7 @@
 			children = (
 				B72B8C5223983A3F0000997B /* README.md */,
 				B72B8C5323983FE10000997B /* LICENSE */,
-				B7ED8C88238E13C2003A1158 /* spec.md */,
+				B77E585C23A83D7400A804FE /* spec.txt */,
 				B7C1CD9D2398274200681266 /* Package.swift */,
 				B7C1CD47239822D200681266 /* LinuxMain.swift */,
 				B7ED8C81238E1015003A1158 /* MakeTestCode */,

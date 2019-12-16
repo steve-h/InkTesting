@@ -33,8 +33,8 @@ final class ImagesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8494-8498
-    func testExample569() {
+    // spec.txt lines 8483-8487
+    func testExample568() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -54,8 +54,8 @@ final class ImagesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8501-8507
-    func testExample570() {
+    // spec.txt lines 8490-8496
+    func testExample569() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -77,8 +77,8 @@ final class ImagesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8510-8514
-    func testExample571() {
+    // spec.txt lines 8499-8503
+    func testExample570() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -98,8 +98,8 @@ final class ImagesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8517-8521
-    func testExample572() {
+    // spec.txt lines 8506-8510
+    func testExample571() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -126,8 +126,8 @@ final class ImagesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8531-8537
-    func testExample573() {
+    // spec.txt lines 8520-8526
+    func testExample572() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -149,8 +149,8 @@ final class ImagesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8540-8546
-    func testExample574() {
+    // spec.txt lines 8529-8535
+    func testExample573() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -172,8 +172,8 @@ final class ImagesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8549-8553
-    func testExample575() {
+    // spec.txt lines 8538-8542
+    func testExample574() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -193,8 +193,8 @@ final class ImagesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8556-8560
-    func testExample576() {
+    // spec.txt lines 8545-8549
+    func testExample575() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -214,8 +214,8 @@ final class ImagesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8563-8567
-    func testExample577() {
+    // spec.txt lines 8552-8556
+    func testExample576() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -235,8 +235,8 @@ final class ImagesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8570-8574
-    func testExample578() {
+    // spec.txt lines 8559-8563
+    func testExample577() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -258,8 +258,8 @@ final class ImagesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8579-8585
-    func testExample579() {
+    // spec.txt lines 8568-8574
+    func testExample578() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -281,8 +281,8 @@ final class ImagesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8588-8594
-    func testExample580() {
+    // spec.txt lines 8577-8583
+    func testExample579() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -306,8 +306,8 @@ final class ImagesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8599-8605
-    func testExample581() {
+    // spec.txt lines 8588-8594
+    func testExample580() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -329,8 +329,8 @@ final class ImagesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8608-8614
-    func testExample582() {
+    // spec.txt lines 8597-8603
+    func testExample581() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -354,8 +354,8 @@ final class ImagesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8619-8625
-    func testExample583() {
+    // spec.txt lines 8608-8614
+    func testExample582() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -380,8 +380,8 @@ final class ImagesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8631-8639
-    func testExample584() {
+    // spec.txt lines 8620-8628
+    func testExample583() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -407,8 +407,8 @@ final class ImagesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8644-8650
-    func testExample585() {
+    // spec.txt lines 8633-8639
+    func testExample584() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -430,8 +430,8 @@ final class ImagesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8653-8659
-    func testExample586() {
+    // spec.txt lines 8642-8648
+    func testExample585() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -455,8 +455,8 @@ final class ImagesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8664-8671
-    func testExample587() {
+    // spec.txt lines 8653-8660
+    func testExample586() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -481,8 +481,8 @@ final class ImagesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8676-8682
-    func testExample588() {
+    // spec.txt lines 8665-8671
+    func testExample587() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -507,8 +507,8 @@ final class ImagesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8688-8694
-    func testExample589() {
+    // spec.txt lines 8677-8683
+    func testExample588() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -533,8 +533,8 @@ final class ImagesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8700-8706
-    func testExample590() {
+    // spec.txt lines 8689-8695
+    func testExample589() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -557,6 +557,7 @@ final class ImagesTests: XCTestCase {
 extension ImagesTests {
     static var allTests: Linux.TestList<ImagesTests> {
         return [
+        ("testExample568", testExample568),
         ("testExample569", testExample569),
         ("testExample570", testExample570),
         ("testExample571", testExample571),
@@ -577,8 +578,7 @@ extension ImagesTests {
         ("testExample586", testExample586),
         ("testExample587", testExample587),
         ("testExample588", testExample588),
-        ("testExample589", testExample589),
-        ("testExample590", testExample590)
+        ("testExample589", testExample589)
         ]
     }
 }

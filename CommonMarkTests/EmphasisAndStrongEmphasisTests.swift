@@ -230,7 +230,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6296-6300
+    // spec.txt lines 6292-6296
     func testExample350() {
         let newlineChar = "\n"
         var markdownTest =
@@ -254,7 +254,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6306-6310
+    // spec.txt lines 6302-6306
     func testExample351() {
         let newlineChar = "\n"
         var markdownTest =
@@ -279,7 +279,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6317-6321
+    // spec.txt lines 6313-6317
     func testExample352() {
         let newlineChar = "\n"
         var markdownTest =
@@ -302,19 +302,19 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6326-6330
+    // spec.txt lines 6322-6326
     func testExample353() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
-        * a *
+        * a *
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         
-      //<p>* a *</p>
+      //<p>* a *</p>
         let normalizedCM = #####"""
-        <p>* a *</p>
+        <ul><li>a *</li></ul>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -325,7 +325,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6335-6339
+    // spec.txt lines 6331-6335
     func testExample354() {
         let newlineChar = "\n"
         var markdownTest =
@@ -346,7 +346,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6342-6346
+    // spec.txt lines 6338-6342
     func testExample355() {
         let newlineChar = "\n"
         var markdownTest =
@@ -369,7 +369,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6351-6355
+    // spec.txt lines 6347-6351
     func testExample356() {
         let newlineChar = "\n"
         var markdownTest =
@@ -393,7 +393,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6361-6365
+    // spec.txt lines 6357-6361
     func testExample357() {
         let newlineChar = "\n"
         var markdownTest =
@@ -417,7 +417,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6371-6375
+    // spec.txt lines 6367-6371
     func testExample358() {
         let newlineChar = "\n"
         var markdownTest =
@@ -440,7 +440,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6380-6384
+    // spec.txt lines 6376-6380
     func testExample359() {
         let newlineChar = "\n"
         var markdownTest =
@@ -461,7 +461,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6387-6391
+    // spec.txt lines 6383-6387
     func testExample360() {
         let newlineChar = "\n"
         var markdownTest =
@@ -482,7 +482,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6394-6398
+    // spec.txt lines 6390-6394
     func testExample361() {
         let newlineChar = "\n"
         var markdownTest =
@@ -506,7 +506,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6404-6408
+    // spec.txt lines 6400-6404
     func testExample362() {
         let newlineChar = "\n"
         var markdownTest =
@@ -531,7 +531,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6415-6419
+    // spec.txt lines 6411-6415
     func testExample363() {
         let newlineChar = "\n"
         var markdownTest =
@@ -557,7 +557,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6427-6431
+    // spec.txt lines 6423-6427
     func testExample364() {
         let newlineChar = "\n"
         var markdownTest =
@@ -581,7 +581,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6437-6441
+    // spec.txt lines 6433-6437
     func testExample365() {
         let newlineChar = "\n"
         var markdownTest =
@@ -604,7 +604,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6446-6452
+    // spec.txt lines 6442-6448
     func testExample366() {
         let newlineChar = "\n"
         var markdownTest =
@@ -631,7 +631,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6459-6463
+    // spec.txt lines 6455-6459
     func testExample367() {
         let newlineChar = "\n"
         var markdownTest =
@@ -655,7 +655,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6469-6473
+    // spec.txt lines 6465-6469
     func testExample368() {
         let newlineChar = "\n"
         var markdownTest =
@@ -678,7 +678,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6478-6482
+    // spec.txt lines 6474-6478
     func testExample369() {
         let newlineChar = "\n"
         var markdownTest =
@@ -705,7 +705,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6491-6495
+    // spec.txt lines 6487-6491
     func testExample370() {
         let newlineChar = "\n"
         var markdownTest =
@@ -729,7 +729,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6501-6505
+    // spec.txt lines 6497-6501
     func testExample371() {
         let newlineChar = "\n"
         var markdownTest =
@@ -752,7 +752,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6510-6514
+    // spec.txt lines 6506-6510
     func testExample372() {
         let newlineChar = "\n"
         var markdownTest =
@@ -775,7 +775,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6519-6523
+    // spec.txt lines 6515-6519
     func testExample373() {
         let newlineChar = "\n"
         var markdownTest =
@@ -796,7 +796,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6526-6530
+    // spec.txt lines 6522-6526
     func testExample374() {
         let newlineChar = "\n"
         var markdownTest =
@@ -817,7 +817,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6533-6537
+    // spec.txt lines 6529-6533
     func testExample375() {
         let newlineChar = "\n"
         var markdownTest =
@@ -842,7 +842,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6544-6548
+    // spec.txt lines 6540-6544
     func testExample376() {
         let newlineChar = "\n"
         var markdownTest =
@@ -865,7 +865,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6553-6557
+    // spec.txt lines 6549-6553
     func testExample377() {
         let newlineChar = "\n"
         var markdownTest =
@@ -889,7 +889,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6563-6567
+    // spec.txt lines 6559-6563
     func testExample378() {
         let newlineChar = "\n"
         var markdownTest =
@@ -914,7 +914,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6574-6578
+    // spec.txt lines 6570-6574
     func testExample379() {
         let newlineChar = "\n"
         var markdownTest =
@@ -937,7 +937,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6583-6587
+    // spec.txt lines 6579-6583
     func testExample380() {
         let newlineChar = "\n"
         var markdownTest =
@@ -960,7 +960,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6592-6596
+    // spec.txt lines 6588-6592
     func testExample381() {
         let newlineChar = "\n"
         var markdownTest =
@@ -984,7 +984,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6602-6606
+    // spec.txt lines 6598-6602
     func testExample382() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1006,7 +1006,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // A newline counts as whitespace:
     // 
     //     
-    // spec.txt lines 6610-6616
+    // spec.txt lines 6606-6612
     func testExample383() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1032,7 +1032,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6622-6626
+    // spec.txt lines 6618-6622
     func testExample384() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1055,7 +1055,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6631-6635
+    // spec.txt lines 6627-6631
     func testExample385() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1076,7 +1076,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6638-6642
+    // spec.txt lines 6634-6638
     func testExample386() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1097,7 +1097,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6645-6649
+    // spec.txt lines 6641-6645
     func testExample387() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1118,7 +1118,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6652-6656
+    // spec.txt lines 6648-6652
     func testExample388() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1143,7 +1143,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6663-6667
+    // spec.txt lines 6659-6663
     func testExample389() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1170,7 +1170,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6676-6680
+    // spec.txt lines 6672-6676
     func testExample390() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1197,7 +1197,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6689-6693
+    // spec.txt lines 6685-6689
     func testExample391() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1221,7 +1221,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6699-6703
+    // spec.txt lines 6695-6699
     func testExample392() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1242,7 +1242,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6706-6712
+    // spec.txt lines 6702-6708
     func testExample393() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1265,7 +1265,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6715-6719
+    // spec.txt lines 6711-6715
     func testExample394() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1288,7 +1288,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6724-6728
+    // spec.txt lines 6720-6724
     func testExample395() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1314,7 +1314,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6736-6740
+    // spec.txt lines 6732-6736
     func testExample396() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1338,7 +1338,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6746-6750
+    // spec.txt lines 6742-6746
     func testExample397() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1362,7 +1362,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6756-6760
+    // spec.txt lines 6752-6756
     func testExample398() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1385,7 +1385,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6765-6769
+    // spec.txt lines 6761-6765
     func testExample399() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1406,7 +1406,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6772-6776
+    // spec.txt lines 6768-6772
     func testExample400() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1427,7 +1427,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6779-6783
+    // spec.txt lines 6775-6779
     func testExample401() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1452,7 +1452,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6790-6794
+    // spec.txt lines 6786-6790
     func testExample402() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1478,7 +1478,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6802-6806
+    // spec.txt lines 6798-6802
     func testExample403() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1499,7 +1499,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6809-6815
+    // spec.txt lines 6805-6811
     func testExample404() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1525,7 +1525,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6821-6825
+    // spec.txt lines 6817-6821
     func testExample405() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1546,7 +1546,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6828-6832
+    // spec.txt lines 6824-6828
     func testExample406() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1567,7 +1567,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6835-6839
+    // spec.txt lines 6831-6835
     func testExample407() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1588,7 +1588,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6842-6846
+    // spec.txt lines 6838-6842
     func testExample408() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1609,7 +1609,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6849-6853
+    // spec.txt lines 6845-6849
     func testExample409() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1629,7 +1629,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6855-6859
+    // spec.txt lines 6851-6855
     func testExample410() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1667,7 +1667,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6879-6883
+    // spec.txt lines 6875-6879
     func testExample411() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1694,7 +1694,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6892-6896
+    // spec.txt lines 6888-6892
     func testExample412() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1715,7 +1715,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6899-6903
+    // spec.txt lines 6895-6899
     func testExample413() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1736,7 +1736,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6906-6910
+    // spec.txt lines 6902-6906
     func testExample414() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1761,7 +1761,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6917-6921
+    // spec.txt lines 6913-6917
     func testExample415() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1781,7 +1781,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6923-6927
+    // spec.txt lines 6919-6923
     func testExample416() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1804,7 +1804,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6932-6936
+    // spec.txt lines 6928-6932
     func testExample417() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1825,7 +1825,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6939-6943
+    // spec.txt lines 6935-6939
     func testExample418() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1848,7 +1848,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6948-6952
+    // spec.txt lines 6944-6948
     func testExample419() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1869,7 +1869,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6955-6959
+    // spec.txt lines 6951-6955
     func testExample420() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1896,7 +1896,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6968-6972
+    // spec.txt lines 6964-6968
     func testExample421() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1917,7 +1917,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6975-6981
+    // spec.txt lines 6971-6977
     func testExample422() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1943,7 +1943,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6987-6991
+    // spec.txt lines 6983-6987
     func testExample423() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1964,7 +1964,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 6994-6998
+    // spec.txt lines 6990-6994
     func testExample424() {
         let newlineChar = "\n"
         var markdownTest =
@@ -1985,7 +1985,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7001-7005
+    // spec.txt lines 6997-7001
     func testExample425() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2006,7 +2006,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7008-7012
+    // spec.txt lines 7004-7008
     func testExample426() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2027,7 +2027,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7015-7019
+    // spec.txt lines 7011-7015
     func testExample427() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2048,7 +2048,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7022-7026
+    // spec.txt lines 7018-7022
     func testExample428() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2069,7 +2069,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7029-7033
+    // spec.txt lines 7025-7029
     func testExample429() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2090,7 +2090,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7036-7040
+    // spec.txt lines 7032-7036
     func testExample430() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2113,7 +2113,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7045-7051
+    // spec.txt lines 7041-7047
     func testExample431() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2136,7 +2136,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7054-7058
+    // spec.txt lines 7050-7054
     func testExample432() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2159,7 +2159,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7063-7067
+    // spec.txt lines 7059-7063
     func testExample433() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2180,7 +2180,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7070-7074
+    // spec.txt lines 7066-7070
     func testExample434() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2204,7 +2204,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7080-7084
+    // spec.txt lines 7076-7080
     func testExample435() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2225,7 +2225,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7087-7091
+    // spec.txt lines 7083-7087
     func testExample436() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2246,7 +2246,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7094-7098
+    // spec.txt lines 7090-7094
     func testExample437() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2267,7 +2267,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7101-7105
+    // spec.txt lines 7097-7101
     func testExample438() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2288,7 +2288,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7108-7112
+    // spec.txt lines 7104-7108
     func testExample439() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2309,7 +2309,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7115-7119
+    // spec.txt lines 7111-7115
     func testExample440() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2334,7 +2334,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7126-7130
+    // spec.txt lines 7122-7126
     func testExample441() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2355,7 +2355,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7133-7137
+    // spec.txt lines 7129-7133
     func testExample442() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2376,7 +2376,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7140-7144
+    // spec.txt lines 7136-7140
     func testExample443() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2397,7 +2397,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7147-7151
+    // spec.txt lines 7143-7147
     func testExample444() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2418,7 +2418,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7154-7158
+    // spec.txt lines 7150-7154
     func testExample445() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2439,7 +2439,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7161-7165
+    // spec.txt lines 7157-7161
     func testExample446() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2463,7 +2463,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7171-7175
+    // spec.txt lines 7167-7171
     func testExample447() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2484,7 +2484,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7178-7182
+    // spec.txt lines 7174-7178
     func testExample448() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2505,7 +2505,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7185-7189
+    // spec.txt lines 7181-7185
     func testExample449() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2526,7 +2526,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7192-7196
+    // spec.txt lines 7188-7192
     func testExample450() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2547,7 +2547,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7199-7203
+    // spec.txt lines 7195-7199
     func testExample451() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2568,7 +2568,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7206-7210
+    // spec.txt lines 7202-7206
     func testExample452() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2589,7 +2589,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7213-7217
+    // spec.txt lines 7209-7213
     func testExample453() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2614,7 +2614,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7224-7228
+    // spec.txt lines 7220-7224
     func testExample454() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2635,7 +2635,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7231-7235
+    // spec.txt lines 7227-7231
     func testExample455() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2656,7 +2656,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7238-7242
+    // spec.txt lines 7234-7238
     func testExample456() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2677,7 +2677,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7245-7249
+    // spec.txt lines 7241-7245
     func testExample457() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2698,7 +2698,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7252-7256
+    // spec.txt lines 7248-7252
     func testExample458() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2722,7 +2722,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7262-7266
+    // spec.txt lines 7258-7262
     func testExample459() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2743,7 +2743,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7269-7273
+    // spec.txt lines 7265-7269
     func testExample460() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2764,7 +2764,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7276-7280
+    // spec.txt lines 7272-7276
     func testExample461() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2785,7 +2785,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7283-7287
+    // spec.txt lines 7279-7283
     func testExample462() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2809,7 +2809,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7293-7297
+    // spec.txt lines 7289-7293
     func testExample463() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2830,7 +2830,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7300-7304
+    // spec.txt lines 7296-7300
     func testExample464() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2855,7 +2855,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7311-7315
+    // spec.txt lines 7307-7311
     func testExample465() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2878,7 +2878,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7320-7324
+    // spec.txt lines 7316-7320
     func testExample466() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2899,7 +2899,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7327-7331
+    // spec.txt lines 7323-7327
     func testExample467() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2922,7 +2922,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7336-7340
+    // spec.txt lines 7332-7336
     func testExample468() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2943,7 +2943,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7343-7347
+    // spec.txt lines 7339-7343
     func testExample469() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2966,7 +2966,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7352-7356
+    // spec.txt lines 7348-7352
     func testExample470() {
         let newlineChar = "\n"
         var markdownTest =
@@ -2987,7 +2987,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7359-7363
+    // spec.txt lines 7355-7359
     func testExample471() {
         let newlineChar = "\n"
         var markdownTest =
@@ -3010,7 +3010,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7368-7372
+    // spec.txt lines 7364-7368
     func testExample472() {
         let newlineChar = "\n"
         var markdownTest =
@@ -3031,7 +3031,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7375-7379
+    // spec.txt lines 7371-7375
     func testExample473() {
         let newlineChar = "\n"
         var markdownTest =
@@ -3052,7 +3052,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7382-7386
+    // spec.txt lines 7378-7382
     func testExample474() {
         let newlineChar = "\n"
         var markdownTest =
@@ -3073,7 +3073,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7389-7393
+    // spec.txt lines 7385-7389
     func testExample475() {
         let newlineChar = "\n"
         var markdownTest =
@@ -3094,7 +3094,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7396-7400
+    // spec.txt lines 7392-7396
     func testExample476() {
         let newlineChar = "\n"
         var markdownTest =
@@ -3115,7 +3115,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7403-7407
+    // spec.txt lines 7399-7403
     func testExample477() {
         let newlineChar = "\n"
         var markdownTest =
@@ -3136,7 +3136,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7410-7414
+    // spec.txt lines 7406-7410
     func testExample478() {
         let newlineChar = "\n"
         var markdownTest =
@@ -3157,7 +3157,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7417-7421
+    // spec.txt lines 7413-7417
     func testExample479() {
         let newlineChar = "\n"
         var markdownTest =
@@ -3178,7 +3178,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7424-7428
+    // spec.txt lines 7420-7424
     func testExample480() {
         let newlineChar = "\n"
         var markdownTest =

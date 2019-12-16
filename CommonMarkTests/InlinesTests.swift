@@ -26,8 +26,8 @@ final class InlinesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 5842-5846
-    func testExample327() {
+    // spec.txt lines 5499-5503
+    func testExample297() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -48,7 +48,7 @@ final class InlinesTests: XCTestCase {
 extension InlinesTests {
     static var allTests: Linux.TestList<InlinesTests> {
         return [
-        ("testExample327", testExample327)
+        ("testExample297", testExample297)
         ]
     }
 }

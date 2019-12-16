@@ -55,11 +55,10 @@ final class LinksTests: XCTestCase {
     //   closing `>` that contains no line breaks or unescaped
     //   `<` or `>` characters, or
     // 
-    // - a nonempty sequence of characters that does not start with `<`,
-    //   does not include [ASCII control characters][ASCII control character]
-    //   or [whitespace][], and includes parentheses only if (a) they are
-    //   backslash-escaped or (b) they are part of a balanced pair of
-    //   unescaped parentheses.
+    // - a nonempty sequence of characters that does not start with
+    //   `<`, does not include ASCII space or control characters, and
+    //   includes parentheses only if (a) they are backslash-escaped or
+    //   (b) they are part of a balanced pair of unescaped parentheses.
     //   (Implementations may impose limits on parentheses nesting to
     //   avoid performance issues, but at least three levels of nesting
     //   should be supported.)
@@ -97,7 +96,7 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7508-7512
+    // spec.txt lines 7503-7507
     func testExample481() {
         let newlineChar = "\n"
         var markdownTest =
@@ -120,7 +119,7 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7517-7521
+    // spec.txt lines 7512-7516
     func testExample482() {
         let newlineChar = "\n"
         var markdownTest =
@@ -143,7 +142,7 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7526-7530
+    // spec.txt lines 7521-7525
     func testExample483() {
         let newlineChar = "\n"
         var markdownTest =
@@ -164,7 +163,7 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7533-7537
+    // spec.txt lines 7528-7532
     func testExample484() {
         let newlineChar = "\n"
         var markdownTest =
@@ -187,7 +186,7 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7542-7546
+    // spec.txt lines 7537-7541
     func testExample485() {
         let newlineChar = "\n"
         var markdownTest =
@@ -207,7 +206,7 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7548-7552
+    // spec.txt lines 7543-7547
     func testExample486() {
         let newlineChar = "\n"
         var markdownTest =
@@ -230,7 +229,7 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7557-7563
+    // spec.txt lines 7552-7558
     func testExample487() {
         let newlineChar = "\n"
         var markdownTest =
@@ -252,7 +251,7 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7565-7571
+    // spec.txt lines 7560-7566
     func testExample488() {
         let newlineChar = "\n"
         var markdownTest =
@@ -278,7 +277,7 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7576-7580
+    // spec.txt lines 7571-7575
     func testExample489() {
         let newlineChar = "\n"
         var markdownTest =
@@ -300,7 +299,7 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7584-7588
+    // spec.txt lines 7579-7583
     func testExample490() {
         let newlineChar = "\n"
         var markdownTest =
@@ -323,7 +322,7 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7593-7601
+    // spec.txt lines 7588-7596
     func testExample491() {
         let newlineChar = "\n"
         var markdownTest =
@@ -349,7 +348,7 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7605-7609
+    // spec.txt lines 7600-7604
     func testExample492() {
         let newlineChar = "\n"
         var markdownTest =
@@ -372,7 +371,7 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7614-7618
+    // spec.txt lines 7609-7613
     func testExample493() {
         let newlineChar = "\n"
         var markdownTest =
@@ -395,29 +394,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7623-7627
+    // spec.txt lines 7618-7622
     func testExample494() {
-        let newlineChar = "\n"
-        var markdownTest =
-        #####"""
-        [link](foo(and(bar))
-        """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
-        let html = MarkdownParser().html(from: markdownTest)
-        
-      //<p>[link](foo(and(bar))</p>
-        let normalizedCM = #####"""
-        <p>[link](foo(and(bar))</p>
-        """#####
-        XCTAssertEqual(html,normalizedCM)
-
-    }
-    // 
-    // 
-    // 
-    //     
-    // spec.txt lines 7630-7634
-    func testExample495() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -437,8 +415,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7637-7641
-    func testExample496() {
+    // spec.txt lines 7625-7629
+    func testExample495() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -461,8 +439,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7647-7651
-    func testExample497() {
+    // spec.txt lines 7635-7639
+    func testExample496() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -484,8 +462,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7656-7666
-    func testExample498() {
+    // spec.txt lines 7644-7654
+    func testExample497() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -514,8 +492,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7672-7676
-    func testExample499() {
+    // spec.txt lines 7660-7664
+    func testExample498() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -544,8 +522,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7688-7692
-    func testExample500() {
+    // spec.txt lines 7676-7680
+    func testExample499() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -569,8 +547,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7699-7703
-    func testExample501() {
+    // spec.txt lines 7687-7691
+    func testExample500() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -592,8 +570,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7708-7716
-    func testExample502() {
+    // spec.txt lines 7696-7704
+    func testExample501() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -620,8 +598,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7722-7726
-    func testExample503() {
+    // spec.txt lines 7710-7714
+    func testExample502() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -644,19 +622,19 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7732-7736
-    func testExample504() {
+    // spec.txt lines 7720-7724
+    func testExample503() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
-        [link](/url "title")
+        [link](/url "title")
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/url%C2%A0%22title%22">link</a></p>
         let normalizedCM = #####"""
-        <p><a href="/url%C2%A0%22title%22">link</a></p>
+        <p><a href="/url" title="title">link</a></p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -667,8 +645,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7741-7745
-    func testExample505() {
+    // spec.txt lines 7729-7733
+    func testExample504() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -690,8 +668,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7750-7754
-    func testExample506() {
+    // spec.txt lines 7738-7742
+    func testExample505() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -728,8 +706,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7774-7779
-    func testExample507() {
+    // spec.txt lines 7762-7767
+    func testExample506() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -753,8 +731,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7785-7789
-    func testExample508() {
+    // spec.txt lines 7773-7777
+    func testExample507() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -777,8 +755,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7795-7799
-    func testExample509() {
+    // spec.txt lines 7783-7787
+    func testExample508() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -798,8 +776,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7802-7806
-    func testExample510() {
+    // spec.txt lines 7790-7794
+    func testExample509() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -819,8 +797,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7809-7813
-    func testExample511() {
+    // spec.txt lines 7797-7801
+    func testExample510() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -840,8 +818,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7816-7820
-    func testExample512() {
+    // spec.txt lines 7804-7808
+    func testExample511() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -863,8 +841,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7825-7829
-    func testExample513() {
+    // spec.txt lines 7813-7817
+    func testExample512() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -884,8 +862,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7832-7836
-    func testExample514() {
+    // spec.txt lines 7820-7824
+    func testExample513() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -907,8 +885,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7841-7845
-    func testExample515() {
+    // spec.txt lines 7829-7833
+    func testExample514() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -928,8 +906,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7848-7852
-    func testExample516() {
+    // spec.txt lines 7836-7840
+    func testExample515() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -949,8 +927,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7855-7859
-    func testExample517() {
+    // spec.txt lines 7843-7847
+    func testExample516() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -973,8 +951,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7865-7869
-    func testExample518() {
+    // spec.txt lines 7853-7857
+    func testExample517() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -994,8 +972,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7872-7876
-    func testExample519() {
+    // spec.txt lines 7860-7864
+    func testExample518() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1018,8 +996,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7882-7886
-    func testExample520() {
+    // spec.txt lines 7870-7874
+    func testExample519() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1042,8 +1020,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7892-7896
-    func testExample521() {
+    // spec.txt lines 7880-7884
+    func testExample520() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1063,8 +1041,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7899-7903
-    func testExample522() {
+    // spec.txt lines 7887-7891
+    func testExample521() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1084,8 +1062,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7906-7910
-    func testExample523() {
+    // spec.txt lines 7894-7898
+    func testExample522() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1128,15 +1106,16 @@ final class LinksTests: XCTestCase {
     // matching reference link definitions, the one that comes first in the
     // document is used.  (It is desirable in such cases to emit a warning.)
     // 
-    // The link's URI and title are provided by the matching [link
-    // reference definition].
+    // The contents of the first link label are parsed as inlines, which are
+    // used as the link's text.  The link's URI and title are provided by the
+    // matching [link reference definition].
     // 
     // Here is a simple example:
     // 
     // 
     //     
-    // spec.txt lines 7943-7949
-    func testExample524() {
+    // spec.txt lines 7932-7938
+    func testExample523() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1164,8 +1143,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7958-7964
-    func testExample525() {
+    // spec.txt lines 7947-7953
+    func testExample524() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1187,8 +1166,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7967-7973
-    func testExample526() {
+    // spec.txt lines 7956-7962
+    func testExample525() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1212,8 +1191,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7978-7984
-    func testExample527() {
+    // spec.txt lines 7967-7973
+    func testExample526() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1235,8 +1214,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7987-7993
-    func testExample528() {
+    // spec.txt lines 7976-7982
+    func testExample527() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1260,8 +1239,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 7998-8004
-    func testExample529() {
+    // spec.txt lines 7987-7993
+    func testExample528() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1283,8 +1262,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8007-8013
-    func testExample530() {
+    // spec.txt lines 7996-8002
+    func testExample529() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1312,8 +1291,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8022-8028
-    func testExample531() {
+    // spec.txt lines 8011-8017
+    func testExample530() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1335,21 +1314,21 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8031-8037
-    func testExample532() {
+    // spec.txt lines 8020-8026
+    func testExample531() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
-        [foo *bar][ref]*
+        [foo *bar][ref]
         
         [ref]: /uri
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         
-      //<p><a href="/uri">foo *bar</a>*</p>
+      //<p><a href="/uri">foo *bar</a></p>
         let normalizedCM = #####"""
-        <p><a href="/uri">foo *bar</a>*</p>
+        <p><a href="/uri">foo *bar</a></p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -1361,8 +1340,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8043-8049
-    func testExample533() {
+    // spec.txt lines 8032-8038
+    func testExample532() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1384,8 +1363,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8052-8058
-    func testExample534() {
+    // spec.txt lines 8041-8047
+    func testExample533() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1407,8 +1386,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8061-8067
-    func testExample535() {
+    // spec.txt lines 8050-8056
+    func testExample534() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1432,8 +1411,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8072-8078
-    func testExample536() {
+    // spec.txt lines 8061-8067
+    func testExample535() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1457,21 +1436,21 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8083-8089
-    func testExample537() {
+    // spec.txt lines 8072-8078
+    func testExample536() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
-        [ẞ]
+        [Толпой][Толпой] is a Russian word.
         
-        [SS]: /url
+        [ТОЛПОЙ]: /url
         """#####
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         
-      //<p><a href="/url">ẞ</a></p>
+      //<p><a href="/url">Толпой</a> is a Russian word.</p>
         let normalizedCM = #####"""
-        <p><a href="/url">ẞ</a></p>
+        <p><a href="/url">Толпой</a> is a Russian word.</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -1483,8 +1462,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8095-8102
-    func testExample538() {
+    // spec.txt lines 8084-8091
+    func testExample537() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1510,8 +1489,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8108-8114
-    func testExample539() {
+    // spec.txt lines 8097-8103
+    func testExample538() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1533,8 +1512,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8117-8125
-    func testExample540() {
+    // spec.txt lines 8106-8114
+    func testExample539() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1588,8 +1567,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8158-8166
-    func testExample541() {
+    // spec.txt lines 8147-8155
+    func testExample540() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1617,8 +1596,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8173-8179
-    func testExample542() {
+    // spec.txt lines 8162-8168
+    func testExample541() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1643,8 +1622,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8185-8192
-    func testExample543() {
+    // spec.txt lines 8174-8181
+    func testExample542() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1667,8 +1646,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8195-8202
-    func testExample544() {
+    // spec.txt lines 8184-8191
+    func testExample543() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1691,8 +1670,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8205-8212
-    func testExample545() {
+    // spec.txt lines 8194-8201
+    func testExample544() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1715,8 +1694,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8215-8221
-    func testExample546() {
+    // spec.txt lines 8204-8210
+    func testExample545() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1740,8 +1719,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8226-8232
-    func testExample547() {
+    // spec.txt lines 8215-8221
+    func testExample546() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1765,8 +1744,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8237-8244
-    func testExample548() {
+    // spec.txt lines 8226-8233
+    func testExample547() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1789,8 +1768,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8247-8258
-    func testExample549() {
+    // spec.txt lines 8236-8247
+    func testExample548() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1826,8 +1805,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8270-8276
-    func testExample550() {
+    // spec.txt lines 8259-8265
+    func testExample549() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1849,8 +1828,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8279-8285
-    func testExample551() {
+    // spec.txt lines 8268-8274
+    func testExample550() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1874,8 +1853,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8290-8296
-    func testExample552() {
+    // spec.txt lines 8279-8285
+    func testExample551() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1901,8 +1880,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8303-8311
-    func testExample553() {
+    // spec.txt lines 8292-8300
+    func testExample552() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1935,8 +1914,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8323-8329
-    func testExample554() {
+    // spec.txt lines 8312-8318
+    func testExample553() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1958,8 +1937,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8332-8338
-    func testExample555() {
+    // spec.txt lines 8321-8327
+    func testExample554() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -1981,8 +1960,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8341-8347
-    func testExample556() {
+    // spec.txt lines 8330-8336
+    func testExample555() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -2004,8 +1983,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8350-8356
-    func testExample557() {
+    // spec.txt lines 8339-8345
+    func testExample556() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -2029,8 +2008,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8361-8367
-    func testExample558() {
+    // spec.txt lines 8350-8356
+    func testExample557() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -2054,8 +2033,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8372-8378
-    func testExample559() {
+    // spec.txt lines 8361-8367
+    func testExample558() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -2080,8 +2059,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8384-8390
-    func testExample560() {
+    // spec.txt lines 8373-8379
+    func testExample559() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -2106,8 +2085,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8396-8402
-    func testExample561() {
+    // spec.txt lines 8385-8391
+    func testExample560() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -2132,8 +2111,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8408-8415
-    func testExample562() {
+    // spec.txt lines 8397-8404
+    func testExample561() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -2155,8 +2134,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8417-8423
-    func testExample563() {
+    // spec.txt lines 8406-8412
+    func testExample562() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -2179,8 +2158,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8427-8433
-    func testExample564() {
+    // spec.txt lines 8416-8422
+    func testExample563() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -2201,8 +2180,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8435-8441
-    func testExample565() {
+    // spec.txt lines 8424-8430
+    func testExample564() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -2226,8 +2205,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8446-8452
-    func testExample566() {
+    // spec.txt lines 8435-8441
+    func testExample565() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -2252,8 +2231,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8458-8465
-    func testExample567() {
+    // spec.txt lines 8447-8454
+    func testExample566() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -2279,8 +2258,8 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 8471-8478
-    func testExample568() {
+    // spec.txt lines 8460-8467
+    func testExample567() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -2390,8 +2369,7 @@ extension LinksTests {
         ("testExample564", testExample564),
         ("testExample565", testExample565),
         ("testExample566", testExample566),
-        ("testExample567", testExample567),
-        ("testExample568", testExample568)
+        ("testExample567", testExample567)
         ]
     }
 }

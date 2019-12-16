@@ -10,8 +10,6 @@ public func allTests() -> [Linux.TestCase] {
     return [
 
         Linux.makeTestCase(using: TabsTests.allTests),
-        Linux.makeTestCase(using: BackslashEscapesTests.allTests),
-        Linux.makeTestCase(using: EntityAndNumericCharacterReferencesTests.allTests),
         Linux.makeTestCase(using: PrecedenceTests.allTests),
         Linux.makeTestCase(using: ThematicBreaksTests.allTests),
         Linux.makeTestCase(using: AtxHeadingsTests.allTests),
@@ -26,6 +24,8 @@ public func allTests() -> [Linux.TestCase] {
         Linux.makeTestCase(using: ListItemsTests.allTests),
         Linux.makeTestCase(using: ListsTests.allTests),
         Linux.makeTestCase(using: InlinesTests.allTests),
+        Linux.makeTestCase(using: BackslashEscapesTests.allTests),
+        Linux.makeTestCase(using: EntityAndNumericCharacterReferencesTests.allTests),
         Linux.makeTestCase(using: CodeSpansTests.allTests),
         Linux.makeTestCase(using: EmphasisAndStrongEmphasisTests.allTests),
         Linux.makeTestCase(using: LinksTests.allTests),

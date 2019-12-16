@@ -18,6 +18,7 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
 
     // 
     // 
+    // 
     // ## Entity and numeric character references
     // 
     // Valid HTML entity references and numeric character references
@@ -40,14 +41,14 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     // 
     // [Entity references](@) consist of `&` + any of the valid
     // HTML5 entity names + `;`. The
-    // document <https://html.spec.whatwg.org/entities.json>
+    // document <https://html.spec.whatwg.org/multipage/entities.json>
     // is used as an authoritative source for the valid entity
     // references and their corresponding code points.
     // 
     // 
     //     
-    // spec.txt lines 648-656
-    func testExample25() {
+    // spec.txt lines 5674-5682
+    func testExample311() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -58,7 +59,7 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
         markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
         let html = MarkdownParser().html(from: markdownTest)
         
-      //<p>  &amp; © Æ Ď
+      //<p>  &amp; © Æ Ď
       //¾ ℋ ⅆ
       //∲ ≧̸</p>
         let normalizedCM = #####"""
@@ -79,8 +80,8 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 667-671
-    func testExample26() {
+    // spec.txt lines 5693-5697
+    func testExample312() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -106,8 +107,8 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 680-684
-    func testExample27() {
+    // spec.txt lines 5706-5710
+    func testExample313() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -129,13 +130,13 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 689-699
-    func testExample28() {
+    // spec.txt lines 5715-5725
+    func testExample314() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
         &nbsp &x; &#; &#x;
-        &#87654321;
+        &#987654321;
         &#abcdef0;
         &ThisIsNotDefined; &hi?;
         """#####
@@ -143,11 +144,11 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>&amp;nbsp &amp;x; &amp;#; &amp;#x;
-      //&amp;#87654321;
+      //&amp;#987654321;
       //&amp;#abcdef0;
       //&amp;ThisIsNotDefined; &amp;hi?;</p>
         let normalizedCM = #####"""
-        <p>&amp;nbsp &amp;x; &amp;#; &amp;#x; � &amp;#abcdef0; &amp;ThisIsNotDefined; &amp;hi?;</p>
+        <p>&amp;nbsp &amp;x; &amp;#; &amp;#x; &amp;#987654321; &amp;#abcdef0; &amp;ThisIsNotDefined; &amp;hi?;</p>
         """#####
         XCTAssertEqual(html,normalizedCM)
 
@@ -160,8 +161,8 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 706-710
-    func testExample29() {
+    // spec.txt lines 5732-5736
+    func testExample315() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -184,8 +185,8 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 716-720
-    func testExample30() {
+    // spec.txt lines 5742-5746
+    func testExample316() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -209,8 +210,8 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 727-731
-    func testExample31() {
+    // spec.txt lines 5753-5757
+    func testExample317() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -230,8 +231,8 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 734-738
-    func testExample32() {
+    // spec.txt lines 5760-5764
+    func testExample318() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -251,8 +252,8 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 741-747
-    func testExample33() {
+    // spec.txt lines 5767-5773
+    func testExample319() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -274,8 +275,8 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 750-757
-    func testExample34() {
+    // spec.txt lines 5776-5783
+    func testExample320() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -302,8 +303,8 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 763-767
-    func testExample35() {
+    // spec.txt lines 5789-5793
+    func testExample321() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -323,8 +324,8 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 770-775
-    func testExample36() {
+    // spec.txt lines 5796-5801
+    func testExample322() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -350,8 +351,8 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 782-788
-    func testExample37() {
+    // spec.txt lines 5808-5814
+    func testExample323() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -372,8 +373,8 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 790-799
-    func testExample38() {
+    // spec.txt lines 5816-5825
+    func testExample324() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -397,8 +398,8 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 801-807
-    func testExample39() {
+    // spec.txt lines 5827-5833
+    func testExample325() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -421,8 +422,8 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 809-813
-    func testExample40() {
+    // spec.txt lines 5835-5839
+    func testExample326() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -442,8 +443,8 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 816-820
-    func testExample41() {
+    // spec.txt lines 5842-5846
+    func testExample327() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -464,23 +465,23 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
 extension EntityAndNumericCharacterReferencesTests {
     static var allTests: Linux.TestList<EntityAndNumericCharacterReferencesTests> {
         return [
-        ("testExample25", testExample25),
-        ("testExample26", testExample26),
-        ("testExample27", testExample27),
-        ("testExample28", testExample28),
-        ("testExample29", testExample29),
-        ("testExample30", testExample30),
-        ("testExample31", testExample31),
-        ("testExample32", testExample32),
-        ("testExample33", testExample33),
-        ("testExample34", testExample34),
-        ("testExample35", testExample35),
-        ("testExample36", testExample36),
-        ("testExample37", testExample37),
-        ("testExample38", testExample38),
-        ("testExample39", testExample39),
-        ("testExample40", testExample40),
-        ("testExample41", testExample41)
+        ("testExample311", testExample311),
+        ("testExample312", testExample312),
+        ("testExample313", testExample313),
+        ("testExample314", testExample314),
+        ("testExample315", testExample315),
+        ("testExample316", testExample316),
+        ("testExample317", testExample317),
+        ("testExample318", testExample318),
+        ("testExample319", testExample319),
+        ("testExample320", testExample320),
+        ("testExample321", testExample321),
+        ("testExample322", testExample322),
+        ("testExample323", testExample323),
+        ("testExample324", testExample324),
+        ("testExample325", testExample325),
+        ("testExample326", testExample326),
+        ("testExample327", testExample327)
         ]
     }
 }

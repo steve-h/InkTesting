@@ -36,8 +36,8 @@ final class AtxHeadingsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1111-1125
-    func testExample62() {
+    // spec.txt lines 768-782
+    func testExample32() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -69,8 +69,8 @@ final class AtxHeadingsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1130-1134
-    func testExample63() {
+    // spec.txt lines 787-791
+    func testExample33() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -98,8 +98,8 @@ final class AtxHeadingsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1145-1152
-    func testExample64() {
+    // spec.txt lines 802-809
+    func testExample34() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -124,8 +124,8 @@ final class AtxHeadingsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1157-1161
-    func testExample65() {
+    // spec.txt lines 814-818
+    func testExample35() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -147,8 +147,8 @@ final class AtxHeadingsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1166-1170
-    func testExample66() {
+    // spec.txt lines 823-827
+    func testExample36() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -170,8 +170,8 @@ final class AtxHeadingsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1175-1179
-    func testExample67() {
+    // spec.txt lines 832-836
+    func testExample37() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -193,8 +193,8 @@ final class AtxHeadingsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1184-1192
-    func testExample68() {
+    // spec.txt lines 841-849
+    func testExample38() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -220,8 +220,8 @@ final class AtxHeadingsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1197-1202
-    func testExample69() {
+    // spec.txt lines 854-859
+    func testExample39() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -243,8 +243,8 @@ final class AtxHeadingsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1205-1211
-    func testExample70() {
+    // spec.txt lines 862-868
+    func testExample40() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -268,8 +268,8 @@ final class AtxHeadingsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1216-1222
-    func testExample71() {
+    // spec.txt lines 873-879
+    func testExample41() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -293,8 +293,8 @@ final class AtxHeadingsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1227-1233
-    func testExample72() {
+    // spec.txt lines 884-890
+    func testExample42() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -318,8 +318,8 @@ final class AtxHeadingsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1238-1242
-    func testExample73() {
+    // spec.txt lines 895-899
+    func testExample43() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -343,8 +343,8 @@ final class AtxHeadingsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1249-1253
-    func testExample74() {
+    // spec.txt lines 906-910
+    func testExample44() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -366,8 +366,8 @@ final class AtxHeadingsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1258-1262
-    func testExample75() {
+    // spec.txt lines 915-919
+    func testExample45() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -390,8 +390,8 @@ final class AtxHeadingsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1268-1276
-    func testExample76() {
+    // spec.txt lines 925-933
+    func testExample46() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -418,8 +418,8 @@ final class AtxHeadingsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1282-1290
-    func testExample77() {
+    // spec.txt lines 939-947
+    func testExample47() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -443,8 +443,8 @@ final class AtxHeadingsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1293-1301
-    func testExample78() {
+    // spec.txt lines 950-958
+    func testExample48() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -470,8 +470,8 @@ final class AtxHeadingsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1306-1314
-    func testExample79() {
+    // spec.txt lines 963-971
+    func testExample49() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -496,24 +496,24 @@ final class AtxHeadingsTests: XCTestCase {
 extension AtxHeadingsTests {
     static var allTests: Linux.TestList<AtxHeadingsTests> {
         return [
-        ("testExample62", testExample62),
-        ("testExample63", testExample63),
-        ("testExample64", testExample64),
-        ("testExample65", testExample65),
-        ("testExample66", testExample66),
-        ("testExample67", testExample67),
-        ("testExample68", testExample68),
-        ("testExample69", testExample69),
-        ("testExample70", testExample70),
-        ("testExample71", testExample71),
-        ("testExample72", testExample72),
-        ("testExample73", testExample73),
-        ("testExample74", testExample74),
-        ("testExample75", testExample75),
-        ("testExample76", testExample76),
-        ("testExample77", testExample77),
-        ("testExample78", testExample78),
-        ("testExample79", testExample79)
+        ("testExample32", testExample32),
+        ("testExample33", testExample33),
+        ("testExample34", testExample34),
+        ("testExample35", testExample35),
+        ("testExample36", testExample36),
+        ("testExample37", testExample37),
+        ("testExample38", testExample38),
+        ("testExample39", testExample39),
+        ("testExample40", testExample40),
+        ("testExample41", testExample41),
+        ("testExample42", testExample42),
+        ("testExample43", testExample43),
+        ("testExample44", testExample44),
+        ("testExample45", testExample45),
+        ("testExample46", testExample46),
+        ("testExample47", testExample47),
+        ("testExample48", testExample48),
+        ("testExample49", testExample49)
         ]
     }
 }

@@ -31,8 +31,8 @@ final class ParagraphsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3514-3521
-    func testExample219() {
+    // spec.txt lines 3171-3178
+    func testExample189() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -57,8 +57,8 @@ final class ParagraphsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3526-3537
-    func testExample220() {
+    // spec.txt lines 3183-3194
+    func testExample190() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -87,8 +87,8 @@ final class ParagraphsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3542-3550
-    func testExample221() {
+    // spec.txt lines 3199-3207
+    func testExample191() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -114,8 +114,8 @@ final class ParagraphsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3555-3561
-    func testExample222() {
+    // spec.txt lines 3212-3218
+    func testExample192() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -140,8 +140,8 @@ final class ParagraphsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3567-3575
-    func testExample223() {
+    // spec.txt lines 3224-3232
+    func testExample193() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -168,8 +168,8 @@ final class ParagraphsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3581-3587
-    func testExample224() {
+    // spec.txt lines 3238-3244
+    func testExample194() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -191,8 +191,8 @@ final class ParagraphsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3590-3597
-    func testExample225() {
+    // spec.txt lines 3247-3254
+    func testExample195() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -220,8 +220,8 @@ final class ParagraphsTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 3604-3610
-    func testExample226() {
+    // spec.txt lines 3261-3267
+    func testExample196() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -244,14 +244,14 @@ final class ParagraphsTests: XCTestCase {
 extension ParagraphsTests {
     static var allTests: Linux.TestList<ParagraphsTests> {
         return [
-        ("testExample219", testExample219),
-        ("testExample220", testExample220),
-        ("testExample221", testExample221),
-        ("testExample222", testExample222),
-        ("testExample223", testExample223),
-        ("testExample224", testExample224),
-        ("testExample225", testExample225),
-        ("testExample226", testExample226)
+        ("testExample189", testExample189),
+        ("testExample190", testExample190),
+        ("testExample191", testExample191),
+        ("testExample192", testExample192),
+        ("testExample193", testExample193),
+        ("testExample194", testExample194),
+        ("testExample195", testExample195),
+        ("testExample196", testExample196)
         ]
     }
 }

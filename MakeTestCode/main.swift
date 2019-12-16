@@ -22,7 +22,7 @@ guard CommandLine.arguments.count > 1 else {
 }
 print (CommandLine.arguments[1])
 let folder = try Folder(path: CommandLine.arguments[1])
-let commonMarkSpec = try folder.file(named: "spec.md").readAsString()
+let commonMarkSpec = try folder.file(named: "spec.txt").readAsString()
 
 let allTheTests = getTests(commonMarkSpec)
 setOutputFolder("CommonMarkTests")

@@ -48,8 +48,8 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 878-886
-    func testExample43() {
+    // spec.txt lines 535-543
+    func testExample13() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -75,8 +75,8 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 891-895
-    func testExample44() {
+    // spec.txt lines 548-552
+    func testExample14() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -96,8 +96,8 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 898-902
-    func testExample45() {
+    // spec.txt lines 555-559
+    func testExample15() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -119,8 +119,8 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 907-915
-    func testExample46() {
+    // spec.txt lines 564-572
+    func testExample16() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -146,8 +146,8 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 920-928
-    func testExample47() {
+    // spec.txt lines 577-585
+    func testExample17() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -173,8 +173,8 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 933-938
-    func testExample48() {
+    // spec.txt lines 590-595
+    func testExample18() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -196,8 +196,8 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 941-947
-    func testExample49() {
+    // spec.txt lines 598-604
+    func testExample19() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -221,8 +221,8 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 952-956
-    func testExample50() {
+    // spec.txt lines 609-613
+    func testExample20() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -244,8 +244,8 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 961-965
-    func testExample51() {
+    // spec.txt lines 618-622
+    func testExample21() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -265,8 +265,8 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 968-972
-    func testExample52() {
+    // spec.txt lines 625-629
+    func testExample22() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -286,8 +286,8 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 975-979
-    func testExample53() {
+    // spec.txt lines 632-636
+    func testExample23() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -309,8 +309,8 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 984-988
-    func testExample54() {
+    // spec.txt lines 641-645
+    func testExample24() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -332,8 +332,8 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 993-1003
-    func testExample55() {
+    // spec.txt lines 650-660
+    func testExample25() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -362,8 +362,8 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1009-1013
-    func testExample56() {
+    // spec.txt lines 666-670
+    func testExample26() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -385,8 +385,8 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1018-1030
-    func testExample57() {
+    // spec.txt lines 675-687
+    func testExample27() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -416,8 +416,8 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1035-1043
-    func testExample58() {
+    // spec.txt lines 692-700
+    func testExample28() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -447,8 +447,8 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1052-1059
-    func testExample59() {
+    // spec.txt lines 709-716
+    func testExample29() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -474,8 +474,8 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1065-1077
-    func testExample60() {
+    // spec.txt lines 722-734
+    func testExample30() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -505,8 +505,8 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     // 
     //     
-    // spec.txt lines 1082-1092
-    func testExample61() {
+    // spec.txt lines 739-749
+    func testExample31() {
         let newlineChar = "\n"
         var markdownTest =
         #####"""
@@ -533,25 +533,25 @@ final class ThematicBreaksTests: XCTestCase {
 extension ThematicBreaksTests {
     static var allTests: Linux.TestList<ThematicBreaksTests> {
         return [
-        ("testExample43", testExample43),
-        ("testExample44", testExample44),
-        ("testExample45", testExample45),
-        ("testExample46", testExample46),
-        ("testExample47", testExample47),
-        ("testExample48", testExample48),
-        ("testExample49", testExample49),
-        ("testExample50", testExample50),
-        ("testExample51", testExample51),
-        ("testExample52", testExample52),
-        ("testExample53", testExample53),
-        ("testExample54", testExample54),
-        ("testExample55", testExample55),
-        ("testExample56", testExample56),
-        ("testExample57", testExample57),
-        ("testExample58", testExample58),
-        ("testExample59", testExample59),
-        ("testExample60", testExample60),
-        ("testExample61", testExample61)
+        ("testExample13", testExample13),
+        ("testExample14", testExample14),
+        ("testExample15", testExample15),
+        ("testExample16", testExample16),
+        ("testExample17", testExample17),
+        ("testExample18", testExample18),
+        ("testExample19", testExample19),
+        ("testExample20", testExample20),
+        ("testExample21", testExample21),
+        ("testExample22", testExample22),
+        ("testExample23", testExample23),
+        ("testExample24", testExample24),
+        ("testExample25", testExample25),
+        ("testExample26", testExample26),
+        ("testExample27", testExample27),
+        ("testExample28", testExample28),
+        ("testExample29", testExample29),
+        ("testExample30", testExample30),
+        ("testExample31", testExample31)
         ]
     }
 }
