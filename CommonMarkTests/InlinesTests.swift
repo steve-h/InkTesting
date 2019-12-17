@@ -26,22 +26,23 @@ final class InlinesTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5499-5503
     func testExample297() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         `hi`lo`
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><code>hi</code>lo`</p>
         let normalizedCM = #####"""
         <p><code>hi</code>lo`</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
 }
 

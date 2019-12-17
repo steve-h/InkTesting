@@ -28,15 +28,16 @@ final class SoftLineBreaksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9317-9323
     func testExample645() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         foo
         baz
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>foo
@@ -44,8 +45,8 @@ final class SoftLineBreaksTests: XCTestCase {
         let normalizedCM = #####"""
         <p>foo baz</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -54,15 +55,16 @@ final class SoftLineBreaksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9329-9335
     func testExample646() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         foo 
          baz
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>foo
@@ -70,8 +72,8 @@ final class SoftLineBreaksTests: XCTestCase {
         let normalizedCM = #####"""
         <p>foo baz</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
 }
 

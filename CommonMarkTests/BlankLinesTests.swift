@@ -28,9 +28,9 @@ final class BlankLinesTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3278-3290
     func testExample197() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
           
@@ -42,7 +42,8 @@ final class BlankLinesTests: XCTestCase {
         
           
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>aaa</p>
@@ -50,8 +51,8 @@ final class BlankLinesTests: XCTestCase {
         let normalizedCM = #####"""
         <p>aaa</p><h1>aaa</h1>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
 }
 

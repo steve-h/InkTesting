@@ -40,15 +40,16 @@ final class PrecedenceTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 496-504
     func testExample12() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         - `one
         - two`
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ul>
@@ -58,8 +59,8 @@ final class PrecedenceTests: XCTestCase {
         let normalizedCM = #####"""
         <ul><li>`one</li><li>two`</li></ul>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
 }
 

@@ -59,9 +59,9 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3779-3794
     func testExample223() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         A paragraph
@@ -71,7 +71,8 @@ final class ListItemsTests: XCTestCase {
         
         > A block quote.
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>A paragraph
@@ -85,8 +86,8 @@ final class ListItemsTests: XCTestCase {
         <p>A paragraph with two lines.</p><pre><code>indented code
         </code></pre><blockquote><p>A block quote.</p></blockquote>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -96,9 +97,9 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3801-3820
     func testExample224() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         1.  A paragraph
@@ -108,7 +109,8 @@ final class ListItemsTests: XCTestCase {
         
             > A block quote.
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ol>
@@ -126,8 +128,8 @@ final class ListItemsTests: XCTestCase {
         <ol><li><p>A paragraph with two lines.</p><pre><code>indented code
         </code></pre><blockquote><p>A block quote.</p></blockquote></li></ol>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -144,16 +146,17 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3834-3843
     func testExample225() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         - one
         
          two
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ul>
@@ -163,23 +166,24 @@ final class ListItemsTests: XCTestCase {
         let normalizedCM = #####"""
         <ul><li>one</li></ul><p>two</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3846-3857
     func testExample226() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         - one
         
           two
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ul>
@@ -191,23 +195,24 @@ final class ListItemsTests: XCTestCase {
         let normalizedCM = #####"""
         <ul><li><p>one</p><p>two</p></li></ul>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3860-3870
     func testExample227() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
          -    one
         
              two
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ul>
@@ -219,23 +224,24 @@ final class ListItemsTests: XCTestCase {
         <ul><li>one</li></ul><pre><code> two
         </code></pre>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3873-3884
     func testExample228() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
          -    one
         
               two
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ul>
@@ -247,8 +253,8 @@ final class ListItemsTests: XCTestCase {
         let normalizedCM = #####"""
         <ul><li><p>one</p><p>two</p></li></ul>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -262,16 +268,17 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3895-3910
     func testExample229() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
            > > 1.  one
         >>
         >>     two
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<blockquote>
@@ -287,8 +294,8 @@ final class ListItemsTests: XCTestCase {
         let normalizedCM = #####"""
         <blockquote><blockquote><ol><li><p>one</p><p>two</p></li></ol></blockquote></blockquote>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -303,16 +310,17 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3922-3935
     func testExample230() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         >>- one
         >>
           >  > two
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<blockquote>
@@ -326,8 +334,8 @@ final class ListItemsTests: XCTestCase {
         let normalizedCM = #####"""
         <blockquote><blockquote><ul><li>one</li></ul><p>two</p></blockquote></blockquote>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -336,16 +344,17 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3941-3948
     func testExample231() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         -one
         
         2.two
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>-one</p>
@@ -353,8 +362,8 @@ final class ListItemsTests: XCTestCase {
         let normalizedCM = #####"""
         <p>-one</p><p>2.two</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -363,9 +372,9 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3954-3966
     func testExample232() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         - foo
@@ -373,7 +382,8 @@ final class ListItemsTests: XCTestCase {
         
           bar
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ul>
@@ -385,8 +395,8 @@ final class ListItemsTests: XCTestCase {
         let normalizedCM = #####"""
         <ul><li><p>foo</p><p>bar</p></li></ul>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -394,9 +404,9 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3971-3993
     func testExample233() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         1.  foo
@@ -409,7 +419,8 @@ final class ListItemsTests: XCTestCase {
         
             > bam
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ol>
@@ -427,8 +438,8 @@ final class ListItemsTests: XCTestCase {
         <ol><li><p>foo</p><pre><code>bar
         </code></pre><p>baz</p><blockquote><p>bam</p></blockquote></li></ol>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -437,9 +448,9 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3999-4017
     func testExample234() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         - Foo
@@ -449,7 +460,8 @@ final class ListItemsTests: XCTestCase {
         
               baz
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ul>
@@ -469,22 +481,23 @@ final class ListItemsTests: XCTestCase {
         baz
         </code></pre></li></ul>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // Note that ordered list start numbers must be nine digits or less:
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4021-4027
     func testExample235() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         123456789. ok
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ol start="123456789">
@@ -493,29 +506,30 @@ final class ListItemsTests: XCTestCase {
         let normalizedCM = #####"""
         <ol start="123456789"><li>ok</li></ol>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4030-4034
     func testExample236() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         1234567890. not ok
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>1234567890. not ok</p>
         let normalizedCM = #####"""
         <p>1234567890. not ok</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -523,14 +537,15 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4039-4045
     func testExample237() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         0. ok
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ol start="0">
@@ -539,21 +554,22 @@ final class ListItemsTests: XCTestCase {
         let normalizedCM = #####"""
         <ol start="0"><li>ok</li></ol>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4048-4054
     func testExample238() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         003. ok
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ol start="3">
@@ -562,8 +578,8 @@ final class ListItemsTests: XCTestCase {
         let normalizedCM = #####"""
         <ol start="3"><li>ok</li></ol>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -571,22 +587,23 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4059-4063
     func testExample239() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         -1. not ok
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>-1. not ok</p>
         let normalizedCM = #####"""
         <p>-1. not ok</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -608,16 +625,17 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4082-4094
     func testExample240() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         - foo
         
               bar
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ul>
@@ -631,8 +649,8 @@ final class ListItemsTests: XCTestCase {
         <ul><li><p>foo</p><pre><code>bar
         </code></pre></li></ul>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -640,16 +658,17 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4099-4111
     func testExample241() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
           10.  foo
         
                    bar
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ol start="10">
@@ -663,8 +682,8 @@ final class ListItemsTests: XCTestCase {
         <ol start="10"><li><p>foo</p><pre><code>bar
         </code></pre></li></ol>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -674,9 +693,9 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4118-4130
     func testExample242() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
             indented code
@@ -685,7 +704,8 @@ final class ListItemsTests: XCTestCase {
         
             more code
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<pre><code>indented code
@@ -698,16 +718,16 @@ final class ListItemsTests: XCTestCase {
         </code></pre><p>paragraph</p><pre><code>more code
         </code></pre>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4133-4149
     func testExample243() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         1.     indented code
@@ -716,7 +736,8 @@ final class ListItemsTests: XCTestCase {
         
                more code
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ol>
@@ -733,8 +754,8 @@ final class ListItemsTests: XCTestCase {
         </code></pre><p>paragraph</p><pre><code>more code
         </code></pre></li></ol>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -743,9 +764,9 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4155-4171
     func testExample244() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         1.      indented code
@@ -754,7 +775,8 @@ final class ListItemsTests: XCTestCase {
         
                more code
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ol>
@@ -771,8 +793,8 @@ final class ListItemsTests: XCTestCase {
         </code></pre><p>paragraph</p><pre><code>more code
         </code></pre></li></ol>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -786,16 +808,17 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4182-4189
     func testExample245() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
            foo
         
         bar
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>foo</p>
@@ -803,23 +826,24 @@ final class ListItemsTests: XCTestCase {
         let normalizedCM = #####"""
         <p>foo</p><p>bar</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4192-4201
     func testExample246() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         -    foo
         
           bar
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ul>
@@ -829,8 +853,8 @@ final class ListItemsTests: XCTestCase {
         let normalizedCM = #####"""
         <ul><li>foo</li></ul><p>bar</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -841,16 +865,17 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4209-4220
     func testExample247() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         -  foo
         
            bar
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ul>
@@ -862,8 +887,8 @@ final class ListItemsTests: XCTestCase {
         let normalizedCM = #####"""
         <ul><li><p>foo</p><p>bar</p></li></ul>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -883,9 +908,9 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4237-4258
     func testExample248() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         -
@@ -897,7 +922,8 @@ final class ListItemsTests: XCTestCase {
         -
               baz
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ul>
@@ -916,8 +942,8 @@ final class ListItemsTests: XCTestCase {
         </code></pre></li><li><pre><code>baz
         </code></pre></li></ul>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // When the list item starts with a blank line, the number of spaces
@@ -925,15 +951,16 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4263-4270
     func testExample249() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         -   
           foo
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ul>
@@ -942,8 +969,8 @@ final class ListItemsTests: XCTestCase {
         let normalizedCM = #####"""
         <ul><li>foo</li></ul>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -953,16 +980,17 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4277-4286
     func testExample250() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         -
         
           foo
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ul>
@@ -972,8 +1000,8 @@ final class ListItemsTests: XCTestCase {
         let normalizedCM = #####"""
         <ul><li></li></ul><p>foo</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -981,16 +1009,17 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4291-4301
     func testExample251() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         - foo
         -
         - bar
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ul>
@@ -1001,8 +1030,8 @@ final class ListItemsTests: XCTestCase {
         let normalizedCM = #####"""
         <ul><li>foo</li><li></li><li>bar</li></ul>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1010,16 +1039,17 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4306-4316
     func testExample252() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         - foo
         -   
         - bar
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ul>
@@ -1030,8 +1060,8 @@ final class ListItemsTests: XCTestCase {
         let normalizedCM = #####"""
         <ul><li>foo</li><li></li><li>bar</li></ul>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1039,16 +1069,17 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4321-4331
     func testExample253() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         1. foo
         2.
         3. bar
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ol>
@@ -1059,8 +1090,8 @@ final class ListItemsTests: XCTestCase {
         let normalizedCM = #####"""
         <ol><li>foo</li><li></li><li>bar</li></ol>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1068,14 +1099,15 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4336-4342
     func testExample254() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         *
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ul>
@@ -1084,17 +1116,17 @@ final class ListItemsTests: XCTestCase {
         let normalizedCM = #####"""
         <ul><li></li></ul>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // However, an empty list item cannot interrupt a paragraph:
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4346-4357
     func testExample255() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         foo
@@ -1103,7 +1135,8 @@ final class ListItemsTests: XCTestCase {
         foo
         1.
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>foo
@@ -1113,8 +1146,8 @@ final class ListItemsTests: XCTestCase {
         let normalizedCM = #####"""
         <p>foo *</p><p>foo 1.</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1128,9 +1161,9 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4368-4387
     func testExample256() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
          1.  A paragraph
@@ -1140,7 +1173,8 @@ final class ListItemsTests: XCTestCase {
         
              > A block quote.
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ol>
@@ -1158,8 +1192,8 @@ final class ListItemsTests: XCTestCase {
         <ol><li><p>A paragraph with two lines.</p><pre><code>indented code
         </code></pre><blockquote><p>A block quote.</p></blockquote></li></ol>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1167,9 +1201,9 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4392-4411
     func testExample257() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
           1.  A paragraph
@@ -1179,7 +1213,8 @@ final class ListItemsTests: XCTestCase {
         
               > A block quote.
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ol>
@@ -1197,8 +1232,8 @@ final class ListItemsTests: XCTestCase {
         <ol><li><p>A paragraph with two lines.</p><pre><code>indented code
         </code></pre><blockquote><p>A block quote.</p></blockquote></li></ol>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1206,9 +1241,9 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4416-4435
     func testExample258() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
            1.  A paragraph
@@ -1218,7 +1253,8 @@ final class ListItemsTests: XCTestCase {
         
                > A block quote.
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ol>
@@ -1236,8 +1272,8 @@ final class ListItemsTests: XCTestCase {
         <ol><li><p>A paragraph with two lines.</p><pre><code>indented code
         </code></pre><blockquote><p>A block quote.</p></blockquote></li></ol>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1245,9 +1281,9 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4440-4455
     func testExample259() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
             1.  A paragraph
@@ -1257,7 +1293,8 @@ final class ListItemsTests: XCTestCase {
         
                 > A block quote.
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<pre><code>1.  A paragraph
@@ -1276,8 +1313,8 @@ final class ListItemsTests: XCTestCase {
             &gt; A block quote.
         </code></pre>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1295,9 +1332,9 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4470-4489
     func testExample260() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
           1.  A paragraph
@@ -1307,7 +1344,8 @@ final class ListItemsTests: XCTestCase {
         
               > A block quote.
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ol>
@@ -1325,8 +1363,8 @@ final class ListItemsTests: XCTestCase {
         <ol><li><p>A paragraph with two lines.</p><pre><code>indented code
         </code></pre><blockquote><p>A block quote.</p></blockquote></li></ol>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1334,15 +1372,16 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4494-4502
     func testExample261() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
           1.  A paragraph
             with two lines.
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ol>
@@ -1352,8 +1391,8 @@ final class ListItemsTests: XCTestCase {
         let normalizedCM = #####"""
         <ol><li>A paragraph with two lines.</li></ol>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1361,15 +1400,16 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4507-4521
     func testExample262() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         > 1. > Blockquote
         continued here.
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<blockquote>
@@ -1385,22 +1425,23 @@ final class ListItemsTests: XCTestCase {
         let normalizedCM = #####"""
         <blockquote><ol><li><blockquote><p>Blockquote continued here.</p></blockquote></li></ol></blockquote>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4524-4538
     func testExample263() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         > 1. > Blockquote
         > continued here.
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<blockquote>
@@ -1416,8 +1457,8 @@ final class ListItemsTests: XCTestCase {
         let normalizedCM = #####"""
         <blockquote><ol><li><blockquote><p>Blockquote continued here.</p></blockquote></li></ol></blockquote>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1434,9 +1475,9 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4552-4573
     func testExample264() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         - foo
@@ -1444,7 +1485,8 @@ final class ListItemsTests: XCTestCase {
             - baz
               - boo
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ul>
@@ -1468,8 +1510,8 @@ final class ListItemsTests: XCTestCase {
         <ul><li>baz
         <ul><li>boo</li></ul></li></ul></li></ul></li></ul>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1477,9 +1519,9 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4578-4590
     func testExample265() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         - foo
@@ -1487,7 +1529,8 @@ final class ListItemsTests: XCTestCase {
           - baz
            - boo
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ul>
@@ -1499,8 +1542,8 @@ final class ListItemsTests: XCTestCase {
         let normalizedCM = #####"""
         <ul><li>foo</li><li>bar</li><li>baz</li><li>boo</li></ul>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1508,15 +1551,16 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4595-4606
     func testExample266() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         10) foo
             - bar
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ol start="10">
@@ -1530,8 +1574,8 @@ final class ListItemsTests: XCTestCase {
         <ol start="10"><li>foo
         <ul><li>bar</li></ul></li></ol>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1539,15 +1583,16 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4611-4621
     func testExample267() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         10) foo
            - bar
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ol start="10">
@@ -1559,8 +1604,8 @@ final class ListItemsTests: XCTestCase {
         let normalizedCM = #####"""
         <ol start="10"><li>foo</li></ol><ul><li>bar</li></ul>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1568,14 +1613,15 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4626-4636
     func testExample268() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         - - foo
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ul>
@@ -1588,21 +1634,22 @@ final class ListItemsTests: XCTestCase {
         let normalizedCM = #####"""
         <ul><li><ul><li>foo</li></ul></li></ul>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4639-4653
     func testExample269() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         1. - 2. foo
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ol>
@@ -1619,8 +1666,8 @@ final class ListItemsTests: XCTestCase {
         let normalizedCM = #####"""
         <ol><li><ul><li><ol start="2"><li>foo</li></ol></li></ul></li></ol>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1628,9 +1675,9 @@ final class ListItemsTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4658-4672
     func testExample270() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         - # Foo
@@ -1638,7 +1685,8 @@ final class ListItemsTests: XCTestCase {
           ---
           baz
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<ul>
@@ -1653,8 +1701,8 @@ final class ListItemsTests: XCTestCase {
         <ul><li><h1>Foo</h1></li><li><h2>Bar</h2>
         baz</li></ul>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
 }
 

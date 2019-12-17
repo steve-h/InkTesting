@@ -31,43 +31,45 @@ final class TextualContentTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9349-9353
     func testExample647() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         hello $.;'there
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>hello $.;'there</p>
         let normalizedCM = #####"""
         <p>hello $.;'there</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9356-9360
     func testExample648() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         Foo χρῆν
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>Foo χρῆν</p>
         let normalizedCM = #####"""
         <p>Foo χρῆν</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -75,22 +77,23 @@ final class TextualContentTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9365-9369
     func testExample649() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         Multiple     spaces
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>Multiple     spaces</p>
         let normalizedCM = #####"""
         <p>Multiple     spaces</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
 }
 

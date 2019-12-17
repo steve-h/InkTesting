@@ -96,22 +96,23 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7503-7507
     func testExample481() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link](/uri "title")
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/uri" title="title">link</a></p>
         let normalizedCM = #####"""
         <p><a href="/uri" title="title">link</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -119,22 +120,23 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7512-7516
     func testExample482() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link](/uri)
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/uri">link</a></p>
         let normalizedCM = #####"""
         <p><a href="/uri">link</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -142,43 +144,45 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7521-7525
     func testExample483() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link]()
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="">link</a></p>
         let normalizedCM = #####"""
         <p><a href="">link</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7528-7532
     func testExample484() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link](<>)
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="">link</a></p>
         let normalizedCM = #####"""
         <p><a href="">link</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // The destination can only contain spaces if it is
@@ -186,42 +190,44 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7537-7541
     func testExample485() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link](/my uri)
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[link](/my uri)</p>
         let normalizedCM = #####"""
         <p>[link](/my uri)</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7543-7547
     func testExample486() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link](</my uri>)
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/my%20uri">link</a></p>
         let normalizedCM = #####"""
         <p>[link](&lt;/my uri&gt;)</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // The destination cannot contain line breaks,
@@ -229,15 +235,16 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7552-7558
     func testExample487() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link](foo
         bar)
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[link](foo
@@ -245,21 +252,22 @@ final class LinksTests: XCTestCase {
         let normalizedCM = #####"""
         <p>[link](foo bar)</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7560-7566
     func testExample488() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link](<foo
         bar>)
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[link](<foo
@@ -268,8 +276,8 @@ final class LinksTests: XCTestCase {
         <p>[link](<foo
         bar>)</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // The destination can contain `)` if it is enclosed
@@ -277,44 +285,46 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7571-7575
     func testExample489() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [a](<b)c>)
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="b)c">a</a></p>
         let normalizedCM = #####"""
         <p><a href="b)c">a</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // Pointy brackets that enclose links must be unescaped:
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7579-7583
     func testExample490() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link](<foo\>)
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[link](&lt;foo&gt;)</p>
         let normalizedCM = #####"""
         <p>[link](&lt;foo&gt;)</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // These are not links, because the opening pointy bracket
@@ -322,16 +332,17 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7588-7596
     func testExample491() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [a](<b)c
         [a](<b)c>
         [a](<b>c)
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[a](&lt;b)c
@@ -340,30 +351,31 @@ final class LinksTests: XCTestCase {
         let normalizedCM = #####"""
         <p>[a](&lt;b)c [a](&lt;b)c&gt; [a](<b>c)</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // Parentheses inside the link destination may be escaped:
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7600-7604
     func testExample492() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link](\(foo\))
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="(foo)">link</a></p>
         let normalizedCM = #####"""
         <p><a href="(foo)">link</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // Any number of parentheses are allowed without escaping, as long as they are
@@ -371,22 +383,23 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7609-7613
     func testExample493() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link](foo(and(bar)))
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="foo(and(bar))">link</a></p>
         let normalizedCM = #####"""
         <p><a href="foo(and(bar))">link</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // However, if you have unbalanced parentheses, you need to escape or use the
@@ -394,43 +407,45 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7618-7622
     func testExample494() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link](foo\(and\(bar\))
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="foo(and(bar)">link</a></p>
         let normalizedCM = #####"""
         <p><a href="foo(and(bar)">link</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7625-7629
     func testExample495() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link](<foo(and(bar)>)
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="foo(and(bar)">link</a></p>
         let normalizedCM = #####"""
         <p><a href="foo(and(bar)">link</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -439,22 +454,23 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7635-7639
     func testExample496() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link](foo\)\:)
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="foo):">link</a></p>
         let normalizedCM = #####"""
         <p><a href="foo):">link</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -462,9 +478,9 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7644-7654
     func testExample497() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link](#fragment)
@@ -473,7 +489,8 @@ final class LinksTests: XCTestCase {
         
         [link](http://example.com?foo=3#frag)
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="#fragment">link</a></p>
@@ -482,8 +499,8 @@ final class LinksTests: XCTestCase {
         let normalizedCM = #####"""
         <p><a href="#fragment">link</a></p><p><a href="http://example.com#fragment">link</a></p><p><a href="http://example.com?foo=3#frag">link</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -492,22 +509,23 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7660-7664
     func testExample498() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link](foo\bar)
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="foo%5Cbar">link</a></p>
         let normalizedCM = #####"""
         <p><a href="foo%5Cbar">link</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -522,22 +540,23 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7676-7680
     func testExample499() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link](foo%20b&auml;)
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="foo%20b%C3%A4">link</a></p>
         let normalizedCM = #####"""
         <p><a href="foo%20b%C3%A4">link</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -547,22 +566,23 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7687-7691
     func testExample500() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link]("title")
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="%22title%22">link</a></p>
         let normalizedCM = #####"""
         <p><a href="%22title%22">link</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -570,16 +590,17 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7696-7704
     func testExample501() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link](/url "title")
         [link](/url 'title')
         [link](/url (title))
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/url" title="title">link</a>
@@ -588,8 +609,8 @@ final class LinksTests: XCTestCase {
         let normalizedCM = #####"""
         <p><a href="/url" title="title">link</a> <a href="/url" title="title">link</a> <a href="/url" title="title">link</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -598,22 +619,23 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7710-7714
     func testExample502() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link](/url "title \"&quot;")
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/url" title="title &quot;&quot;">link</a></p>
         let normalizedCM = #####"""
         <p><a href="/url" title="title &quot;&quot;">link</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -622,22 +644,23 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7720-7724
     func testExample503() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link](/url "title")
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/url%C2%A0%22title%22">link</a></p>
         let normalizedCM = #####"""
         <p><a href="/url" title="title">link</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -645,22 +668,23 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7729-7733
     func testExample504() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link](/url "title "and" title")
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[link](/url &quot;title &quot;and&quot; title&quot;)</p>
         let normalizedCM = #####"""
         <p>[link](/url &quot;title &quot;and&quot; title&quot;)</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -668,22 +692,23 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7738-7742
     func testExample505() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link](/url 'title "and" title')
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/url" title="title &quot;and&quot; title">link</a></p>
         let normalizedCM = #####"""
         <p><a href="/url" title="title &quot;and&quot; title">link</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -706,23 +731,24 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7762-7767
     func testExample506() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link](   /uri
           "title"  )
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/uri" title="title">link</a></p>
         let normalizedCM = #####"""
         <p><a href="/uri" title="title">link</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -731,22 +757,23 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7773-7777
     func testExample507() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link] (/uri)
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[link] (/uri)</p>
         let normalizedCM = #####"""
         <p>[link] (/uri)</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -755,85 +782,89 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7783-7787
     func testExample508() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link [foo [bar]]](/uri)
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/uri">link [foo [bar]]</a></p>
         let normalizedCM = #####"""
         <p><a href="/uri">link [foo [bar]]</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7790-7794
     func testExample509() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link] bar](/uri)
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[link] bar](/uri)</p>
         let normalizedCM = #####"""
         <p>[link] bar](/uri)</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7797-7801
     func testExample510() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link [bar](/uri)
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[link <a href="/uri">bar</a></p>
         let normalizedCM = #####"""
         <p>[link <a href="/uri">bar</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7804-7808
     func testExample511() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link \[bar](/uri)
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/uri">link [bar</a></p>
         let normalizedCM = #####"""
         <p><a href="/uri">link [bar</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -841,43 +872,45 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7813-7817
     func testExample512() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link *foo **bar** `#`*](/uri)
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/uri">link <em>foo <strong>bar</strong> <code>#</code></em></a></p>
         let normalizedCM = #####"""
         <p><a href="/uri">link <em>foo <strong>bar</strong> <code>#</code></em></a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7820-7824
     func testExample513() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [![moon](moon.jpg)](/uri)
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/uri"><img src="moon.jpg" alt="moon" /></a></p>
         let normalizedCM = #####"""
         <p><a href="/uri"><img src="moon.jpg" alt="moon" /></a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -885,64 +918,67 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7829-7833
     func testExample514() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo [bar](/uri)](/uri)
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[foo <a href="/uri">bar</a>](/uri)</p>
         let normalizedCM = #####"""
         <p>[foo <a href="/uri">bar</a>](/uri)</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7836-7840
     func testExample515() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo *[bar [baz](/uri)](/uri)*](/uri)
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[foo <em>[bar <a href="/uri">baz</a>](/uri)</em>](/uri)</p>
         let normalizedCM = #####"""
         <p>[foo <em>[bar <a href="/uri">baz</a>](/uri)</em>](/uri)</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7843-7847
     func testExample516() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         ![[[foo](uri1)](uri2)](uri3)
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><img src="uri3" alt="[foo](uri2)" /></p>
         let normalizedCM = #####"""
         <p><img src="uri3" alt="[foo](uri2)" /></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -951,43 +987,45 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7853-7857
     func testExample517() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         *[foo*](/uri)
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>*<a href="/uri">foo*</a></p>
         let normalizedCM = #####"""
         <p>*<a href="/uri">foo*</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7860-7864
     func testExample518() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo *bar](baz*)
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="baz*">foo *bar</a></p>
         let normalizedCM = #####"""
         <p><a href="baz*">foo *bar</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -996,22 +1034,23 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7870-7874
     func testExample519() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         *foo [bar* baz]
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><em>foo [bar</em> baz]</p>
         let normalizedCM = #####"""
         <p><em>foo [bar</em> baz]</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1020,64 +1059,67 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7880-7884
     func testExample520() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo <bar attr="](baz)">
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[foo <bar attr="](baz)"></p>
         let normalizedCM = #####"""
         <p>[foo <bar attr="](baz)"></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7887-7891
     func testExample521() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo`](/uri)`
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[foo<code>](/uri)</code></p>
         let normalizedCM = #####"""
         <p>[foo<code>](/uri)</code></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7894-7898
     func testExample522() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo<http://example.com/?search=](uri)>
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[foo<a href="http://example.com/?search=%5D(uri)">http://example.com/?search=](uri)</a></p>
         let normalizedCM = #####"""
         <p>[foo<a href="http://example.com/?search=%5D(uri)">http://example.com/?search=](uri)</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1114,24 +1156,25 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7932-7938
     func testExample523() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo][bar]
         
         [bar]: /url "title"
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/url" title="title">foo</a></p>
         let normalizedCM = #####"""
         <p><a href="/url" title="title">foo</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1143,47 +1186,49 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7947-7953
     func testExample524() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link [foo [bar]]][ref]
         
         [ref]: /uri
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/uri">link [foo [bar]]</a></p>
         let normalizedCM = #####"""
         <p><a href="/uri">link [foo [bar]]</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7956-7962
     func testExample525() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link \[bar][ref]
         
         [ref]: /uri
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/uri">link [bar</a></p>
         let normalizedCM = #####"""
         <p><a href="/uri">link [bar</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1191,47 +1236,49 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7967-7973
     func testExample526() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [link *foo **bar** `#`*][ref]
         
         [ref]: /uri
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/uri">link <em>foo <strong>bar</strong> <code>#</code></em></a></p>
         let normalizedCM = #####"""
         <p><a href="/uri">link <em>foo <strong>bar</strong> <code>#</code></em></a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7976-7982
     func testExample527() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [![moon](moon.jpg)][ref]
         
         [ref]: /uri
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/uri"><img src="moon.jpg" alt="moon" /></a></p>
         let normalizedCM = #####"""
         <p><a href="/uri"><img src="moon.jpg" alt="moon" /></a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1239,47 +1286,49 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7987-7993
     func testExample528() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo [bar](/uri)][ref]
         
         [ref]: /uri
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[foo <a href="/uri">bar</a>]<a href="/uri">ref</a></p>
         let normalizedCM = #####"""
         <p>[foo <a href="/uri">bar</a>]<a href="/uri">ref</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7996-8002
     func testExample529() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo *bar [baz][ref]*][ref]
         
         [ref]: /uri
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[foo <em>bar <a href="/uri">baz</a></em>]<a href="/uri">ref</a></p>
         let normalizedCM = #####"""
         <p>[foo <em>bar <a href="/uri">baz</a></em>]<a href="/uri">ref</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1291,47 +1340,49 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8011-8017
     func testExample530() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         *[foo*][ref]
         
         [ref]: /uri
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>*<a href="/uri">foo*</a></p>
         let normalizedCM = #####"""
         <p>*<a href="/uri">foo*</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8020-8026
     func testExample531() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo *bar][ref]
         
         [ref]: /uri
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/uri">foo *bar</a></p>
         let normalizedCM = #####"""
         <p><a href="/uri">foo *bar</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1340,70 +1391,73 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8032-8038
     func testExample532() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo <bar attr="][ref]">
         
         [ref]: /uri
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[foo <bar attr="][ref]"></p>
         let normalizedCM = #####"""
         <p>[foo <bar attr="][ref]"></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8041-8047
     func testExample533() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo`][ref]`
         
         [ref]: /uri
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[foo<code>][ref]</code></p>
         let normalizedCM = #####"""
         <p>[foo<code>][ref]</code></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8050-8056
     func testExample534() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo<http://example.com/?search=][ref]>
         
         [ref]: /uri
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[foo<a href="http://example.com/?search=%5D%5Bref%5D">http://example.com/?search=][ref]</a></p>
         let normalizedCM = #####"""
         <p>[foo<a href="http://example.com/?search=%5D%5Bref%5D">http://example.com/?search=][ref]</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1411,24 +1465,25 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8061-8067
     func testExample535() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo][BaR]
         
         [bar]: /url "title"
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/url" title="title">foo</a></p>
         let normalizedCM = #####"""
         <p><a href="/url" title="title">foo</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1436,24 +1491,25 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8072-8078
     func testExample536() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [Толпой][Толпой] is a Russian word.
         
         [ТОЛПОЙ]: /url
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/url">Толпой</a> is a Russian word.</p>
         let normalizedCM = #####"""
         <p><a href="/url">Толпой</a> is a Russian word.</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1462,9 +1518,9 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8084-8091
     func testExample537() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [Foo
@@ -1472,15 +1528,16 @@ final class LinksTests: XCTestCase {
         
         [Baz][Foo bar]
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/url">Baz</a></p>
         let normalizedCM = #####"""
         <p><a href="/url">Baz</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1489,32 +1546,33 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8097-8103
     func testExample538() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo] [bar]
         
         [bar]: /url "title"
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[foo] <a href="/url" title="title">bar</a></p>
         let normalizedCM = #####"""
         <p>[foo] <a href="/url" title="title">bar</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8106-8114
     func testExample539() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo]
@@ -1522,7 +1580,8 @@ final class LinksTests: XCTestCase {
         
         [bar]: /url "title"
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[foo]
@@ -1530,8 +1589,8 @@ final class LinksTests: XCTestCase {
         let normalizedCM = #####"""
         <p>[foo] <a href="/url" title="title">bar</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1567,9 +1626,9 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8147-8155
     func testExample540() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo]: /url1
@@ -1578,15 +1637,16 @@ final class LinksTests: XCTestCase {
         
         [bar][foo]
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/url1">bar</a></p>
         let normalizedCM = #####"""
         <p><a href="/url1">bar</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1596,24 +1656,25 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8162-8168
     func testExample541() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [bar][foo\!]
         
         [foo!]: /url
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[bar][foo!]</p>
         let normalizedCM = #####"""
         <p>[bar][foo!]</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1622,16 +1683,17 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8174-8181
     func testExample542() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo][ref[]
         
         [ref[]: /uri
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[foo][ref[]</p>
@@ -1639,23 +1701,24 @@ final class LinksTests: XCTestCase {
         let normalizedCM = #####"""
         <p>[foo][ref[]</p><p>[ref[]: /uri</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8184-8191
     func testExample543() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo][ref[bar]]
         
         [ref[bar]]: /uri
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[foo][ref[bar]]</p>
@@ -1663,23 +1726,24 @@ final class LinksTests: XCTestCase {
         let normalizedCM = #####"""
         <p>[foo][ref[bar]]</p><p>[ref[bar]]: /uri</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8194-8201
     func testExample544() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [[[foo]]]
         
         [[[foo]]]: /url
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[[[foo]]]</p>
@@ -1687,31 +1751,32 @@ final class LinksTests: XCTestCase {
         let normalizedCM = #####"""
         <p>[[[foo]]]</p><p>[[[foo]]]: /url</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8204-8210
     func testExample545() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo][ref\[]
         
         [ref\[]: /uri
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/uri">foo</a></p>
         let normalizedCM = #####"""
         <p><a href="/uri">foo</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1719,24 +1784,25 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8215-8221
     func testExample546() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [bar\\]: /uri
         
         [bar\\]
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/uri">bar\</a></p>
         let normalizedCM = #####"""
         <p><a href="/uri">bar\</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1744,16 +1810,17 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8226-8233
     func testExample547() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         []
         
         []: /uri
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[]</p>
@@ -1761,16 +1828,16 @@ final class LinksTests: XCTestCase {
         let normalizedCM = #####"""
         <p>[]</p><p>[]: /uri</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8236-8247
     func testExample548() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [
@@ -1779,7 +1846,8 @@ final class LinksTests: XCTestCase {
         [
          ]: /uri
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[
@@ -1789,8 +1857,8 @@ final class LinksTests: XCTestCase {
         let normalizedCM = #####"""
         <p>[ ]</p><p>[ ]: /uri</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1805,47 +1873,49 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8259-8265
     func testExample549() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo][]
         
         [foo]: /url "title"
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/url" title="title">foo</a></p>
         let normalizedCM = #####"""
         <p><a href="/url" title="title">foo</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8268-8274
     func testExample550() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [*foo* bar][]
         
         [*foo* bar]: /url "title"
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/url" title="title"><em>foo</em> bar</a></p>
         let normalizedCM = #####"""
         <p><a href="/url" title="title"><em>foo</em> bar</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1853,24 +1923,25 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8279-8285
     func testExample551() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [Foo][]
         
         [foo]: /url "title"
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/url" title="title">Foo</a></p>
         let normalizedCM = #####"""
         <p><a href="/url" title="title">Foo</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1880,9 +1951,9 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8292-8300
     func testExample552() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo] 
@@ -1890,7 +1961,8 @@ final class LinksTests: XCTestCase {
         
         [foo]: /url "title"
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/url" title="title">foo</a>
@@ -1898,8 +1970,8 @@ final class LinksTests: XCTestCase {
         let normalizedCM = #####"""
         <p><a href="/url" title="title">foo</a> []</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -1914,93 +1986,97 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8312-8318
     func testExample553() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo]
         
         [foo]: /url "title"
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/url" title="title">foo</a></p>
         let normalizedCM = #####"""
         <p><a href="/url" title="title">foo</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8321-8327
     func testExample554() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [*foo* bar]
         
         [*foo* bar]: /url "title"
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/url" title="title"><em>foo</em> bar</a></p>
         let normalizedCM = #####"""
         <p><a href="/url" title="title"><em>foo</em> bar</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8330-8336
     func testExample555() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [[*foo* bar]]
         
         [*foo* bar]: /url "title"
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[<a href="/url" title="title"><em>foo</em> bar</a>]</p>
         let normalizedCM = #####"""
         <p>[<a href="/url" title="title"><em>foo</em> bar</a>]</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8339-8345
     func testExample556() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [[bar [foo]
         
         [foo]: /url
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[[bar <a href="/url">foo</a></p>
         let normalizedCM = #####"""
         <p>[[bar <a href="/url">foo</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -2008,24 +2084,25 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8350-8356
     func testExample557() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [Foo]
         
         [foo]: /url "title"
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/url" title="title">Foo</a></p>
         let normalizedCM = #####"""
         <p><a href="/url" title="title">Foo</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -2033,24 +2110,25 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8361-8367
     func testExample558() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo] bar
         
         [foo]: /url
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/url">foo</a> bar</p>
         let normalizedCM = #####"""
         <p><a href="/url">foo</a> bar</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -2059,24 +2137,25 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8373-8379
     func testExample559() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         \[foo]
         
         [foo]: /url "title"
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[foo]</p>
         let normalizedCM = #####"""
         <p>[foo]</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -2085,24 +2164,25 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8385-8391
     func testExample560() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo*]: /url
         
         *[foo*]
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>*<a href="/url">foo*</a></p>
         let normalizedCM = #####"""
         <p>*<a href="/url">foo*</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -2111,9 +2191,9 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8397-8404
     func testExample561() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo][bar]
@@ -2121,83 +2201,87 @@ final class LinksTests: XCTestCase {
         [foo]: /url1
         [bar]: /url2
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/url2">foo</a></p>
         let normalizedCM = #####"""
         <p><a href="/url2">foo</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8406-8412
     func testExample562() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo][]
         
         [foo]: /url1
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/url1">foo</a></p>
         let normalizedCM = #####"""
         <p><a href="/url1">foo</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // Inline links also take precedence:
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8416-8422
     func testExample563() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo]()
         
         [foo]: /url1
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="">foo</a></p>
         let normalizedCM = #####"""
         <p><a href="">foo</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8424-8430
     func testExample564() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo](not a link)
         
         [foo]: /url1
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/url1">foo</a>(not a link)</p>
         let normalizedCM = #####"""
         <p><a href="/url1">foo</a>(not a link)</p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // In the following case `[bar][baz]` is parsed as a reference,
@@ -2205,24 +2289,25 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8435-8441
     func testExample565() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo][bar][baz]
         
         [baz]: /url
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[foo]<a href="/url">bar</a></p>
         let normalizedCM = #####"""
         <p>[foo]<a href="/url">bar</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -2231,9 +2316,9 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8447-8454
     func testExample566() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo][bar][baz]
@@ -2241,15 +2326,16 @@ final class LinksTests: XCTestCase {
         [baz]: /url1
         [bar]: /url2
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p><a href="/url2">foo</a><a href="/url1">baz</a></p>
         let normalizedCM = #####"""
         <p><a href="/url2">foo</a><a href="/url1">baz</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
     // 
     // 
@@ -2258,9 +2344,9 @@ final class LinksTests: XCTestCase {
     // 
     // 
     //     
+    // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8460-8467
     func testExample567() {
-        let newlineChar = "\n"
         var markdownTest =
         #####"""
         [foo][bar][baz]
@@ -2268,15 +2354,16 @@ final class LinksTests: XCTestCase {
         [baz]: /url1
         [foo]: /url2
         """#####
-        markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+        markdownTest = markdownTest + "\n"
+    
         let html = MarkdownParser().html(from: markdownTest)
         
       //<p>[foo]<a href="/url1">bar</a></p>
         let normalizedCM = #####"""
         <p>[foo]<a href="/url1">bar</a></p>
         """#####
+    
         XCTAssertEqual(html,normalizedCM)
-
     }
 }
 

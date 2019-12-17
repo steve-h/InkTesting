@@ -134,21 +134,22 @@ func outputTestCase(_ test: Test) {
 
     let testCase = """
         
+        // https://github.com/commonmark/commonmark-spec
         // spec.txt lines \(test.startLine)-\(test.endLine)
         func \(testCaseName)() {
-            let newlineChar = "\\n"
             var markdownTest =
             #####\"\"\"
             \(markdownsegment)
             \"\"\"#####
-            markdownTest = markdownTest + newlineChar // adding because the multiline literal does not include last newline!
+            markdownTest = markdownTest + "\\n"
+        
             let html = MarkdownParser().html(from: markdownTest)
             \(htmlFromTestcase)
             let normalizedCM = #####\"\"\"
             \(htmlsegment)
             \"\"\"#####
+        
             XCTAssertEqual(html,normalizedCM)
-    
     """
     + "\n    }"
     try? currentFile?.append(testCase)
