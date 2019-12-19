@@ -12,29 +12,24 @@ license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
 
 import XCTest
 import Ink
-import Foundation
 
 final class BackslashEscapesTests: XCTestCase {
 
-    // 
     // `hi` is parsed as code, leaving the backtick at the end as a literal
     // backtick.
-    // 
     // 
     // ## Backslash escapes
     // 
     // Any ASCII punctuation character may be backslash-escaped:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5513-5517
     func testExample298() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         \!\"\#\$\%\&\'\(\)\*\+\,\-\.\/\:\;\<\=\>\?\@\[\\\]\^\_\`\{\|\}\~
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -45,21 +40,18 @@ final class BackslashEscapesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Backslashes before other characters are treated as literal
     // backslashes:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5523-5527
     func testExample299() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         \	\A\a\ \3\φ\«
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -70,17 +62,15 @@ final class BackslashEscapesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Escaped characters are treated as regular characters and do
     // not have their usual Markdown meanings:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5533-5553
     func testExample300() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         \*not emphasized*
         \<br/> not a tag
@@ -90,9 +80,8 @@ final class BackslashEscapesTests: XCTestCase {
         \* not a list
         \# not a heading
         \[foo]: /url "not a reference"
-        \&ouml; not a character entity
+        \&ouml; not a character entity\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -111,20 +100,17 @@ final class BackslashEscapesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // If a backslash is itself escaped, the following character is not:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5558-5562
     func testExample301() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         \\*emphasis*
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -135,21 +121,18 @@ final class BackslashEscapesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // A backslash at the end of the line is a [hard line break]:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5567-5573
     func testExample302() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo\
-        bar
+        bar\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -161,21 +144,18 @@ final class BackslashEscapesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Backslash escapes do not work in code blocks, code spans, autolinks, or
     // raw HTML:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5579-5583
     func testExample303() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         `` \[\` ``
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -186,18 +166,15 @@ final class BackslashEscapesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5586-5591
     func testExample304() {
-        var markdownTest =
+        let markdownTest =
         #####"""
             \[\]
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -210,20 +187,17 @@ final class BackslashEscapesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5594-5601
     func testExample305() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ~~~
         \[\]
-        ~~~
+        ~~~\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -236,18 +210,15 @@ final class BackslashEscapesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5604-5608
     func testExample306() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <http://example.com?find=\*>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -258,18 +229,15 @@ final class BackslashEscapesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5611-5615
     func testExample307() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <a href="/bar\/)">
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -280,21 +248,18 @@ final class BackslashEscapesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // But they work in all other contexts, including URLs and link titles,
     // link references, and [info strings] in [fenced code blocks]:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5621-5625
     func testExample308() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo](/bar\* "ti\*tle")
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -305,20 +270,17 @@ final class BackslashEscapesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5628-5634
     func testExample309() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo]
         
-        [foo]: /bar\* "ti\*tle"
+        [foo]: /bar\* "ti\*tle"\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -329,20 +291,17 @@ final class BackslashEscapesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5637-5644
     func testExample310() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ``` foo\+bar
         foo
-        ```
+        ```\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -355,6 +314,7 @@ final class BackslashEscapesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
+
 }
 
 extension BackslashEscapesTests {

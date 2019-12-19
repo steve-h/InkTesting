@@ -12,12 +12,9 @@ license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
 
 import XCTest
 import Ink
-import Foundation
 
 final class TextualContentTests: XCTestCase {
 
-    // 
-    // 
     // A conforming parser may render a soft line break in HTML either as a
     // line break or as a space.
     // 
@@ -29,16 +26,14 @@ final class TextualContentTests: XCTestCase {
     // Any characters not given an interpretation by the above rules will
     // be parsed as plain textual content.
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9349-9353
     func testExample647() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         hello $.;'there
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -49,18 +44,15 @@ final class TextualContentTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9356-9360
     func testExample648() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         Foo χρῆν
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -71,20 +63,17 @@ final class TextualContentTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Internal spaces are preserved verbatim:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9365-9369
     func testExample649() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         Multiple     spaces
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -95,6 +84,7 @@ final class TextualContentTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
+
 }
 
 extension TextualContentTests {

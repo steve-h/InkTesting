@@ -57,6 +57,7 @@ import Foundation
 
 struct Test {
     var markdown: String = ""
+    var markdownLines: Int = 0
     var html: String = ""
     var example: Int = 0
     var startLine: Int = 0
@@ -95,14 +96,18 @@ func getTests(_ specFile: String) -> [Test] {
         switch state {
         case .collectPreamble:
             if linefromArray == exampleStartMarker {
-                test.preamble = preambleLines.joined(separator: "") + "\n"
+                test.preamble = preambleLines.joined(separator: "")
                 preambleLines = []
                 markdownLines  = []
                 state = .collectMarkdown
                 test.section = recentSection
                 test.startLine = index + 1   // line number where test starts
             } else {
-                preambleLines.append(line)
+                if line == "\n" && (preambleLines.last == "\n" || preambleLines.last == nil) {
+                    
+                } else {
+                    preambleLines.append(line)
+                }
                 let linetext = line.drop(while: {char in char.isWhitespace})
                 let head = linetext.prefix(while: {char in char == "#"})
                 if head.count > 0 {
@@ -115,6 +120,7 @@ func getTests(_ specFile: String) -> [Test] {
         
         case .collectMarkdown:
             if linefromArray == "." {
+                test.markdownLines = markdownLines.count
                 test.markdown = String(markdownLines.joined(separator: "").map({char in
                     if char == "→" {return "\t"}
                     return char

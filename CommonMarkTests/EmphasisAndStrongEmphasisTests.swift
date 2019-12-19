@@ -12,12 +12,9 @@ license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
 
 import XCTest
 import Ink
-import Foundation
 
 final class EmphasisAndStrongEmphasisTests: XCTestCase {
 
-    // 
-    // 
     // ## Emphasis and strong emphasis
     // 
     // John Gruber's original [Markdown syntax
@@ -228,16 +225,14 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // 
     // Rule 1:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6292-6296
     func testExample350() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *foo bar*
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -248,21 +243,18 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // This is not emphasis, because the opening `*` is followed by
     // whitespace, and hence not part of a [left-flanking delimiter run]:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6302-6306
     func testExample351() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         a * foo bar*
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -273,22 +265,19 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // This is not emphasis, because the opening `*` is preceded
     // by an alphanumeric and followed by punctuation, and hence
     // not part of a [left-flanking delimiter run]:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6313-6317
     func testExample352() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         a*"foo"*
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -299,20 +288,17 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Unicode nonbreaking spaces count as whitespace, too:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6322-6326
     func testExample353() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         * a *
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -323,20 +309,17 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Intraword emphasis with `*` is permitted:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6331-6335
     func testExample354() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo*bar*
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -347,18 +330,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6338-6342
     func testExample355() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         5*6*78
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -369,20 +349,17 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Rule 2:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6347-6351
     func testExample356() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         _foo bar_
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -393,21 +370,18 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // This is not emphasis, because the opening `_` is followed by
     // whitespace:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6357-6361
     func testExample357() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         _ foo bar_
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -418,21 +392,18 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // This is not emphasis, because the opening `_` is preceded
     // by an alphanumeric and followed by punctuation:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6367-6371
     func testExample358() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         a_"foo"_
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -443,20 +414,17 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Emphasis with `_` is not allowed inside words:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6376-6380
     func testExample359() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo_bar_
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -467,18 +435,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6383-6387
     func testExample360() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         5_6_78
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -489,18 +454,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6390-6394
     func testExample361() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         пристаням_стремятся_
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -511,21 +473,18 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Here `_` does not generate emphasis, because the first delimiter run
     // is right-flanking and the second left-flanking:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6400-6404
     func testExample362() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         aa_"bb"_cc
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -536,22 +495,19 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // This is emphasis, even though the opening delimiter is
     // both left- and right-flanking, because it is preceded by
     // punctuation:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6411-6415
     func testExample363() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo-_(bar)_
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -562,23 +518,20 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Rule 3:
     // 
     // This is not emphasis, because the closing delimiter does
     // not match the opening delimiter:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6423-6427
     func testExample364() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         _foo*
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -589,21 +542,18 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // This is not emphasis, because the closing `*` is preceded by
     // whitespace:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6433-6437
     func testExample365() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *foo bar *
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -614,21 +564,18 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // A newline also counts as whitespace:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6442-6448
     func testExample366() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *foo bar
-        *
+        *\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -640,22 +587,19 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // This is not emphasis, because the second `*` is
     // preceded by punctuation and followed by an alphanumeric
     // (hence it is not part of a [right-flanking delimiter run]:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6455-6459
     func testExample367() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *(*foo)
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -666,21 +610,18 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // The point of this restriction is more easily appreciated
     // with this example:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6465-6469
     func testExample368() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *(*foo*)*
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -691,20 +632,17 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Intraword emphasis with `*` is allowed:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6474-6478
     func testExample369() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *foo*bar
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -715,24 +653,20 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     // Rule 4:
     // 
     // This is not emphasis, because the closing `_` is preceded by
     // whitespace:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6487-6491
     func testExample370() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         _foo bar _
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -743,21 +677,18 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // This is not emphasis, because the second `_` is
     // preceded by punctuation and followed by an alphanumeric:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6497-6501
     func testExample371() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         _(_foo)
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -768,20 +699,17 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // This is emphasis within emphasis:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6506-6510
     func testExample372() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         _(_foo_)_
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -792,20 +720,17 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Intraword emphasis is disallowed for `_`:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6515-6519
     func testExample373() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         _foo_bar
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -816,18 +741,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6522-6526
     func testExample374() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         _пристаням_стремятся
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -838,18 +760,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6529-6533
     func testExample375() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         _foo_bar_baz_
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -860,22 +779,19 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // This is emphasis, even though the closing delimiter is
     // both left- and right-flanking, because it is followed by
     // punctuation:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6540-6544
     func testExample376() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         _(bar)_.
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -886,20 +802,17 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Rule 5:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6549-6553
     func testExample377() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         **foo bar**
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -910,21 +823,18 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // This is not strong emphasis, because the opening delimiter is
     // followed by whitespace:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6559-6563
     func testExample378() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ** foo bar**
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -935,22 +845,19 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // This is not strong emphasis, because the opening `**` is preceded
     // by an alphanumeric and followed by punctuation, and hence
     // not part of a [left-flanking delimiter run]:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6570-6574
     func testExample379() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         a**"foo"**
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -961,20 +868,17 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Intraword strong emphasis with `**` is permitted:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6579-6583
     func testExample380() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo**bar**
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -985,20 +889,17 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Rule 6:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6588-6592
     func testExample381() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         __foo bar__
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1009,21 +910,18 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // This is not strong emphasis, because the opening delimiter is
     // followed by whitespace:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6598-6602
     func testExample382() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         __ foo bar__
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1034,20 +932,17 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // A newline counts as whitespace:
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6606-6612
     func testExample383() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         __
-        foo bar__
+        foo bar__\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1059,21 +954,18 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // This is not strong emphasis, because the opening `__` is preceded
     // by an alphanumeric and followed by punctuation:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6618-6622
     func testExample384() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         a__"foo"__
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1084,20 +976,17 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Intraword strong emphasis is forbidden with `__`:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6627-6631
     func testExample385() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo__bar__
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1108,18 +997,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6634-6638
     func testExample386() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         5__6__78
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1130,18 +1016,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6641-6645
     func testExample387() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         пристаням__стремятся__
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1152,18 +1035,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6648-6652
     func testExample388() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         __foo, __bar__, baz__
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1174,22 +1054,19 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // This is strong emphasis, even though the opening delimiter is
     // both left- and right-flanking, because it is preceded by
     // punctuation:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6659-6663
     func testExample389() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo-__(bar)__
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1200,24 +1077,20 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     // Rule 7:
     // 
     // This is not strong emphasis, because the closing delimiter is preceded
     // by whitespace:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6672-6676
     func testExample390() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         **foo bar **
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1228,24 +1101,21 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // (Nor can it be interpreted as an emphasized `*foo bar *`, because of
     // Rule 11.)
     // 
     // This is not strong emphasis, because the second `**` is
     // preceded by punctuation and followed by an alphanumeric:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6685-6689
     func testExample391() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         **(**foo)
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1256,21 +1126,18 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // The point of this restriction is more easily appreciated
     // with these examples:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6695-6699
     func testExample392() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *(**foo**)*
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1281,19 +1148,16 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6702-6708
     func testExample393() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         **Gomphocarpus (*Gomphocarpus physocarpus*, syn.
-        *Asclepias physocarpa*)**
+        *Asclepias physocarpa*)**\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1305,18 +1169,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6711-6715
     func testExample394() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         **foo "*bar*" foo**
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1327,20 +1188,17 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Intraword emphasis:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6720-6724
     func testExample395() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         **foo**bar
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1351,23 +1209,20 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Rule 8:
     // 
     // This is not strong emphasis, because the closing delimiter is
     // preceded by whitespace:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6732-6736
     func testExample396() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         __foo bar __
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1378,21 +1233,18 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // This is not strong emphasis, because the second `__` is
     // preceded by punctuation and followed by an alphanumeric:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6742-6746
     func testExample397() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         __(__foo)
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1403,21 +1255,18 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // The point of this restriction is more easily appreciated
     // with this example:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6752-6756
     func testExample398() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         _(__foo__)_
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1428,20 +1277,17 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Intraword strong emphasis is forbidden with `__`:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6761-6765
     func testExample399() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         __foo__bar
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1452,18 +1298,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6768-6772
     func testExample400() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         __пристаням__стремятся
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1474,18 +1317,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6775-6779
     func testExample401() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         __foo__bar__baz__
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1496,22 +1336,19 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // This is strong emphasis, even though the closing delimiter is
     // both left- and right-flanking, because it is followed by
     // punctuation:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6786-6790
     func testExample402() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         __(bar)__.
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1522,23 +1359,20 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Rule 9:
     // 
     // Any nonempty sequence of inline elements can be the contents of an
     // emphasized span.
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6798-6802
     func testExample403() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *foo [bar](/url)*
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1549,19 +1383,16 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6805-6811
     func testExample404() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *foo
-        bar*
+        bar*\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1573,21 +1404,18 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // In particular, emphasis and strong emphasis can be nested
     // inside emphasis:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6817-6821
     func testExample405() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         _foo __bar__ baz_
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1598,18 +1426,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6824-6828
     func testExample406() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         _foo _bar_ baz_
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1620,18 +1445,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6831-6835
     func testExample407() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         __foo_ bar_
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1642,18 +1464,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6838-6842
     func testExample408() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *foo *bar**
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1664,18 +1483,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6845-6849
     func testExample409() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *foo **bar** baz*
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1686,17 +1502,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6851-6855
     func testExample410() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *foo**bar**baz*
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1707,13 +1521,12 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
+
     // Note that in the preceding case, the interpretation
     // 
     // ``` markdown
     // <p><em>foo</em><em>bar<em></em>baz</em></p>
     // ```
-    // 
     // 
     // is precluded by the condition that a delimiter that
     // can both open and close (like the `*` after `foo`)
@@ -1722,20 +1535,17 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // closing delimiters is a multiple of 3 unless
     // both lengths are multiples of 3.
     // 
-    // 
     // For the same reason, we don't get two consecutive
     // emphasis sections in this example:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6875-6879
     func testExample411() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *foo**bar*
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1746,24 +1556,20 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // The same condition ensures that the following
     // cases are all strong emphasis nested inside
     // emphasis, even when the interior spaces are
     // omitted:
     // 
-    // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6888-6892
     func testExample412() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ***foo** bar*
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1774,18 +1580,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6895-6899
     func testExample413() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *foo **bar***
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1796,18 +1599,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6902-6906
     func testExample414() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *foo**bar***
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1818,22 +1618,19 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // When the lengths of the interior closing and opening
     // delimiter runs are *both* multiples of 3, though,
     // they can match to create emphasis:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6913-6917
     func testExample415() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo***bar***baz
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1844,17 +1641,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6919-6923
     func testExample416() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo******bar*********baz
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1865,20 +1660,17 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Indefinite levels of nesting are possible:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6928-6932
     func testExample417() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *foo **bar *baz* bim** bop*
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1889,18 +1681,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6935-6939
     func testExample418() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *foo [*bar*](/url)*
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1911,20 +1700,17 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // There can be no empty emphasis or strong emphasis:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6944-6948
     func testExample419() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ** is not an empty emphasis
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1935,18 +1721,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6951-6955
     func testExample420() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         **** is not an empty strong emphasis
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1957,24 +1740,20 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     // Rule 10:
     // 
     // Any nonempty sequence of inline elements can be the contents of an
     // strongly emphasized span.
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6964-6968
     func testExample421() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         **foo [bar](/url)**
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1985,19 +1764,16 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6971-6977
     func testExample422() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         **foo
-        bar**
+        bar**\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2009,21 +1785,18 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // In particular, emphasis and strong emphasis can be nested
     // inside strong emphasis:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6983-6987
     func testExample423() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         __foo _bar_ baz__
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2034,18 +1807,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6990-6994
     func testExample424() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         __foo __bar__ baz__
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2056,18 +1826,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 6997-7001
     func testExample425() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ____foo__ bar__
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2078,18 +1845,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7004-7008
     func testExample426() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         **foo **bar****
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2100,18 +1864,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7011-7015
     func testExample427() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         **foo *bar* baz**
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2122,18 +1883,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7018-7022
     func testExample428() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         **foo*bar*baz**
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2144,18 +1902,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7025-7029
     func testExample429() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ***foo* bar**
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2166,18 +1921,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7032-7036
     func testExample430() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         **foo *bar***
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2188,21 +1940,18 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Indefinite levels of nesting are possible:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7041-7047
     func testExample431() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         **foo *bar **baz**
-        bim* bop**
+        bim* bop**\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2214,18 +1963,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7050-7054
     func testExample432() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         **foo [*bar*](/url)**
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2236,20 +1982,17 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // There can be no empty emphasis or strong emphasis:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7059-7063
     func testExample433() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         __ is not an empty emphasis
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2260,18 +2003,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7066-7070
     func testExample434() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ____ is not an empty strong emphasis
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2282,21 +2022,17 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     // Rule 11:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7076-7080
     func testExample435() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo ***
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2307,18 +2043,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7083-7087
     func testExample436() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo *\**
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2329,18 +2062,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7090-7094
     func testExample437() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo *_*
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2351,18 +2081,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7097-7101
     func testExample438() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo *****
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2373,18 +2100,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7104-7108
     func testExample439() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo **\***
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2395,18 +2119,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7111-7115
     func testExample440() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo **_**
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2417,22 +2138,19 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Note that when delimiters do not match evenly, Rule 11 determines
     // that the excess literal `*` characters will appear outside of the
     // emphasis, rather than inside it:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7122-7126
     func testExample441() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         **foo*
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2443,18 +2161,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7129-7133
     func testExample442() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *foo**
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2465,18 +2180,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7136-7140
     func testExample443() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ***foo**
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2487,18 +2199,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7143-7147
     func testExample444() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ****foo*
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2509,18 +2218,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7150-7154
     func testExample445() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         **foo***
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2531,18 +2237,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7157-7161
     func testExample446() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *foo****
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2553,21 +2256,17 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     // Rule 12:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7167-7171
     func testExample447() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo ___
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2578,18 +2277,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7174-7178
     func testExample448() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo _\__
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2600,18 +2296,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7181-7185
     func testExample449() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo _*_
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2622,18 +2315,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7188-7192
     func testExample450() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo _____
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2644,18 +2334,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7195-7199
     func testExample451() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo __\___
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2666,18 +2353,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7202-7206
     func testExample452() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo __*__
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2688,18 +2372,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7209-7213
     func testExample453() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         __foo_
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2710,22 +2391,19 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Note that when delimiters do not match evenly, Rule 12 determines
     // that the excess literal `_` characters will appear outside of the
     // emphasis, rather than inside it:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7220-7224
     func testExample454() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         _foo__
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2736,18 +2414,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7227-7231
     func testExample455() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ___foo__
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2758,18 +2433,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7234-7238
     func testExample456() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ____foo_
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2780,18 +2452,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7241-7245
     func testExample457() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         __foo___
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2802,18 +2471,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7248-7252
     func testExample458() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         _foo____
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2824,21 +2490,18 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Rule 13 implies that if you want emphasis nested directly inside
     // emphasis, you must use different delimiters:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7258-7262
     func testExample459() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         **foo**
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2849,18 +2512,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7265-7269
     func testExample460() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *_foo_*
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2871,18 +2531,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7272-7276
     func testExample461() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         __foo__
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2893,18 +2550,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7279-7283
     func testExample462() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         _*foo*_
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2915,21 +2569,18 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // However, strong emphasis within strong emphasis is possible without
     // switching delimiters:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7289-7293
     func testExample463() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ****foo****
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2940,18 +2591,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7296-7300
     func testExample464() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ____foo____
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2962,22 +2610,18 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     // Rule 13 can be applied to arbitrarily long sequences of
     // delimiters:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7307-7311
     func testExample465() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ******foo******
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2988,20 +2632,17 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Rule 14:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7316-7320
     func testExample466() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ***foo***
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -3012,18 +2653,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7323-7327
     func testExample467() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         _____foo_____
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -3034,20 +2672,17 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Rule 15:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7332-7336
     func testExample468() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *foo _bar* baz_
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -3058,18 +2693,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7339-7343
     func testExample469() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *foo __bar *baz bim__ bam*
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -3080,20 +2712,17 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Rule 16:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7348-7352
     func testExample470() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         **foo **bar baz**
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -3104,18 +2733,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7355-7359
     func testExample471() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *foo *bar baz*
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -3126,20 +2752,17 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Rule 17:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7364-7368
     func testExample472() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *[bar*](/url)
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -3150,18 +2773,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7371-7375
     func testExample473() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         _foo [bar_](/url)
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -3172,18 +2792,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7378-7382
     func testExample474() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *<img src="foo" title="*"/>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -3194,18 +2811,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7385-7389
     func testExample475() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         **<a href="**">
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -3216,18 +2830,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7392-7396
     func testExample476() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         __<a href="__">
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -3238,18 +2849,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7399-7403
     func testExample477() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *a `*`*
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -3260,18 +2868,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7406-7410
     func testExample478() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         _a `_`_
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -3282,18 +2887,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7413-7417
     func testExample479() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         **a<http://foo.bar/?q=**>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -3304,18 +2906,15 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7420-7424
     func testExample480() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         __a<http://foo.bar/?q=__>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -3326,6 +2925,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
+
 }
 
 extension EmphasisAndStrongEmphasisTests {

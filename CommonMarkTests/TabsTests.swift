@@ -12,7 +12,6 @@ license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
 
 import XCTest
 import Ink
-import Foundation
 
 final class TabsTests: XCTestCase {
 
@@ -367,16 +366,14 @@ final class TabsTests: XCTestCase {
     // tabs are passed through as literal tabs, not expanded to
     // spaces.)
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 352-357
     func testExample1() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         	foo	baz		bim
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -389,17 +386,15 @@ final class TabsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 359-364
     func testExample2() {
-        var markdownTest =
+        let markdownTest =
         #####"""
           	foo	baz		bim
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -412,18 +407,16 @@ final class TabsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 366-373
     func testExample3() {
-        var markdownTest =
+        let markdownTest =
         #####"""
             a	a
-            ὐ	a
+            ὐ	a\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -438,23 +431,21 @@ final class TabsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
+
     // In the following example, a continuation paragraph of a list
     // item is indented with a tab; this has exactly the same effect
     // as indentation with four spaces would:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 379-390
     func testExample4() {
-        var markdownTest =
+        let markdownTest =
         #####"""
           - foo
         
-        	bar
+        	bar\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -470,19 +461,17 @@ final class TabsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 392-404
     func testExample5() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         - foo
         
-        		bar
+        		bar\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -500,7 +489,7 @@ final class TabsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
+
     // Normally the `>` that begins a block quote may be followed
     // optionally by a space, which is not considered part of the
     // content.  In the following case `>` is followed by a tab,
@@ -510,16 +499,14 @@ final class TabsTests: XCTestCase {
     // inside the block quote context, so we get an indented
     // code block starting with two spaces.
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 415-422
     func testExample6() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         >		foo
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -534,17 +521,15 @@ final class TabsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 424-433
     func testExample7() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         -		foo
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -561,19 +546,16 @@ final class TabsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 436-443
     func testExample8() {
-        var markdownTest =
+        let markdownTest =
         #####"""
             foo
-        	bar
+        	bar\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -588,19 +570,17 @@ final class TabsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 445-461
     func testExample9() {
-        var markdownTest =
+        let markdownTest =
         #####"""
          - foo
            - bar
-        	 - baz
+        	 - baz\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -623,17 +603,15 @@ final class TabsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 463-467
     func testExample10() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         #	Foo
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -644,17 +622,15 @@ final class TabsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 469-473
     func testExample11() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *	*	*	
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -665,6 +641,7 @@ final class TabsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
+
 }
 
 extension TabsTests {

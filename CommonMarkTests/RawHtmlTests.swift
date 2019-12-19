@@ -12,12 +12,9 @@ license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
 
 import XCTest
 import Ink
-import Foundation
 
 final class RawHtmlTests: XCTestCase {
 
-    // 
-    // 
     // ## Raw HTML
     // 
     // Text between `<` and `>` that looks like an HTML tag is parsed as a
@@ -93,16 +90,14 @@ final class RawHtmlTests: XCTestCase {
     // 
     // Here are some simple open tags:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8960-8964
     func testExample609() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <a><bab><c2c>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -113,20 +108,17 @@ final class RawHtmlTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Empty elements:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8969-8973
     func testExample610() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <a/><b2/>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -137,21 +129,18 @@ final class RawHtmlTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // [Whitespace] is allowed:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8978-8984
     func testExample611() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <a  /><b2
-        data="foo" >
+        data="foo" >\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -164,21 +153,18 @@ final class RawHtmlTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // With attributes:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8989-8995
     func testExample612() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <a foo="bar" bam = 'baz <em>"</em>'
-        _boolean zoop:33=zoop:33 />
+        _boolean zoop:33=zoop:33 />\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -191,20 +177,17 @@ final class RawHtmlTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Custom tag names can be used:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9000-9004
     func testExample613() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         Foo <responsive-image src="foo.jpg" />
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -215,20 +198,17 @@ final class RawHtmlTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Illegal tag names, not parsed as HTML:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9009-9013
     func testExample614() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <33> <__>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -239,20 +219,17 @@ final class RawHtmlTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Illegal attribute names:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9018-9022
     func testExample615() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <a h*#ref="hi">
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -263,20 +240,17 @@ final class RawHtmlTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Illegal attribute values:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9027-9031
     func testExample616() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <a href="hi'> <a href=hi'>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -287,23 +261,20 @@ final class RawHtmlTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Illegal [whitespace]:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9036-9046
     func testExample617() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         < a><
         foo><bar/ >
         <foo bar=baz
-        bim!bop />
+        bim!bop />\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -318,20 +289,17 @@ final class RawHtmlTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Missing [whitespace]:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9051-9055
     func testExample618() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <a href='bar'title=title>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -342,20 +310,17 @@ final class RawHtmlTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Closing tags:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9060-9064
     func testExample619() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         </a></foo >
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -366,20 +331,17 @@ final class RawHtmlTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Illegal attributes in closing tag:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9069-9073
     func testExample620() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         </a href="foo">
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -390,21 +352,18 @@ final class RawHtmlTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Comments:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9078-9084
     func testExample621() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo <!-- this is a
-        comment - with hyphen -->
+        comment - with hyphen -->\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -417,18 +376,15 @@ final class RawHtmlTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9087-9091
     func testExample622() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo <!-- not a comment -- two hyphens -->
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -439,22 +395,19 @@ final class RawHtmlTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Not comments:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9096-9103
     func testExample623() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo <!--> foo -->
         
-        foo <!-- foo--->
+        foo <!-- foo--->\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -466,20 +419,17 @@ final class RawHtmlTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Processing instructions:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9108-9112
     func testExample624() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo <?php echo $a; ?>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -490,20 +440,17 @@ final class RawHtmlTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Declarations:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9117-9121
     func testExample625() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo <!ELEMENT br EMPTY>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -514,20 +461,17 @@ final class RawHtmlTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // CDATA sections:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9126-9130
     func testExample626() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo <![CDATA[>&<]]>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -538,21 +482,18 @@ final class RawHtmlTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Entity and numeric character references are preserved in HTML
     // attributes:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9136-9140
     func testExample627() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo <a href="&ouml;">
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -563,20 +504,17 @@ final class RawHtmlTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Backslash escapes do not work in HTML attributes:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9145-9149
     func testExample628() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo <a href="\*">
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -587,18 +525,15 @@ final class RawHtmlTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9152-9156
     func testExample629() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <a href="\"">
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -609,6 +544,7 @@ final class RawHtmlTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
+
 }
 
 extension RawHtmlTests {

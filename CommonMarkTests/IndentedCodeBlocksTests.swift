@@ -12,12 +12,9 @@ license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
 
 import XCTest
 import Ink
-import Foundation
 
 final class IndentedCodeBlocksTests: XCTestCase {
 
-    // 
-    // 
     // ## Indented code blocks
     // 
     // An [indented code block](@) is composed of one or more
@@ -33,17 +30,15 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // (A blank line is not needed, however, between a code block and a following
     // paragraph.)
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1408-1415
     func testExample77() {
-        var markdownTest =
+        let markdownTest =
         #####"""
             a simple
-              indented code block
+              indented code block\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -58,24 +53,21 @@ final class IndentedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // If there is any ambiguity between an interpretation of indentation
     // as a code block and as indicating that material belongs to a [list
     // item][list items], the list item interpretation takes precedence:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1422-1433
     func testExample78() {
-        var markdownTest =
+        let markdownTest =
         #####"""
           - foo
         
-            bar
+            bar\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -91,20 +83,17 @@ final class IndentedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1436-1449
     func testExample79() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         1.  foo
         
-            - bar
+            - bar\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -122,25 +111,21 @@ final class IndentedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     // The contents of a code block are literal text, and do not get parsed
     // as Markdown:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1456-1467
     func testExample80() {
-        var markdownTest =
+        let markdownTest =
         #####"""
             <a/>
             *hi*
         
-            - one
+            - one\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -159,16 +144,14 @@ final class IndentedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Here we have three chunks separated by blank lines:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1472-1489
     func testExample81() {
-        var markdownTest =
+        let markdownTest =
         #####"""
             chunk1
         
@@ -176,9 +159,8 @@ final class IndentedCodeBlocksTests: XCTestCase {
           
          
          
-            chunk3
+            chunk3\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -203,23 +185,20 @@ final class IndentedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Any initial spaces beyond four will be included in the content, even
     // in interior blank lines:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1495-1504
     func testExample82() {
-        var markdownTest =
+        let markdownTest =
         #####"""
             chunk1
               
-              chunk2
+              chunk2\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -236,23 +215,20 @@ final class IndentedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // An indented code block cannot interrupt a paragraph.  (This
     // allows hanging indents and the like.)
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1510-1517
     func testExample83() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         Foo
             bar
-        
+        \#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -264,23 +240,20 @@ final class IndentedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // However, any non-blank line with fewer than four leading spaces ends
     // the code block immediately.  So a paragraph may occur immediately
     // after indented code:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1524-1531
     func testExample84() {
-        var markdownTest =
+        let markdownTest =
         #####"""
             foo
-        bar
+        bar\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -294,26 +267,23 @@ final class IndentedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // And indented code can occur immediately before and after other kinds of
     // blocks:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1537-1552
     func testExample85() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         # Heading
             foo
         Heading
         ------
             foo
-        ----
+        ----\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -332,21 +302,18 @@ final class IndentedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // The first line can be indented more than four spaces:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1557-1564
     func testExample86() {
-        var markdownTest =
+        let markdownTest =
         #####"""
                 foo
-            bar
+            bar\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -361,25 +328,22 @@ final class IndentedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Blank lines preceding or following an indented code block
     // are not included in it:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1570-1579
     func testExample87() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         
             
             foo
             
-        
+        \#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -392,20 +356,17 @@ final class IndentedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Trailing spaces are included in the code block's content:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1584-1589
     func testExample88() {
-        var markdownTest =
+        let markdownTest =
         #####"""
             foo  
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -418,6 +379,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
+
 }
 
 extension IndentedCodeBlocksTests {

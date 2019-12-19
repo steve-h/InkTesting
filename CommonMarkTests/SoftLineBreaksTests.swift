@@ -12,12 +12,9 @@ license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
 
 import XCTest
 import Ink
-import Foundation
 
 final class SoftLineBreaksTests: XCTestCase {
 
-    // 
-    // 
     // ## Soft line breaks
     // 
     // A regular line break (not in a code span or HTML tag) that is not
@@ -26,17 +23,15 @@ final class SoftLineBreaksTests: XCTestCase {
     // [line ending] or as a space. The result will be the same in
     // browsers. In the examples here, a [line ending] will be used.)
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9317-9323
     func testExample645() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo
-        baz
+        baz\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -48,22 +43,19 @@ final class SoftLineBreaksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Spaces at the end of the line and beginning of the next line are
     // removed:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9329-9335
     func testExample646() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo 
-         baz
+         baz\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -75,6 +67,7 @@ final class SoftLineBreaksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
+
 }
 
 extension SoftLineBreaksTests {

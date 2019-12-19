@@ -12,12 +12,9 @@ license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
 
 import XCTest
 import Ink
-import Foundation
 
 final class PrecedenceTests: XCTestCase {
 
-    // 
-    // 
     // ## Insecure characters
     // 
     // For security reasons, the Unicode character `U+0000` must be replaced
@@ -38,17 +35,15 @@ final class PrecedenceTests: XCTestCase {
     // of inline structure.  So, for example, the following is a list with
     // two items, not a list with one item containing a code span:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 496-504
     func testExample12() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         - `one
-        - two`
+        - two`\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -62,6 +57,7 @@ final class PrecedenceTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
+
 }
 
 extension PrecedenceTests {

@@ -12,12 +12,9 @@ license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
 
 import XCTest
 import Ink
-import Foundation
 
 final class ParagraphsTests: XCTestCase {
 
-    // 
-    // 
     // ## Paragraphs
     // 
     // A sequence of non-blank lines that cannot be interpreted as other
@@ -29,18 +26,16 @@ final class ParagraphsTests: XCTestCase {
     // 
     // A simple example with two paragraphs:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3171-3178
     func testExample189() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         aaa
         
-        bbb
+        bbb\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -52,24 +47,21 @@ final class ParagraphsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Paragraphs can contain multiple lines, but no blank lines:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3183-3194
     func testExample190() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         aaa
         bbb
         
         ccc
-        ddd
+        ddd\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -83,23 +75,20 @@ final class ParagraphsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Multiple blank lines between paragraph have no effect:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3199-3207
     func testExample191() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         aaa
         
         
-        bbb
+        bbb\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -111,21 +100,18 @@ final class ParagraphsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Leading spaces are skipped:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3212-3218
     func testExample192() {
-        var markdownTest =
+        let markdownTest =
         #####"""
           aaa
-         bbb
+         bbb\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -137,23 +123,20 @@ final class ParagraphsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Lines after the first may be indented any amount, since indented
     // code blocks cannot interrupt paragraphs.
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3224-3232
     func testExample193() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         aaa
                      bbb
-                                               ccc
+                                               ccc\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -166,22 +149,19 @@ final class ParagraphsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // However, the first line may be indented at most three spaces,
     // or an indented code block will be triggered:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3238-3244
     func testExample194() {
-        var markdownTest =
+        let markdownTest =
         #####"""
            aaa
-        bbb
+        bbb\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -193,19 +173,16 @@ final class ParagraphsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3247-3254
     func testExample195() {
-        var markdownTest =
+        let markdownTest =
         #####"""
             aaa
-        bbb
+        bbb\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -219,23 +196,20 @@ final class ParagraphsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Final spaces are stripped before inline parsing, so a paragraph
     // that ends with two or more spaces will not end with a [hard line
     // break]:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3261-3267
     func testExample196() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         aaa     
-        bbb     
+        bbb     \#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -247,6 +221,7 @@ final class ParagraphsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
+
 }
 
 extension ParagraphsTests {

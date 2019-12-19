@@ -12,13 +12,9 @@ license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
 
 import XCTest
 import Ink
-import Foundation
 
 final class HtmlBlocksTests: XCTestCase {
 
-    // 
-    // 
-    // 
     // ## HTML blocks
     // 
     // An [HTML block](@) is a group of lines that is treated
@@ -87,12 +83,11 @@ final class HtmlBlocksTests: XCTestCase {
     // the parser state; as the HTML block was started in by start condition 6, it
     // will end at any blank line. This can be surprising:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2087-2102
     func testExample118() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <table><tr><td>
         <pre>
@@ -100,9 +95,8 @@ final class HtmlBlocksTests: XCTestCase {
         
         _world_.
         </pre>
-        </td></tr></table>
+        </td></tr></table>\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -120,7 +114,7 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
+
     // In this case, the HTML block is terminated by the newline — the `**Hello**`
     // text remains verbatim — and regular parsing resumes, with a paragraph,
     // emphasised `world` and inline and block HTML following.
@@ -133,12 +127,11 @@ final class HtmlBlocksTests: XCTestCase {
     // Some simple examples follow.  Here are some basic HTML blocks
     // of type 6:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2116-2135
     func testExample119() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <table>
           <tr>
@@ -148,9 +141,8 @@ final class HtmlBlocksTests: XCTestCase {
           </tr>
         </table>
         
-        okay.
+        okay.\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -173,20 +165,17 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2138-2146
     func testExample120() {
-        var markdownTest =
+        let markdownTest =
         #####"""
          <div>
           *hello*
-                 <foo><a>
+                 <foo><a>\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -201,21 +190,18 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // A block can also start with a closing tag:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2151-2157
     func testExample121() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         </div>
-        *foo*
+        *foo*\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -228,24 +214,21 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Here we have two HTML blocks with a Markdown paragraph between them:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2162-2172
     func testExample122() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <DIV CLASS="foo">
         
         *Markdown*
         
-        </DIV>
+        </DIV>\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -258,23 +241,20 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // The tag on the first line can be partial, as long
     // as it is split where there would be whitespace:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2178-2186
     func testExample123() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <div id="foo"
           class="bar">
-        </div>
+        </div>\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -288,20 +268,17 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2189-2197
     func testExample124() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <div id="foo" class="bar
           baz">
-        </div>
+        </div>\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -315,22 +292,19 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // An open tag need not be closed:
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2201-2210
     func testExample125() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <div>
         *foo*
         
-        *bar*
+        *bar*\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -345,23 +319,19 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     // A partial tag need not even be completed (garbage
     // in, garbage out):
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2217-2223
     func testExample126() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <div id="foo"
-        *hi*
+        *hi*\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -374,19 +344,16 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2226-2232
     func testExample127() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <div class
-        foo
+        foo\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -399,22 +366,19 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // The initial tag doesn't even need to be a valid
     // tag, as long as it starts like one:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2238-2244
     func testExample128() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <div *???-&&&-<---
-        *foo*
+        *foo*\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -427,21 +391,18 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // In type 6 blocks, the initial tag need not be on a line by
     // itself:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2250-2254
     func testExample129() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <div><a href="bar">*foo*</a></div>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -452,20 +413,17 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2257-2265
     func testExample130() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <table><tr><td>
         foo
-        </td></tr></table>
+        </td></tr></table>\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -480,27 +438,24 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Everything until the next blank line or end of document
     // gets included in the HTML block.  So, in the following
     // example, what looks like a Markdown code block
     // is actually part of the HTML block, which continues until a blank
     // line or the end of the document is reached:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2274-2284
     func testExample131() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <div></div>
         ``` c
         int x = 33;
-        ```
+        ```\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -517,24 +472,21 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // To start an [HTML block] with a tag that is *not* in the
     // list of block-level tags in (6), you must put the tag by
     // itself on the first line (and it must be complete):
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2291-2299
     func testExample132() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <a href="foo">
         *bar*
-        </a>
+        </a>\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -549,22 +501,19 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // In type 7 blocks, the [tag name] can be anything:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2304-2312
     func testExample133() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <Warning>
         *bar*
-        </Warning>
+        </Warning>\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -579,20 +528,17 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2315-2323
     func testExample134() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <i class="foo">
         *bar*
-        </i>
+        </i>\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -607,19 +553,16 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2326-2332
     func testExample135() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         </ins>
-        *bar*
+        *bar*\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -632,26 +575,23 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // These rules are designed to allow us to work with tags that
     // can function as either block-level or inline-level tags.
     // The `<del>` tag is a nice example.  We can surround content with
     // `<del>` tags in three different ways.  In this case, we get a raw
     // HTML block, because the `<del>` tag is on a line by itself:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2341-2349
     func testExample136() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <del>
         *foo*
-        </del>
+        </del>\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -666,26 +606,23 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // In this case, we get a raw HTML block that just includes
     // the `<del>` tag (because it ends with the following blank
     // line).  So the contents get interpreted as CommonMark:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2356-2366
     func testExample137() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <del>
         
         *foo*
         
-        </del>
+        </del>\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -698,23 +635,20 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Finally, in this case, the `<del>` tags are interpreted
     // as [raw HTML] *inside* the CommonMark paragraph.  (Because
     // the tag is not on a line by itself, we get inline HTML
     // rather than an [HTML block].)
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2374-2378
     func testExample138() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <del>*foo*</del>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -725,8 +659,7 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // HTML tags designed to contain literal content
     // (`script`, `style`, `pre`), comments, processing instructions,
     // and declarations are treated somewhat differently.
@@ -736,12 +669,11 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // A pre tag (type 1):
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2390-2406
     func testExample139() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <pre language="haskell"><code>
         import Text.HTML.TagSoup
@@ -749,9 +681,8 @@ final class HtmlBlocksTests: XCTestCase {
         main :: IO ()
         main = print $ parseTags tags
         </code></pre>
-        okay
+        okay\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -773,25 +704,22 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // A script tag (type 1):
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2411-2425
     func testExample140() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <script type="text/javascript">
         // JavaScript example
         
         document.getElementById("demo").innerHTML = "Hello JavaScript!";
         </script>
-        okay
+        okay\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -811,16 +739,14 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // A style tag (type 1):
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2430-2446
     func testExample141() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <style
           type="text/css">
@@ -828,9 +754,8 @@ final class HtmlBlocksTests: XCTestCase {
         
         p {color:blue;}
         </style>
-        okay
+        okay\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -852,25 +777,22 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // If there is no matching end tag, the block will end at the
     // end of the document (or the enclosing [block quote][block quotes]
     // or [list item][list items]):
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2453-2463
     func testExample142() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <style
           type="text/css">
         
-        foo
+        foo\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -887,21 +809,18 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2466-2477
     func testExample143() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         > <div>
         > foo
         
-        bar
+        bar\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -918,19 +837,16 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2480-2490
     func testExample144() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         - <div>
-        - foo
+        - foo\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -946,21 +862,18 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // The end tag can occur on the same line as the start tag:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2495-2501
     func testExample145() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <style>p{color:red;}</style>
-        *foo*
+        *foo*\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -972,19 +885,16 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2504-2510
     func testExample146() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <!-- foo -->*bar*
-        *baz*
+        *baz*\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -997,23 +907,20 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Note that anything on the last line after the
     // end tag will be included in the [HTML block]:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2516-2524
     func testExample147() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <script>
         foo
-        </script>1. *bar*
+        </script>1. *bar*\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1028,24 +935,21 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // A comment (type 2):
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2529-2541
     func testExample148() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <!-- Foo
         
         bar
            baz -->
-        okay
+        okay\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1063,26 +967,22 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     // A processing instruction (type 3):
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2547-2561
     func testExample149() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <?php
         
           echo '>';
         
         ?>
-        okay
+        okay\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1102,20 +1002,17 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // A declaration (type 4):
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2566-2570
     func testExample150() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <!DOCTYPE html>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1126,16 +1023,14 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // CDATA (type 5):
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2575-2603
     func testExample151() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <![CDATA[
         function matchwo(a,b)
@@ -1149,9 +1044,8 @@ final class HtmlBlocksTests: XCTestCase {
           }
         }
         ]]>
-        okay
+        okay\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1185,22 +1079,19 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // The opening tag can be indented 1-3 spaces, but not 4:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2608-2616
     func testExample152() {
-        var markdownTest =
+        let markdownTest =
         #####"""
           <!-- foo -->
         
-            <!-- foo -->
+            <!-- foo -->\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1214,20 +1105,17 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2619-2627
     func testExample153() {
-        var markdownTest =
+        let markdownTest =
         #####"""
           <div>
         
-            <div>
+            <div>\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1241,24 +1129,21 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // An HTML block of types 1--6 can interrupt a paragraph, and need not be
     // preceded by a blank line.
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2633-2643
     func testExample154() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         Foo
         <div>
         bar
-        </div>
+        </div>\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1274,25 +1159,22 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // However, a following blank line is needed, except at the end of
     // a document, and except for blocks of types 1--5, [above][HTML
     // block]:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2650-2660
     func testExample155() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <div>
         bar
         </div>
-        *foo*
+        *foo*\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1309,22 +1191,19 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // HTML blocks of type 7 cannot interrupt a paragraph:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2665-2673
     func testExample156() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         Foo
         <a href="bar">
-        baz
+        baz\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1337,8 +1216,7 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // This rule differs from John Gruber's original Markdown syntax
     // specification, which says:
     // 
@@ -1369,20 +1247,18 @@ final class HtmlBlocksTests: XCTestCase {
     // 
     // Compare:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2706-2716
     func testExample157() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <div>
         
         *Emphasized* text.
         
-        </div>
+        </div>\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1395,20 +1271,17 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2719-2727
     func testExample158() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <div>
         *Emphasized* text.
-        </div>
+        </div>\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1423,8 +1296,7 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Some Markdown implementations have adopted a convention of
     // interpreting content inside tags as text if the open tag has
     // the attribute `markdown=1`.  The rule given above seems a simpler and
@@ -1436,12 +1308,11 @@ final class HtmlBlocksTests: XCTestCase {
     // *in most cases* this will work fine, because the blank lines in
     // HTML are usually followed by HTML block tags.  For example:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2741-2761
     func testExample159() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <table>
         
@@ -1453,9 +1324,8 @@ final class HtmlBlocksTests: XCTestCase {
         
         </tr>
         
-        </table>
+        </table>\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1474,18 +1344,16 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // There are problems, however, if the inner tags are indented
     // *and* separated by spaces, as then they will be interpreted as
     // an indented code block:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2768-2789
     func testExample160() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <table>
         
@@ -1497,9 +1365,8 @@ final class HtmlBlocksTests: XCTestCase {
         
           </tr>
         
-        </table>
+        </table>\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1522,6 +1389,7 @@ final class HtmlBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
+
 }
 
 extension HtmlBlocksTests {

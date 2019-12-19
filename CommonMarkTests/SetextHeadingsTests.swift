@@ -12,12 +12,9 @@ license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
 
 import XCTest
 import Ink
-import Foundation
 
 final class SetextHeadingsTests: XCTestCase {
 
-    // 
-    // 
     // ## Setext headings
     // 
     // A [setext heading](@) consists of one or more
@@ -50,20 +47,18 @@ final class SetextHeadingsTests: XCTestCase {
     // 
     // Simple examples:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1006-1015
     func testExample50() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         Foo *bar*
         =========
         
         Foo *bar*
-        ---------
+        ---------\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -75,22 +70,19 @@ final class SetextHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // The content of the header may span more than one line:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1020-1027
     func testExample51() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         Foo *bar
         baz*
-        ====
+        ====\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -102,24 +94,22 @@ final class SetextHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
+
     // The contents are the result of parsing the headings's raw
     // content as inlines.  The heading's raw content is formed by
     // concatenating the lines and removing initial and final
     // [whitespace].
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1034-1041
     func testExample52() {
-        var markdownTest =
+        let markdownTest =
         #####"""
           Foo *bar
         baz*	
-        ====
+        ====\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -131,24 +121,21 @@ final class SetextHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // The underlining can be any length:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1046-1055
     func testExample53() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         Foo
         -------------------------
         
         Foo
-        =
+        =\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -160,17 +147,15 @@ final class SetextHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // The heading content can be indented up to three spaces, and need
     // not line up with the underlining:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1061-1074
     func testExample54() {
-        var markdownTest =
+        let markdownTest =
         #####"""
            Foo
         ---
@@ -179,9 +164,8 @@ final class SetextHeadingsTests: XCTestCase {
         -----
         
           Foo
-          ===
+          ===\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -194,24 +178,21 @@ final class SetextHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Four spaces indent is too much:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1079-1092
     func testExample55() {
-        var markdownTest =
+        let markdownTest =
         #####"""
             Foo
             ---
         
             Foo
-        ---
+        ---\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -231,22 +212,19 @@ final class SetextHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // The setext heading underline can be indented up to three spaces, and
     // may have trailing spaces:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1098-1103
     func testExample56() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         Foo
-           ----      
+           ----      \#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -257,21 +235,18 @@ final class SetextHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Four spaces is too much:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1108-1114
     func testExample57() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         Foo
-            ---
+            ---\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -283,24 +258,21 @@ final class SetextHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // The setext heading underline cannot contain internal spaces:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1119-1130
     func testExample58() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         Foo
         = =
         
         Foo
-        --- -
+        --- -\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -314,21 +286,18 @@ final class SetextHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Trailing spaces in the content line do not cause a line break:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1135-1140
     func testExample59() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         Foo  
-        -----
+        -----\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -339,21 +308,18 @@ final class SetextHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Nor does a backslash at the end:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1145-1150
     func testExample60() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         Foo\
-        ----
+        ----\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -364,17 +330,15 @@ final class SetextHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Since indicators of block structure take precedence over
     // indicators of inline structure, the following are setext headings:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1156-1169
     func testExample61() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         `Foo
         ----
@@ -382,9 +346,8 @@ final class SetextHeadingsTests: XCTestCase {
         
         <a title="a lot
         ---
-        of dashes"/>
+        of dashes"/>\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -398,22 +361,19 @@ final class SetextHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // The setext heading underline cannot be a [lazy continuation
     // line] in a list item or block quote:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1175-1183
     func testExample62() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         > Foo
-        ---
+        ---\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -427,20 +387,17 @@ final class SetextHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1186-1196
     func testExample63() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         > foo
         bar
-        ===
+        ===\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -455,19 +412,16 @@ final class SetextHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1199-1207
     func testExample64() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         - Foo
-        ---
+        ---\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -481,24 +435,21 @@ final class SetextHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // A blank line is needed between a paragraph and a following
     // setext heading, since otherwise the paragraph becomes part
     // of the heading's content:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1214-1221
     func testExample65() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         Foo
         Bar
-        ---
+        ---\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -510,26 +461,23 @@ final class SetextHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // But in general a blank line is not required before or after
     // setext headings:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1227-1239
     func testExample66() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ---
         Foo
         ---
         Bar
         ---
-        Baz
+        Baz\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -543,21 +491,18 @@ final class SetextHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Setext headings cannot be empty:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1244-1249
     func testExample67() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         
-        ====
+        ====\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -568,23 +513,20 @@ final class SetextHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Setext heading text lines must not be interpretable as block
     // constructs other than paragraphs.  So, the line of dashes
     // in these examples gets interpreted as a thematic break:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1256-1262
     func testExample68() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ---
-        ---
+        ---\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -596,19 +538,16 @@ final class SetextHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1265-1273
     func testExample69() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         - foo
-        -----
+        -----\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -622,19 +561,16 @@ final class SetextHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1276-1283
     func testExample70() {
-        var markdownTest =
+        let markdownTest =
         #####"""
             foo
-        ---
+        ---\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -648,19 +584,16 @@ final class SetextHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1286-1294
     func testExample71() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         > foo
-        -----
+        -----\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -674,22 +607,19 @@ final class SetextHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // If you want a heading with `> foo` as its literal text, you can
     // use backslash escapes:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1300-1305
     func testExample72() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         \> foo
-        ------
+        ------\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -700,8 +630,7 @@ final class SetextHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // **Compatibility note:**  Most existing Markdown implementations
     // do not allow the text of setext headings to span multiple lines.
     // But there is no consensus about how to interpret
@@ -725,20 +654,18 @@ final class SetextHeadingsTests: XCTestCase {
     // multiline headings.  Authors who want interpretation 1 can
     // put a blank line after the first paragraph:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1331-1341
     func testExample73() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         Foo
         
         bar
         ---
-        baz
+        baz\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -751,26 +678,23 @@ final class SetextHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Authors who want interpretation 2 can put blank lines around
     // the thematic break,
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1347-1359
     func testExample74() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         Foo
         bar
         
         ---
         
-        baz
+        baz\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -784,24 +708,21 @@ final class SetextHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // or use a thematic break that cannot count as a [setext heading
     // underline], such as
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1365-1375
     func testExample75() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         Foo
         bar
         * * *
-        baz
+        baz\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -815,23 +736,20 @@ final class SetextHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Authors who want interpretation 3 can use backslash escapes:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1380-1390
     func testExample76() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         Foo
         bar
         \---
-        baz
+        baz\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -845,6 +763,7 @@ final class SetextHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
+
 }
 
 extension SetextHeadingsTests {

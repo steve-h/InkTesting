@@ -12,12 +12,9 @@ license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
 
 import XCTest
 import Ink
-import Foundation
 
 final class BlankLinesTests: XCTestCase {
 
-    // 
-    // 
     // ## Blank lines
     // 
     // [Blank lines] between block-level elements are ignored,
@@ -26,12 +23,11 @@ final class BlankLinesTests: XCTestCase {
     // 
     // Blank lines at the beginning and end of the document are also ignored.
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3278-3290
     func testExample197() {
-        var markdownTest =
+        let markdownTest =
         #####"""
           
         
@@ -40,9 +36,8 @@ final class BlankLinesTests: XCTestCase {
         
         # aaa
         
-          
+          \#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -54,6 +49,7 @@ final class BlankLinesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
+
 }
 
 extension BlankLinesTests {

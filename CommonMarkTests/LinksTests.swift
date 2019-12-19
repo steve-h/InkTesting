@@ -12,13 +12,9 @@ license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
 
 import XCTest
 import Ink
-import Foundation
 
 final class LinksTests: XCTestCase {
 
-    // 
-    // 
-    // 
     // ## Links
     // 
     // A link contains [link text] (the visible text), a [link destination]
@@ -94,16 +90,14 @@ final class LinksTests: XCTestCase {
     // 
     // Here is a simple inline link:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7503-7507
     func testExample481() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link](/uri "title")
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -114,20 +108,17 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // The title may be omitted:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7512-7516
     func testExample482() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link](/uri)
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -138,20 +129,17 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Both the title and the destination may be omitted:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7521-7525
     func testExample483() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link]()
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -162,18 +150,15 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7528-7532
     func testExample484() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link](<>)
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -184,20 +169,18 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
+
     // The destination can only contain spaces if it is
     // enclosed in pointy brackets:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7537-7541
     func testExample485() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link](/my uri)
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -208,17 +191,15 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7543-7547
     func testExample486() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link](</my uri>)
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -229,21 +210,19 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
+
     // The destination cannot contain line breaks,
     // even if enclosed in pointy brackets:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7552-7558
     func testExample487() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link](foo
-        bar)
+        bar)\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -255,18 +234,16 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7560-7566
     func testExample488() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link](<foo
-        bar>)
+        bar>)\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -279,20 +256,18 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
+
     // The destination can contain `)` if it is enclosed
     // in pointy brackets:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7571-7575
     func testExample489() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [a](<b)c>)
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -303,19 +278,17 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
+
     // Pointy brackets that enclose links must be unescaped:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7579-7583
     func testExample490() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link](<foo\>)
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -326,22 +299,20 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
+
     // These are not links, because the opening pointy bracket
     // is not matched properly:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7588-7596
     func testExample491() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [a](<b)c
         [a](<b)c>
-        [a](<b>c)
+        [a](<b>c)\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -354,19 +325,17 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
+
     // Parentheses inside the link destination may be escaped:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7600-7604
     func testExample492() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link](\(foo\))
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -377,20 +346,18 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
+
     // Any number of parentheses are allowed without escaping, as long as they are
     // balanced:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7609-7613
     func testExample493() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link](foo(and(bar)))
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -401,20 +368,18 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
+
     // However, if you have unbalanced parentheses, you need to escape or use the
     // `<...>` form:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7618-7622
     func testExample494() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link](foo\(and\(bar\))
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -425,18 +390,15 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7625-7629
     func testExample495() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link](<foo(and(bar)>)
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -447,21 +409,18 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Parentheses and other symbols can also be escaped, as usual
     // in Markdown:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7635-7639
     func testExample496() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link](foo\)\:)
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -472,24 +431,21 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // A link can contain fragment identifiers and queries:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7644-7654
     func testExample497() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link](#fragment)
         
         [link](http://example.com#fragment)
         
-        [link](http://example.com?foo=3#frag)
+        [link](http://example.com?foo=3#frag)\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -502,21 +458,18 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Note that a backslash before a non-escapable character is
     // just a backslash:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7660-7664
     func testExample498() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link](foo\bar)
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -527,8 +480,7 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // URL-escaping should be left alone inside the destination, as all
     // URL-escaped characters are also valid URL characters. Entity and
     // numerical character references in the destination will be parsed
@@ -538,16 +490,14 @@ final class LinksTests: XCTestCase {
     // HTML or other formats.  Renderers may make different decisions
     // about how to escape or normalize URLs in the output.
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7676-7680
     func testExample499() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link](foo%20b&auml;)
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -558,22 +508,19 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Note that, because titles can often be parsed as destinations,
     // if you try to omit the destination and keep the title, you'll
     // get unexpected results:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7687-7691
     func testExample500() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link]("title")
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -584,22 +531,19 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Titles may be in single quotes, double quotes, or parentheses:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7696-7704
     func testExample501() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link](/url "title")
         [link](/url 'title')
-        [link](/url (title))
+        [link](/url (title))\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -612,21 +556,18 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Backslash escapes and entity and numeric character references
     // may be used in titles:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7710-7714
     func testExample502() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link](/url "title \"&quot;")
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -637,21 +578,18 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Titles must be separated from the link using a [whitespace].
     // Other [Unicode whitespace] like non-breaking space doesn't work.
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7720-7724
     func testExample503() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link](/url "title")
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -662,20 +600,17 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Nested balanced quotes are not allowed without escaping:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7729-7733
     func testExample504() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link](/url "title "and" title")
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -686,20 +621,17 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // But it is easy to work around this by using a different quote type:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7738-7742
     func testExample505() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link](/url 'title "and" title')
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -710,8 +642,7 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // (Note:  `Markdown.pl` did allow double quotes inside a double-quoted
     // title, and its test suite included a test demonstrating this.
     // But it is hard to see a good rationale for the extra complexity this
@@ -729,17 +660,15 @@ final class LinksTests: XCTestCase {
     // 
     // [Whitespace] is allowed around the destination and title:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7762-7767
     func testExample506() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link](   /uri
-          "title"  )
+          "title"  )\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -750,21 +679,18 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // But it is not allowed between the link text and the
     // following parenthesis:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7773-7777
     func testExample507() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link] (/uri)
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -775,21 +701,18 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // The link text may contain balanced brackets, but not unbalanced ones,
     // unless they are escaped:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7783-7787
     func testExample508() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link [foo [bar]]](/uri)
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -800,18 +723,15 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7790-7794
     func testExample509() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link] bar](/uri)
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -822,18 +742,15 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7797-7801
     func testExample510() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link [bar](/uri)
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -844,18 +761,15 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7804-7808
     func testExample511() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link \[bar](/uri)
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -866,20 +780,17 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // The link text may contain inline content:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7813-7817
     func testExample512() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link *foo **bar** `#`*](/uri)
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -890,18 +801,15 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7820-7824
     func testExample513() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [![moon](moon.jpg)](/uri)
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -912,20 +820,17 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // However, links may not contain other links, at any level of nesting.
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7829-7833
     func testExample514() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo [bar](/uri)](/uri)
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -936,18 +841,15 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7836-7840
     func testExample515() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo *[bar [baz](/uri)](/uri)*](/uri)
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -958,18 +860,15 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7843-7847
     func testExample516() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ![[[foo](uri1)](uri2)](uri3)
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -980,21 +879,18 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // These cases illustrate the precedence of link text grouping over
     // emphasis grouping:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7853-7857
     func testExample517() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *[foo*](/uri)
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1005,18 +901,15 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7860-7864
     func testExample518() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo *bar](baz*)
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1027,21 +920,18 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Note that brackets that *aren't* part of links do not take
     // precedence:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7870-7874
     func testExample519() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *foo [bar* baz]
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1052,21 +942,18 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // These cases illustrate the precedence of HTML tags, code spans,
     // and autolinks over link grouping:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7880-7884
     func testExample520() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo <bar attr="](baz)">
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1077,18 +964,15 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7887-7891
     func testExample521() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo`](/uri)`
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1099,18 +983,15 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7894-7898
     func testExample522() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo<http://example.com/?search=](uri)>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1121,8 +1002,7 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // There are three kinds of [reference link](@)s:
     // [full](#full-reference-link), [collapsed](#collapsed-reference-link),
     // and [shortcut](#shortcut-reference-link).
@@ -1154,18 +1034,16 @@ final class LinksTests: XCTestCase {
     // 
     // Here is a simple example:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7932-7938
     func testExample523() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo][bar]
         
-        [bar]: /url "title"
+        [bar]: /url "title"\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1176,26 +1054,23 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // The rules for the [link text] are the same as with
     // [inline links].  Thus:
     // 
     // The link text may contain balanced brackets, but not unbalanced ones,
     // unless they are escaped:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7947-7953
     func testExample524() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link [foo [bar]]][ref]
         
-        [ref]: /uri
+        [ref]: /uri\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1206,20 +1081,17 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7956-7962
     func testExample525() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link \[bar][ref]
         
-        [ref]: /uri
+        [ref]: /uri\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1230,22 +1102,19 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // The link text may contain inline content:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7967-7973
     func testExample526() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [link *foo **bar** `#`*][ref]
         
-        [ref]: /uri
+        [ref]: /uri\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1256,20 +1125,17 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7976-7982
     func testExample527() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [![moon](moon.jpg)][ref]
         
-        [ref]: /uri
+        [ref]: /uri\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1280,22 +1146,19 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // However, links may not contain other links, at any level of nesting.
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7987-7993
     func testExample528() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo [bar](/uri)][ref]
         
-        [ref]: /uri
+        [ref]: /uri\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1306,20 +1169,17 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 7996-8002
     func testExample529() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo *bar [baz][ref]*][ref]
         
-        [ref]: /uri
+        [ref]: /uri\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1330,26 +1190,23 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // (In the examples above, we have two [shortcut reference links]
     // instead of one [full reference link].)
     // 
     // The following cases illustrate the precedence of link text grouping over
     // emphasis grouping:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8011-8017
     func testExample530() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *[foo*][ref]
         
-        [ref]: /uri
+        [ref]: /uri\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1360,20 +1217,17 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8020-8026
     func testExample531() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo *bar][ref]
         
-        [ref]: /uri
+        [ref]: /uri\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1384,23 +1238,20 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // These cases illustrate the precedence of HTML tags, code spans,
     // and autolinks over link grouping:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8032-8038
     func testExample532() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo <bar attr="][ref]">
         
-        [ref]: /uri
+        [ref]: /uri\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1411,20 +1262,17 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8041-8047
     func testExample533() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo`][ref]`
         
-        [ref]: /uri
+        [ref]: /uri\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1435,20 +1283,17 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8050-8056
     func testExample534() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo<http://example.com/?search=][ref]>
         
-        [ref]: /uri
+        [ref]: /uri\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1459,22 +1304,19 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Matching is case-insensitive:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8061-8067
     func testExample535() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo][BaR]
         
-        [bar]: /url "title"
+        [bar]: /url "title"\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1485,22 +1327,19 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Unicode case fold is used:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8072-8078
     func testExample536() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [Толпой][Толпой] is a Russian word.
         
-        [ТОЛПОЙ]: /url
+        [ТОЛПОЙ]: /url\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1511,24 +1350,21 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Consecutive internal [whitespace] is treated as one space for
     // purposes of determining matching:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8084-8091
     func testExample537() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [Foo
           bar]: /url
         
-        [Baz][Foo bar]
+        [Baz][Foo bar]\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1539,23 +1375,20 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // No [whitespace] is allowed between the [link text] and the
     // [link label]:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8097-8103
     func testExample538() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo] [bar]
         
-        [bar]: /url "title"
+        [bar]: /url "title"\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1566,21 +1399,18 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8106-8114
     func testExample539() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo]
         [bar]
         
-        [bar]: /url "title"
+        [bar]: /url "title"\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1592,8 +1422,7 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // This is a departure from John Gruber's original Markdown syntax
     // description, which explicitly allows whitespace between the link
     // text and the link label.  It brings reference links in line with
@@ -1624,20 +1453,18 @@ final class LinksTests: XCTestCase {
     // When there are multiple matching [link reference definitions],
     // the first is used:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8147-8155
     func testExample540() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo]: /url1
         
         [foo]: /url2
         
-        [bar][foo]
+        [bar][foo]\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1648,24 +1475,21 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Note that matching is performed on normalized strings, not parsed
     // inline content.  So the following does not match, even though the
     // labels define equivalent inline content:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8162-8168
     func testExample541() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [bar][foo\!]
         
-        [foo!]: /url
+        [foo!]: /url\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1676,23 +1500,20 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // [Link labels] cannot contain brackets, unless they are
     // backslash-escaped:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8174-8181
     func testExample542() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo][ref[]
         
-        [ref[]: /uri
+        [ref[]: /uri\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1704,20 +1525,17 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8184-8191
     func testExample543() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo][ref[bar]]
         
-        [ref[bar]]: /uri
+        [ref[bar]]: /uri\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1729,20 +1547,17 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8194-8201
     func testExample544() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [[[foo]]]
         
-        [[[foo]]]: /url
+        [[[foo]]]: /url\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1754,20 +1569,17 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8204-8210
     func testExample545() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo][ref\[]
         
-        [ref\[]: /uri
+        [ref\[]: /uri\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1778,22 +1590,19 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Note that in this example `]` is not backslash-escaped:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8215-8221
     func testExample546() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [bar\\]: /uri
         
-        [bar\\]
+        [bar\\]\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1804,22 +1613,19 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // A [link label] must contain at least one [non-whitespace character]:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8226-8233
     func testExample547() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         []
         
-        []: /uri
+        []: /uri\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1831,22 +1637,19 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8236-8247
     func testExample548() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [
          ]
         
         [
-         ]: /uri
+         ]: /uri\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1860,8 +1663,7 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // A [collapsed reference link](@)
     // consists of a [link label] that [matches] a
     // [link reference definition] elsewhere in the
@@ -1871,18 +1673,16 @@ final class LinksTests: XCTestCase {
     // provided by the matching reference link definition.  Thus,
     // `[foo][]` is equivalent to `[foo][foo]`.
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8259-8265
     func testExample549() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo][]
         
-        [foo]: /url "title"
+        [foo]: /url "title"\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1893,20 +1693,17 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8268-8274
     func testExample550() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [*foo* bar][]
         
-        [*foo* bar]: /url "title"
+        [*foo* bar]: /url "title"\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1917,22 +1714,19 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // The link labels are case-insensitive:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8279-8285
     func testExample551() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [Foo][]
         
-        [foo]: /url "title"
+        [foo]: /url "title"\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1943,25 +1737,21 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     // As with full reference links, [whitespace] is not
     // allowed between the two sets of brackets:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8292-8300
     func testExample552() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo] 
         []
         
-        [foo]: /url "title"
+        [foo]: /url "title"\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1973,8 +1763,7 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // A [shortcut reference link](@)
     // consists of a [link label] that [matches] a
     // [link reference definition] elsewhere in the
@@ -1984,18 +1773,16 @@ final class LinksTests: XCTestCase {
     // are provided by the matching link reference definition.
     // Thus, `[foo]` is equivalent to `[foo][]`.
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8312-8318
     func testExample553() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo]
         
-        [foo]: /url "title"
+        [foo]: /url "title"\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2006,20 +1793,17 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8321-8327
     func testExample554() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [*foo* bar]
         
-        [*foo* bar]: /url "title"
+        [*foo* bar]: /url "title"\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2030,20 +1814,17 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8330-8336
     func testExample555() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [[*foo* bar]]
         
-        [*foo* bar]: /url "title"
+        [*foo* bar]: /url "title"\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2054,20 +1835,17 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8339-8345
     func testExample556() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [[bar [foo]
         
-        [foo]: /url
+        [foo]: /url\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2078,22 +1856,19 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // The link labels are case-insensitive:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8350-8356
     func testExample557() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [Foo]
         
-        [foo]: /url "title"
+        [foo]: /url "title"\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2104,22 +1879,19 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // A space after the link text should be preserved:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8361-8367
     func testExample558() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo] bar
         
-        [foo]: /url
+        [foo]: /url\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2130,23 +1902,20 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // If you just want bracketed text, you can backslash-escape the
     // opening bracket to avoid links:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8373-8379
     func testExample559() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         \[foo]
         
-        [foo]: /url "title"
+        [foo]: /url "title"\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2157,23 +1926,20 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Note that this is a link, because a link label ends with the first
     // following closing bracket:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8385-8391
     func testExample560() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo*]: /url
         
-        *[foo*]
+        *[foo*]\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2184,24 +1950,21 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Full and compact references take precedence over shortcut
     // references:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8397-8404
     func testExample561() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo][bar]
         
         [foo]: /url1
-        [bar]: /url2
+        [bar]: /url2\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2212,19 +1975,17 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8406-8412
     func testExample562() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo][]
         
-        [foo]: /url1
+        [foo]: /url1\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2235,21 +1996,19 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
+
     // Inline links also take precedence:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8416-8422
     func testExample563() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo]()
         
-        [foo]: /url1
+        [foo]: /url1\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2260,19 +2019,17 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8424-8430
     func testExample564() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo](not a link)
         
-        [foo]: /url1
+        [foo]: /url1\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2283,22 +2040,20 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
+
     // In the following case `[bar][baz]` is parsed as a reference,
     // `[foo]` as normal text:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8435-8441
     func testExample565() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo][bar][baz]
         
-        [baz]: /url
+        [baz]: /url\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2309,24 +2064,21 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Here, though, `[foo][bar]` is parsed as a reference, since
     // `[bar]` is defined:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8447-8454
     func testExample566() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo][bar][baz]
         
         [baz]: /url1
-        [bar]: /url2
+        [bar]: /url2\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2337,24 +2089,21 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Here `[foo]` is not parsed as a shortcut reference, because it
     // is followed by a link label (even though `[bar]` is not defined):
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8460-8467
     func testExample567() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         [foo][bar][baz]
         
         [baz]: /url1
-        [foo]: /url2
+        [foo]: /url2\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -2365,6 +2114,7 @@ final class LinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
+
 }
 
 extension LinksTests {

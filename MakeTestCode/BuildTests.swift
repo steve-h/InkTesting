@@ -97,7 +97,6 @@ func openNewFile() {
 
     import XCTest
     import Ink
-    import Foundation
     
     """
     let testFileName = recentSection.upperCamelCased + "Tests"
@@ -122,8 +121,9 @@ func outputTestCase(_ test: Test) {
     let sepstr:String = "\n        "
     let sepstrForComments:String = "\n      //"
     
+    
     let markdownsegment = test.markdown.components(separatedBy: "\n").dropLast().joined(separator:sepstr)
-        
+    var markdownOptionalNewline: String = (test.markdownLines <= 1) ? "" : "\\#####n"
     let htmlFromTestcase = sepstrForComments + test.html.components(separatedBy: "\n").dropLast().joined(separator:sepstrForComments)
     
     let cMarkhtml = try! markdownToHTML(test.markdown, options: [.normalize, .noBreaks])
@@ -137,11 +137,10 @@ func outputTestCase(_ test: Test) {
         // https://github.com/commonmark/commonmark-spec
         // spec.txt lines \(test.startLine)-\(test.endLine)
         func \(testCaseName)() {
-            var markdownTest =
+            let markdownTest =
             #####\"\"\"
-            \(markdownsegment)
+            \(markdownsegment)\(markdownOptionalNewline)
             \"\"\"#####
-            markdownTest = markdownTest + "\\n"
         
             let html = MarkdownParser().html(from: markdownTest)
             \(htmlFromTestcase)
@@ -151,7 +150,7 @@ func outputTestCase(_ test: Test) {
         
             XCTAssertEqual(html,normalizedCM)
     """
-    + "\n    }"
+    + "\n    }\n"
     try? currentFile?.append(testCase)
 }
  

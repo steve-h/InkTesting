@@ -12,12 +12,9 @@ license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
 
 import XCTest
 import Ink
-import Foundation
 
 final class AutolinksTests: XCTestCase {
 
-    // 
-    // 
     // ## Autolinks
     // 
     // [Autolink](@)s are absolute URIs and email addresses inside
@@ -42,16 +39,14 @@ final class AutolinksTests: XCTestCase {
     // 
     // Here are some valid autolinks:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8722-8726
     func testExample590() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <http://foo.bar.baz>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -62,18 +57,15 @@ final class AutolinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8729-8733
     func testExample591() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <http://foo.bar.baz/test?q=hello&id=22&boolean>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -84,18 +76,15 @@ final class AutolinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8736-8740
     func testExample592() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <irc://foo.bar:2233/baz>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -106,20 +95,17 @@ final class AutolinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Uppercase is also fine:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8745-8749
     func testExample593() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <MAILTO:FOO@BAR.BAZ>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -130,23 +116,20 @@ final class AutolinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Note that many strings that count as [absolute URIs] for
     // purposes of this spec are not valid URIs, because their
     // schemes are not registered or because of other problems
     // with their syntax:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8757-8761
     func testExample594() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <a+b+c:d>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -157,18 +140,15 @@ final class AutolinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8764-8768
     func testExample595() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <made-up-scheme://foo,bar>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -179,18 +159,15 @@ final class AutolinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8771-8775
     func testExample596() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <http://../>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -201,18 +178,15 @@ final class AutolinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8778-8782
     func testExample597() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <localhost:5001/foo>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -223,20 +197,17 @@ final class AutolinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Spaces are not allowed in autolinks:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8787-8791
     func testExample598() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <http://foo.bar/baz bim>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -247,20 +218,17 @@ final class AutolinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Backslash-escapes do not work inside autolinks:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8796-8800
     func testExample599() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <http://example.com/\[\>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -271,8 +239,7 @@ final class AutolinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // An [email autolink](@)
     // consists of `<`, followed by an [email address],
     // followed by `>`.  The link's label is the email address,
@@ -288,16 +255,14 @@ final class AutolinksTests: XCTestCase {
     // 
     // Examples of email autolinks:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8818-8822
     func testExample600() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <foo@bar.example.com>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -308,18 +273,15 @@ final class AutolinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8825-8829
     func testExample601() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <foo+special@Bar.baz-bar0.com>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -330,20 +292,17 @@ final class AutolinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Backslash-escapes do not work inside email autolinks:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8834-8838
     func testExample602() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <foo\+@bar.example.com>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -354,20 +313,17 @@ final class AutolinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // These are not autolinks:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8843-8847
     func testExample603() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -378,18 +334,15 @@ final class AutolinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8850-8854
     func testExample604() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         < http://foo.bar >
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -400,18 +353,15 @@ final class AutolinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8857-8861
     func testExample605() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <m:abc>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -422,18 +372,15 @@ final class AutolinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8864-8868
     func testExample606() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <foo.bar.baz>
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -444,18 +391,15 @@ final class AutolinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8871-8875
     func testExample607() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         http://example.com
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -466,18 +410,15 @@ final class AutolinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 8878-8882
     func testExample608() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo@bar.example.com
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -488,6 +429,7 @@ final class AutolinksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
+
 }
 
 extension AutolinksTests {

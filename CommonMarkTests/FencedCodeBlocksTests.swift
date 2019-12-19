@@ -12,13 +12,9 @@ license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
 
 import XCTest
 import Ink
-import Foundation
 
 final class FencedCodeBlocksTests: XCTestCase {
 
-    // 
-    // 
-    // 
     // ## Fenced code blocks
     // 
     // A [code fence](@) is a sequence
@@ -65,19 +61,17 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     // Here is a simple example with backticks:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1639-1648
     func testExample89() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ```
         <
          >
-        ```
+        ```\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -92,23 +86,20 @@ final class FencedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // With tildes:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1653-1662
     func testExample90() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ~~~
         <
          >
-        ~~~
+        ~~~\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -123,21 +114,19 @@ final class FencedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
+
     // Fewer than three backticks is not enough:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1666-1672
     func testExample91() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ``
         foo
-        ``
+        ``\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -148,23 +137,21 @@ final class FencedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
+
     // The closing code fence must use the same character as the opening
     // fence:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1677-1686
     func testExample92() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ```
         aaa
         ~~~
-        ```
+        ```\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -179,21 +166,18 @@ final class FencedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1689-1698
     func testExample93() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ~~~
         aaa
         ```
-        ~~~
+        ~~~\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -208,23 +192,20 @@ final class FencedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // The closing code fence must be at least as long as the opening fence:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1703-1712
     func testExample94() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ````
         aaa
         ```
-        ``````
+        ``````\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -239,21 +220,18 @@ final class FencedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1715-1724
     func testExample95() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ~~~~
         aaa
         ~~~
-        ~~~~
+        ~~~~\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -268,21 +246,18 @@ final class FencedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Unclosed code blocks are closed by the end of the document
     // (or the enclosing [block quote][block quotes] or [list item][list items]):
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1730-1734
     func testExample96() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ```
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -293,21 +268,18 @@ final class FencedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1737-1747
     func testExample97() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         `````
         
         ```
-        aaa
+        aaa\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -324,21 +296,18 @@ final class FencedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1750-1761
     func testExample98() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         > ```
         > aaa
         
-        bbb
+        bbb\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -354,23 +323,20 @@ final class FencedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // A code block can have all empty lines as its content:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1766-1775
     func testExample99() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ```
         
           
-        ```
+        ```\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -385,21 +351,18 @@ final class FencedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // A code block can be empty:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1780-1785
     func testExample100() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ```
-        ```
+        ```\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -410,25 +373,22 @@ final class FencedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Fences can be indented.  If the opening fence is indented,
     // content lines will have equivalent opening indentation removed,
     // if present:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1792-1801
     func testExample101() {
-        var markdownTest =
+        let markdownTest =
         #####"""
          ```
          aaa
         aaa
-        ```
+        ```\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -443,22 +403,19 @@ final class FencedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1804-1815
     func testExample102() {
-        var markdownTest =
+        let markdownTest =
         #####"""
           ```
         aaa
           aaa
         aaa
-          ```
+          ```\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -475,22 +432,19 @@ final class FencedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1818-1829
     func testExample103() {
-        var markdownTest =
+        let markdownTest =
         #####"""
            ```
            aaa
             aaa
           aaa
-           ```
+           ```\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -507,22 +461,19 @@ final class FencedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Four spaces indentation produces an indented code block:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1834-1843
     func testExample104() {
-        var markdownTest =
+        let markdownTest =
         #####"""
             ```
             aaa
-            ```
+            ```\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -539,23 +490,20 @@ final class FencedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Closing fences may be indented by 0-3 spaces, and their indentation
     // need not match that of the opening fence:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1849-1856
     func testExample105() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ```
         aaa
-          ```
+          ```\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -568,20 +516,17 @@ final class FencedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1859-1866
     func testExample106() {
-        var markdownTest =
+        let markdownTest =
         #####"""
            ```
         aaa
-          ```
+          ```\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -594,22 +539,19 @@ final class FencedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // This is not a closing fence, because it is indented 4 spaces:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1871-1879
     func testExample107() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ```
         aaa
-            ```
+            ```\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -624,22 +566,18 @@ final class FencedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     // Code fences (opening and closing) cannot contain internal spaces:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1885-1891
     func testExample108() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ``` ```
-        aaa
+        aaa\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -651,20 +589,17 @@ final class FencedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1894-1902
     func testExample109() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ~~~~~~
         aaa
-        ~~~ ~~
+        ~~~ ~~\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -679,25 +614,22 @@ final class FencedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Fenced code blocks can interrupt paragraphs, and can be followed
     // directly by paragraphs, without a blank line between:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1908-1919
     func testExample110() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo
         ```
         bar
         ```
-        baz
+        baz\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -712,26 +644,23 @@ final class FencedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Other blocks can also occur before and after fenced code blocks
     // without an intervening blank line:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1925-1937
     func testExample111() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo
         ---
         ~~~
         bar
         ~~~
-        # baz
+        # baz\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -746,8 +675,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // An [info string] can be provided after the opening code fence.
     // Although this spec doesn't mandate any particular treatment of
     // the info string, the first word is typically used to specify
@@ -755,20 +683,18 @@ final class FencedCodeBlocksTests: XCTestCase {
     // normally indicated by adding a class to the `code` element consisting
     // of `language-` followed by the language name.
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1947-1958
     func testExample112() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ```ruby
         def foo(x)
           return 3
         end
-        ```
+        ```\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -785,22 +711,19 @@ final class FencedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1961-1972
     func testExample113() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ~~~~    ruby startline=3 $%@#$
         def foo(x)
           return 3
         end
-        ~~~~~~~
+        ~~~~~~~\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -817,19 +740,16 @@ final class FencedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1975-1980
     func testExample114() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ````;
-        ````
+        ````\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -840,21 +760,18 @@ final class FencedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // [Info strings] for backtick code blocks cannot contain backticks:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1985-1991
     func testExample115() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ``` aa ```
-        foo
+        foo\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -866,22 +783,19 @@ final class FencedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // [Info strings] for tilde code blocks can contain backticks and tildes:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 1996-2003
     func testExample116() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ~~~ aa ``` ~~~
         foo
-        ~~~
+        ~~~\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -893,22 +807,19 @@ final class FencedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Closing code fences cannot have [info strings]:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 2008-2015
     func testExample117() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ```
         ``` aaa
-        ```
+        ```\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -921,6 +832,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
+
 }
 
 extension FencedCodeBlocksTests {

@@ -12,13 +12,9 @@ license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
 
 import XCTest
 import Ink
-import Foundation
 
 final class BlockQuotesTests: XCTestCase {
 
-    // 
-    // 
-    // 
     // # Container blocks
     // 
     // A [container block](#container-blocks) is a block that has other
@@ -69,18 +65,16 @@ final class BlockQuotesTests: XCTestCase {
     // 
     // Here is a simple example:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3344-3354
     func testExample198() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         > # Foo
         > bar
-        > baz
+        > baz\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -95,22 +89,19 @@ final class BlockQuotesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // The spaces after the `>` characters can be omitted:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3359-3369
     func testExample199() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ># Foo
         >bar
-        > baz
+        > baz\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -125,22 +116,19 @@ final class BlockQuotesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // The `>` characters can be indented 1-3 spaces:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3374-3384
     func testExample200() {
-        var markdownTest =
+        let markdownTest =
         #####"""
            > # Foo
            > bar
-         > baz
+         > baz\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -155,22 +143,19 @@ final class BlockQuotesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Four spaces gives us a code block:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3389-3398
     func testExample201() {
-        var markdownTest =
+        let markdownTest =
         #####"""
             > # Foo
             > bar
-            > baz
+            > baz\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -187,23 +172,20 @@ final class BlockQuotesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // The Laziness clause allows us to omit the `>` before
     // [paragraph continuation text]:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3404-3414
     func testExample202() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         > # Foo
         > bar
-        baz
+        baz\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -218,23 +200,20 @@ final class BlockQuotesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // A block quote can contain some lazy and some non-lazy
     // continuation lines:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3420-3430
     func testExample203() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         > bar
         baz
-        > foo
+        > foo\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -249,8 +228,7 @@ final class BlockQuotesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Laziness only applies to lines that would have been continuations of
     // paragraphs had they been prepended with [block quote markers].
     // For example, the `> ` cannot be omitted in the second line of
@@ -262,17 +240,15 @@ final class BlockQuotesTests: XCTestCase {
     // 
     // without changing the meaning:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3444-3452
     func testExample204() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         > foo
-        ---
+        ---\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -286,8 +262,7 @@ final class BlockQuotesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Similarly, if we omit the `> ` in the second line of
     // 
     // ``` markdown
@@ -297,17 +272,15 @@ final class BlockQuotesTests: XCTestCase {
     // 
     // then the block quote ends after the first line:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3464-3476
     func testExample205() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         > - foo
-        - bar
+        - bar\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -325,22 +298,19 @@ final class BlockQuotesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // For the same reason, we can't omit the `> ` in front of
     // subsequent lines of an indented or fenced code block:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3482-3492
     func testExample206() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         >     foo
-            bar
+            bar\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -358,20 +328,17 @@ final class BlockQuotesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3495-3505
     func testExample207() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         > ```
         foo
-        ```
+        ```\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -386,22 +353,19 @@ final class BlockQuotesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Note that in the following case, we have a [lazy
     // continuation line]:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3511-3519
     func testExample208() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         > foo
-            - bar
+            - bar\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -415,8 +379,7 @@ final class BlockQuotesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // To see why, note that in
     // 
     // ```markdown
@@ -430,16 +393,14 @@ final class BlockQuotesTests: XCTestCase {
     // 
     // A block quote can be empty:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3535-3540
     func testExample209() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         >
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -451,20 +412,17 @@ final class BlockQuotesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3543-3550
     func testExample210() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         >
         >  
-        > 
+        > \#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -476,22 +434,19 @@ final class BlockQuotesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // A block quote can have initial or final blank lines:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3555-3563
     func testExample211() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         >
         > foo
-        >  
+        >  \#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -504,22 +459,19 @@ final class BlockQuotesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // A blank line always separates block quotes:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3568-3579
     func testExample212() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         > foo
         
-        > bar
+        > bar\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -535,8 +487,7 @@ final class BlockQuotesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // (Most current Markdown implementations, including John Gruber's
     // original `Markdown.pl`, will parse this example as a single block quote
     // with two paragraphs.  But it seems better to allow the author to decide
@@ -545,17 +496,15 @@ final class BlockQuotesTests: XCTestCase {
     // Consecutiveness means that if we put these block quotes together,
     // we get a single block quote:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3590-3598
     func testExample213() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         > foo
-        > bar
+        > bar\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -569,22 +518,19 @@ final class BlockQuotesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // To get a block quote with two paragraphs, use:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3603-3612
     func testExample214() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         > foo
         >
-        > bar
+        > bar\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -598,21 +544,18 @@ final class BlockQuotesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Block quotes can interrupt paragraphs:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3617-3625
     func testExample215() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo
-        > bar
+        > bar\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -626,23 +569,20 @@ final class BlockQuotesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // In general, blank lines are not needed before or after block
     // quotes:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3631-3643
     func testExample216() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         > aaa
         ***
-        > bbb
+        > bbb\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -659,22 +599,19 @@ final class BlockQuotesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // However, because of laziness, a blank line is needed between
     // a block quote and a following paragraph:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3649-3657
     func testExample217() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         > bar
-        baz
+        baz\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -688,20 +625,17 @@ final class BlockQuotesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3660-3669
     func testExample218() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         > bar
         
-        baz
+        baz\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -715,20 +649,17 @@ final class BlockQuotesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3672-3681
     func testExample219() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         > bar
         >
-        baz
+        baz\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -742,23 +673,20 @@ final class BlockQuotesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // It is a consequence of the Laziness rule that any number
     // of initial `>`s may be omitted on a continuation line of a
     // nested block quote:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3688-3700
     func testExample220() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         > > > foo
-        bar
+        bar\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -776,20 +704,17 @@ final class BlockQuotesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3703-3717
     func testExample221() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         >>> foo
         > bar
-        >>baz
+        >>baz\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -808,25 +733,22 @@ final class BlockQuotesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // When including an indented code block in a block quote,
     // remember that the [block quote marker] includes
     // both the `>` and a following space.  So *five spaces* are needed after
     // the `>`:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 3725-3737
     func testExample222() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         >     code
         
-        >    not code
+        >    not code\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -844,6 +766,7 @@ final class BlockQuotesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
+
 }
 
 extension BlockQuotesTests {

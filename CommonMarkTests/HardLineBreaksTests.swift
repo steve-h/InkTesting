@@ -12,12 +12,9 @@ license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
 
 import XCTest
 import Ink
-import Foundation
 
 final class HardLineBreaksTests: XCTestCase {
 
-    // 
-    // 
     // ## Hard line breaks
     // 
     // A line break (not in a code span or HTML tag) that is preceded
@@ -25,17 +22,15 @@ final class HardLineBreaksTests: XCTestCase {
     // is parsed as a [hard line break](@) (rendered
     // in HTML as a `<br />` tag):
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9166-9172
     func testExample630() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo  
-        baz
+        baz\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -47,22 +42,19 @@ final class HardLineBreaksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // For a more visible alternative, a backslash before the
     // [line ending] may be used instead of two spaces:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9178-9184
     func testExample631() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo\
-        baz
+        baz\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -74,21 +66,18 @@ final class HardLineBreaksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // More than two spaces can be used:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9189-9195
     func testExample632() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo       
-        baz
+        baz\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -100,21 +89,18 @@ final class HardLineBreaksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Leading spaces at the beginning of the next line are ignored:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9200-9206
     func testExample633() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo  
-             bar
+             bar\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -126,19 +112,16 @@ final class HardLineBreaksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9209-9215
     func testExample634() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo\
-             bar
+             bar\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -150,22 +133,19 @@ final class HardLineBreaksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Line breaks can occur inside emphasis, links, and other constructs
     // that allow inline content:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9221-9227
     func testExample635() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *foo  
-        bar*
+        bar*\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -177,19 +157,16 @@ final class HardLineBreaksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9230-9236
     func testExample636() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         *foo\
-        bar*
+        bar*\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -201,21 +178,18 @@ final class HardLineBreaksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Line breaks do not occur inside code spans
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9241-9246
     func testExample637() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         `code 
-        span`
+        span`\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -226,19 +200,16 @@ final class HardLineBreaksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9249-9254
     func testExample638() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         `code\
-        span`
+        span`\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -249,21 +220,18 @@ final class HardLineBreaksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // or HTML tags:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9259-9265
     func testExample639() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <a href="foo  
-        bar">
+        bar">\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -276,19 +244,16 @@ final class HardLineBreaksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9268-9274
     func testExample640() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         <a href="foo\
-        bar">
+        bar">\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -301,22 +266,19 @@ final class HardLineBreaksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Hard line breaks are for separating inline content within a block.
     // Neither syntax for hard line breaks works at the end of a paragraph or
     // other block element:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9281-9285
     func testExample641() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo\
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -327,18 +289,15 @@ final class HardLineBreaksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9288-9292
     func testExample642() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo  
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -349,18 +308,15 @@ final class HardLineBreaksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9295-9299
     func testExample643() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ### foo\
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -371,18 +327,15 @@ final class HardLineBreaksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 9302-9306
     func testExample644() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ### foo  
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -393,6 +346,7 @@ final class HardLineBreaksTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
+
 }
 
 extension HardLineBreaksTests {

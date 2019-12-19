@@ -12,12 +12,9 @@ license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
 
 import XCTest
 import Ink
-import Foundation
 
 final class ListsTests: XCTestCase {
 
-    // 
-    // 
     // ### Motivation
     // 
     // John Gruber's Markdown spec says the following about list items:
@@ -237,18 +234,16 @@ final class ListsTests: XCTestCase {
     // 
     // Changing the bullet or ordered list delimiter starts a new list:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4894-4906
     func testExample271() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         - foo
         - bar
-        + baz
+        + baz\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -265,20 +260,17 @@ final class ListsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4909-4921
     func testExample272() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         1. foo
         2. bar
-        3) baz
+        3) baz\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -295,24 +287,21 @@ final class ListsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // In CommonMark, a list can interrupt a paragraph. That is,
     // no blank line is needed to separate a paragraph from a following
     // list:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 4928-4938
     func testExample273() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         Foo
         - bar
-        - baz
+        - baz\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -327,7 +316,7 @@ final class ListsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
+
     // `Markdown.pl` does not allow this, through fear of triggering a list
     // via a numeral in a hard-wrapped line:
     // 
@@ -393,17 +382,15 @@ final class ListsTests: XCTestCase {
     // hard-wrapped numerals, we allow only lists starting with `1` to
     // interrupt paragraphs.  Thus,
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5005-5011
     func testExample274() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         The number of windows in my house is
-        14.  The number of doors is 6.
+        14.  The number of doors is 6.\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -415,20 +402,18 @@ final class ListsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
+
     // We may still get an unintended result in cases like
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5015-5023
     func testExample275() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         The number of windows in my house is
-        1.  The number of doors is 6.
+        1.  The number of doors is 6.\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -442,26 +427,24 @@ final class ListsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
+
     // but this rule should prevent most spurious list captures.
     // 
     // There can be any number of blank lines between items:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5029-5048
     func testExample276() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         - foo
         
         - bar
         
         
-        - baz
+        - baz\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -482,22 +465,20 @@ final class ListsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5050-5072
     func testExample277() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         - foo
           - bar
             - baz
         
         
-              bim
+              bim\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -523,19 +504,17 @@ final class ListsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // To separate consecutive lists of the same type, or to separate a
     // list from an indented code block that would otherwise be parsed
     // as a subparagraph of the final list item, you can insert a blank HTML
     // comment:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5080-5098
     func testExample278() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         - foo
         - bar
@@ -543,9 +522,8 @@ final class ListsTests: XCTestCase {
         <!-- -->
         
         - baz
-        - bim
+        - bim\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -564,14 +542,12 @@ final class ListsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5101-5124
     func testExample279() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         -   foo
         
@@ -581,9 +557,8 @@ final class ListsTests: XCTestCase {
         
         <!-- -->
         
-            code
+            code\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -606,19 +581,17 @@ final class ListsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // List items need not be indented to the same level.  The following
     // list items will be treated as items at the same list level,
     // since none is indented enough to belong to the previous list
     // item:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5132-5150
     func testExample280() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         - a
          - b
@@ -626,9 +599,8 @@ final class ListsTests: XCTestCase {
            - d
           - e
          - f
-        - g
+        - g\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -647,22 +619,19 @@ final class ListsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5153-5171
     func testExample281() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         1. a
         
           2. b
         
-           3. c
+           3. c\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -683,25 +652,23 @@ final class ListsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
+
     // Note, however, that list items may not be indented more than
     // three spaces.  Here `- e` is treated as a paragraph continuation
     // line, because it is indented more than three spaces:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5177-5191
     func testExample282() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         - a
          - b
           - c
            - d
-            - e
+            - e\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -718,25 +685,23 @@ final class ListsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
+
     // And here, `3. c` is treated as in indented code block,
     // because it is indented four spaces and preceded by a
     // blank line.
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5197-5214
     func testExample283() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         1. a
         
           2. b
         
-            3. c
+            3. c\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -756,24 +721,21 @@ final class ListsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // This is a loose list, because there is a blank line between
     // two of the list items:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5220-5237
     func testExample284() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         - a
         - b
         
-        - c
+        - c\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -794,23 +756,20 @@ final class ListsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // So is this, with a empty second item:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5242-5257
     func testExample285() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         * a
         *
         
-        * c
+        * c\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -829,26 +788,23 @@ final class ListsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // These are loose lists, even though there is no space between the items,
     // because one of the items directly contains two block-level elements
     // with a blank line between them:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5264-5283
     func testExample286() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         - a
         - b
         
           c
-        - d
+        - d\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -870,22 +826,19 @@ final class ListsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5286-5304
     func testExample287() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         - a
         - b
         
           [ref]: /url
-        - d
+        - d\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -906,16 +859,14 @@ final class ListsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // This is a tight list, because the blank lines are in a code block:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5309-5328
     func testExample288() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         - a
         - ```
@@ -923,9 +874,8 @@ final class ListsTests: XCTestCase {
         
         
           ```
-        - c
+        - c\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -948,26 +898,23 @@ final class ListsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // This is a tight list, because the blank line is between two
     // paragraphs of a sublist.  So the sublist is loose while
     // the outer list is tight:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5335-5353
     func testExample289() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         - a
           - b
         
             c
-        - d
+        - d\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -989,24 +936,21 @@ final class ListsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // This is a tight list, because the blank line is inside the
     // block quote:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5359-5373
     func testExample290() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         * a
           > b
           >
-        * c
+        * c\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1025,26 +969,23 @@ final class ListsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // This list is tight, because the consecutive block elements
     // are not separated by blank lines:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5379-5397
     func testExample291() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         - a
           > b
           ```
           c
           ```
-        - d
+        - d\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1066,20 +1007,17 @@ final class ListsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // A single-paragraph list is tight:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5402-5408
     func testExample292() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         - a
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1092,19 +1030,16 @@ final class ListsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5411-5422
     func testExample293() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         - a
-          - b
+          - b\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1122,25 +1057,22 @@ final class ListsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // This list is loose, because of the blank line between the
     // two block elements in the list item:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5428-5442
     func testExample294() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         1. ```
            foo
            ```
         
-           bar
+           bar\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1158,23 +1090,20 @@ final class ListsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Here the outer list is loose, the inner list tight:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5447-5462
     func testExample295() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         * foo
           * bar
         
-          baz
+          baz\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1193,14 +1122,12 @@ final class ListsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5465-5490
     func testExample296() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         - a
           - b
@@ -1208,9 +1135,8 @@ final class ListsTests: XCTestCase {
         
         - d
           - e
-          - f
+          - f\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -1236,6 +1162,7 @@ final class ListsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
+
 }
 
 extension ListsTests {

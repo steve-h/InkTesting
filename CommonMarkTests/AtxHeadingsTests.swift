@@ -12,12 +12,9 @@ license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
 
 import XCTest
 import Ink
-import Foundation
 
 final class AtxHeadingsTests: XCTestCase {
 
-    // 
-    // 
     // ## ATX headings
     // 
     // An [ATX heading](@)
@@ -34,21 +31,19 @@ final class AtxHeadingsTests: XCTestCase {
     // 
     // Simple headings:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 768-782
     func testExample32() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         # foo
         ## foo
         ### foo
         #### foo
         ##### foo
-        ###### foo
+        ###### foo\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -64,20 +59,17 @@ final class AtxHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // More than six `#` characters is not a heading:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 787-791
     func testExample33() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ####### foo
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -88,8 +80,7 @@ final class AtxHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // At least one space is required between the `#` characters and the
     // heading's contents, unless the heading is empty.  Note that many
     // implementations currently do not require the space.  However, the
@@ -98,18 +89,16 @@ final class AtxHeadingsTests: XCTestCase {
     // and it helps prevent things like the following from being parsed as
     // headings:
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 802-809
     func testExample34() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         #5 bolt
         
-        #hashtag
+        #hashtag\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -121,20 +110,17 @@ final class AtxHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // This is not a heading, because the first `#` is escaped:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 814-818
     func testExample35() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         \## foo
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -145,20 +131,17 @@ final class AtxHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Contents are parsed as inlines:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 823-827
     func testExample36() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         # foo *bar* \*baz\*
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -169,20 +152,17 @@ final class AtxHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Leading and trailing [whitespace] is ignored in parsing inline content:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 832-836
     func testExample37() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         #                  foo                     
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -193,22 +173,19 @@ final class AtxHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // One to three spaces indentation are allowed:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 841-849
     func testExample38() {
-        var markdownTest =
+        let markdownTest =
         #####"""
          ### foo
           ## foo
-           # foo
+           # foo\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -221,20 +198,17 @@ final class AtxHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Four spaces are too much:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 854-859
     func testExample39() {
-        var markdownTest =
+        let markdownTest =
         #####"""
             # foo
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -247,19 +221,16 @@ final class AtxHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 862-868
     func testExample40() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         foo
-            # bar
+            # bar\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -271,21 +242,18 @@ final class AtxHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // A closing sequence of `#` characters is optional:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 873-879
     func testExample41() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ## foo ##
-          ###   bar    ###
+          ###   bar    ###\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -297,21 +265,18 @@ final class AtxHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // It need not be the same length as the opening sequence:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 884-890
     func testExample42() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         # foo ##################################
-        ##### foo ##
+        ##### foo ##\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -323,20 +288,17 @@ final class AtxHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Spaces are allowed after the closing sequence:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 895-899
     func testExample43() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ### foo ###     
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -347,22 +309,19 @@ final class AtxHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // A sequence of `#` characters with anything but [spaces] following it
     // is not a closing sequence, but counts as part of the contents of the
     // heading:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 906-910
     func testExample44() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ### foo ### b
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -373,20 +332,17 @@ final class AtxHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // The closing sequence must be preceded by a space:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 915-919
     func testExample45() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         # foo#
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -397,23 +353,20 @@ final class AtxHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // Backslash-escaped `#` characters do not count as part
     // of the closing sequence:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 925-933
     func testExample46() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ### foo \###
         ## foo #\##
-        # foo \#
+        # foo \#\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -426,23 +379,20 @@ final class AtxHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // ATX headings need not be separated from surrounding content by blank
     // lines, and they can interrupt paragraphs:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 939-947
     func testExample47() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ****
         ## foo
-        ****
+        ****\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -455,20 +405,17 @@ final class AtxHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
-    // 
+
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 950-958
     func testExample48() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         Foo bar
         # baz
-        Bar foo
+        Bar foo\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -481,22 +428,19 @@ final class AtxHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
-    // 
-    // 
+
     // ATX headings can be empty:
-    // 
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 963-971
     func testExample49() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         ## 
         #
-        ### ###
+        ### ###\#####n
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -509,6 +453,7 @@ final class AtxHeadingsTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
+
 }
 
 extension AtxHeadingsTests {

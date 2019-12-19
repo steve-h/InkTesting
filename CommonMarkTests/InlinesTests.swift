@@ -12,28 +12,23 @@ license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
 
 import XCTest
 import Ink
-import Foundation
 
 final class InlinesTests: XCTestCase {
 
-    // 
-    // 
     // # Inlines
     // 
     // Inlines are parsed sequentially from the beginning of the character
     // stream to the end (left to right, in left-to-right languages).
     // Thus, for example, in
     // 
-    // 
     //     
     // https://github.com/commonmark/commonmark-spec
     // spec.txt lines 5499-5503
     func testExample297() {
-        var markdownTest =
+        let markdownTest =
         #####"""
         `hi`lo`
         """#####
-        markdownTest = markdownTest + "\n"
     
         let html = MarkdownParser().html(from: markdownTest)
         
@@ -44,6 +39,7 @@ final class InlinesTests: XCTestCase {
     
         XCTAssertEqual(html,normalizedCM)
     }
+
 }
 
 extension InlinesTests {
