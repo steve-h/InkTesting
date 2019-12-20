@@ -380,7 +380,7 @@ final class TabsTests: XCTestCase {
       //<pre><code>foo	baz		bim
       //</code></pre>
         let normalizedCM = #####"""
-        <pre><code>foo	baz		bim
+        <pre><code>foo\#####tbaz\#####t\#####tbim
         </code></pre>
         """#####
     
@@ -401,7 +401,7 @@ final class TabsTests: XCTestCase {
       //<pre><code>foo	baz		bim
       //</code></pre>
         let normalizedCM = #####"""
-        <pre><code>foo	baz		bim
+        <pre><code>foo\#####tbaz\#####t\#####tbim
         </code></pre>
         """#####
     
@@ -424,8 +424,8 @@ final class TabsTests: XCTestCase {
       //ὐ	a
       //</code></pre>
         let normalizedCM = #####"""
-        <pre><code>a	a
-        ὐ	a
+        <pre><code>a\#####ta
+        ὐ\#####ta
         </code></pre>
         """#####
     

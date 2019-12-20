@@ -402,7 +402,7 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
         
       //<p>	foo</p>
         let normalizedCM = #####"""
-        <p>	foo</p>
+        <p>\#####tfoo</p>
         """#####
     
         XCTAssertEqual(html,normalizedCM)

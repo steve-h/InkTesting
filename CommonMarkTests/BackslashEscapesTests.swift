@@ -57,7 +57,7 @@ final class BackslashEscapesTests: XCTestCase {
         
       //<p>\	\A\a\ \3\φ\«</p>
         let normalizedCM = #####"""
-        <p>\	\A\a\ \3\φ\«</p>
+        <p>\\#####t\A\a\ \3\φ\«</p>
         """#####
     
         XCTAssertEqual(html,normalizedCM)

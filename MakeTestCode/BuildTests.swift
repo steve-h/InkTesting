@@ -123,12 +123,15 @@ func outputTestCase(_ test: Test) {
     
     
     let markdownsegment = test.markdown.components(separatedBy: "\n").dropLast().joined(separator:sepstr)
-    var markdownOptionalNewline: String = (test.markdownLines <= 1) ? "" : "\\#####n"
+    let markdownOptionalNewline: String = (test.markdownLines <= 1) ? "" : "\\#####n"
     let htmlFromTestcase = sepstrForComments + test.html.components(separatedBy: "\n").dropLast().joined(separator:sepstrForComments)
     
     let cMarkhtml = try! markdownToHTML(test.markdown, options: [.normalize, .noBreaks])
-    let normalizedcMark = cMarkhtml.replacingOccurrences(of: ">\n<", with: "><").replacingOccurrences(of: "<hr />", with: "<hr>").replacingOccurrences(of: "<br />\n", with: "<br>")
-    
+    var normalizedcMark = cMarkhtml.replacingOccurrences(of: ">\n<", with: "><").replacingOccurrences(of: "<hr />", with: "<hr>").replacingOccurrences(of: "<br />\n", with: "<br>")
+    if normalizedcMark.contains("\t") {
+        print("Tab found in example \(testCaseName) line: \(test.startLine)")
+        normalizedcMark = normalizedcMark.components(separatedBy: "\t").joined(separator:"\\#####t")
+    }
     let htmlsegments = normalizedcMark.components(separatedBy: "\n").dropLast()
     let htmlsegment = htmlsegments.joined(separator:sepstr)
 
