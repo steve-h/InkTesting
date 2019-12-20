@@ -14,29 +14,29 @@ import XCTest
 import Ink
 import Foundation
 
-final class InlinesTests: XCTestCase {
+final class StrikethroughExtensionTests: XCTestCase {
 
-    // # Inlines
-    // 
-    // Inlines are parsed sequentially from the beginning of the character
-    // stream to the end (left to right, in left-to-right languages).
-    // Thus, for example, in
+    // As with regular emphasis delimiters, a new paragraph will cause strikethrough
+    // parsing to cease:
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5780-5784
-    func testExample307() {
+    // spec.txt lines 7726-7733
+    func testExample492() {
         let markdownTest =
         #####"""
-        `hi`lo`
+        This ~~has a
+        
+        new paragraph~~.\#####n
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
-        
-      //<p><code>hi</code>lo`</p>
+      //<p>This ~~has a</p>
+      //<p>new paragraph~~.</p>
         let normalizedCM = #####"""
-        <p><code>hi</code>lo`</p>
+        <p>This ~~has a</p><p>new paragraph~~.</p>
         """#####
     
         XCTAssertEqual(html,normalizedCM)
@@ -44,10 +44,10 @@ final class InlinesTests: XCTestCase {
 
 }
 
-extension InlinesTests {
-    static var allTests: Linux.TestList<InlinesTests> {
+extension StrikethroughExtensionTests {
+    static var allTests: Linux.TestList<StrikethroughExtensionTests> {
         return [
-        ("testExample307", testExample307)
+        ("testExample492", testExample492)
         ]
     }
 }

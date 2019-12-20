@@ -2,16 +2,17 @@
 *  Ink
 *  Copyright (c) Steve Hume 2019
 *  MIT license, see LICENSE file for details
-These tests are extracted from https://spec.commonmark.org/0.29/
-title: CommonMark Spec
-author: John MacFarlane
+---
+title: GitHub Flavored Markdown Spec
 version: 0.29
 date: '2019-04-06'
-license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
+license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/)'
+...
 */
 
 import XCTest
 import Ink
+import Foundation
 
 final class BlankLinesTests: XCTestCase {
 
@@ -25,7 +26,7 @@ final class BlankLinesTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 3278-3290
+    // spec.txt lines 3294-3306
     func testExample197() {
         let markdownTest =
         #####"""
@@ -40,6 +41,7 @@ final class BlankLinesTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>aaa</p>
       //<h1>aaa</h1>

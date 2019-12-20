@@ -2,28 +2,45 @@
 *  Ink
 *  Copyright (c) Steve Hume 2019
 *  MIT license, see LICENSE file for details
-These tests are extracted from https://spec.commonmark.org/0.29/
-title: CommonMark Spec
-author: John MacFarlane
+---
+title: GitHub Flavored Markdown Spec
 version: 0.29
 date: '2019-04-06'
-license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
+license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/)'
+...
 */
 
 import XCTest
 import Ink
+import Foundation
 
 final class TabsTests: XCTestCase {
 
     // ---
-    // title: CommonMark Spec
-    // author: John MacFarlane
+    // title: GitHub Flavored Markdown Spec
     // version: 0.29
     // date: '2019-04-06'
     // license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/)'
     // ...
     // 
     // # Introduction
+    // 
+    // ## What is GitHub Flavored Markdown?
+    // 
+    // GitHub Flavored Markdown, often shortened as GFM, is the dialect of Markdown
+    // that is currently supported for user content on GitHub.com and GitHub
+    // Enterprise.
+    // 
+    // This formal specification, based on the CommonMark Spec, defines the syntax and
+    // semantics of this dialect.
+    // 
+    // GFM is a strict superset of CommonMark. All the features which are supported in
+    // GitHub user content and that are not specified on the original CommonMark Spec
+    // are hence known as **extensions**, and highlighted as such.
+    // 
+    // While GFM supports a wide range of inputs, it's worth noting that GitHub.com
+    // and GitHub Enterprise perform additional post-processing and sanitization after
+    // GFM is converted to HTML to ensure security and consistency of the website.
     // 
     // ## What is Markdown?
     // 
@@ -345,9 +362,9 @@ final class TabsTests: XCTestCase {
     // 
     // An [ASCII punctuation character](@)
     // is `!`, `"`, `#`, `$`, `%`, `&`, `'`, `(`, `)`,
-    // `*`, `+`, `,`, `-`, `.`, `/` (U+0021–2F), 
+    // `*`, `+`, `,`, `-`, `.`, `/` (U+0021–2F),
     // `:`, `;`, `<`, `=`, `>`, `?`, `@` (U+003A–0040),
-    // `[`, `\`, `]`, `^`, `_`, `` ` `` (U+005B–0060), 
+    // `[`, `\`, `]`, `^`, `_`, `` ` `` (U+005B–0060),
     // `{`, `|`, `}`, or `~` (U+007B–007E).
     // 
     // A [punctuation character](@) is an [ASCII
@@ -368,7 +385,7 @@ final class TabsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 352-357
+    // spec.txt lines 368-373
     func testExample1() {
         let markdownTest =
         #####"""
@@ -377,26 +394,6 @@ final class TabsTests: XCTestCase {
     
         let html = MarkdownParser().html(from: markdownTest)
         
-      //<pre><code>foo	baz		bim
-      //</code></pre>
-        let normalizedCM = #####"""
-        <pre><code>foo\#####tbaz\#####t\#####tbim
-        </code></pre>
-        """#####
-    
-        XCTAssertEqual(html,normalizedCM)
-    }
-
-    //     
-    // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 359-364
-    func testExample2() {
-        let markdownTest =
-        #####"""
-          	foo	baz		bim
-        """#####
-    
-        let html = MarkdownParser().html(from: markdownTest)
         
       //<pre><code>foo	baz		bim
       //</code></pre>
@@ -410,7 +407,29 @@ final class TabsTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 366-373
+    // spec.txt lines 375-380
+    func testExample2() {
+        let markdownTest =
+        #####"""
+          	foo	baz		bim
+        """#####
+    
+        let html = MarkdownParser().html(from: markdownTest)
+        
+        
+      //<pre><code>foo	baz		bim
+      //</code></pre>
+        let normalizedCM = #####"""
+        <pre><code>foo\#####tbaz\#####t\#####tbim
+        </code></pre>
+        """#####
+    
+        XCTAssertEqual(html,normalizedCM)
+    }
+
+    //     
+    // https://github.com/commonmark/commonmark-spec
+    // spec.txt lines 382-389
     func testExample3() {
         let markdownTest =
         #####"""
@@ -419,6 +438,7 @@ final class TabsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code>a	a
       //ὐ	a
@@ -438,7 +458,7 @@ final class TabsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 379-390
+    // spec.txt lines 395-406
     func testExample4() {
         let markdownTest =
         #####"""
@@ -448,6 +468,7 @@ final class TabsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>
@@ -464,7 +485,7 @@ final class TabsTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 392-404
+    // spec.txt lines 408-420
     func testExample5() {
         let markdownTest =
         #####"""
@@ -474,6 +495,7 @@ final class TabsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>
@@ -501,7 +523,7 @@ final class TabsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 415-422
+    // spec.txt lines 431-438
     func testExample6() {
         let markdownTest =
         #####"""
@@ -509,6 +531,7 @@ final class TabsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<blockquote>
       //<pre><code>  foo
@@ -524,7 +547,7 @@ final class TabsTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 424-433
+    // spec.txt lines 440-449
     func testExample7() {
         let markdownTest =
         #####"""
@@ -532,6 +555,7 @@ final class TabsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<ul>
       //<li>
@@ -549,7 +573,7 @@ final class TabsTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 436-443
+    // spec.txt lines 452-459
     func testExample8() {
         let markdownTest =
         #####"""
@@ -558,6 +582,7 @@ final class TabsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code>foo
       //bar
@@ -573,7 +598,7 @@ final class TabsTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 445-461
+    // spec.txt lines 461-477
     func testExample9() {
         let markdownTest =
         #####"""
@@ -583,6 +608,7 @@ final class TabsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>foo
@@ -606,7 +632,7 @@ final class TabsTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 463-467
+    // spec.txt lines 479-483
     func testExample10() {
         let markdownTest =
         #####"""
@@ -614,6 +640,7 @@ final class TabsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<h1>Foo</h1>
         let normalizedCM = #####"""
@@ -625,7 +652,7 @@ final class TabsTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 469-473
+    // spec.txt lines 485-489
     func testExample11() {
         let markdownTest =
         #####"""
@@ -633,6 +660,7 @@ final class TabsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<hr />
         let normalizedCM = #####"""

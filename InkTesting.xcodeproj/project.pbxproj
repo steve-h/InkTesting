@@ -15,7 +15,6 @@
 		B75DB6AB2398513900200029 /* Regex in Frameworks */ = {isa = PBXBuildFile; productRef = B75DB6AA2398513900200029 /* Regex */; };
 		B75DB6AD2398516900200029 /* NormalizeHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DB6AC2398516900200029 /* NormalizeHTML.swift */; };
 		B75DB6B02398540D00200029 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = B75DB6AF2398540D00200029 /* SwiftSoup */; };
-		B75DB6B223986C2A00200029 /* NormalizeHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DB6B123986C2900200029 /* NormalizeHTML.swift */; };
 		B75DB6B423986F5900200029 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = B75DB6B323986F5900200029 /* SwiftSoup */; };
 		B77E585B23A5789400A804FE /* SwiftMarkdown in Frameworks */ = {isa = PBXBuildFile; productRef = B77E585A23A5789400A804FE /* SwiftMarkdown */; };
 		B7C1CD7C2398245400681266 /* AtxHeadingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C1CD732398245300681266 /* AtxHeadingsTests.swift */; };
@@ -50,6 +49,11 @@
 		B7C1CD9E2398274300681266 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C1CD9D2398274200681266 /* Package.swift */; };
 		B7C1CD9F239827F500681266 /* LinuxMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C1CD47239822D200681266 /* LinuxMain.swift */; };
 		B7C1CDA02398285000681266 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C1CD9D2398274200681266 /* Package.swift */; };
+		B7C4BAFF23AD2C220010114B /* StrikethroughExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C4BAFA23AD2C210010114B /* StrikethroughExtensionTests.swift */; };
+		B7C4BB0023AD2C220010114B /* DisallowedRawHtmlExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C4BAFB23AD2C210010114B /* DisallowedRawHtmlExtensionTests.swift */; };
+		B7C4BB0123AD2C220010114B /* AutolinksExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C4BAFC23AD2C210010114B /* AutolinksExtensionTests.swift */; };
+		B7C4BB0223AD2C220010114B /* TablesExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C4BAFD23AD2C220010114B /* TablesExtensionTests.swift */; };
+		B7C4BB0323AD2C220010114B /* TaskListItemsExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C4BAFE23AD2C220010114B /* TaskListItemsExtensionTests.swift */; };
 		B7ED8C83238E1015003A1158 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ED8C82238E1015003A1158 /* main.swift */; };
 		B7ED8C8F238F248A003A1158 /* Files in Frameworks */ = {isa = PBXBuildFile; productRef = B7ED8C8E238F248A003A1158 /* Files */; };
 		B7ED8C9523906588003A1158 /* Ink in Frameworks */ = {isa = PBXBuildFile; productRef = B7ED8C9423906588003A1158 /* Ink */; };
@@ -74,7 +78,6 @@
 		B72B8C5223983A3F0000997B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B72B8C5323983FE10000997B /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		B75DB6AC2398516900200029 /* NormalizeHTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalizeHTML.swift; sourceTree = "<group>"; };
-		B75DB6B123986C2900200029 /* NormalizeHTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalizeHTML.swift; sourceTree = "<group>"; };
 		B77E585C23A83D7400A804FE /* spec.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = spec.txt; sourceTree = "<group>"; };
 		B7C1CD47239822D200681266 /* LinuxMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
 		B7C1CD592398244100681266 /* CommonMarkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommonMarkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +112,11 @@
 		B7C1CD99239825A200681266 /* LinuxCompatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinuxCompatibility.swift; sourceTree = "<group>"; };
 		B7C1CD9D2398274200681266 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		B7C1CDA22398290100681266 /* CommonMarkTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonMarkTests.swift; path = ../../../.Trash/CommonMarkTests.swift; sourceTree = "<group>"; };
+		B7C4BAFA23AD2C210010114B /* StrikethroughExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrikethroughExtensionTests.swift; sourceTree = "<group>"; };
+		B7C4BAFB23AD2C210010114B /* DisallowedRawHtmlExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisallowedRawHtmlExtensionTests.swift; sourceTree = "<group>"; };
+		B7C4BAFC23AD2C210010114B /* AutolinksExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutolinksExtensionTests.swift; sourceTree = "<group>"; };
+		B7C4BAFD23AD2C220010114B /* TablesExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TablesExtensionTests.swift; sourceTree = "<group>"; };
+		B7C4BAFE23AD2C220010114B /* TaskListItemsExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListItemsExtensionTests.swift; sourceTree = "<group>"; };
 		B7ED8C80238E1015003A1158 /* MakeTestCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MakeTestCode; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7ED8C82238E1015003A1158 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,11 +154,15 @@
 				B7C1CD6A2398245300681266 /* AutolinksTests.swift */,
 				B7C1CD662398245200681266 /* BackslashEscapesTests.swift */,
 				B7C1CD6C2398245300681266 /* BlankLinesTests.swift */,
-				B75DB6B123986C2900200029 /* NormalizeHTML.swift */,
 				B7C1CD7A2398245400681266 /* BlockQuotesTests.swift */,
 				B7C1CD702398245300681266 /* CodeSpansTests.swift */,
 				B7C1CD722398245300681266 /* EmphasisAndStrongEmphasisTests.swift */,
 				B7C1CD692398245300681266 /* EntityAndNumericCharacterReferencesTests.swift */,
+				B7C4BAFC23AD2C210010114B /* AutolinksExtensionTests.swift */,
+				B7C4BAFB23AD2C210010114B /* DisallowedRawHtmlExtensionTests.swift */,
+				B7C4BAFA23AD2C210010114B /* StrikethroughExtensionTests.swift */,
+				B7C4BAFD23AD2C220010114B /* TablesExtensionTests.swift */,
+				B7C4BAFE23AD2C220010114B /* TaskListItemsExtensionTests.swift */,
 				B7C1CD652398245200681266 /* FencedCodeBlocksTests.swift */,
 				B7C1CD682398245200681266 /* HardLineBreaksTests.swift */,
 				B7C1CD742398245300681266 /* HtmlBlocksTests.swift */,
@@ -332,6 +344,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7C1CD8E2398245400681266 /* ListItemsTests.swift in Sources */,
+				B7C4BAFF23AD2C220010114B /* StrikethroughExtensionTests.swift in Sources */,
+				B7C4BB0123AD2C220010114B /* AutolinksExtensionTests.swift in Sources */,
 				B7C1CD912398245400681266 /* RawHtmlTests.swift in Sources */,
 				B7C1CD882398245400681266 /* BlankLinesTests.swift in Sources */,
 				B7C1CD942398245400681266 /* IndentedCodeBlocksTests.swift in Sources */,
@@ -343,10 +357,10 @@
 				B7C1CD7C2398245400681266 /* AtxHeadingsTests.swift in Sources */,
 				B7C1CD902398245400681266 /* LinksTests.swift in Sources */,
 				B7C1CD7D2398245400681266 /* ListsTests.swift in Sources */,
-				B75DB6B223986C2A00200029 /* NormalizeHTML.swift in Sources */,
 				B7C1CD842398245400681266 /* CodeSpansTests.swift in Sources */,
 				B7C1CD822398245400681266 /* LinkReferenceDefinitionsTests.swift in Sources */,
 				B7C1CD9A239825A200681266 /* LinuxCompatibility.swift in Sources */,
+				B7C4BB0323AD2C220010114B /* TaskListItemsExtensionTests.swift in Sources */,
 				B7C1CD9C2398267E00681266 /* LinuxMain.swift in Sources */,
 				B7C1CD8A2398245400681266 /* EmphasisAndStrongEmphasisTests.swift in Sources */,
 				B7C1CD8F2398245400681266 /* ImagesTests.swift in Sources */,
@@ -354,9 +368,11 @@
 				B7C1CD812398245400681266 /* PrecedenceTests.swift in Sources */,
 				B7C1CD8B2398245400681266 /* HardLineBreaksTests.swift in Sources */,
 				B7C1CD892398245400681266 /* TabsTests.swift in Sources */,
+				B7C4BB0023AD2C220010114B /* DisallowedRawHtmlExtensionTests.swift in Sources */,
 				B7C1CDA02398285000681266 /* Package.swift in Sources */,
 				B7C1CD7F2398245400681266 /* ThematicBreaksTests.swift in Sources */,
 				B7C1CD862398245400681266 /* BlockQuotesTests.swift in Sources */,
+				B7C4BB0223AD2C220010114B /* TablesExtensionTests.swift in Sources */,
 				B7C1CD7E2398245400681266 /* SoftLineBreaksTests.swift in Sources */,
 				B7C1CD832398245400681266 /* BackslashEscapesTests.swift in Sources */,
 				B7C1CD802398245400681266 /* SetextHeadingsTests.swift in Sources */,

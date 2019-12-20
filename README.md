@@ -6,6 +6,12 @@ Warning: it may not be easy to run.
 
 The idea is that it starts with the spec.txt file that is from the [CommonMark website open source](https://github.com/commonmark/commonmark-spec).
 
+I am now using [GitHub's fork of cmark, a CommonMark parsing and rendering library](https://github.com/github/cmark-gfm) to get their spec.txt
+
+They have a strikethrough extension that Ink also has and some HTML protections that Ink should adopt.
+
+See some online docs for [GitHub flavored markdown](https://github.github.com/gfm/)
+
 The XCode project has an App "MakeTestCode" that when run inside XCode will produce XCTest files in a CommonMarkTests folder.  These tests are also published with the repo so you do not need to run this test case builder in order to see the result.
 
 If you instead "Test" (run testcases) on the MakeTestCode it will actually run the tests on the Ink Markdown parser. 
@@ -18,7 +24,7 @@ I have stopped using SwiftSoup, an HTML Parser, to act as a normalizer.
 
 The latest version uses the [SwiftMarkdown](https://github.com/vapor-community/markdown) package with the GitHub flavoured Markdown C-code implementation as the **"reference truth"** instead of the spec.txt file.
 
-The Markdown test is executed on cMark and the result is used to write the testcase.
+The Markdown test is executed on cMark-gfm and the result is used to write the testcase.
 
 ## Missing
 

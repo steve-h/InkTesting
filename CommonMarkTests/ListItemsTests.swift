@@ -2,16 +2,17 @@
 *  Ink
 *  Copyright (c) Steve Hume 2019
 *  MIT license, see LICENSE file for details
-These tests are extracted from https://spec.commonmark.org/0.29/
-title: CommonMark Spec
-author: John MacFarlane
+---
+title: GitHub Flavored Markdown Spec
 version: 0.29
 date: '2019-04-06'
-license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
+license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/)'
+...
 */
 
 import XCTest
 import Ink
+import Foundation
 
 final class ListItemsTests: XCTestCase {
 
@@ -44,10 +45,10 @@ final class ListItemsTests: XCTestCase {
     //     Exceptions:
     // 
     //     1. When the first list item in a [list] interrupts
-    //        a paragraph---that is, when it starts on a line that would
-    //        otherwise count as [paragraph continuation text]---then (a)
-    //        the lines *Ls* must not begin with a blank line, and (b) if
-    //        the list item is ordered, the start number must be 1.
+    //     a paragraph---that is, when it starts on a line that would
+    //     otherwise count as [paragraph continuation text]---then (a)
+    //     the lines *Ls* must not begin with a blank line, and (b) if
+    //     the list item is ordered, the start number must be 1.
     //     2. If any line is a [thematic break][thematic breaks] then
     //        that line is not a list item.
     // 
@@ -55,8 +56,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 3779-3794
-    func testExample223() {
+    // spec.txt lines 4003-4018
+    func testExample231() {
         let markdownTest =
         #####"""
         A paragraph
@@ -68,6 +69,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>A paragraph
       //with two lines.</p>
@@ -90,8 +92,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 3801-3820
-    func testExample224() {
+    // spec.txt lines 4025-4044
+    func testExample232() {
         let markdownTest =
         #####"""
         1.  A paragraph
@@ -103,6 +105,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ol>
       //<li>
@@ -136,8 +139,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 3834-3843
-    func testExample225() {
+    // spec.txt lines 4058-4067
+    func testExample233() {
         let markdownTest =
         #####"""
         - one
@@ -146,6 +149,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>one</li>
@@ -160,8 +164,8 @@ final class ListItemsTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 3846-3857
-    func testExample226() {
+    // spec.txt lines 4070-4081
+    func testExample234() {
         let markdownTest =
         #####"""
         - one
@@ -170,6 +174,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>
@@ -186,8 +191,8 @@ final class ListItemsTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 3860-3870
-    func testExample227() {
+    // spec.txt lines 4084-4094
+    func testExample235() {
         let markdownTest =
         #####"""
          -    one
@@ -196,6 +201,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>one</li>
@@ -212,8 +218,8 @@ final class ListItemsTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 3873-3884
-    func testExample228() {
+    // spec.txt lines 4097-4108
+    func testExample236() {
         let markdownTest =
         #####"""
          -    one
@@ -222,6 +228,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>
@@ -246,8 +253,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 3895-3910
-    func testExample229() {
+    // spec.txt lines 4119-4134
+    func testExample237() {
         let markdownTest =
         #####"""
            > > 1.  one
@@ -256,6 +263,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<blockquote>
       //<blockquote>
@@ -285,8 +293,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 3922-3935
-    func testExample230() {
+    // spec.txt lines 4146-4159
+    func testExample238() {
         let markdownTest =
         #####"""
         >>- one
@@ -295,6 +303,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<blockquote>
       //<blockquote>
@@ -316,8 +325,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 3941-3948
-    func testExample231() {
+    // spec.txt lines 4165-4172
+    func testExample239() {
         let markdownTest =
         #####"""
         -one
@@ -326,6 +335,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>-one</p>
       //<p>2.two</p>
@@ -341,8 +351,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 3954-3966
-    func testExample232() {
+    // spec.txt lines 4178-4190
+    func testExample240() {
         let markdownTest =
         #####"""
         - foo
@@ -352,6 +362,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>
@@ -370,8 +381,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 3971-3993
-    func testExample233() {
+    // spec.txt lines 4195-4217
+    func testExample241() {
         let markdownTest =
         #####"""
         1.  foo
@@ -386,6 +397,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ol>
       //<li>
@@ -411,8 +423,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 3999-4017
-    func testExample234() {
+    // spec.txt lines 4223-4241
+    func testExample242() {
         let markdownTest =
         #####"""
         - Foo
@@ -424,6 +436,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>
@@ -450,14 +463,15 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4021-4027
-    func testExample235() {
+    // spec.txt lines 4245-4251
+    func testExample243() {
         let markdownTest =
         #####"""
         123456789. ok
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<ol start="123456789">
       //<li>ok</li>
@@ -471,14 +485,15 @@ final class ListItemsTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4030-4034
-    func testExample236() {
+    // spec.txt lines 4254-4258
+    func testExample244() {
         let markdownTest =
         #####"""
         1234567890. not ok
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p>1234567890. not ok</p>
         let normalizedCM = #####"""
@@ -492,14 +507,15 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4039-4045
-    func testExample237() {
+    // spec.txt lines 4263-4269
+    func testExample245() {
         let markdownTest =
         #####"""
         0. ok
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<ol start="0">
       //<li>ok</li>
@@ -513,14 +529,15 @@ final class ListItemsTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4048-4054
-    func testExample238() {
+    // spec.txt lines 4272-4278
+    func testExample246() {
         let markdownTest =
         #####"""
         003. ok
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<ol start="3">
       //<li>ok</li>
@@ -536,14 +553,15 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4059-4063
-    func testExample239() {
+    // spec.txt lines 4283-4287
+    func testExample247() {
         let markdownTest =
         #####"""
         -1. not ok
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p>-1. not ok</p>
         let normalizedCM = #####"""
@@ -570,8 +588,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4082-4094
-    func testExample240() {
+    // spec.txt lines 4306-4318
+    func testExample248() {
         let markdownTest =
         #####"""
         - foo
@@ -580,6 +598,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>
@@ -600,8 +619,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4099-4111
-    func testExample241() {
+    // spec.txt lines 4323-4335
+    func testExample249() {
         let markdownTest =
         #####"""
           10.  foo
@@ -610,6 +629,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ol start="10">
       //<li>
@@ -632,8 +652,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4118-4130
-    func testExample242() {
+    // spec.txt lines 4342-4354
+    func testExample250() {
         let markdownTest =
         #####"""
             indented code
@@ -644,6 +664,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code>indented code
       //</code></pre>
@@ -661,8 +682,8 @@ final class ListItemsTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4133-4149
-    func testExample243() {
+    // spec.txt lines 4357-4373
+    func testExample251() {
         let markdownTest =
         #####"""
         1.     indented code
@@ -673,6 +694,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ol>
       //<li>
@@ -697,8 +719,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4155-4171
-    func testExample244() {
+    // spec.txt lines 4379-4395
+    func testExample252() {
         let markdownTest =
         #####"""
         1.      indented code
@@ -709,6 +731,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ol>
       //<li>
@@ -738,8 +761,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4182-4189
-    func testExample245() {
+    // spec.txt lines 4406-4413
+    func testExample253() {
         let markdownTest =
         #####"""
            foo
@@ -748,6 +771,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>foo</p>
       //<p>bar</p>
@@ -760,8 +784,8 @@ final class ListItemsTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4192-4201
-    func testExample246() {
+    // spec.txt lines 4416-4425
+    func testExample254() {
         let markdownTest =
         #####"""
         -    foo
@@ -770,6 +794,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>foo</li>
@@ -789,8 +814,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4209-4220
-    func testExample247() {
+    // spec.txt lines 4433-4444
+    func testExample255() {
         let markdownTest =
         #####"""
         -  foo
@@ -799,6 +824,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>
@@ -829,8 +855,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4237-4258
-    func testExample248() {
+    // spec.txt lines 4461-4482
+    func testExample256() {
         let markdownTest =
         #####"""
         -
@@ -844,6 +870,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>foo</li>
@@ -870,15 +897,16 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4263-4270
-    func testExample249() {
+    // spec.txt lines 4487-4494
+    func testExample257() {
         let markdownTest =
         #####"""
-        -   
+        -
           foo\#####n
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>foo</li>
@@ -896,8 +924,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4277-4286
-    func testExample250() {
+    // spec.txt lines 4501-4510
+    func testExample258() {
         let markdownTest =
         #####"""
         -
@@ -906,6 +934,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li></li>
@@ -922,8 +951,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4291-4301
-    func testExample251() {
+    // spec.txt lines 4515-4525
+    func testExample259() {
         let markdownTest =
         #####"""
         - foo
@@ -932,6 +961,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>foo</li>
@@ -949,16 +979,17 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4306-4316
-    func testExample252() {
+    // spec.txt lines 4530-4540
+    func testExample260() {
         let markdownTest =
         #####"""
         - foo
-        -   
+        -
         - bar\#####n
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>foo</li>
@@ -976,8 +1007,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4321-4331
-    func testExample253() {
+    // spec.txt lines 4545-4555
+    func testExample261() {
         let markdownTest =
         #####"""
         1. foo
@@ -986,6 +1017,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ol>
       //<li>foo</li>
@@ -1003,14 +1035,15 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4336-4342
-    func testExample254() {
+    // spec.txt lines 4560-4566
+    func testExample262() {
         let markdownTest =
         #####"""
         *
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<ul>
       //<li></li>
@@ -1026,8 +1059,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4346-4357
-    func testExample255() {
+    // spec.txt lines 4570-4581
+    func testExample263() {
         let markdownTest =
         #####"""
         foo
@@ -1038,6 +1071,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>foo
       //*</p>
@@ -1060,8 +1094,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4368-4387
-    func testExample256() {
+    // spec.txt lines 4592-4611
+    func testExample264() {
         let markdownTest =
         #####"""
          1.  A paragraph
@@ -1073,6 +1107,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ol>
       //<li>
@@ -1097,8 +1132,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4392-4411
-    func testExample257() {
+    // spec.txt lines 4616-4635
+    func testExample265() {
         let markdownTest =
         #####"""
           1.  A paragraph
@@ -1110,6 +1145,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ol>
       //<li>
@@ -1134,8 +1170,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4416-4435
-    func testExample258() {
+    // spec.txt lines 4640-4659
+    func testExample266() {
         let markdownTest =
         #####"""
            1.  A paragraph
@@ -1147,6 +1183,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ol>
       //<li>
@@ -1171,8 +1208,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4440-4455
-    func testExample259() {
+    // spec.txt lines 4664-4679
+    func testExample267() {
         let markdownTest =
         #####"""
             1.  A paragraph
@@ -1184,6 +1221,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code>1.  A paragraph
       //    with two lines.
@@ -1218,8 +1256,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4470-4489
-    func testExample260() {
+    // spec.txt lines 4694-4713
+    func testExample268() {
         let markdownTest =
         #####"""
           1.  A paragraph
@@ -1231,6 +1269,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ol>
       //<li>
@@ -1255,8 +1294,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4494-4502
-    func testExample261() {
+    // spec.txt lines 4718-4726
+    func testExample269() {
         let markdownTest =
         #####"""
           1.  A paragraph
@@ -1264,6 +1303,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ol>
       //<li>A paragraph
@@ -1280,8 +1320,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4507-4521
-    func testExample262() {
+    // spec.txt lines 4731-4745
+    func testExample270() {
         let markdownTest =
         #####"""
         > 1. > Blockquote
@@ -1289,6 +1329,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<blockquote>
       //<ol>
@@ -1309,8 +1350,8 @@ final class ListItemsTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4524-4538
-    func testExample263() {
+    // spec.txt lines 4748-4762
+    func testExample271() {
         let markdownTest =
         #####"""
         > 1. > Blockquote
@@ -1318,6 +1359,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<blockquote>
       //<ol>
@@ -1348,8 +1390,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4552-4573
-    func testExample264() {
+    // spec.txt lines 4776-4797
+    func testExample272() {
         let markdownTest =
         #####"""
         - foo
@@ -1359,6 +1401,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>foo
@@ -1389,8 +1432,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4578-4590
-    func testExample265() {
+    // spec.txt lines 4802-4814
+    func testExample273() {
         let markdownTest =
         #####"""
         - foo
@@ -1400,6 +1443,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>foo</li>
@@ -1418,8 +1462,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4595-4606
-    func testExample266() {
+    // spec.txt lines 4819-4830
+    func testExample274() {
         let markdownTest =
         #####"""
         10) foo
@@ -1427,6 +1471,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ol start="10">
       //<li>foo
@@ -1447,8 +1492,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4611-4621
-    func testExample267() {
+    // spec.txt lines 4835-4845
+    func testExample275() {
         let markdownTest =
         #####"""
         10) foo
@@ -1456,6 +1501,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ol start="10">
       //<li>foo</li>
@@ -1474,14 +1520,15 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4626-4636
-    func testExample268() {
+    // spec.txt lines 4850-4860
+    func testExample276() {
         let markdownTest =
         #####"""
         - - foo
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<ul>
       //<li>
@@ -1499,14 +1546,15 @@ final class ListItemsTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4639-4653
-    func testExample269() {
+    // spec.txt lines 4863-4877
+    func testExample277() {
         let markdownTest =
         #####"""
         1. - 2. foo
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<ol>
       //<li>
@@ -1530,8 +1578,8 @@ final class ListItemsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4658-4672
-    func testExample270() {
+    // spec.txt lines 4882-4896
+    func testExample278() {
         let markdownTest =
         #####"""
         - # Foo
@@ -1541,6 +1589,7 @@ final class ListItemsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>
@@ -1563,14 +1612,6 @@ final class ListItemsTests: XCTestCase {
 extension ListItemsTests {
     static var allTests: Linux.TestList<ListItemsTests> {
         return [
-        ("testExample223", testExample223),
-        ("testExample224", testExample224),
-        ("testExample225", testExample225),
-        ("testExample226", testExample226),
-        ("testExample227", testExample227),
-        ("testExample228", testExample228),
-        ("testExample229", testExample229),
-        ("testExample230", testExample230),
         ("testExample231", testExample231),
         ("testExample232", testExample232),
         ("testExample233", testExample233),
@@ -1610,7 +1651,15 @@ extension ListItemsTests {
         ("testExample267", testExample267),
         ("testExample268", testExample268),
         ("testExample269", testExample269),
-        ("testExample270", testExample270)
+        ("testExample270", testExample270),
+        ("testExample271", testExample271),
+        ("testExample272", testExample272),
+        ("testExample273", testExample273),
+        ("testExample274", testExample274),
+        ("testExample275", testExample275),
+        ("testExample276", testExample276),
+        ("testExample277", testExample277),
+        ("testExample278", testExample278)
         ]
     }
 }

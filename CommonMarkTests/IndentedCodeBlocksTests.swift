@@ -2,16 +2,17 @@
 *  Ink
 *  Copyright (c) Steve Hume 2019
 *  MIT license, see LICENSE file for details
-These tests are extracted from https://spec.commonmark.org/0.29/
-title: CommonMark Spec
-author: John MacFarlane
+---
+title: GitHub Flavored Markdown Spec
 version: 0.29
 date: '2019-04-06'
-license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
+license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/)'
+...
 */
 
 import XCTest
 import Ink
+import Foundation
 
 final class IndentedCodeBlocksTests: XCTestCase {
 
@@ -32,7 +33,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1408-1415
+    // spec.txt lines 1424-1431
     func testExample77() {
         let markdownTest =
         #####"""
@@ -41,6 +42,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code>a simple
       //  indented code block
@@ -60,7 +62,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1422-1433
+    // spec.txt lines 1438-1449
     func testExample78() {
         let markdownTest =
         #####"""
@@ -70,6 +72,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>
@@ -86,7 +89,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1436-1449
+    // spec.txt lines 1452-1465
     func testExample79() {
         let markdownTest =
         #####"""
@@ -96,6 +99,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ol>
       //<li>
@@ -117,7 +121,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1456-1467
+    // spec.txt lines 1472-1483
     func testExample80() {
         let markdownTest =
         #####"""
@@ -128,6 +132,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code>&lt;a/&gt;
       //*hi*
@@ -149,7 +154,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1472-1489
+    // spec.txt lines 1488-1505
     func testExample81() {
         let markdownTest =
         #####"""
@@ -163,6 +168,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code>chunk1
       //
@@ -191,7 +197,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1495-1504
+    // spec.txt lines 1511-1520
     func testExample82() {
         let markdownTest =
         #####"""
@@ -201,6 +207,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code>chunk1
       //  
@@ -221,7 +228,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1510-1517
+    // spec.txt lines 1526-1533
     func testExample83() {
         let markdownTest =
         #####"""
@@ -231,6 +238,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>Foo
       //bar</p>
@@ -247,7 +255,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1524-1531
+    // spec.txt lines 1540-1547
     func testExample84() {
         let markdownTest =
         #####"""
@@ -256,6 +264,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code>foo
       //</code></pre>
@@ -273,7 +282,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1537-1552
+    // spec.txt lines 1553-1568
     func testExample85() {
         let markdownTest =
         #####"""
@@ -286,6 +295,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<h1>Heading</h1>
       //<pre><code>foo
@@ -307,7 +317,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1557-1564
+    // spec.txt lines 1573-1580
     func testExample86() {
         let markdownTest =
         #####"""
@@ -316,6 +326,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code>    foo
       //bar
@@ -334,7 +345,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1570-1579
+    // spec.txt lines 1586-1595
     func testExample87() {
         let markdownTest =
         #####"""
@@ -346,6 +357,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code>foo
       //</code></pre>
@@ -361,19 +373,20 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1584-1589
+    // spec.txt lines 1600-1605
     func testExample88() {
         let markdownTest =
         #####"""
-            foo  
+            foo
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
         
-      //<pre><code>foo  
+        
+      //<pre><code>foo
       //</code></pre>
         let normalizedCM = #####"""
-        <pre><code>foo  
+        <pre><code>foo
         </code></pre>
         """#####
     

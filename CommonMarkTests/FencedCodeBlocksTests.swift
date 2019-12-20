@@ -2,16 +2,17 @@
 *  Ink
 *  Copyright (c) Steve Hume 2019
 *  MIT license, see LICENSE file for details
-These tests are extracted from https://spec.commonmark.org/0.29/
-title: CommonMark Spec
-author: John MacFarlane
+---
+title: GitHub Flavored Markdown Spec
 version: 0.29
 date: '2019-04-06'
-license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
+license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/)'
+...
 */
 
 import XCTest
 import Ink
+import Foundation
 
 final class FencedCodeBlocksTests: XCTestCase {
 
@@ -63,7 +64,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1639-1648
+    // spec.txt lines 1655-1664
     func testExample89() {
         let markdownTest =
         #####"""
@@ -74,6 +75,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code>&lt;
       // &gt;
@@ -91,7 +93,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1653-1662
+    // spec.txt lines 1669-1678
     func testExample90() {
         let markdownTest =
         #####"""
@@ -102,6 +104,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code>&lt;
       // &gt;
@@ -119,7 +122,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1666-1672
+    // spec.txt lines 1682-1688
     func testExample91() {
         let markdownTest =
         #####"""
@@ -129,6 +132,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><code>foo</code></p>
         let normalizedCM = #####"""
@@ -143,7 +147,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1677-1686
+    // spec.txt lines 1693-1702
     func testExample92() {
         let markdownTest =
         #####"""
@@ -154,6 +158,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code>aaa
       //~~~
@@ -169,7 +174,7 @@ final class FencedCodeBlocksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1689-1698
+    // spec.txt lines 1705-1714
     func testExample93() {
         let markdownTest =
         #####"""
@@ -180,6 +185,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code>aaa
       //```
@@ -197,7 +203,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1703-1712
+    // spec.txt lines 1719-1728
     func testExample94() {
         let markdownTest =
         #####"""
@@ -208,6 +214,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code>aaa
       //```
@@ -223,7 +230,7 @@ final class FencedCodeBlocksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1715-1724
+    // spec.txt lines 1731-1740
     func testExample95() {
         let markdownTest =
         #####"""
@@ -234,6 +241,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code>aaa
       //~~~
@@ -252,7 +260,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1730-1734
+    // spec.txt lines 1746-1750
     func testExample96() {
         let markdownTest =
         #####"""
@@ -260,6 +268,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<pre><code></code></pre>
         let normalizedCM = #####"""
@@ -271,7 +280,7 @@ final class FencedCodeBlocksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1737-1747
+    // spec.txt lines 1753-1763
     func testExample97() {
         let markdownTest =
         #####"""
@@ -282,6 +291,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code>
       //```
@@ -299,7 +309,7 @@ final class FencedCodeBlocksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1750-1761
+    // spec.txt lines 1766-1777
     func testExample98() {
         let markdownTest =
         #####"""
@@ -310,6 +320,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<blockquote>
       //<pre><code>aaa
@@ -328,7 +339,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1766-1775
+    // spec.txt lines 1782-1791
     func testExample99() {
         let markdownTest =
         #####"""
@@ -339,6 +350,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code>
       //  
@@ -356,7 +368,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1780-1785
+    // spec.txt lines 1796-1801
     func testExample100() {
         let markdownTest =
         #####"""
@@ -365,6 +377,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code></code></pre>
         let normalizedCM = #####"""
@@ -380,7 +393,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1792-1801
+    // spec.txt lines 1808-1817
     func testExample101() {
         let markdownTest =
         #####"""
@@ -391,6 +404,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code>aaa
       //aaa
@@ -406,7 +420,7 @@ final class FencedCodeBlocksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1804-1815
+    // spec.txt lines 1820-1831
     func testExample102() {
         let markdownTest =
         #####"""
@@ -418,6 +432,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code>aaa
       //aaa
@@ -435,7 +450,7 @@ final class FencedCodeBlocksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1818-1829
+    // spec.txt lines 1834-1845
     func testExample103() {
         let markdownTest =
         #####"""
@@ -447,6 +462,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code>aaa
       // aaa
@@ -466,7 +482,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1834-1843
+    // spec.txt lines 1850-1859
     func testExample104() {
         let markdownTest =
         #####"""
@@ -476,6 +492,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code>```
       //aaa
@@ -496,7 +513,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1849-1856
+    // spec.txt lines 1865-1872
     func testExample105() {
         let markdownTest =
         #####"""
@@ -506,6 +523,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code>aaa
       //</code></pre>
@@ -519,7 +537,7 @@ final class FencedCodeBlocksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1859-1866
+    // spec.txt lines 1875-1882
     func testExample106() {
         let markdownTest =
         #####"""
@@ -529,6 +547,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code>aaa
       //</code></pre>
@@ -544,7 +563,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1871-1879
+    // spec.txt lines 1887-1895
     func testExample107() {
         let markdownTest =
         #####"""
@@ -554,6 +573,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code>aaa
       //    ```
@@ -571,7 +591,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1885-1891
+    // spec.txt lines 1901-1907
     func testExample108() {
         let markdownTest =
         #####"""
@@ -580,6 +600,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><code> </code>
       //aaa</p>
@@ -592,7 +613,7 @@ final class FencedCodeBlocksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1894-1902
+    // spec.txt lines 1910-1918
     func testExample109() {
         let markdownTest =
         #####"""
@@ -602,6 +623,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code>aaa
       //~~~ ~~
@@ -620,7 +642,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1908-1919
+    // spec.txt lines 1924-1935
     func testExample110() {
         let markdownTest =
         #####"""
@@ -632,6 +654,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>foo</p>
       //<pre><code>bar
@@ -650,7 +673,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1925-1937
+    // spec.txt lines 1941-1953
     func testExample111() {
         let markdownTest =
         #####"""
@@ -663,6 +686,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<h2>foo</h2>
       //<pre><code>bar
@@ -685,7 +709,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1947-1958
+    // spec.txt lines 1963-1974
     func testExample112() {
         let markdownTest =
         #####"""
@@ -697,6 +721,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code class="language-ruby">def foo(x)
       //  return 3
@@ -714,7 +739,7 @@ final class FencedCodeBlocksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1961-1972
+    // spec.txt lines 1977-1988
     func testExample113() {
         let markdownTest =
         #####"""
@@ -726,6 +751,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code class="language-ruby">def foo(x)
       //  return 3
@@ -743,7 +769,7 @@ final class FencedCodeBlocksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1975-1980
+    // spec.txt lines 1991-1996
     func testExample114() {
         let markdownTest =
         #####"""
@@ -752,6 +778,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code class="language-;"></code></pre>
         let normalizedCM = #####"""
@@ -765,7 +792,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1985-1991
+    // spec.txt lines 2001-2007
     func testExample115() {
         let markdownTest =
         #####"""
@@ -774,6 +801,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><code>aa</code>
       //foo</p>
@@ -788,7 +816,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1996-2003
+    // spec.txt lines 2012-2019
     func testExample116() {
         let markdownTest =
         #####"""
@@ -798,6 +826,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code class="language-aa">foo
       //</code></pre>
@@ -812,7 +841,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 2008-2015
+    // spec.txt lines 2024-2031
     func testExample117() {
         let markdownTest =
         #####"""
@@ -822,6 +851,7 @@ final class FencedCodeBlocksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code>``` aaa
       //</code></pre>

@@ -87,16 +87,17 @@ func openNewFile() {
     *  Ink
     *  Copyright (c) Steve Hume 2019
     *  MIT license, see LICENSE file for details
-    These tests are extracted from https://spec.commonmark.org/0.29/
-    title: CommonMark Spec
-    author: John MacFarlane
+    ---
+    title: GitHub Flavored Markdown Spec
     version: 0.29
     date: '2019-04-06'
-    license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
+    license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/)'
+    ...
     */
 
     import XCTest
     import Ink
+    import Foundation
     
     """
     let testFileName = recentSection.upperCamelCased + "Tests"
@@ -124,6 +125,10 @@ func outputTestCase(_ test: Test) {
     
     let markdownsegment = test.markdown.components(separatedBy: "\n").dropLast().joined(separator:sepstr)
     let markdownOptionalNewline: String = (test.markdownLines <= 1) ? "" : "\\#####n"
+    let inkPostNormalize: String = (test.markdownLines <= 1) ? "" :
+    """
+    .replacingOccurrences(of: ">\\n<", with: "><")
+    """
     let htmlFromTestcase = sepstrForComments + test.html.components(separatedBy: "\n").dropLast().joined(separator:sepstrForComments)
     
     let cMarkhtml = try! markdownToHTML(test.markdown, options: [.normalize, .noBreaks])
@@ -146,6 +151,7 @@ func outputTestCase(_ test: Test) {
             \"\"\"#####
         
             let html = MarkdownParser().html(from: markdownTest)
+            \(inkPostNormalize)
             \(htmlFromTestcase)
             let normalizedCM = #####\"\"\"
             \(htmlsegment)

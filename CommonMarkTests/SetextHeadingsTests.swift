@@ -2,16 +2,17 @@
 *  Ink
 *  Copyright (c) Steve Hume 2019
 *  MIT license, see LICENSE file for details
-These tests are extracted from https://spec.commonmark.org/0.29/
-title: CommonMark Spec
-author: John MacFarlane
+---
+title: GitHub Flavored Markdown Spec
 version: 0.29
 date: '2019-04-06'
-license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
+license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/)'
+...
 */
 
 import XCTest
 import Ink
+import Foundation
 
 final class SetextHeadingsTests: XCTestCase {
 
@@ -49,7 +50,7 @@ final class SetextHeadingsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1006-1015
+    // spec.txt lines 1022-1031
     func testExample50() {
         let markdownTest =
         #####"""
@@ -61,6 +62,7 @@ final class SetextHeadingsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<h1>Foo <em>bar</em></h1>
       //<h2>Foo <em>bar</em></h2>
@@ -75,7 +77,7 @@ final class SetextHeadingsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1020-1027
+    // spec.txt lines 1036-1043
     func testExample51() {
         let markdownTest =
         #####"""
@@ -85,6 +87,7 @@ final class SetextHeadingsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<h1>Foo <em>bar
       //baz</em></h1>
@@ -102,7 +105,7 @@ final class SetextHeadingsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1034-1041
+    // spec.txt lines 1050-1057
     func testExample52() {
         let markdownTest =
         #####"""
@@ -112,6 +115,7 @@ final class SetextHeadingsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<h1>Foo <em>bar
       //baz</em></h1>
@@ -126,7 +130,7 @@ final class SetextHeadingsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1046-1055
+    // spec.txt lines 1062-1071
     func testExample53() {
         let markdownTest =
         #####"""
@@ -138,6 +142,7 @@ final class SetextHeadingsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<h2>Foo</h2>
       //<h1>Foo</h1>
@@ -153,7 +158,7 @@ final class SetextHeadingsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1061-1074
+    // spec.txt lines 1077-1090
     func testExample54() {
         let markdownTest =
         #####"""
@@ -168,6 +173,7 @@ final class SetextHeadingsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<h2>Foo</h2>
       //<h2>Foo</h2>
@@ -183,7 +189,7 @@ final class SetextHeadingsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1079-1092
+    // spec.txt lines 1095-1108
     func testExample55() {
         let markdownTest =
         #####"""
@@ -195,6 +201,7 @@ final class SetextHeadingsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code>Foo
       //---
@@ -218,15 +225,16 @@ final class SetextHeadingsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1098-1103
+    // spec.txt lines 1114-1119
     func testExample56() {
         let markdownTest =
         #####"""
         Foo
-           ----      \#####n
+           ----\#####n
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<h2>Foo</h2>
         let normalizedCM = #####"""
@@ -240,7 +248,7 @@ final class SetextHeadingsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1108-1114
+    // spec.txt lines 1124-1130
     func testExample57() {
         let markdownTest =
         #####"""
@@ -249,6 +257,7 @@ final class SetextHeadingsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>Foo
       //---</p>
@@ -263,7 +272,7 @@ final class SetextHeadingsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1119-1130
+    // spec.txt lines 1135-1146
     func testExample58() {
         let markdownTest =
         #####"""
@@ -275,6 +284,7 @@ final class SetextHeadingsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>Foo
       //= =</p>
@@ -291,15 +301,16 @@ final class SetextHeadingsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1135-1140
+    // spec.txt lines 1151-1156
     func testExample59() {
         let markdownTest =
         #####"""
-        Foo  
+        Foo
         -----\#####n
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<h2>Foo</h2>
         let normalizedCM = #####"""
@@ -313,7 +324,7 @@ final class SetextHeadingsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1145-1150
+    // spec.txt lines 1161-1166
     func testExample60() {
         let markdownTest =
         #####"""
@@ -322,6 +333,7 @@ final class SetextHeadingsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<h2>Foo\</h2>
         let normalizedCM = #####"""
@@ -336,7 +348,7 @@ final class SetextHeadingsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1156-1169
+    // spec.txt lines 1172-1185
     func testExample61() {
         let markdownTest =
         #####"""
@@ -350,6 +362,7 @@ final class SetextHeadingsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<h2>`Foo</h2>
       //<p>`</p>
@@ -367,7 +380,7 @@ final class SetextHeadingsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1175-1183
+    // spec.txt lines 1191-1199
     func testExample62() {
         let markdownTest =
         #####"""
@@ -376,6 +389,7 @@ final class SetextHeadingsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<blockquote>
       //<p>Foo</p>
@@ -390,7 +404,7 @@ final class SetextHeadingsTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1186-1196
+    // spec.txt lines 1202-1212
     func testExample63() {
         let markdownTest =
         #####"""
@@ -400,6 +414,7 @@ final class SetextHeadingsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<blockquote>
       //<p>foo
@@ -415,7 +430,7 @@ final class SetextHeadingsTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1199-1207
+    // spec.txt lines 1215-1223
     func testExample64() {
         let markdownTest =
         #####"""
@@ -424,6 +439,7 @@ final class SetextHeadingsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>Foo</li>
@@ -442,7 +458,7 @@ final class SetextHeadingsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1214-1221
+    // spec.txt lines 1230-1237
     func testExample65() {
         let markdownTest =
         #####"""
@@ -452,6 +468,7 @@ final class SetextHeadingsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<h2>Foo
       //Bar</h2>
@@ -467,7 +484,7 @@ final class SetextHeadingsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1227-1239
+    // spec.txt lines 1243-1255
     func testExample66() {
         let markdownTest =
         #####"""
@@ -480,6 +497,7 @@ final class SetextHeadingsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<hr />
       //<h2>Foo</h2>
@@ -496,7 +514,7 @@ final class SetextHeadingsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1244-1249
+    // spec.txt lines 1260-1265
     func testExample67() {
         let markdownTest =
         #####"""
@@ -505,6 +523,7 @@ final class SetextHeadingsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>====</p>
         let normalizedCM = #####"""
@@ -520,7 +539,7 @@ final class SetextHeadingsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1256-1262
+    // spec.txt lines 1272-1278
     func testExample68() {
         let markdownTest =
         #####"""
@@ -529,6 +548,7 @@ final class SetextHeadingsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<hr />
       //<hr />
@@ -541,7 +561,7 @@ final class SetextHeadingsTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1265-1273
+    // spec.txt lines 1281-1289
     func testExample69() {
         let markdownTest =
         #####"""
@@ -550,6 +570,7 @@ final class SetextHeadingsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>foo</li>
@@ -564,7 +585,7 @@ final class SetextHeadingsTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1276-1283
+    // spec.txt lines 1292-1299
     func testExample70() {
         let markdownTest =
         #####"""
@@ -573,6 +594,7 @@ final class SetextHeadingsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code>foo
       //</code></pre>
@@ -587,7 +609,7 @@ final class SetextHeadingsTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1286-1294
+    // spec.txt lines 1302-1310
     func testExample71() {
         let markdownTest =
         #####"""
@@ -596,6 +618,7 @@ final class SetextHeadingsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<blockquote>
       //<p>foo</p>
@@ -613,7 +636,7 @@ final class SetextHeadingsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1300-1305
+    // spec.txt lines 1316-1321
     func testExample72() {
         let markdownTest =
         #####"""
@@ -622,6 +645,7 @@ final class SetextHeadingsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<h2>&gt; foo</h2>
         let normalizedCM = #####"""
@@ -656,7 +680,7 @@ final class SetextHeadingsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1331-1341
+    // spec.txt lines 1347-1357
     func testExample73() {
         let markdownTest =
         #####"""
@@ -668,6 +692,7 @@ final class SetextHeadingsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>Foo</p>
       //<h2>bar</h2>
@@ -684,7 +709,7 @@ final class SetextHeadingsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1347-1359
+    // spec.txt lines 1363-1375
     func testExample74() {
         let markdownTest =
         #####"""
@@ -697,6 +722,7 @@ final class SetextHeadingsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>Foo
       //bar</p>
@@ -714,7 +740,7 @@ final class SetextHeadingsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1365-1375
+    // spec.txt lines 1381-1391
     func testExample75() {
         let markdownTest =
         #####"""
@@ -725,6 +751,7 @@ final class SetextHeadingsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>Foo
       //bar</p>
@@ -741,7 +768,7 @@ final class SetextHeadingsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 1380-1390
+    // spec.txt lines 1396-1406
     func testExample76() {
         let markdownTest =
         #####"""
@@ -752,6 +779,7 @@ final class SetextHeadingsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>Foo
       //bar

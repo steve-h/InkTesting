@@ -2,16 +2,17 @@
 *  Ink
 *  Copyright (c) Steve Hume 2019
 *  MIT license, see LICENSE file for details
-These tests are extracted from https://spec.commonmark.org/0.29/
-title: CommonMark Spec
-author: John MacFarlane
+---
+title: GitHub Flavored Markdown Spec
 version: 0.29
 date: '2019-04-06'
-license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
+license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/)'
+...
 */
 
 import XCTest
 import Ink
+import Foundation
 
 final class ThematicBreaksTests: XCTestCase {
 
@@ -45,7 +46,7 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 535-543
+    // spec.txt lines 551-559
     func testExample13() {
         let markdownTest =
         #####"""
@@ -55,6 +56,7 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<hr />
       //<hr />
@@ -70,7 +72,7 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 548-552
+    // spec.txt lines 564-568
     func testExample14() {
         let markdownTest =
         #####"""
@@ -78,6 +80,7 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p>+++</p>
         let normalizedCM = #####"""
@@ -89,7 +92,7 @@ final class ThematicBreaksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 555-559
+    // spec.txt lines 571-575
     func testExample15() {
         let markdownTest =
         #####"""
@@ -97,6 +100,7 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p>===</p>
         let normalizedCM = #####"""
@@ -110,7 +114,7 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 564-572
+    // spec.txt lines 580-588
     func testExample16() {
         let markdownTest =
         #####"""
@@ -120,6 +124,7 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>--
       //**
@@ -135,7 +140,7 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 577-585
+    // spec.txt lines 593-601
     func testExample17() {
         let markdownTest =
         #####"""
@@ -145,6 +150,7 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<hr />
       //<hr />
@@ -160,7 +166,7 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 590-595
+    // spec.txt lines 606-611
     func testExample18() {
         let markdownTest =
         #####"""
@@ -168,6 +174,7 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<pre><code>***
       //</code></pre>
@@ -181,7 +188,7 @@ final class ThematicBreaksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 598-604
+    // spec.txt lines 614-620
     func testExample19() {
         let markdownTest =
         #####"""
@@ -190,6 +197,7 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>Foo
       //***</p>
@@ -204,7 +212,7 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 609-613
+    // spec.txt lines 625-629
     func testExample20() {
         let markdownTest =
         #####"""
@@ -212,6 +220,7 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<hr />
         let normalizedCM = #####"""
@@ -225,7 +234,7 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 618-622
+    // spec.txt lines 634-638
     func testExample21() {
         let markdownTest =
         #####"""
@@ -234,24 +243,6 @@ final class ThematicBreaksTests: XCTestCase {
     
         let html = MarkdownParser().html(from: markdownTest)
         
-      //<hr />
-        let normalizedCM = #####"""
-        <hr>
-        """#####
-    
-        XCTAssertEqual(html,normalizedCM)
-    }
-
-    //     
-    // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 625-629
-    func testExample22() {
-        let markdownTest =
-        #####"""
-         **  * ** * ** * **
-        """#####
-    
-        let html = MarkdownParser().html(from: markdownTest)
         
       //<hr />
         let normalizedCM = #####"""
@@ -263,7 +254,27 @@ final class ThematicBreaksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 632-636
+    // spec.txt lines 641-645
+    func testExample22() {
+        let markdownTest =
+        #####"""
+         **  * ** * ** * **
+        """#####
+    
+        let html = MarkdownParser().html(from: markdownTest)
+        
+        
+      //<hr />
+        let normalizedCM = #####"""
+        <hr>
+        """#####
+    
+        XCTAssertEqual(html,normalizedCM)
+    }
+
+    //     
+    // https://github.com/commonmark/commonmark-spec
+    // spec.txt lines 648-652
     func testExample23() {
         let markdownTest =
         #####"""
@@ -271,6 +282,7 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<hr />
         let normalizedCM = #####"""
@@ -284,14 +296,15 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 641-645
+    // spec.txt lines 657-661
     func testExample24() {
         let markdownTest =
         #####"""
-        - - - -    
+        - - - -
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<hr />
         let normalizedCM = #####"""
@@ -305,7 +318,7 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 650-660
+    // spec.txt lines 666-676
     func testExample25() {
         let markdownTest =
         #####"""
@@ -317,6 +330,7 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>_ _ _ _ a</p>
       //<p>a------</p>
@@ -333,7 +347,7 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 666-670
+    // spec.txt lines 682-686
     func testExample26() {
         let markdownTest =
         #####"""
@@ -341,6 +355,7 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><em>-</em></p>
         let normalizedCM = #####"""
@@ -354,7 +369,7 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 675-687
+    // spec.txt lines 691-703
     func testExample27() {
         let markdownTest =
         #####"""
@@ -364,6 +379,7 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>foo</li>
@@ -383,7 +399,7 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 692-700
+    // spec.txt lines 708-716
     func testExample28() {
         let markdownTest =
         #####"""
@@ -393,6 +409,7 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>Foo</p>
       //<hr />
@@ -412,7 +429,7 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 709-716
+    // spec.txt lines 725-732
     func testExample29() {
         let markdownTest =
         #####"""
@@ -422,6 +439,7 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<h2>Foo</h2>
       //<p>bar</p>
@@ -437,7 +455,7 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 722-734
+    // spec.txt lines 738-750
     func testExample30() {
         let markdownTest =
         #####"""
@@ -447,6 +465,7 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>Foo</li>
@@ -466,7 +485,7 @@ final class ThematicBreaksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 739-749
+    // spec.txt lines 755-765
     func testExample31() {
         let markdownTest =
         #####"""
@@ -475,6 +494,7 @@ final class ThematicBreaksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>Foo</li>

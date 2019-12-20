@@ -95,7 +95,7 @@ func getTests(_ specFile: String) -> [Test] {
         
         switch state {
         case .collectPreamble:
-            if linefromArray == exampleStartMarker {
+            if linefromArray.hasPrefix(exampleStartMarker) {
                 test.preamble = preambleLines.joined(separator: "")
                 preambleLines = []
                 markdownLines  = []

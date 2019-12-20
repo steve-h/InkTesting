@@ -2,204 +2,21 @@
 *  Ink
 *  Copyright (c) Steve Hume 2019
 *  MIT license, see LICENSE file for details
-These tests are extracted from https://spec.commonmark.org/0.29/
-title: CommonMark Spec
-author: John MacFarlane
+---
+title: GitHub Flavored Markdown Spec
 version: 0.29
 date: '2019-04-06'
-license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
+license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/)'
+...
 */
 
 import XCTest
 import Ink
+import Foundation
 
 final class ListsTests: XCTestCase {
 
-    // ### Motivation
-    // 
-    // John Gruber's Markdown spec says the following about list items:
-    // 
-    // 1. "List markers typically start at the left margin, but may be indented
-    //    by up to three spaces. List markers must be followed by one or more
-    //    spaces or a tab."
-    // 
-    // 2. "To make lists look nice, you can wrap items with hanging indents....
-    //    But if you don't want to, you don't have to."
-    // 
-    // 3. "List items may consist of multiple paragraphs. Each subsequent
-    //    paragraph in a list item must be indented by either 4 spaces or one
-    //    tab."
-    // 
-    // 4. "It looks nice if you indent every line of the subsequent paragraphs,
-    //    but here again, Markdown will allow you to be lazy."
-    // 
-    // 5. "To put a blockquote within a list item, the blockquote's `>`
-    //    delimiters need to be indented."
-    // 
-    // 6. "To put a code block within a list item, the code block needs to be
-    //    indented twice — 8 spaces or two tabs."
-    // 
-    // These rules specify that a paragraph under a list item must be indented
-    // four spaces (presumably, from the left margin, rather than the start of
-    // the list marker, but this is not said), and that code under a list item
-    // must be indented eight spaces instead of the usual four.  They also say
-    // that a block quote must be indented, but not by how much; however, the
-    // example given has four spaces indentation.  Although nothing is said
-    // about other kinds of block-level content, it is certainly reasonable to
-    // infer that *all* block elements under a list item, including other
-    // lists, must be indented four spaces.  This principle has been called the
-    // *four-space rule*.
-    // 
-    // The four-space rule is clear and principled, and if the reference
-    // implementation `Markdown.pl` had followed it, it probably would have
-    // become the standard.  However, `Markdown.pl` allowed paragraphs and
-    // sublists to start with only two spaces indentation, at least on the
-    // outer level.  Worse, its behavior was inconsistent: a sublist of an
-    // outer-level list needed two spaces indentation, but a sublist of this
-    // sublist needed three spaces.  It is not surprising, then, that different
-    // implementations of Markdown have developed very different rules for
-    // determining what comes under a list item.  (Pandoc and python-Markdown,
-    // for example, stuck with Gruber's syntax description and the four-space
-    // rule, while discount, redcarpet, marked, PHP Markdown, and others
-    // followed `Markdown.pl`'s behavior more closely.)
-    // 
-    // Unfortunately, given the divergences between implementations, there
-    // is no way to give a spec for list items that will be guaranteed not
-    // to break any existing documents.  However, the spec given here should
-    // correctly handle lists formatted with either the four-space rule or
-    // the more forgiving `Markdown.pl` behavior, provided they are laid out
-    // in a way that is natural for a human to read.
-    // 
-    // The strategy here is to let the width and indentation of the list marker
-    // determine the indentation necessary for blocks to fall under the list
-    // item, rather than having a fixed and arbitrary number.  The writer can
-    // think of the body of the list item as a unit which gets indented to the
-    // right enough to fit the list marker (and any indentation on the list
-    // marker).  (The laziness rule, #5, then allows continuation lines to be
-    // unindented if needed.)
-    // 
-    // This rule is superior, we claim, to any rule requiring a fixed level of
-    // indentation from the margin.  The four-space rule is clear but
-    // unnatural. It is quite unintuitive that
-    // 
-    // ``` markdown
-    // - foo
-    // 
-    //   bar
-    // 
-    //   - baz
-    // ```
-    // 
-    // should be parsed as two lists with an intervening paragraph,
-    // 
-    // ``` html
-    // <ul>
-    // <li>foo</li>
-    // </ul>
-    // <p>bar</p>
-    // <ul>
-    // <li>baz</li>
-    // </ul>
-    // ```
-    // 
-    // as the four-space rule demands, rather than a single list,
-    // 
-    // ``` html
-    // <ul>
-    // <li>
-    // <p>foo</p>
-    // <p>bar</p>
-    // <ul>
-    // <li>baz</li>
-    // </ul>
-    // </li>
-    // </ul>
-    // ```
-    // 
-    // The choice of four spaces is arbitrary.  It can be learned, but it is
-    // not likely to be guessed, and it trips up beginners regularly.
-    // 
-    // Would it help to adopt a two-space rule?  The problem is that such
-    // a rule, together with the rule allowing 1--3 spaces indentation of the
-    // initial list marker, allows text that is indented *less than* the
-    // original list marker to be included in the list item. For example,
-    // `Markdown.pl` parses
-    // 
-    // ``` markdown
-    //    - one
-    // 
-    //   two
-    // ```
-    // 
-    // as a single list item, with `two` a continuation paragraph:
-    // 
-    // ``` html
-    // <ul>
-    // <li>
-    // <p>one</p>
-    // <p>two</p>
-    // </li>
-    // </ul>
-    // ```
-    // 
-    // and similarly
-    // 
-    // ``` markdown
-    // >   - one
-    // >
-    // >  two
-    // ```
-    // 
-    // as
-    // 
-    // ``` html
-    // <blockquote>
-    // <ul>
-    // <li>
-    // <p>one</p>
-    // <p>two</p>
-    // </li>
-    // </ul>
-    // </blockquote>
-    // ```
-    // 
-    // This is extremely unintuitive.
-    // 
-    // Rather than requiring a fixed indent from the margin, we could require
-    // a fixed indent (say, two spaces, or even one space) from the list marker (which
-    // may itself be indented).  This proposal would remove the last anomaly
-    // discussed.  Unlike the spec presented above, it would count the following
-    // as a list item with a subparagraph, even though the paragraph `bar`
-    // is not indented as far as the first paragraph `foo`:
-    // 
-    // ``` markdown
-    //  10. foo
-    // 
-    //    bar  
-    // ```
-    // 
-    // Arguably this text does read like a list item with `bar` as a subparagraph,
-    // which may count in favor of the proposal.  However, on this proposal indented
-    // code would have to be indented six spaces after the list marker.  And this
-    // would break a lot of existing Markdown, which has the pattern:
-    // 
-    // ``` markdown
-    // 1.  foo
-    // 
-    //         indented code
-    // ```
-    // 
-    // where the code is indented eight spaces.  The spec above, by contrast, will
-    // parse this text as expected, since the code block's indentation is measured
-    // from the beginning of `foo`.
-    // 
-    // The one case that needs special treatment is a list item that *starts*
-    // with indented code.  How much indentation is required in that case, since
-    // we don't have a "first paragraph" to measure from?  Rule #2 simply stipulates
-    // that in such cases, we require one space indentation from the list marker
-    // (and then the normal four spaces for the indented code).  This will match the
-    // four-space rule in cases where the list marker plus its initial indentation
-    // takes four spaces (a common case), but diverge in other cases.
+    // </div>
     // 
     // ## Lists
     // 
@@ -236,8 +53,8 @@ final class ListsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4894-4906
-    func testExample271() {
+    // spec.txt lines 5175-5187
+    func testExample281() {
         let markdownTest =
         #####"""
         - foo
@@ -246,6 +63,7 @@ final class ListsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>foo</li>
@@ -263,8 +81,8 @@ final class ListsTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4909-4921
-    func testExample272() {
+    // spec.txt lines 5190-5202
+    func testExample282() {
         let markdownTest =
         #####"""
         1. foo
@@ -273,6 +91,7 @@ final class ListsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ol>
       //<li>foo</li>
@@ -294,8 +113,8 @@ final class ListsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 4928-4938
-    func testExample273() {
+    // spec.txt lines 5209-5219
+    func testExample283() {
         let markdownTest =
         #####"""
         Foo
@@ -304,6 +123,7 @@ final class ListsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>Foo</p>
       //<ul>
@@ -384,8 +204,8 @@ final class ListsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5005-5011
-    func testExample274() {
+    // spec.txt lines 5286-5292
+    func testExample284() {
         let markdownTest =
         #####"""
         The number of windows in my house is
@@ -393,6 +213,7 @@ final class ListsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>The number of windows in my house is
       //14.  The number of doors is 6.</p>
@@ -407,8 +228,8 @@ final class ListsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5015-5023
-    func testExample275() {
+    // spec.txt lines 5296-5304
+    func testExample285() {
         let markdownTest =
         #####"""
         The number of windows in my house is
@@ -416,6 +237,7 @@ final class ListsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>The number of windows in my house is</p>
       //<ol>
@@ -434,8 +256,8 @@ final class ListsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5029-5048
-    func testExample276() {
+    // spec.txt lines 5310-5329
+    func testExample286() {
         let markdownTest =
         #####"""
         - foo
@@ -447,6 +269,7 @@ final class ListsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>
@@ -468,8 +291,8 @@ final class ListsTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5050-5072
-    func testExample277() {
+    // spec.txt lines 5331-5353
+    func testExample287() {
         let markdownTest =
         #####"""
         - foo
@@ -481,6 +304,7 @@ final class ListsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>foo
@@ -512,8 +336,8 @@ final class ListsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5080-5098
-    func testExample278() {
+    // spec.txt lines 5361-5379
+    func testExample288() {
         let markdownTest =
         #####"""
         - foo
@@ -526,6 +350,7 @@ final class ListsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>foo</li>
@@ -545,8 +370,8 @@ final class ListsTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5101-5124
-    func testExample279() {
+    // spec.txt lines 5382-5405
+    func testExample289() {
         let markdownTest =
         #####"""
         -   foo
@@ -561,6 +386,7 @@ final class ListsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>
@@ -589,8 +415,8 @@ final class ListsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5132-5150
-    func testExample280() {
+    // spec.txt lines 5413-5431
+    func testExample290() {
         let markdownTest =
         #####"""
         - a
@@ -603,6 +429,7 @@ final class ListsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>a</li>
@@ -622,8 +449,8 @@ final class ListsTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5153-5171
-    func testExample281() {
+    // spec.txt lines 5434-5452
+    func testExample291() {
         let markdownTest =
         #####"""
         1. a
@@ -634,6 +461,7 @@ final class ListsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ol>
       //<li>
@@ -659,8 +487,8 @@ final class ListsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5177-5191
-    func testExample282() {
+    // spec.txt lines 5458-5472
+    func testExample292() {
         let markdownTest =
         #####"""
         - a
@@ -671,6 +499,7 @@ final class ListsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>a</li>
@@ -692,8 +521,8 @@ final class ListsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5197-5214
-    func testExample283() {
+    // spec.txt lines 5478-5495
+    func testExample293() {
         let markdownTest =
         #####"""
         1. a
@@ -704,6 +533,7 @@ final class ListsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ol>
       //<li>
@@ -727,8 +557,8 @@ final class ListsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5220-5237
-    func testExample284() {
+    // spec.txt lines 5501-5518
+    func testExample294() {
         let markdownTest =
         #####"""
         - a
@@ -738,6 +568,7 @@ final class ListsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>
@@ -761,8 +592,8 @@ final class ListsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5242-5257
-    func testExample285() {
+    // spec.txt lines 5523-5538
+    func testExample295() {
         let markdownTest =
         #####"""
         * a
@@ -772,6 +603,7 @@ final class ListsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>
@@ -795,8 +627,8 @@ final class ListsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5264-5283
-    func testExample286() {
+    // spec.txt lines 5545-5564
+    func testExample296() {
         let markdownTest =
         #####"""
         - a
@@ -807,6 +639,7 @@ final class ListsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>
@@ -829,8 +662,8 @@ final class ListsTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5286-5304
-    func testExample287() {
+    // spec.txt lines 5567-5585
+    func testExample297() {
         let markdownTest =
         #####"""
         - a
@@ -841,6 +674,7 @@ final class ListsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>
@@ -864,8 +698,8 @@ final class ListsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5309-5328
-    func testExample288() {
+    // spec.txt lines 5590-5609
+    func testExample298() {
         let markdownTest =
         #####"""
         - a
@@ -878,6 +712,7 @@ final class ListsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>a</li>
@@ -905,8 +740,8 @@ final class ListsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5335-5353
-    func testExample289() {
+    // spec.txt lines 5616-5634
+    func testExample299() {
         let markdownTest =
         #####"""
         - a
@@ -917,6 +752,7 @@ final class ListsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>a
@@ -942,8 +778,8 @@ final class ListsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5359-5373
-    func testExample290() {
+    // spec.txt lines 5640-5654
+    func testExample300() {
         let markdownTest =
         #####"""
         * a
@@ -953,6 +789,7 @@ final class ListsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>a
@@ -975,8 +812,8 @@ final class ListsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5379-5397
-    func testExample291() {
+    // spec.txt lines 5660-5678
+    func testExample301() {
         let markdownTest =
         #####"""
         - a
@@ -988,6 +825,7 @@ final class ListsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>a
@@ -1012,14 +850,15 @@ final class ListsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5402-5408
-    func testExample292() {
+    // spec.txt lines 5683-5689
+    func testExample302() {
         let markdownTest =
         #####"""
         - a
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<ul>
       //<li>a</li>
@@ -1033,8 +872,8 @@ final class ListsTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5411-5422
-    func testExample293() {
+    // spec.txt lines 5692-5703
+    func testExample303() {
         let markdownTest =
         #####"""
         - a
@@ -1042,6 +881,7 @@ final class ListsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>a
@@ -1063,8 +903,8 @@ final class ListsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5428-5442
-    func testExample294() {
+    // spec.txt lines 5709-5723
+    func testExample304() {
         let markdownTest =
         #####"""
         1. ```
@@ -1075,6 +915,7 @@ final class ListsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ol>
       //<li>
@@ -1095,8 +936,8 @@ final class ListsTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5447-5462
-    func testExample295() {
+    // spec.txt lines 5728-5743
+    func testExample305() {
         let markdownTest =
         #####"""
         * foo
@@ -1106,6 +947,7 @@ final class ListsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>
@@ -1125,8 +967,8 @@ final class ListsTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5465-5490
-    func testExample296() {
+    // spec.txt lines 5746-5771
+    func testExample306() {
         let markdownTest =
         #####"""
         - a
@@ -1139,6 +981,7 @@ final class ListsTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<ul>
       //<li>
@@ -1168,16 +1011,6 @@ final class ListsTests: XCTestCase {
 extension ListsTests {
     static var allTests: Linux.TestList<ListsTests> {
         return [
-        ("testExample271", testExample271),
-        ("testExample272", testExample272),
-        ("testExample273", testExample273),
-        ("testExample274", testExample274),
-        ("testExample275", testExample275),
-        ("testExample276", testExample276),
-        ("testExample277", testExample277),
-        ("testExample278", testExample278),
-        ("testExample279", testExample279),
-        ("testExample280", testExample280),
         ("testExample281", testExample281),
         ("testExample282", testExample282),
         ("testExample283", testExample283),
@@ -1193,7 +1026,17 @@ extension ListsTests {
         ("testExample293", testExample293),
         ("testExample294", testExample294),
         ("testExample295", testExample295),
-        ("testExample296", testExample296)
+        ("testExample296", testExample296),
+        ("testExample297", testExample297),
+        ("testExample298", testExample298),
+        ("testExample299", testExample299),
+        ("testExample300", testExample300),
+        ("testExample301", testExample301),
+        ("testExample302", testExample302),
+        ("testExample303", testExample303),
+        ("testExample304", testExample304),
+        ("testExample305", testExample305),
+        ("testExample306", testExample306)
         ]
     }
 }

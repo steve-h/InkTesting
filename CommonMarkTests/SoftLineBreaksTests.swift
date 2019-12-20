@@ -2,16 +2,17 @@
 *  Ink
 *  Copyright (c) Steve Hume 2019
 *  MIT license, see LICENSE file for details
-These tests are extracted from https://spec.commonmark.org/0.29/
-title: CommonMark Spec
-author: John MacFarlane
+---
+title: GitHub Flavored Markdown Spec
 version: 0.29
 date: '2019-04-06'
-license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
+license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/)'
+...
 */
 
 import XCTest
 import Ink
+import Foundation
 
 final class SoftLineBreaksTests: XCTestCase {
 
@@ -25,8 +26,8 @@ final class SoftLineBreaksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 9317-9323
-    func testExample645() {
+    // spec.txt lines 9834-9840
+    func testExample669() {
         let markdownTest =
         #####"""
         foo
@@ -34,6 +35,7 @@ final class SoftLineBreaksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>foo
       //baz</p>
@@ -49,15 +51,16 @@ final class SoftLineBreaksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 9329-9335
-    func testExample646() {
+    // spec.txt lines 9846-9852
+    func testExample670() {
         let markdownTest =
         #####"""
-        foo 
+        foo
          baz\#####n
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>foo
       //baz</p>
@@ -73,8 +76,8 @@ final class SoftLineBreaksTests: XCTestCase {
 extension SoftLineBreaksTests {
     static var allTests: Linux.TestList<SoftLineBreaksTests> {
         return [
-        ("testExample645", testExample645),
-        ("testExample646", testExample646)
+        ("testExample669", testExample669),
+        ("testExample670", testExample670)
         ]
     }
 }

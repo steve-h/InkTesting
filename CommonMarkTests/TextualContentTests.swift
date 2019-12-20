@@ -2,16 +2,17 @@
 *  Ink
 *  Copyright (c) Steve Hume 2019
 *  MIT license, see LICENSE file for details
-These tests are extracted from https://spec.commonmark.org/0.29/
-title: CommonMark Spec
-author: John MacFarlane
+---
+title: GitHub Flavored Markdown Spec
 version: 0.29
 date: '2019-04-06'
-license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
+license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/)'
+...
 */
 
 import XCTest
 import Ink
+import Foundation
 
 final class TextualContentTests: XCTestCase {
 
@@ -28,14 +29,15 @@ final class TextualContentTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 9349-9353
-    func testExample647() {
+    // spec.txt lines 9866-9870
+    func testExample671() {
         let markdownTest =
         #####"""
         hello $.;'there
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p>hello $.;'there</p>
         let normalizedCM = #####"""
@@ -47,14 +49,15 @@ final class TextualContentTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 9356-9360
-    func testExample648() {
+    // spec.txt lines 9873-9877
+    func testExample672() {
         let markdownTest =
         #####"""
         Foo χρῆν
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p>Foo χρῆν</p>
         let normalizedCM = #####"""
@@ -68,14 +71,15 @@ final class TextualContentTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 9365-9369
-    func testExample649() {
+    // spec.txt lines 9882-9886
+    func testExample673() {
         let markdownTest =
         #####"""
         Multiple     spaces
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p>Multiple     spaces</p>
         let normalizedCM = #####"""
@@ -90,9 +94,9 @@ final class TextualContentTests: XCTestCase {
 extension TextualContentTests {
     static var allTests: Linux.TestList<TextualContentTests> {
         return [
-        ("testExample647", testExample647),
-        ("testExample648", testExample648),
-        ("testExample649", testExample649)
+        ("testExample671", testExample671),
+        ("testExample672", testExample672),
+        ("testExample673", testExample673)
         ]
     }
 }

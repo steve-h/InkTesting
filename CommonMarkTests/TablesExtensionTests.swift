@@ -14,29 +14,33 @@ import XCTest
 import Ink
 import Foundation
 
-final class InlinesTests: XCTestCase {
+final class TablesExtensionTests: XCTestCase {
 
-    // # Inlines
-    // 
-    // Inlines are parsed sequentially from the beginning of the character
-    // stream to the end (left to right, in left-to-right languages).
-    // Thus, for example, in
+    // If there are no rows in the body, no `<tbody>` is generated in HTML output:
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5780-5784
-    func testExample307() {
+    // spec.txt lines 3502-3514
+    func testExample205() {
         let markdownTest =
         #####"""
-        `hi`lo`
+        | abc | def |
+        | --- | --- |\#####n
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
-        
-      //<p><code>hi</code>lo`</p>
+      //<table>
+      //<thead>
+      //<tr>
+      //<th>abc</th>
+      //<th>def</th>
+      //</tr>
+      //</thead>
+      //</table>
         let normalizedCM = #####"""
-        <p><code>hi</code>lo`</p>
+        <p>| abc | def | | --- | --- |</p>
         """#####
     
         XCTAssertEqual(html,normalizedCM)
@@ -44,10 +48,10 @@ final class InlinesTests: XCTestCase {
 
 }
 
-extension InlinesTests {
-    static var allTests: Linux.TestList<InlinesTests> {
+extension TablesExtensionTests {
+    static var allTests: Linux.TestList<TablesExtensionTests> {
         return [
-        ("testExample307", testExample307)
+        ("testExample205", testExample205)
         ]
     }
 }

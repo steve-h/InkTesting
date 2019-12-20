@@ -2,16 +2,17 @@
 *  Ink
 *  Copyright (c) Steve Hume 2019
 *  MIT license, see LICENSE file for details
-These tests are extracted from https://spec.commonmark.org/0.29/
-title: CommonMark Spec
-author: John MacFarlane
+---
+title: GitHub Flavored Markdown Spec
 version: 0.29
 date: '2019-04-06'
-license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
+license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/)'
+...
 */
 
 import XCTest
 import Ink
+import Foundation
 
 final class BackslashEscapesTests: XCTestCase {
 
@@ -24,14 +25,15 @@ final class BackslashEscapesTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5513-5517
-    func testExample298() {
+    // spec.txt lines 5794-5798
+    func testExample308() {
         let markdownTest =
         #####"""
         \!\"\#\$\%\&\'\(\)\*\+\,\-\.\/\:\;\<\=\>\?\@\[\\\]\^\_\`\{\|\}\~
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p>!&quot;#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</p>
         let normalizedCM = #####"""
@@ -46,14 +48,15 @@ final class BackslashEscapesTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5523-5527
-    func testExample299() {
+    // spec.txt lines 5804-5808
+    func testExample309() {
         let markdownTest =
         #####"""
         \	\A\a\ \3\φ\«
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p>\	\A\a\ \3\φ\«</p>
         let normalizedCM = #####"""
@@ -68,8 +71,8 @@ final class BackslashEscapesTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5533-5553
-    func testExample300() {
+    // spec.txt lines 5814-5834
+    func testExample310() {
         let markdownTest =
         #####"""
         \*not emphasized*
@@ -84,6 +87,7 @@ final class BackslashEscapesTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>*not emphasized*
       //&lt;br/&gt; not a tag
@@ -105,14 +109,15 @@ final class BackslashEscapesTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5558-5562
-    func testExample301() {
+    // spec.txt lines 5839-5843
+    func testExample311() {
         let markdownTest =
         #####"""
         \\*emphasis*
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p>\<em>emphasis</em></p>
         let normalizedCM = #####"""
@@ -126,8 +131,8 @@ final class BackslashEscapesTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5567-5573
-    func testExample302() {
+    // spec.txt lines 5848-5854
+    func testExample312() {
         let markdownTest =
         #####"""
         foo\
@@ -135,6 +140,7 @@ final class BackslashEscapesTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>foo<br />
       //bar</p>
@@ -150,14 +156,15 @@ final class BackslashEscapesTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5579-5583
-    func testExample303() {
+    // spec.txt lines 5860-5864
+    func testExample313() {
         let markdownTest =
         #####"""
         `` \[\` ``
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><code>\[\`</code></p>
         let normalizedCM = #####"""
@@ -169,14 +176,15 @@ final class BackslashEscapesTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5586-5591
-    func testExample304() {
+    // spec.txt lines 5867-5872
+    func testExample314() {
         let markdownTest =
         #####"""
             \[\]
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<pre><code>\[\]
       //</code></pre>
@@ -190,8 +198,8 @@ final class BackslashEscapesTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5594-5601
-    func testExample305() {
+    // spec.txt lines 5875-5882
+    func testExample315() {
         let markdownTest =
         #####"""
         ~~~
@@ -200,6 +208,7 @@ final class BackslashEscapesTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code>\[\]
       //</code></pre>
@@ -213,14 +222,15 @@ final class BackslashEscapesTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5604-5608
-    func testExample306() {
+    // spec.txt lines 5885-5889
+    func testExample316() {
         let markdownTest =
         #####"""
         <http://example.com?find=\*>
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><a href="http://example.com?find=%5C*">http://example.com?find=\*</a></p>
         let normalizedCM = #####"""
@@ -232,14 +242,15 @@ final class BackslashEscapesTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5611-5615
-    func testExample307() {
+    // spec.txt lines 5892-5896
+    func testExample317() {
         let markdownTest =
         #####"""
         <a href="/bar\/)">
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<a href="/bar\/)">
         let normalizedCM = #####"""
@@ -254,14 +265,15 @@ final class BackslashEscapesTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5621-5625
-    func testExample308() {
+    // spec.txt lines 5902-5906
+    func testExample318() {
         let markdownTest =
         #####"""
         [foo](/bar\* "ti\*tle")
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><a href="/bar*" title="ti*tle">foo</a></p>
         let normalizedCM = #####"""
@@ -273,8 +285,8 @@ final class BackslashEscapesTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5628-5634
-    func testExample309() {
+    // spec.txt lines 5909-5915
+    func testExample319() {
         let markdownTest =
         #####"""
         [foo]
@@ -283,6 +295,7 @@ final class BackslashEscapesTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><a href="/bar*" title="ti*tle">foo</a></p>
         let normalizedCM = #####"""
@@ -294,8 +307,8 @@ final class BackslashEscapesTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5637-5644
-    func testExample310() {
+    // spec.txt lines 5918-5925
+    func testExample320() {
         let markdownTest =
         #####"""
         ``` foo\+bar
@@ -304,6 +317,7 @@ final class BackslashEscapesTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<pre><code class="language-foo+bar">foo
       //</code></pre>
@@ -320,19 +334,19 @@ final class BackslashEscapesTests: XCTestCase {
 extension BackslashEscapesTests {
     static var allTests: Linux.TestList<BackslashEscapesTests> {
         return [
-        ("testExample298", testExample298),
-        ("testExample299", testExample299),
-        ("testExample300", testExample300),
-        ("testExample301", testExample301),
-        ("testExample302", testExample302),
-        ("testExample303", testExample303),
-        ("testExample304", testExample304),
-        ("testExample305", testExample305),
-        ("testExample306", testExample306),
-        ("testExample307", testExample307),
         ("testExample308", testExample308),
         ("testExample309", testExample309),
-        ("testExample310", testExample310)
+        ("testExample310", testExample310),
+        ("testExample311", testExample311),
+        ("testExample312", testExample312),
+        ("testExample313", testExample313),
+        ("testExample314", testExample314),
+        ("testExample315", testExample315),
+        ("testExample316", testExample316),
+        ("testExample317", testExample317),
+        ("testExample318", testExample318),
+        ("testExample319", testExample319),
+        ("testExample320", testExample320)
         ]
     }
 }

@@ -2,19 +2,22 @@
 *  Ink
 *  Copyright (c) Steve Hume 2019
 *  MIT license, see LICENSE file for details
-These tests are extracted from https://spec.commonmark.org/0.29/
-title: CommonMark Spec
-author: John MacFarlane
+---
+title: GitHub Flavored Markdown Spec
 version: 0.29
 date: '2019-04-06'
-license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
+license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/)'
+...
 */
 
 import XCTest
 import Ink
+import Foundation
 
 final class LinksTests: XCTestCase {
 
+    // </div>
+    // 
     // ## Links
     // 
     // A link contains [link text] (the visible text), a [link destination]
@@ -92,14 +95,15 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7503-7507
-    func testExample481() {
+    // spec.txt lines 7812-7816
+    func testExample493() {
         let markdownTest =
         #####"""
         [link](/uri "title")
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><a href="/uri" title="title">link</a></p>
         let normalizedCM = #####"""
@@ -113,14 +117,15 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7512-7516
-    func testExample482() {
+    // spec.txt lines 7821-7825
+    func testExample494() {
         let markdownTest =
         #####"""
         [link](/uri)
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><a href="/uri">link</a></p>
         let normalizedCM = #####"""
@@ -134,14 +139,15 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7521-7525
-    func testExample483() {
+    // spec.txt lines 7830-7834
+    func testExample495() {
         let markdownTest =
         #####"""
         [link]()
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><a href="">link</a></p>
         let normalizedCM = #####"""
@@ -153,14 +159,15 @@ final class LinksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7528-7532
-    func testExample484() {
+    // spec.txt lines 7837-7841
+    func testExample496() {
         let markdownTest =
         #####"""
         [link](<>)
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><a href="">link</a></p>
         let normalizedCM = #####"""
@@ -175,14 +182,15 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7537-7541
-    func testExample485() {
+    // spec.txt lines 7846-7850
+    func testExample497() {
         let markdownTest =
         #####"""
         [link](/my uri)
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p>[link](/my uri)</p>
         let normalizedCM = #####"""
@@ -194,14 +202,15 @@ final class LinksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7543-7547
-    func testExample486() {
+    // spec.txt lines 7852-7856
+    func testExample498() {
         let markdownTest =
         #####"""
         [link](</my uri>)
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><a href="/my%20uri">link</a></p>
         let normalizedCM = #####"""
@@ -216,8 +225,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7552-7558
-    func testExample487() {
+    // spec.txt lines 7861-7867
+    func testExample499() {
         let markdownTest =
         #####"""
         [link](foo
@@ -225,6 +234,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>[link](foo
       //bar)</p>
@@ -237,8 +247,8 @@ final class LinksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7560-7566
-    func testExample488() {
+    // spec.txt lines 7869-7875
+    func testExample500() {
         let markdownTest =
         #####"""
         [link](<foo
@@ -246,6 +256,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>[link](<foo
       //bar>)</p>
@@ -262,14 +273,15 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7571-7575
-    func testExample489() {
+    // spec.txt lines 7880-7884
+    func testExample501() {
         let markdownTest =
         #####"""
         [a](<b)c>)
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><a href="b)c">a</a></p>
         let normalizedCM = #####"""
@@ -283,14 +295,15 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7579-7583
-    func testExample490() {
+    // spec.txt lines 7888-7892
+    func testExample502() {
         let markdownTest =
         #####"""
         [link](<foo\>)
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p>[link](&lt;foo&gt;)</p>
         let normalizedCM = #####"""
@@ -305,8 +318,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7588-7596
-    func testExample491() {
+    // spec.txt lines 7897-7905
+    func testExample503() {
         let markdownTest =
         #####"""
         [a](<b)c
@@ -315,6 +328,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>[a](&lt;b)c
       //[a](&lt;b)c&gt;
@@ -330,14 +344,15 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7600-7604
-    func testExample492() {
+    // spec.txt lines 7909-7913
+    func testExample504() {
         let markdownTest =
         #####"""
         [link](\(foo\))
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><a href="(foo)">link</a></p>
         let normalizedCM = #####"""
@@ -352,14 +367,15 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7609-7613
-    func testExample493() {
+    // spec.txt lines 7918-7922
+    func testExample505() {
         let markdownTest =
         #####"""
         [link](foo(and(bar)))
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><a href="foo(and(bar))">link</a></p>
         let normalizedCM = #####"""
@@ -374,14 +390,15 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7618-7622
-    func testExample494() {
+    // spec.txt lines 7927-7931
+    func testExample506() {
         let markdownTest =
         #####"""
         [link](foo\(and\(bar\))
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><a href="foo(and(bar)">link</a></p>
         let normalizedCM = #####"""
@@ -393,14 +410,15 @@ final class LinksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7625-7629
-    func testExample495() {
+    // spec.txt lines 7934-7938
+    func testExample507() {
         let markdownTest =
         #####"""
         [link](<foo(and(bar)>)
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><a href="foo(and(bar)">link</a></p>
         let normalizedCM = #####"""
@@ -415,14 +433,15 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7635-7639
-    func testExample496() {
+    // spec.txt lines 7944-7948
+    func testExample508() {
         let markdownTest =
         #####"""
         [link](foo\)\:)
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><a href="foo):">link</a></p>
         let normalizedCM = #####"""
@@ -436,8 +455,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7644-7654
-    func testExample497() {
+    // spec.txt lines 7953-7963
+    func testExample509() {
         let markdownTest =
         #####"""
         [link](#fragment)
@@ -448,6 +467,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><a href="#fragment">link</a></p>
       //<p><a href="http://example.com#fragment">link</a></p>
@@ -464,14 +484,15 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7660-7664
-    func testExample498() {
+    // spec.txt lines 7969-7973
+    func testExample510() {
         let markdownTest =
         #####"""
         [link](foo\bar)
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><a href="foo%5Cbar">link</a></p>
         let normalizedCM = #####"""
@@ -492,14 +513,15 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7676-7680
-    func testExample499() {
+    // spec.txt lines 7985-7989
+    func testExample511() {
         let markdownTest =
         #####"""
         [link](foo%20b&auml;)
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><a href="foo%20b%C3%A4">link</a></p>
         let normalizedCM = #####"""
@@ -515,14 +537,15 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7687-7691
-    func testExample500() {
+    // spec.txt lines 7996-8000
+    func testExample512() {
         let markdownTest =
         #####"""
         [link]("title")
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><a href="%22title%22">link</a></p>
         let normalizedCM = #####"""
@@ -536,8 +559,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7696-7704
-    func testExample501() {
+    // spec.txt lines 8005-8013
+    func testExample513() {
         let markdownTest =
         #####"""
         [link](/url "title")
@@ -546,6 +569,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><a href="/url" title="title">link</a>
       //<a href="/url" title="title">link</a>
@@ -562,14 +586,15 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7710-7714
-    func testExample502() {
+    // spec.txt lines 8019-8023
+    func testExample514() {
         let markdownTest =
         #####"""
         [link](/url "title \"&quot;")
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><a href="/url" title="title &quot;&quot;">link</a></p>
         let normalizedCM = #####"""
@@ -584,14 +609,15 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7720-7724
-    func testExample503() {
+    // spec.txt lines 8029-8033
+    func testExample515() {
         let markdownTest =
         #####"""
         [link](/url "title")
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><a href="/url%C2%A0%22title%22">link</a></p>
         let normalizedCM = #####"""
@@ -605,14 +631,15 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7729-7733
-    func testExample504() {
+    // spec.txt lines 8038-8042
+    func testExample516() {
         let markdownTest =
         #####"""
         [link](/url "title "and" title")
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p>[link](/url &quot;title &quot;and&quot; title&quot;)</p>
         let normalizedCM = #####"""
@@ -626,14 +653,15 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7738-7742
-    func testExample505() {
+    // spec.txt lines 8047-8051
+    func testExample517() {
         let markdownTest =
         #####"""
         [link](/url 'title "and" title')
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><a href="/url" title="title &quot;and&quot; title">link</a></p>
         let normalizedCM = #####"""
@@ -662,8 +690,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7762-7767
-    func testExample506() {
+    // spec.txt lines 8071-8076
+    func testExample518() {
         let markdownTest =
         #####"""
         [link](   /uri
@@ -671,6 +699,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><a href="/uri" title="title">link</a></p>
         let normalizedCM = #####"""
@@ -685,14 +714,15 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7773-7777
-    func testExample507() {
+    // spec.txt lines 8082-8086
+    func testExample519() {
         let markdownTest =
         #####"""
         [link] (/uri)
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p>[link] (/uri)</p>
         let normalizedCM = #####"""
@@ -707,14 +737,15 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7783-7787
-    func testExample508() {
+    // spec.txt lines 8092-8096
+    func testExample520() {
         let markdownTest =
         #####"""
         [link [foo [bar]]](/uri)
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><a href="/uri">link [foo [bar]]</a></p>
         let normalizedCM = #####"""
@@ -726,14 +757,15 @@ final class LinksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7790-7794
-    func testExample509() {
+    // spec.txt lines 8099-8103
+    func testExample521() {
         let markdownTest =
         #####"""
         [link] bar](/uri)
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p>[link] bar](/uri)</p>
         let normalizedCM = #####"""
@@ -745,14 +777,15 @@ final class LinksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7797-7801
-    func testExample510() {
+    // spec.txt lines 8106-8110
+    func testExample522() {
         let markdownTest =
         #####"""
         [link [bar](/uri)
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p>[link <a href="/uri">bar</a></p>
         let normalizedCM = #####"""
@@ -764,14 +797,15 @@ final class LinksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7804-7808
-    func testExample511() {
+    // spec.txt lines 8113-8117
+    func testExample523() {
         let markdownTest =
         #####"""
         [link \[bar](/uri)
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><a href="/uri">link [bar</a></p>
         let normalizedCM = #####"""
@@ -785,14 +819,15 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7813-7817
-    func testExample512() {
+    // spec.txt lines 8122-8126
+    func testExample524() {
         let markdownTest =
         #####"""
         [link *foo **bar** `#`*](/uri)
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><a href="/uri">link <em>foo <strong>bar</strong> <code>#</code></em></a></p>
         let normalizedCM = #####"""
@@ -804,14 +839,15 @@ final class LinksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7820-7824
-    func testExample513() {
+    // spec.txt lines 8129-8133
+    func testExample525() {
         let markdownTest =
         #####"""
         [![moon](moon.jpg)](/uri)
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><a href="/uri"><img src="moon.jpg" alt="moon" /></a></p>
         let normalizedCM = #####"""
@@ -825,14 +861,15 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7829-7833
-    func testExample514() {
+    // spec.txt lines 8138-8142
+    func testExample526() {
         let markdownTest =
         #####"""
         [foo [bar](/uri)](/uri)
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p>[foo <a href="/uri">bar</a>](/uri)</p>
         let normalizedCM = #####"""
@@ -844,14 +881,15 @@ final class LinksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7836-7840
-    func testExample515() {
+    // spec.txt lines 8145-8149
+    func testExample527() {
         let markdownTest =
         #####"""
         [foo *[bar [baz](/uri)](/uri)*](/uri)
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p>[foo <em>[bar <a href="/uri">baz</a>](/uri)</em>](/uri)</p>
         let normalizedCM = #####"""
@@ -863,14 +901,15 @@ final class LinksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7843-7847
-    func testExample516() {
+    // spec.txt lines 8152-8156
+    func testExample528() {
         let markdownTest =
         #####"""
         ![[[foo](uri1)](uri2)](uri3)
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><img src="uri3" alt="[foo](uri2)" /></p>
         let normalizedCM = #####"""
@@ -885,14 +924,15 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7853-7857
-    func testExample517() {
+    // spec.txt lines 8162-8166
+    func testExample529() {
         let markdownTest =
         #####"""
         *[foo*](/uri)
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p>*<a href="/uri">foo*</a></p>
         let normalizedCM = #####"""
@@ -904,14 +944,15 @@ final class LinksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7860-7864
-    func testExample518() {
+    // spec.txt lines 8169-8173
+    func testExample530() {
         let markdownTest =
         #####"""
         [foo *bar](baz*)
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><a href="baz*">foo *bar</a></p>
         let normalizedCM = #####"""
@@ -926,14 +967,15 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7870-7874
-    func testExample519() {
+    // spec.txt lines 8179-8183
+    func testExample531() {
         let markdownTest =
         #####"""
         *foo [bar* baz]
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><em>foo [bar</em> baz]</p>
         let normalizedCM = #####"""
@@ -948,14 +990,15 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7880-7884
-    func testExample520() {
+    // spec.txt lines 8189-8193
+    func testExample532() {
         let markdownTest =
         #####"""
         [foo <bar attr="](baz)">
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p>[foo <bar attr="](baz)"></p>
         let normalizedCM = #####"""
@@ -967,14 +1010,15 @@ final class LinksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7887-7891
-    func testExample521() {
+    // spec.txt lines 8196-8200
+    func testExample533() {
         let markdownTest =
         #####"""
         [foo`](/uri)`
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p>[foo<code>](/uri)</code></p>
         let normalizedCM = #####"""
@@ -986,14 +1030,15 @@ final class LinksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7894-7898
-    func testExample522() {
+    // spec.txt lines 8203-8207
+    func testExample534() {
         let markdownTest =
         #####"""
         [foo<http://example.com/?search=](uri)>
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p>[foo<a href="http://example.com/?search=%5D(uri)">http://example.com/?search=](uri)</a></p>
         let normalizedCM = #####"""
@@ -1036,8 +1081,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7932-7938
-    func testExample523() {
+    // spec.txt lines 8241-8247
+    func testExample535() {
         let markdownTest =
         #####"""
         [foo][bar]
@@ -1046,6 +1091,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><a href="/url" title="title">foo</a></p>
         let normalizedCM = #####"""
@@ -1063,8 +1109,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7947-7953
-    func testExample524() {
+    // spec.txt lines 8256-8262
+    func testExample536() {
         let markdownTest =
         #####"""
         [link [foo [bar]]][ref]
@@ -1073,6 +1119,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><a href="/uri">link [foo [bar]]</a></p>
         let normalizedCM = #####"""
@@ -1084,8 +1131,8 @@ final class LinksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7956-7962
-    func testExample525() {
+    // spec.txt lines 8265-8271
+    func testExample537() {
         let markdownTest =
         #####"""
         [link \[bar][ref]
@@ -1094,6 +1141,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><a href="/uri">link [bar</a></p>
         let normalizedCM = #####"""
@@ -1107,8 +1155,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7967-7973
-    func testExample526() {
+    // spec.txt lines 8276-8282
+    func testExample538() {
         let markdownTest =
         #####"""
         [link *foo **bar** `#`*][ref]
@@ -1117,6 +1165,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><a href="/uri">link <em>foo <strong>bar</strong> <code>#</code></em></a></p>
         let normalizedCM = #####"""
@@ -1128,8 +1177,8 @@ final class LinksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7976-7982
-    func testExample527() {
+    // spec.txt lines 8285-8291
+    func testExample539() {
         let markdownTest =
         #####"""
         [![moon](moon.jpg)][ref]
@@ -1138,6 +1187,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><a href="/uri"><img src="moon.jpg" alt="moon" /></a></p>
         let normalizedCM = #####"""
@@ -1151,8 +1201,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7987-7993
-    func testExample528() {
+    // spec.txt lines 8296-8302
+    func testExample540() {
         let markdownTest =
         #####"""
         [foo [bar](/uri)][ref]
@@ -1161,6 +1211,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>[foo <a href="/uri">bar</a>]<a href="/uri">ref</a></p>
         let normalizedCM = #####"""
@@ -1172,8 +1223,8 @@ final class LinksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 7996-8002
-    func testExample529() {
+    // spec.txt lines 8305-8311
+    func testExample541() {
         let markdownTest =
         #####"""
         [foo *bar [baz][ref]*][ref]
@@ -1182,6 +1233,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>[foo <em>bar <a href="/uri">baz</a></em>]<a href="/uri">ref</a></p>
         let normalizedCM = #####"""
@@ -1199,8 +1251,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8011-8017
-    func testExample530() {
+    // spec.txt lines 8320-8326
+    func testExample542() {
         let markdownTest =
         #####"""
         *[foo*][ref]
@@ -1209,6 +1261,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>*<a href="/uri">foo*</a></p>
         let normalizedCM = #####"""
@@ -1220,8 +1273,8 @@ final class LinksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8020-8026
-    func testExample531() {
+    // spec.txt lines 8329-8335
+    func testExample543() {
         let markdownTest =
         #####"""
         [foo *bar][ref]
@@ -1230,6 +1283,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><a href="/uri">foo *bar</a></p>
         let normalizedCM = #####"""
@@ -1244,8 +1298,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8032-8038
-    func testExample532() {
+    // spec.txt lines 8341-8347
+    func testExample544() {
         let markdownTest =
         #####"""
         [foo <bar attr="][ref]">
@@ -1254,6 +1308,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>[foo <bar attr="][ref]"></p>
         let normalizedCM = #####"""
@@ -1265,8 +1320,8 @@ final class LinksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8041-8047
-    func testExample533() {
+    // spec.txt lines 8350-8356
+    func testExample545() {
         let markdownTest =
         #####"""
         [foo`][ref]`
@@ -1275,6 +1330,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>[foo<code>][ref]</code></p>
         let normalizedCM = #####"""
@@ -1286,8 +1342,8 @@ final class LinksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8050-8056
-    func testExample534() {
+    // spec.txt lines 8359-8365
+    func testExample546() {
         let markdownTest =
         #####"""
         [foo<http://example.com/?search=][ref]>
@@ -1296,6 +1352,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>[foo<a href="http://example.com/?search=%5D%5Bref%5D">http://example.com/?search=][ref]</a></p>
         let normalizedCM = #####"""
@@ -1309,8 +1366,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8061-8067
-    func testExample535() {
+    // spec.txt lines 8370-8376
+    func testExample547() {
         let markdownTest =
         #####"""
         [foo][BaR]
@@ -1319,6 +1376,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><a href="/url" title="title">foo</a></p>
         let normalizedCM = #####"""
@@ -1332,8 +1390,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8072-8078
-    func testExample536() {
+    // spec.txt lines 8381-8387
+    func testExample548() {
         let markdownTest =
         #####"""
         [Толпой][Толпой] is a Russian word.
@@ -1342,6 +1400,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><a href="/url">Толпой</a> is a Russian word.</p>
         let normalizedCM = #####"""
@@ -1356,8 +1415,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8084-8091
-    func testExample537() {
+    // spec.txt lines 8393-8400
+    func testExample549() {
         let markdownTest =
         #####"""
         [Foo
@@ -1367,6 +1426,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><a href="/url">Baz</a></p>
         let normalizedCM = #####"""
@@ -1381,8 +1441,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8097-8103
-    func testExample538() {
+    // spec.txt lines 8406-8412
+    func testExample550() {
         let markdownTest =
         #####"""
         [foo] [bar]
@@ -1391,6 +1451,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>[foo] <a href="/url" title="title">bar</a></p>
         let normalizedCM = #####"""
@@ -1402,8 +1463,8 @@ final class LinksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8106-8114
-    func testExample539() {
+    // spec.txt lines 8415-8423
+    func testExample551() {
         let markdownTest =
         #####"""
         [foo]
@@ -1413,6 +1474,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>[foo]
       //<a href="/url" title="title">bar</a></p>
@@ -1455,8 +1517,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8147-8155
-    func testExample540() {
+    // spec.txt lines 8456-8464
+    func testExample552() {
         let markdownTest =
         #####"""
         [foo]: /url1
@@ -1467,6 +1529,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><a href="/url1">bar</a></p>
         let normalizedCM = #####"""
@@ -1482,8 +1545,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8162-8168
-    func testExample541() {
+    // spec.txt lines 8471-8477
+    func testExample553() {
         let markdownTest =
         #####"""
         [bar][foo\!]
@@ -1492,6 +1555,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>[bar][foo!]</p>
         let normalizedCM = #####"""
@@ -1506,8 +1570,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8174-8181
-    func testExample542() {
+    // spec.txt lines 8483-8490
+    func testExample554() {
         let markdownTest =
         #####"""
         [foo][ref[]
@@ -1516,6 +1580,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>[foo][ref[]</p>
       //<p>[ref[]: /uri</p>
@@ -1528,8 +1593,8 @@ final class LinksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8184-8191
-    func testExample543() {
+    // spec.txt lines 8493-8500
+    func testExample555() {
         let markdownTest =
         #####"""
         [foo][ref[bar]]
@@ -1538,6 +1603,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>[foo][ref[bar]]</p>
       //<p>[ref[bar]]: /uri</p>
@@ -1550,8 +1616,8 @@ final class LinksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8194-8201
-    func testExample544() {
+    // spec.txt lines 8503-8510
+    func testExample556() {
         let markdownTest =
         #####"""
         [[[foo]]]
@@ -1560,6 +1626,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>[[[foo]]]</p>
       //<p>[[[foo]]]: /url</p>
@@ -1572,8 +1639,8 @@ final class LinksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8204-8210
-    func testExample545() {
+    // spec.txt lines 8513-8519
+    func testExample557() {
         let markdownTest =
         #####"""
         [foo][ref\[]
@@ -1582,6 +1649,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><a href="/uri">foo</a></p>
         let normalizedCM = #####"""
@@ -1595,8 +1663,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8215-8221
-    func testExample546() {
+    // spec.txt lines 8524-8530
+    func testExample558() {
         let markdownTest =
         #####"""
         [bar\\]: /uri
@@ -1605,6 +1673,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><a href="/uri">bar\</a></p>
         let normalizedCM = #####"""
@@ -1618,8 +1687,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8226-8233
-    func testExample547() {
+    // spec.txt lines 8535-8542
+    func testExample559() {
         let markdownTest =
         #####"""
         []
@@ -1628,6 +1697,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>[]</p>
       //<p>[]: /uri</p>
@@ -1640,8 +1710,8 @@ final class LinksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8236-8247
-    func testExample548() {
+    // spec.txt lines 8545-8556
+    func testExample560() {
         let markdownTest =
         #####"""
         [
@@ -1652,6 +1722,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>[
       //]</p>
@@ -1675,8 +1746,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8259-8265
-    func testExample549() {
+    // spec.txt lines 8568-8574
+    func testExample561() {
         let markdownTest =
         #####"""
         [foo][]
@@ -1685,6 +1756,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><a href="/url" title="title">foo</a></p>
         let normalizedCM = #####"""
@@ -1696,8 +1768,8 @@ final class LinksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8268-8274
-    func testExample550() {
+    // spec.txt lines 8577-8583
+    func testExample562() {
         let markdownTest =
         #####"""
         [*foo* bar][]
@@ -1706,6 +1778,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><a href="/url" title="title"><em>foo</em> bar</a></p>
         let normalizedCM = #####"""
@@ -1719,8 +1792,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8279-8285
-    func testExample551() {
+    // spec.txt lines 8588-8594
+    func testExample563() {
         let markdownTest =
         #####"""
         [Foo][]
@@ -1729,6 +1802,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><a href="/url" title="title">Foo</a></p>
         let normalizedCM = #####"""
@@ -1743,17 +1817,18 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8292-8300
-    func testExample552() {
+    // spec.txt lines 8601-8609
+    func testExample564() {
         let markdownTest =
         #####"""
-        [foo] 
+        [foo]
         []
         
         [foo]: /url "title"\#####n
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><a href="/url" title="title">foo</a>
       //[]</p>
@@ -1775,8 +1850,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8312-8318
-    func testExample553() {
+    // spec.txt lines 8621-8627
+    func testExample565() {
         let markdownTest =
         #####"""
         [foo]
@@ -1785,6 +1860,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><a href="/url" title="title">foo</a></p>
         let normalizedCM = #####"""
@@ -1796,8 +1872,8 @@ final class LinksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8321-8327
-    func testExample554() {
+    // spec.txt lines 8630-8636
+    func testExample566() {
         let markdownTest =
         #####"""
         [*foo* bar]
@@ -1806,6 +1882,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><a href="/url" title="title"><em>foo</em> bar</a></p>
         let normalizedCM = #####"""
@@ -1817,8 +1894,8 @@ final class LinksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8330-8336
-    func testExample555() {
+    // spec.txt lines 8639-8645
+    func testExample567() {
         let markdownTest =
         #####"""
         [[*foo* bar]]
@@ -1827,6 +1904,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>[<a href="/url" title="title"><em>foo</em> bar</a>]</p>
         let normalizedCM = #####"""
@@ -1838,8 +1916,8 @@ final class LinksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8339-8345
-    func testExample556() {
+    // spec.txt lines 8648-8654
+    func testExample568() {
         let markdownTest =
         #####"""
         [[bar [foo]
@@ -1848,6 +1926,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>[[bar <a href="/url">foo</a></p>
         let normalizedCM = #####"""
@@ -1861,8 +1940,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8350-8356
-    func testExample557() {
+    // spec.txt lines 8659-8665
+    func testExample569() {
         let markdownTest =
         #####"""
         [Foo]
@@ -1871,6 +1950,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><a href="/url" title="title">Foo</a></p>
         let normalizedCM = #####"""
@@ -1884,8 +1964,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8361-8367
-    func testExample558() {
+    // spec.txt lines 8670-8676
+    func testExample570() {
         let markdownTest =
         #####"""
         [foo] bar
@@ -1894,6 +1974,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><a href="/url">foo</a> bar</p>
         let normalizedCM = #####"""
@@ -1908,8 +1989,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8373-8379
-    func testExample559() {
+    // spec.txt lines 8682-8688
+    func testExample571() {
         let markdownTest =
         #####"""
         \[foo]
@@ -1918,6 +1999,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>[foo]</p>
         let normalizedCM = #####"""
@@ -1932,8 +2014,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8385-8391
-    func testExample560() {
+    // spec.txt lines 8694-8700
+    func testExample572() {
         let markdownTest =
         #####"""
         [foo*]: /url
@@ -1942,6 +2024,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>*<a href="/url">foo*</a></p>
         let normalizedCM = #####"""
@@ -1956,8 +2039,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8397-8404
-    func testExample561() {
+    // spec.txt lines 8706-8713
+    func testExample573() {
         let markdownTest =
         #####"""
         [foo][bar]
@@ -1967,6 +2050,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><a href="/url2">foo</a></p>
         let normalizedCM = #####"""
@@ -1978,8 +2062,8 @@ final class LinksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8406-8412
-    func testExample562() {
+    // spec.txt lines 8715-8721
+    func testExample574() {
         let markdownTest =
         #####"""
         [foo][]
@@ -1988,6 +2072,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><a href="/url1">foo</a></p>
         let normalizedCM = #####"""
@@ -2001,8 +2086,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8416-8422
-    func testExample563() {
+    // spec.txt lines 8725-8731
+    func testExample575() {
         let markdownTest =
         #####"""
         [foo]()
@@ -2011,6 +2096,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><a href="">foo</a></p>
         let normalizedCM = #####"""
@@ -2022,8 +2108,8 @@ final class LinksTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8424-8430
-    func testExample564() {
+    // spec.txt lines 8733-8739
+    func testExample576() {
         let markdownTest =
         #####"""
         [foo](not a link)
@@ -2032,6 +2118,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><a href="/url1">foo</a>(not a link)</p>
         let normalizedCM = #####"""
@@ -2046,8 +2133,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8435-8441
-    func testExample565() {
+    // spec.txt lines 8744-8750
+    func testExample577() {
         let markdownTest =
         #####"""
         [foo][bar][baz]
@@ -2056,6 +2143,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>[foo]<a href="/url">bar</a></p>
         let normalizedCM = #####"""
@@ -2070,8 +2158,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8447-8454
-    func testExample566() {
+    // spec.txt lines 8756-8763
+    func testExample578() {
         let markdownTest =
         #####"""
         [foo][bar][baz]
@@ -2081,6 +2169,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><a href="/url2">foo</a><a href="/url1">baz</a></p>
         let normalizedCM = #####"""
@@ -2095,8 +2184,8 @@ final class LinksTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 8460-8467
-    func testExample567() {
+    // spec.txt lines 8769-8776
+    func testExample579() {
         let markdownTest =
         #####"""
         [foo][bar][baz]
@@ -2106,6 +2195,7 @@ final class LinksTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p>[foo]<a href="/url1">bar</a></p>
         let normalizedCM = #####"""
@@ -2120,18 +2210,6 @@ final class LinksTests: XCTestCase {
 extension LinksTests {
     static var allTests: Linux.TestList<LinksTests> {
         return [
-        ("testExample481", testExample481),
-        ("testExample482", testExample482),
-        ("testExample483", testExample483),
-        ("testExample484", testExample484),
-        ("testExample485", testExample485),
-        ("testExample486", testExample486),
-        ("testExample487", testExample487),
-        ("testExample488", testExample488),
-        ("testExample489", testExample489),
-        ("testExample490", testExample490),
-        ("testExample491", testExample491),
-        ("testExample492", testExample492),
         ("testExample493", testExample493),
         ("testExample494", testExample494),
         ("testExample495", testExample495),
@@ -2206,7 +2284,19 @@ extension LinksTests {
         ("testExample564", testExample564),
         ("testExample565", testExample565),
         ("testExample566", testExample566),
-        ("testExample567", testExample567)
+        ("testExample567", testExample567),
+        ("testExample568", testExample568),
+        ("testExample569", testExample569),
+        ("testExample570", testExample570),
+        ("testExample571", testExample571),
+        ("testExample572", testExample572),
+        ("testExample573", testExample573),
+        ("testExample574", testExample574),
+        ("testExample575", testExample575),
+        ("testExample576", testExample576),
+        ("testExample577", testExample577),
+        ("testExample578", testExample578),
+        ("testExample579", testExample579)
         ]
     }
 }

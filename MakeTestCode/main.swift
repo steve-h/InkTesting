@@ -29,7 +29,7 @@ setOutputFolder("CommonMarkTests")
 for test in allTheTests {
     if test.section != recentSection {
         closeCurrentFile()
-        recentSection = test.section
+        recentSection = test.section.replacingOccurrences(of: "(extension)", with: "Extension")
         sectionNames.append(recentSection)
         openNewFile()
     }

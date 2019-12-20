@@ -2,16 +2,17 @@
 *  Ink
 *  Copyright (c) Steve Hume 2019
 *  MIT license, see LICENSE file for details
-These tests are extracted from https://spec.commonmark.org/0.29/
-title: CommonMark Spec
-author: John MacFarlane
+---
+title: GitHub Flavored Markdown Spec
 version: 0.29
 date: '2019-04-06'
-license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0
+license: '[CC-BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/)'
+...
 */
 
 import XCTest
 import Ink
+import Foundation
 
 final class CodeSpansTests: XCTestCase {
 
@@ -38,14 +39,15 @@ final class CodeSpansTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5870-5874
-    func testExample328() {
+    // spec.txt lines 6151-6155
+    func testExample338() {
         let markdownTest =
         #####"""
         `foo`
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><code>foo</code></p>
         let normalizedCM = #####"""
@@ -61,14 +63,15 @@ final class CodeSpansTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5881-5885
-    func testExample329() {
+    // spec.txt lines 6162-6166
+    func testExample339() {
         let markdownTest =
         #####"""
         `` foo ` bar ``
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><code>foo ` bar</code></p>
         let normalizedCM = #####"""
@@ -83,14 +86,15 @@ final class CodeSpansTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5891-5895
-    func testExample330() {
+    // spec.txt lines 6172-6176
+    func testExample340() {
         let markdownTest =
         #####"""
         ` `` `
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><code>``</code></p>
         let normalizedCM = #####"""
@@ -104,14 +108,15 @@ final class CodeSpansTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5899-5903
-    func testExample331() {
+    // spec.txt lines 6180-6184
+    func testExample341() {
         let markdownTest =
         #####"""
         `  ``  `
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><code> `` </code></p>
         let normalizedCM = #####"""
@@ -126,14 +131,15 @@ final class CodeSpansTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5908-5912
-    func testExample332() {
+    // spec.txt lines 6189-6193
+    func testExample342() {
         let markdownTest =
         #####"""
         ` a`
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><code> a</code></p>
         let normalizedCM = #####"""
@@ -148,14 +154,15 @@ final class CodeSpansTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5917-5921
-    func testExample333() {
+    // spec.txt lines 6198-6202
+    func testExample343() {
         let markdownTest =
         #####"""
         ` b `
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><code> b </code></p>
         let normalizedCM = #####"""
@@ -169,8 +176,8 @@ final class CodeSpansTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5925-5931
-    func testExample334() {
+    // spec.txt lines 6206-6212
+    func testExample344() {
         let markdownTest =
         #####"""
         ` `
@@ -178,6 +185,7 @@ final class CodeSpansTests: XCTestCase {
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><code> </code>
       //<code>  </code></p>
@@ -192,18 +200,19 @@ final class CodeSpansTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5936-5944
-    func testExample335() {
+    // spec.txt lines 6217-6225
+    func testExample345() {
         let markdownTest =
         #####"""
         ``
         foo
-        bar  
+        bar
         baz
         ``\#####n
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><code>foo bar   baz</code></p>
         let normalizedCM = #####"""
@@ -215,16 +224,17 @@ final class CodeSpansTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5946-5952
-    func testExample336() {
+    // spec.txt lines 6227-6233
+    func testExample346() {
         let markdownTest =
         #####"""
         ``
-        foo 
+        foo
         ``\#####n
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><code>foo </code></p>
         let normalizedCM = #####"""
@@ -238,15 +248,16 @@ final class CodeSpansTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5957-5962
-    func testExample337() {
+    // spec.txt lines 6238-6243
+    func testExample347() {
         let markdownTest =
         #####"""
-        `foo   bar 
+        `foo   bar
         baz`\#####n
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        .replacingOccurrences(of: ">\n<", with: "><")
         
       //<p><code>foo   bar  baz</code></p>
         let normalizedCM = #####"""
@@ -267,14 +278,15 @@ final class CodeSpansTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5974-5978
-    func testExample338() {
+    // spec.txt lines 6255-6259
+    func testExample348() {
         let markdownTest =
         #####"""
         `foo\`bar`
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><code>foo\</code>bar`</p>
         let normalizedCM = #####"""
@@ -290,14 +302,15 @@ final class CodeSpansTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5985-5989
-    func testExample339() {
+    // spec.txt lines 6266-6270
+    func testExample349() {
         let markdownTest =
         #####"""
         ``foo`bar``
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><code>foo`bar</code></p>
         let normalizedCM = #####"""
@@ -309,14 +322,15 @@ final class CodeSpansTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 5991-5995
-    func testExample340() {
+    // spec.txt lines 6272-6276
+    func testExample350() {
         let markdownTest =
         #####"""
         ` foo `` bar `
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><code>foo `` bar</code></p>
         let normalizedCM = #####"""
@@ -333,14 +347,15 @@ final class CodeSpansTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 6003-6007
-    func testExample341() {
+    // spec.txt lines 6284-6288
+    func testExample351() {
         let markdownTest =
         #####"""
         *foo`*`
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p>*foo<code>*</code></p>
         let normalizedCM = #####"""
@@ -354,14 +369,15 @@ final class CodeSpansTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 6012-6016
-    func testExample342() {
+    // spec.txt lines 6293-6297
+    func testExample352() {
         let markdownTest =
         #####"""
         [not a `link](/foo`)
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p>[not a <code>link](/foo</code>)</p>
         let normalizedCM = #####"""
@@ -376,14 +392,15 @@ final class CodeSpansTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 6022-6026
-    func testExample343() {
+    // spec.txt lines 6303-6307
+    func testExample353() {
         let markdownTest =
         #####"""
         `<a href="`">`
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><code>&lt;a href=&quot;</code>&quot;&gt;`</p>
         let normalizedCM = #####"""
@@ -397,14 +414,15 @@ final class CodeSpansTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 6031-6035
-    func testExample344() {
+    // spec.txt lines 6312-6316
+    func testExample354() {
         let markdownTest =
         #####"""
         <a href="`">`
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><a href="`">`</p>
         let normalizedCM = #####"""
@@ -418,14 +436,15 @@ final class CodeSpansTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 6040-6044
-    func testExample345() {
+    // spec.txt lines 6321-6325
+    func testExample355() {
         let markdownTest =
         #####"""
         `<http://foo.bar.`baz>`
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><code>&lt;http://foo.bar.</code>baz&gt;`</p>
         let normalizedCM = #####"""
@@ -439,14 +458,15 @@ final class CodeSpansTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 6049-6053
-    func testExample346() {
+    // spec.txt lines 6330-6334
+    func testExample356() {
         let markdownTest =
         #####"""
         <http://foo.bar.`baz>`
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p><a href="http://foo.bar.%60baz">http://foo.bar.`baz</a>`</p>
         let normalizedCM = #####"""
@@ -461,14 +481,15 @@ final class CodeSpansTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 6059-6063
-    func testExample347() {
+    // spec.txt lines 6340-6344
+    func testExample357() {
         let markdownTest =
         #####"""
         ```foo``
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p>```foo``</p>
         let normalizedCM = #####"""
@@ -480,14 +501,15 @@ final class CodeSpansTests: XCTestCase {
 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 6066-6070
-    func testExample348() {
+    // spec.txt lines 6347-6351
+    func testExample358() {
         let markdownTest =
         #####"""
         `foo
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p>`foo</p>
         let normalizedCM = #####"""
@@ -502,14 +524,15 @@ final class CodeSpansTests: XCTestCase {
     // 
     //     
     // https://github.com/commonmark/commonmark-spec
-    // spec.txt lines 6075-6079
-    func testExample349() {
+    // spec.txt lines 6356-6360
+    func testExample359() {
         let markdownTest =
         #####"""
         `foo``bar``
         """#####
     
         let html = MarkdownParser().html(from: markdownTest)
+        
         
       //<p>`foo<code>bar</code></p>
         let normalizedCM = #####"""
@@ -524,16 +547,6 @@ final class CodeSpansTests: XCTestCase {
 extension CodeSpansTests {
     static var allTests: Linux.TestList<CodeSpansTests> {
         return [
-        ("testExample328", testExample328),
-        ("testExample329", testExample329),
-        ("testExample330", testExample330),
-        ("testExample331", testExample331),
-        ("testExample332", testExample332),
-        ("testExample333", testExample333),
-        ("testExample334", testExample334),
-        ("testExample335", testExample335),
-        ("testExample336", testExample336),
-        ("testExample337", testExample337),
         ("testExample338", testExample338),
         ("testExample339", testExample339),
         ("testExample340", testExample340),
@@ -545,7 +558,17 @@ extension CodeSpansTests {
         ("testExample346", testExample346),
         ("testExample347", testExample347),
         ("testExample348", testExample348),
-        ("testExample349", testExample349)
+        ("testExample349", testExample349),
+        ("testExample350", testExample350),
+        ("testExample351", testExample351),
+        ("testExample352", testExample352),
+        ("testExample353", testExample353),
+        ("testExample354", testExample354),
+        ("testExample355", testExample355),
+        ("testExample356", testExample356),
+        ("testExample357", testExample357),
+        ("testExample358", testExample358),
+        ("testExample359", testExample359)
         ]
     }
 }
