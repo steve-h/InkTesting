@@ -23,8 +23,8 @@
         "package": "Ink",
         "repositoryURL": "https://github.com/steve-h/Ink",
         "state": {
-          "branch": "backslashescapes",
-          "revision": "2f8efe3cee5a1ccea19c8388827ae661abfe3009",
+          "branch": "entityparse",
+          "revision": "14c1ea72b9e5e0d1b07220636fa7bb10c67f95d2",
           "version": null
         }
       },
