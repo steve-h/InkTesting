@@ -23,7 +23,7 @@ final class InlinesTests: XCTestCase {
     // Thus, for example, in
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5780-5784
     func testExample307() {
         let markdownTest =

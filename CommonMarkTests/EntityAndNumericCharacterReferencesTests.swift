@@ -43,7 +43,7 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     // references and their corresponding code points.
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5955-5963
     func testExample321() {
         let markdownTest =
@@ -75,7 +75,7 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     // the code point `U+0000` will also be replaced by `U+FFFD`.
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5974-5978
     func testExample322() {
         let markdownTest =
@@ -101,7 +101,7 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     // time specified with a hexadecimal numeral instead of decimal).
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5987-5991
     func testExample323() {
         let markdownTest =
@@ -123,7 +123,7 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     // Here are some nonentities:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5996-6006
     func testExample324() {
         let markdownTest =
@@ -153,7 +153,7 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     // recognized here, because it makes the grammar too ambiguous:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6013-6017
     func testExample325() {
         let markdownTest =
@@ -176,7 +176,7 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     // recognized as entity references either:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6023-6027
     func testExample326() {
         let markdownTest =
@@ -200,7 +200,7 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     // URLs, [link titles], and [fenced code block][] [info strings]:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6034-6038
     func testExample327() {
         let markdownTest =
@@ -220,7 +220,7 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6041-6045
     func testExample328() {
         let markdownTest =
@@ -240,7 +240,7 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6048-6054
     func testExample329() {
         let markdownTest =
@@ -262,7 +262,7 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6057-6064
     func testExample330() {
         let markdownTest =
@@ -289,7 +289,7 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     // text in code spans and code blocks:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6070-6074
     func testExample331() {
         let markdownTest =
@@ -309,7 +309,7 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6077-6082
     func testExample332() {
         let markdownTest =
@@ -335,7 +335,7 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     // documents.
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6089-6095
     func testExample333() {
         let markdownTest =
@@ -357,7 +357,7 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6097-6106
     func testExample334() {
         let markdownTest =
@@ -382,7 +382,7 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6108-6114
     func testExample335() {
         let markdownTest =
@@ -406,7 +406,7 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6116-6120
     func testExample336() {
         let markdownTest =
@@ -426,7 +426,7 @@ final class EntityAndNumericCharacterReferencesTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6123-6127
     func testExample337() {
         let markdownTest =

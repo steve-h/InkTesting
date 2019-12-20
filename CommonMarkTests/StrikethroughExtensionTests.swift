@@ -20,7 +20,7 @@ final class StrikethroughExtensionTests: XCTestCase {
     // parsing to cease:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7726-7733
     func testExample492() {
         let markdownTest =

@@ -32,7 +32,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // paragraph.)
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1424-1431
     func testExample77() {
         let markdownTest =
@@ -61,7 +61,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // item][list items], the list item interpretation takes precedence:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1438-1449
     func testExample78() {
         let markdownTest =
@@ -88,7 +88,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1452-1465
     func testExample79() {
         let markdownTest =
@@ -120,7 +120,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // as Markdown:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1472-1483
     func testExample80() {
         let markdownTest =
@@ -153,7 +153,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // Here we have three chunks separated by blank lines:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1488-1505
     func testExample81() {
         let markdownTest =
@@ -196,7 +196,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // in interior blank lines:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1511-1520
     func testExample82() {
         let markdownTest =
@@ -227,7 +227,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // allows hanging indents and the like.)
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1526-1533
     func testExample83() {
         let markdownTest =
@@ -254,7 +254,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // after indented code:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1540-1547
     func testExample84() {
         let markdownTest =
@@ -281,7 +281,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // blocks:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1553-1568
     func testExample85() {
         let markdownTest =
@@ -316,7 +316,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // The first line can be indented more than four spaces:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1573-1580
     func testExample86() {
         let markdownTest =
@@ -344,7 +344,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // are not included in it:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1586-1595
     func testExample87() {
         let markdownTest =
@@ -372,7 +372,7 @@ final class IndentedCodeBlocksTests: XCTestCase {
     // Trailing spaces are included in the code block's content:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1600-1605
     func testExample88() {
         let markdownTest =

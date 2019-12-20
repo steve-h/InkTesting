@@ -19,7 +19,7 @@ final class TaskListItemsExtensionTests: XCTestCase {
     // Task lists can be arbitrarily nested:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5123-5138
     func testExample280() {
         let markdownTest =

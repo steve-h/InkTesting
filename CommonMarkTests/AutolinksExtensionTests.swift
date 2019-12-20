@@ -21,7 +21,7 @@ final class AutolinksExtensionTests: XCTestCase {
     // the address:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9346-9359
     func testExample631() {
         let markdownTest =

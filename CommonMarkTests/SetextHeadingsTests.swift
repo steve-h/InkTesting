@@ -49,7 +49,7 @@ final class SetextHeadingsTests: XCTestCase {
     // Simple examples:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1022-1031
     func testExample50() {
         let markdownTest =
@@ -76,7 +76,7 @@ final class SetextHeadingsTests: XCTestCase {
     // The content of the header may span more than one line:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1036-1043
     func testExample51() {
         let markdownTest =
@@ -104,7 +104,7 @@ final class SetextHeadingsTests: XCTestCase {
     // [whitespace].
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1050-1057
     func testExample52() {
         let markdownTest =
@@ -129,7 +129,7 @@ final class SetextHeadingsTests: XCTestCase {
     // The underlining can be any length:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1062-1071
     func testExample53() {
         let markdownTest =
@@ -157,7 +157,7 @@ final class SetextHeadingsTests: XCTestCase {
     // not line up with the underlining:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1077-1090
     func testExample54() {
         let markdownTest =
@@ -188,7 +188,7 @@ final class SetextHeadingsTests: XCTestCase {
     // Four spaces indent is too much:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1095-1108
     func testExample55() {
         let markdownTest =
@@ -224,7 +224,7 @@ final class SetextHeadingsTests: XCTestCase {
     // may have trailing spaces:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1114-1119
     func testExample56() {
         let markdownTest =
@@ -247,7 +247,7 @@ final class SetextHeadingsTests: XCTestCase {
     // Four spaces is too much:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1124-1130
     func testExample57() {
         let markdownTest =
@@ -271,7 +271,7 @@ final class SetextHeadingsTests: XCTestCase {
     // The setext heading underline cannot contain internal spaces:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1135-1146
     func testExample58() {
         let markdownTest =
@@ -300,7 +300,7 @@ final class SetextHeadingsTests: XCTestCase {
     // Trailing spaces in the content line do not cause a line break:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1151-1156
     func testExample59() {
         let markdownTest =
@@ -323,7 +323,7 @@ final class SetextHeadingsTests: XCTestCase {
     // Nor does a backslash at the end:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1161-1166
     func testExample60() {
         let markdownTest =
@@ -347,7 +347,7 @@ final class SetextHeadingsTests: XCTestCase {
     // indicators of inline structure, the following are setext headings:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1172-1185
     func testExample61() {
         let markdownTest =
@@ -379,7 +379,7 @@ final class SetextHeadingsTests: XCTestCase {
     // line] in a list item or block quote:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1191-1199
     func testExample62() {
         let markdownTest =
@@ -403,7 +403,7 @@ final class SetextHeadingsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1202-1212
     func testExample63() {
         let markdownTest =
@@ -429,7 +429,7 @@ final class SetextHeadingsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1215-1223
     func testExample64() {
         let markdownTest =
@@ -457,7 +457,7 @@ final class SetextHeadingsTests: XCTestCase {
     // of the heading's content:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1230-1237
     func testExample65() {
         let markdownTest =
@@ -483,7 +483,7 @@ final class SetextHeadingsTests: XCTestCase {
     // setext headings:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1243-1255
     func testExample66() {
         let markdownTest =
@@ -513,7 +513,7 @@ final class SetextHeadingsTests: XCTestCase {
     // Setext headings cannot be empty:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1260-1265
     func testExample67() {
         let markdownTest =
@@ -538,7 +538,7 @@ final class SetextHeadingsTests: XCTestCase {
     // in these examples gets interpreted as a thematic break:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1272-1278
     func testExample68() {
         let markdownTest =
@@ -560,7 +560,7 @@ final class SetextHeadingsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1281-1289
     func testExample69() {
         let markdownTest =
@@ -584,7 +584,7 @@ final class SetextHeadingsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1292-1299
     func testExample70() {
         let markdownTest =
@@ -608,7 +608,7 @@ final class SetextHeadingsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1302-1310
     func testExample71() {
         let markdownTest =
@@ -635,7 +635,7 @@ final class SetextHeadingsTests: XCTestCase {
     // use backslash escapes:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1316-1321
     func testExample72() {
         let markdownTest =
@@ -679,7 +679,7 @@ final class SetextHeadingsTests: XCTestCase {
     // put a blank line after the first paragraph:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1347-1357
     func testExample73() {
         let markdownTest =
@@ -708,7 +708,7 @@ final class SetextHeadingsTests: XCTestCase {
     // the thematic break,
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1363-1375
     func testExample74() {
         let markdownTest =
@@ -739,7 +739,7 @@ final class SetextHeadingsTests: XCTestCase {
     // underline], such as
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1381-1391
     func testExample75() {
         let markdownTest =
@@ -767,7 +767,7 @@ final class SetextHeadingsTests: XCTestCase {
     // Authors who want interpretation 3 can use backslash escapes:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1396-1406
     func testExample76() {
         let markdownTest =

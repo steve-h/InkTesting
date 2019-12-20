@@ -94,7 +94,7 @@ final class RawHtmlTests: XCTestCase {
     // Here are some simple open tags:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9438-9442
     func testExample632() {
         let markdownTest =
@@ -116,7 +116,7 @@ final class RawHtmlTests: XCTestCase {
     // Empty elements:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9447-9451
     func testExample633() {
         let markdownTest =
@@ -138,7 +138,7 @@ final class RawHtmlTests: XCTestCase {
     // [Whitespace] is allowed:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9456-9462
     func testExample634() {
         let markdownTest =
@@ -163,7 +163,7 @@ final class RawHtmlTests: XCTestCase {
     // With attributes:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9467-9473
     func testExample635() {
         let markdownTest =
@@ -188,7 +188,7 @@ final class RawHtmlTests: XCTestCase {
     // Custom tag names can be used:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9478-9482
     func testExample636() {
         let markdownTest =
@@ -210,7 +210,7 @@ final class RawHtmlTests: XCTestCase {
     // Illegal tag names, not parsed as HTML:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9487-9491
     func testExample637() {
         let markdownTest =
@@ -232,7 +232,7 @@ final class RawHtmlTests: XCTestCase {
     // Illegal attribute names:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9496-9500
     func testExample638() {
         let markdownTest =
@@ -254,7 +254,7 @@ final class RawHtmlTests: XCTestCase {
     // Illegal attribute values:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9505-9509
     func testExample639() {
         let markdownTest =
@@ -276,7 +276,7 @@ final class RawHtmlTests: XCTestCase {
     // Illegal [whitespace]:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9514-9524
     func testExample640() {
         let markdownTest =
@@ -305,7 +305,7 @@ final class RawHtmlTests: XCTestCase {
     // Missing [whitespace]:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9529-9533
     func testExample641() {
         let markdownTest =
@@ -327,7 +327,7 @@ final class RawHtmlTests: XCTestCase {
     // Closing tags:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9538-9542
     func testExample642() {
         let markdownTest =
@@ -349,7 +349,7 @@ final class RawHtmlTests: XCTestCase {
     // Illegal attributes in closing tag:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9547-9551
     func testExample643() {
         let markdownTest =
@@ -371,7 +371,7 @@ final class RawHtmlTests: XCTestCase {
     // Comments:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9556-9562
     func testExample644() {
         let markdownTest =
@@ -394,7 +394,7 @@ final class RawHtmlTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9565-9569
     func testExample645() {
         let markdownTest =
@@ -416,7 +416,7 @@ final class RawHtmlTests: XCTestCase {
     // Not comments:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9574-9581
     func testExample646() {
         let markdownTest =
@@ -441,7 +441,7 @@ final class RawHtmlTests: XCTestCase {
     // Processing instructions:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9586-9590
     func testExample647() {
         let markdownTest =
@@ -463,7 +463,7 @@ final class RawHtmlTests: XCTestCase {
     // Declarations:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9595-9599
     func testExample648() {
         let markdownTest =
@@ -485,7 +485,7 @@ final class RawHtmlTests: XCTestCase {
     // CDATA sections:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9604-9608
     func testExample649() {
         let markdownTest =
@@ -508,7 +508,7 @@ final class RawHtmlTests: XCTestCase {
     // attributes:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9614-9618
     func testExample650() {
         let markdownTest =
@@ -530,7 +530,7 @@ final class RawHtmlTests: XCTestCase {
     // Backslash escapes do not work in HTML attributes:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9623-9627
     func testExample651() {
         let markdownTest =
@@ -550,7 +550,7 @@ final class RawHtmlTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9630-9634
     func testExample652() {
         let markdownTest =

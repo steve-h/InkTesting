@@ -26,7 +26,7 @@ final class HardLineBreaksTests: XCTestCase {
     // in HTML as a `<br />` tag):
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9683-9689
     func testExample654() {
         let markdownTest =
@@ -51,7 +51,7 @@ final class HardLineBreaksTests: XCTestCase {
     // [line ending] may be used instead of two spaces:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9695-9701
     func testExample655() {
         let markdownTest =
@@ -75,7 +75,7 @@ final class HardLineBreaksTests: XCTestCase {
     // More than two spaces can be used:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9706-9712
     func testExample656() {
         let markdownTest =
@@ -99,7 +99,7 @@ final class HardLineBreaksTests: XCTestCase {
     // Leading spaces at the beginning of the next line are ignored:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9717-9723
     func testExample657() {
         let markdownTest =
@@ -121,7 +121,7 @@ final class HardLineBreaksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9726-9732
     func testExample658() {
         let markdownTest =
@@ -146,7 +146,7 @@ final class HardLineBreaksTests: XCTestCase {
     // that allow inline content:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9738-9744
     func testExample659() {
         let markdownTest =
@@ -168,7 +168,7 @@ final class HardLineBreaksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9747-9753
     func testExample660() {
         let markdownTest =
@@ -192,7 +192,7 @@ final class HardLineBreaksTests: XCTestCase {
     // Line breaks do not occur inside code spans
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9758-9763
     func testExample661() {
         let markdownTest =
@@ -213,7 +213,7 @@ final class HardLineBreaksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9766-9771
     func testExample662() {
         let markdownTest =
@@ -236,7 +236,7 @@ final class HardLineBreaksTests: XCTestCase {
     // or HTML tags:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9776-9782
     func testExample663() {
         let markdownTest =
@@ -259,7 +259,7 @@ final class HardLineBreaksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9785-9791
     func testExample664() {
         let markdownTest =
@@ -286,7 +286,7 @@ final class HardLineBreaksTests: XCTestCase {
     // other block element:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9798-9802
     func testExample665() {
         let markdownTest =
@@ -306,7 +306,7 @@ final class HardLineBreaksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9805-9809
     func testExample666() {
         let markdownTest =
@@ -326,7 +326,7 @@ final class HardLineBreaksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9812-9816
     func testExample667() {
         let markdownTest =
@@ -346,7 +346,7 @@ final class HardLineBreaksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9819-9823
     func testExample668() {
         let markdownTest =

@@ -142,7 +142,7 @@ func outputTestCase(_ test: Test) {
 
     let testCase = """
         
-        // https://github.com/commonmark/commonmark-spec
+        // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
         // spec.txt lines \(test.startLine)-\(test.endLine)
         func \(testCaseName)() {
             let markdownTest =

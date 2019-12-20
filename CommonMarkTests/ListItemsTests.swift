@@ -55,7 +55,7 @@ final class ListItemsTests: XCTestCase {
     // For example, let *Ls* be the lines
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4003-4018
     func testExample231() {
         let markdownTest =
@@ -91,7 +91,7 @@ final class ListItemsTests: XCTestCase {
     // and the same contents as *Ls*:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4025-4044
     func testExample232() {
         let markdownTest =
@@ -138,7 +138,7 @@ final class ListItemsTests: XCTestCase {
     // put under the list item:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4058-4067
     func testExample233() {
         let markdownTest =
@@ -163,7 +163,7 @@ final class ListItemsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4070-4081
     func testExample234() {
         let markdownTest =
@@ -190,7 +190,7 @@ final class ListItemsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4084-4094
     func testExample235() {
         let markdownTest =
@@ -217,7 +217,7 @@ final class ListItemsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4097-4108
     func testExample236() {
         let markdownTest =
@@ -252,7 +252,7 @@ final class ListItemsTests: XCTestCase {
     // this example:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4119-4134
     func testExample237() {
         let markdownTest =
@@ -292,7 +292,7 @@ final class ListItemsTests: XCTestCase {
     // far enough past the blockquote marker:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4146-4159
     func testExample238() {
         let markdownTest =
@@ -324,7 +324,7 @@ final class ListItemsTests: XCTestCase {
     // any following content, so these are not list items:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4165-4172
     func testExample239() {
         let markdownTest =
@@ -350,7 +350,7 @@ final class ListItemsTests: XCTestCase {
     // one blank line.
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4178-4190
     func testExample240() {
         let markdownTest =
@@ -380,7 +380,7 @@ final class ListItemsTests: XCTestCase {
     // A list item may contain any kind of block:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4195-4217
     func testExample241() {
         let markdownTest =
@@ -422,7 +422,7 @@ final class ListItemsTests: XCTestCase {
     // empty lines within the code block verbatim.
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4223-4241
     func testExample242() {
         let markdownTest =
@@ -462,7 +462,7 @@ final class ListItemsTests: XCTestCase {
     // Note that ordered list start numbers must be nine digits or less:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4245-4251
     func testExample243() {
         let markdownTest =
@@ -484,7 +484,7 @@ final class ListItemsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4254-4258
     func testExample244() {
         let markdownTest =
@@ -506,7 +506,7 @@ final class ListItemsTests: XCTestCase {
     // A start number may begin with 0s:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4263-4269
     func testExample245() {
         let markdownTest =
@@ -528,7 +528,7 @@ final class ListItemsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4272-4278
     func testExample246() {
         let markdownTest =
@@ -552,7 +552,7 @@ final class ListItemsTests: XCTestCase {
     // A start number may not be negative:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4283-4287
     func testExample247() {
         let markdownTest =
@@ -587,7 +587,7 @@ final class ListItemsTests: XCTestCase {
     // In the following case that is 6 spaces:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4306-4318
     func testExample248() {
         let markdownTest =
@@ -618,7 +618,7 @@ final class ListItemsTests: XCTestCase {
     // And in this case it is 11 spaces:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4323-4335
     func testExample249() {
         let markdownTest =
@@ -651,7 +651,7 @@ final class ListItemsTests: XCTestCase {
     // list marker:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4342-4354
     func testExample250() {
         let markdownTest =
@@ -681,7 +681,7 @@ final class ListItemsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4357-4373
     func testExample251() {
         let markdownTest =
@@ -718,7 +718,7 @@ final class ListItemsTests: XCTestCase {
     // inside the code block:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4379-4395
     func testExample252() {
         let markdownTest =
@@ -760,7 +760,7 @@ final class ListItemsTests: XCTestCase {
     // indenting the whole thing and prepending a list marker:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4406-4413
     func testExample253() {
         let markdownTest =
@@ -783,7 +783,7 @@ final class ListItemsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4416-4425
     func testExample254() {
         let markdownTest =
@@ -813,7 +813,7 @@ final class ListItemsTests: XCTestCase {
     // the above case:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4433-4444
     func testExample255() {
         let markdownTest =
@@ -854,7 +854,7 @@ final class ListItemsTests: XCTestCase {
     // Here are some list items that start with a blank line but are not empty:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4461-4482
     func testExample256() {
         let markdownTest =
@@ -896,7 +896,7 @@ final class ListItemsTests: XCTestCase {
     // following the list marker doesn't change the required indentation:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4487-4494
     func testExample257() {
         let markdownTest =
@@ -923,7 +923,7 @@ final class ListItemsTests: XCTestCase {
     // item:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4501-4510
     func testExample258() {
         let markdownTest =
@@ -950,7 +950,7 @@ final class ListItemsTests: XCTestCase {
     // Here is an empty bullet list item:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4515-4525
     func testExample259() {
         let markdownTest =
@@ -978,7 +978,7 @@ final class ListItemsTests: XCTestCase {
     // It does not matter whether there are spaces following the [list marker]:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4530-4540
     func testExample260() {
         let markdownTest =
@@ -1006,7 +1006,7 @@ final class ListItemsTests: XCTestCase {
     // Here is an empty ordered list item:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4545-4555
     func testExample261() {
         let markdownTest =
@@ -1034,7 +1034,7 @@ final class ListItemsTests: XCTestCase {
     // A list may start or end with an empty list item:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4560-4566
     func testExample262() {
         let markdownTest =
@@ -1058,7 +1058,7 @@ final class ListItemsTests: XCTestCase {
     // However, an empty list item cannot interrupt a paragraph:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4570-4581
     func testExample263() {
         let markdownTest =
@@ -1093,7 +1093,7 @@ final class ListItemsTests: XCTestCase {
     // Indented one space:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4592-4611
     func testExample264() {
         let markdownTest =
@@ -1131,7 +1131,7 @@ final class ListItemsTests: XCTestCase {
     // Indented two spaces:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4616-4635
     func testExample265() {
         let markdownTest =
@@ -1169,7 +1169,7 @@ final class ListItemsTests: XCTestCase {
     // Indented three spaces:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4640-4659
     func testExample266() {
         let markdownTest =
@@ -1207,7 +1207,7 @@ final class ListItemsTests: XCTestCase {
     // Four spaces indent gives a code block:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4664-4679
     func testExample267() {
         let markdownTest =
@@ -1255,7 +1255,7 @@ final class ListItemsTests: XCTestCase {
     // Here is an example with [lazy continuation lines]:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4694-4713
     func testExample268() {
         let markdownTest =
@@ -1293,7 +1293,7 @@ final class ListItemsTests: XCTestCase {
     // Indentation can be partially deleted:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4718-4726
     func testExample269() {
         let markdownTest =
@@ -1319,7 +1319,7 @@ final class ListItemsTests: XCTestCase {
     // These examples show how laziness can work in nested structures:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4731-4745
     func testExample270() {
         let markdownTest =
@@ -1349,7 +1349,7 @@ final class ListItemsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4748-4762
     func testExample271() {
         let markdownTest =
@@ -1389,7 +1389,7 @@ final class ListItemsTests: XCTestCase {
     // So, in this case we need two spaces indent:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4776-4797
     func testExample272() {
         let markdownTest =
@@ -1431,7 +1431,7 @@ final class ListItemsTests: XCTestCase {
     // One is not enough:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4802-4814
     func testExample273() {
         let markdownTest =
@@ -1461,7 +1461,7 @@ final class ListItemsTests: XCTestCase {
     // Here we need four, because the list marker is wider:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4819-4830
     func testExample274() {
         let markdownTest =
@@ -1491,7 +1491,7 @@ final class ListItemsTests: XCTestCase {
     // Three is not enough:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4835-4845
     func testExample275() {
         let markdownTest =
@@ -1519,7 +1519,7 @@ final class ListItemsTests: XCTestCase {
     // A list may be the first block in a list item:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4850-4860
     func testExample276() {
         let markdownTest =
@@ -1545,7 +1545,7 @@ final class ListItemsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4863-4877
     func testExample277() {
         let markdownTest =
@@ -1577,7 +1577,7 @@ final class ListItemsTests: XCTestCase {
     // A list item can contain a heading:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 4882-4896
     func testExample278() {
         let markdownTest =

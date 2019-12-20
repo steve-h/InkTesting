@@ -41,7 +41,7 @@ final class DisallowedRawHtmlExtensionTests: XCTestCase {
     // All other HTML tags are left untouched.
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9661-9672
     func testExample653() {
         let markdownTest =

@@ -41,7 +41,7 @@ final class AutolinksTests: XCTestCase {
     // Here are some valid autolinks:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9031-9035
     func testExample602() {
         let markdownTest =
@@ -61,7 +61,7 @@ final class AutolinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9038-9042
     func testExample603() {
         let markdownTest =
@@ -81,7 +81,7 @@ final class AutolinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9045-9049
     func testExample604() {
         let markdownTest =
@@ -103,7 +103,7 @@ final class AutolinksTests: XCTestCase {
     // Uppercase is also fine:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9054-9058
     func testExample605() {
         let markdownTest =
@@ -128,7 +128,7 @@ final class AutolinksTests: XCTestCase {
     // with their syntax:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9066-9070
     func testExample606() {
         let markdownTest =
@@ -148,7 +148,7 @@ final class AutolinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9073-9077
     func testExample607() {
         let markdownTest =
@@ -168,7 +168,7 @@ final class AutolinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9080-9084
     func testExample608() {
         let markdownTest =
@@ -188,7 +188,7 @@ final class AutolinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9087-9091
     func testExample609() {
         let markdownTest =
@@ -210,7 +210,7 @@ final class AutolinksTests: XCTestCase {
     // Spaces are not allowed in autolinks:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9096-9100
     func testExample610() {
         let markdownTest =
@@ -232,7 +232,7 @@ final class AutolinksTests: XCTestCase {
     // Backslash-escapes do not work inside autolinks:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9105-9109
     func testExample611() {
         let markdownTest =
@@ -267,7 +267,7 @@ final class AutolinksTests: XCTestCase {
     // Examples of email autolinks:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9127-9131
     func testExample612() {
         let markdownTest =
@@ -287,7 +287,7 @@ final class AutolinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9134-9138
     func testExample613() {
         let markdownTest =
@@ -309,7 +309,7 @@ final class AutolinksTests: XCTestCase {
     // Backslash-escapes do not work inside email autolinks:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9143-9147
     func testExample614() {
         let markdownTest =
@@ -331,7 +331,7 @@ final class AutolinksTests: XCTestCase {
     // These are not autolinks:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9152-9156
     func testExample615() {
         let markdownTest =
@@ -351,7 +351,7 @@ final class AutolinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9159-9163
     func testExample616() {
         let markdownTest =
@@ -371,7 +371,7 @@ final class AutolinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9166-9170
     func testExample617() {
         let markdownTest =
@@ -391,7 +391,7 @@ final class AutolinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9173-9177
     func testExample618() {
         let markdownTest =
@@ -411,7 +411,7 @@ final class AutolinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9180-9184
     func testExample619() {
         let markdownTest =
@@ -431,7 +431,7 @@ final class AutolinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9187-9191
     func testExample620() {
         let markdownTest =

@@ -24,7 +24,7 @@ final class BackslashEscapesTests: XCTestCase {
     // Any ASCII punctuation character may be backslash-escaped:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5794-5798
     func testExample308() {
         let markdownTest =
@@ -47,7 +47,7 @@ final class BackslashEscapesTests: XCTestCase {
     // backslashes:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5804-5808
     func testExample309() {
         let markdownTest =
@@ -70,7 +70,7 @@ final class BackslashEscapesTests: XCTestCase {
     // not have their usual Markdown meanings:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5814-5834
     func testExample310() {
         let markdownTest =
@@ -108,7 +108,7 @@ final class BackslashEscapesTests: XCTestCase {
     // If a backslash is itself escaped, the following character is not:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5839-5843
     func testExample311() {
         let markdownTest =
@@ -130,7 +130,7 @@ final class BackslashEscapesTests: XCTestCase {
     // A backslash at the end of the line is a [hard line break]:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5848-5854
     func testExample312() {
         let markdownTest =
@@ -155,7 +155,7 @@ final class BackslashEscapesTests: XCTestCase {
     // raw HTML:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5860-5864
     func testExample313() {
         let markdownTest =
@@ -175,7 +175,7 @@ final class BackslashEscapesTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5867-5872
     func testExample314() {
         let markdownTest =
@@ -197,7 +197,7 @@ final class BackslashEscapesTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5875-5882
     func testExample315() {
         let markdownTest =
@@ -221,7 +221,7 @@ final class BackslashEscapesTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5885-5889
     func testExample316() {
         let markdownTest =
@@ -241,7 +241,7 @@ final class BackslashEscapesTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5892-5896
     func testExample317() {
         let markdownTest =
@@ -264,7 +264,7 @@ final class BackslashEscapesTests: XCTestCase {
     // link references, and [info strings] in [fenced code blocks]:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5902-5906
     func testExample318() {
         let markdownTest =
@@ -284,7 +284,7 @@ final class BackslashEscapesTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5909-5915
     func testExample319() {
         let markdownTest =
@@ -306,7 +306,7 @@ final class BackslashEscapesTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5918-5925
     func testExample320() {
         let markdownTest =

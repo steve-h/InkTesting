@@ -227,7 +227,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // Rule 1:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6573-6577
     func testExample360() {
         let markdownTest =
@@ -250,7 +250,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // whitespace, and hence not part of a [left-flanking delimiter run]:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6583-6587
     func testExample361() {
         let markdownTest =
@@ -274,7 +274,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // not part of a [left-flanking delimiter run]:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6594-6598
     func testExample362() {
         let markdownTest =
@@ -296,7 +296,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // Unicode nonbreaking spaces count as whitespace, too:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6603-6607
     func testExample363() {
         let markdownTest =
@@ -318,7 +318,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // Intraword emphasis with `*` is permitted:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6612-6616
     func testExample364() {
         let markdownTest =
@@ -338,7 +338,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6619-6623
     func testExample365() {
         let markdownTest =
@@ -360,7 +360,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // Rule 2:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6628-6632
     func testExample366() {
         let markdownTest =
@@ -383,7 +383,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // whitespace:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6638-6642
     func testExample367() {
         let markdownTest =
@@ -406,7 +406,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // by an alphanumeric and followed by punctuation:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6648-6652
     func testExample368() {
         let markdownTest =
@@ -428,7 +428,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // Emphasis with `_` is not allowed inside words:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6657-6661
     func testExample369() {
         let markdownTest =
@@ -448,7 +448,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6664-6668
     func testExample370() {
         let markdownTest =
@@ -468,7 +468,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6671-6675
     func testExample371() {
         let markdownTest =
@@ -491,7 +491,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // is right-flanking and the second left-flanking:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6681-6685
     func testExample372() {
         let markdownTest =
@@ -515,7 +515,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // punctuation:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6692-6696
     func testExample373() {
         let markdownTest =
@@ -540,7 +540,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // not match the opening delimiter:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6704-6708
     func testExample374() {
         let markdownTest =
@@ -563,7 +563,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // whitespace:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6714-6718
     func testExample375() {
         let markdownTest =
@@ -585,7 +585,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // A newline also counts as whitespace:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6723-6729
     func testExample376() {
         let markdownTest =
@@ -611,7 +611,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // (hence it is not part of a [right-flanking delimiter run]:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6736-6740
     func testExample377() {
         let markdownTest =
@@ -634,7 +634,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // with this example:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6746-6750
     func testExample378() {
         let markdownTest =
@@ -656,7 +656,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // Intraword emphasis with `*` is allowed:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6755-6759
     func testExample379() {
         let markdownTest =
@@ -681,7 +681,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // whitespace:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6768-6772
     func testExample380() {
         let markdownTest =
@@ -704,7 +704,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // preceded by punctuation and followed by an alphanumeric:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6778-6782
     func testExample381() {
         let markdownTest =
@@ -726,7 +726,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // This is emphasis within emphasis:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6787-6791
     func testExample382() {
         let markdownTest =
@@ -748,7 +748,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // Intraword emphasis is disallowed for `_`:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6796-6800
     func testExample383() {
         let markdownTest =
@@ -768,7 +768,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6803-6807
     func testExample384() {
         let markdownTest =
@@ -788,7 +788,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6810-6814
     func testExample385() {
         let markdownTest =
@@ -812,7 +812,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // punctuation:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6821-6825
     func testExample386() {
         let markdownTest =
@@ -834,7 +834,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // Rule 5:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6830-6834
     func testExample387() {
         let markdownTest =
@@ -857,7 +857,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // followed by whitespace:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6840-6844
     func testExample388() {
         let markdownTest =
@@ -881,7 +881,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // not part of a [left-flanking delimiter run]:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6851-6855
     func testExample389() {
         let markdownTest =
@@ -903,7 +903,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // Intraword strong emphasis with `**` is permitted:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6860-6864
     func testExample390() {
         let markdownTest =
@@ -925,7 +925,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // Rule 6:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6869-6873
     func testExample391() {
         let markdownTest =
@@ -948,7 +948,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // followed by whitespace:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6879-6883
     func testExample392() {
         let markdownTest =
@@ -969,7 +969,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
 
     // A newline counts as whitespace:
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6887-6893
     func testExample393() {
         let markdownTest =
@@ -994,7 +994,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // by an alphanumeric and followed by punctuation:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6899-6903
     func testExample394() {
         let markdownTest =
@@ -1016,7 +1016,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // Intraword strong emphasis is forbidden with `__`:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6908-6912
     func testExample395() {
         let markdownTest =
@@ -1036,7 +1036,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6915-6919
     func testExample396() {
         let markdownTest =
@@ -1056,7 +1056,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6922-6926
     func testExample397() {
         let markdownTest =
@@ -1076,7 +1076,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6929-6933
     func testExample398() {
         let markdownTest =
@@ -1100,7 +1100,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // punctuation:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6940-6944
     func testExample399() {
         let markdownTest =
@@ -1125,7 +1125,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // by whitespace:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6953-6957
     func testExample400() {
         let markdownTest =
@@ -1151,7 +1151,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // preceded by punctuation and followed by an alphanumeric:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6966-6970
     func testExample401() {
         let markdownTest =
@@ -1174,7 +1174,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // with these examples:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6976-6980
     func testExample402() {
         let markdownTest =
@@ -1194,7 +1194,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6983-6989
     func testExample403() {
         let markdownTest =
@@ -1216,7 +1216,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6992-6996
     func testExample404() {
         let markdownTest =
@@ -1238,7 +1238,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // Intraword emphasis:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7001-7005
     func testExample405() {
         let markdownTest =
@@ -1263,7 +1263,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // preceded by whitespace:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7013-7017
     func testExample406() {
         let markdownTest =
@@ -1286,7 +1286,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // preceded by punctuation and followed by an alphanumeric:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7023-7027
     func testExample407() {
         let markdownTest =
@@ -1309,7 +1309,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // with this example:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7033-7037
     func testExample408() {
         let markdownTest =
@@ -1331,7 +1331,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // Intraword strong emphasis is forbidden with `__`:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7042-7046
     func testExample409() {
         let markdownTest =
@@ -1351,7 +1351,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7049-7053
     func testExample410() {
         let markdownTest =
@@ -1371,7 +1371,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7056-7060
     func testExample411() {
         let markdownTest =
@@ -1395,7 +1395,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // punctuation:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7067-7071
     func testExample412() {
         let markdownTest =
@@ -1420,7 +1420,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // emphasized span.
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7079-7083
     func testExample413() {
         let markdownTest =
@@ -1440,7 +1440,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7086-7092
     func testExample414() {
         let markdownTest =
@@ -1465,7 +1465,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // inside emphasis:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7098-7102
     func testExample415() {
         let markdownTest =
@@ -1485,7 +1485,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7105-7109
     func testExample416() {
         let markdownTest =
@@ -1505,7 +1505,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7112-7116
     func testExample417() {
         let markdownTest =
@@ -1525,7 +1525,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7119-7123
     func testExample418() {
         let markdownTest =
@@ -1545,7 +1545,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7126-7130
     func testExample419() {
         let markdownTest =
@@ -1565,7 +1565,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7132-7136
     func testExample420() {
         let markdownTest =
@@ -1601,7 +1601,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // emphasis sections in this example:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7156-7160
     func testExample421() {
         let markdownTest =
@@ -1626,7 +1626,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // omitted:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7169-7173
     func testExample422() {
         let markdownTest =
@@ -1646,7 +1646,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7176-7180
     func testExample423() {
         let markdownTest =
@@ -1666,7 +1666,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7183-7187
     func testExample424() {
         let markdownTest =
@@ -1690,7 +1690,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // they can match to create emphasis:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7194-7198
     func testExample425() {
         let markdownTest =
@@ -1710,7 +1710,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7200-7204
     func testExample426() {
         let markdownTest =
@@ -1732,7 +1732,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // Indefinite levels of nesting are possible:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7209-7213
     func testExample427() {
         let markdownTest =
@@ -1752,7 +1752,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7216-7220
     func testExample428() {
         let markdownTest =
@@ -1774,7 +1774,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // There can be no empty emphasis or strong emphasis:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7225-7229
     func testExample429() {
         let markdownTest =
@@ -1794,7 +1794,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7232-7236
     func testExample430() {
         let markdownTest =
@@ -1819,7 +1819,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // strongly emphasized span.
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7245-7249
     func testExample431() {
         let markdownTest =
@@ -1839,7 +1839,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7252-7258
     func testExample432() {
         let markdownTest =
@@ -1864,7 +1864,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // inside strong emphasis:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7264-7268
     func testExample433() {
         let markdownTest =
@@ -1884,7 +1884,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7271-7275
     func testExample434() {
         let markdownTest =
@@ -1904,7 +1904,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7278-7282
     func testExample435() {
         let markdownTest =
@@ -1924,7 +1924,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7285-7289
     func testExample436() {
         let markdownTest =
@@ -1944,7 +1944,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7292-7296
     func testExample437() {
         let markdownTest =
@@ -1964,7 +1964,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7299-7303
     func testExample438() {
         let markdownTest =
@@ -1984,7 +1984,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7306-7310
     func testExample439() {
         let markdownTest =
@@ -2004,7 +2004,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7313-7317
     func testExample440() {
         let markdownTest =
@@ -2026,7 +2026,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // Indefinite levels of nesting are possible:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7322-7328
     func testExample441() {
         let markdownTest =
@@ -2048,7 +2048,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7331-7335
     func testExample442() {
         let markdownTest =
@@ -2070,7 +2070,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // There can be no empty emphasis or strong emphasis:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7340-7344
     func testExample443() {
         let markdownTest =
@@ -2090,7 +2090,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7347-7351
     func testExample444() {
         let markdownTest =
@@ -2112,7 +2112,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // Rule 11:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7357-7361
     func testExample445() {
         let markdownTest =
@@ -2132,7 +2132,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7364-7368
     func testExample446() {
         let markdownTest =
@@ -2152,7 +2152,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7371-7375
     func testExample447() {
         let markdownTest =
@@ -2172,7 +2172,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7378-7382
     func testExample448() {
         let markdownTest =
@@ -2192,7 +2192,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7385-7389
     func testExample449() {
         let markdownTest =
@@ -2212,7 +2212,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7392-7396
     func testExample450() {
         let markdownTest =
@@ -2236,7 +2236,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // emphasis, rather than inside it:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7403-7407
     func testExample451() {
         let markdownTest =
@@ -2256,7 +2256,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7410-7414
     func testExample452() {
         let markdownTest =
@@ -2276,7 +2276,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7417-7421
     func testExample453() {
         let markdownTest =
@@ -2296,7 +2296,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7424-7428
     func testExample454() {
         let markdownTest =
@@ -2316,7 +2316,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7431-7435
     func testExample455() {
         let markdownTest =
@@ -2336,7 +2336,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7438-7442
     func testExample456() {
         let markdownTest =
@@ -2358,7 +2358,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // Rule 12:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7448-7452
     func testExample457() {
         let markdownTest =
@@ -2378,7 +2378,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7455-7459
     func testExample458() {
         let markdownTest =
@@ -2398,7 +2398,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7462-7466
     func testExample459() {
         let markdownTest =
@@ -2418,7 +2418,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7469-7473
     func testExample460() {
         let markdownTest =
@@ -2438,7 +2438,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7476-7480
     func testExample461() {
         let markdownTest =
@@ -2458,7 +2458,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7483-7487
     func testExample462() {
         let markdownTest =
@@ -2478,7 +2478,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7490-7494
     func testExample463() {
         let markdownTest =
@@ -2502,7 +2502,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // emphasis, rather than inside it:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7501-7505
     func testExample464() {
         let markdownTest =
@@ -2522,7 +2522,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7508-7512
     func testExample465() {
         let markdownTest =
@@ -2542,7 +2542,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7515-7519
     func testExample466() {
         let markdownTest =
@@ -2562,7 +2562,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7522-7526
     func testExample467() {
         let markdownTest =
@@ -2582,7 +2582,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7529-7533
     func testExample468() {
         let markdownTest =
@@ -2605,7 +2605,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // emphasis, you must use different delimiters:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7539-7543
     func testExample469() {
         let markdownTest =
@@ -2625,7 +2625,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7546-7550
     func testExample470() {
         let markdownTest =
@@ -2645,7 +2645,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7553-7557
     func testExample471() {
         let markdownTest =
@@ -2665,7 +2665,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7560-7564
     func testExample472() {
         let markdownTest =
@@ -2688,7 +2688,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // switching delimiters:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7570-7574
     func testExample473() {
         let markdownTest =
@@ -2708,7 +2708,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7577-7581
     func testExample474() {
         let markdownTest =
@@ -2731,7 +2731,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // delimiters:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7588-7592
     func testExample475() {
         let markdownTest =
@@ -2753,7 +2753,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // Rule 14:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7597-7601
     func testExample476() {
         let markdownTest =
@@ -2773,7 +2773,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7604-7608
     func testExample477() {
         let markdownTest =
@@ -2795,7 +2795,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // Rule 15:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7613-7617
     func testExample478() {
         let markdownTest =
@@ -2815,7 +2815,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7620-7624
     func testExample479() {
         let markdownTest =
@@ -2837,7 +2837,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // Rule 16:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7629-7633
     func testExample480() {
         let markdownTest =
@@ -2857,7 +2857,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7636-7640
     func testExample481() {
         let markdownTest =
@@ -2879,7 +2879,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     // Rule 17:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7645-7649
     func testExample482() {
         let markdownTest =
@@ -2899,7 +2899,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7652-7656
     func testExample483() {
         let markdownTest =
@@ -2919,7 +2919,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7659-7663
     func testExample484() {
         let markdownTest =
@@ -2939,7 +2939,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7666-7670
     func testExample485() {
         let markdownTest =
@@ -2959,7 +2959,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7673-7677
     func testExample486() {
         let markdownTest =
@@ -2979,7 +2979,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7680-7684
     func testExample487() {
         let markdownTest =
@@ -2999,7 +2999,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7687-7691
     func testExample488() {
         let markdownTest =
@@ -3019,7 +3019,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7694-7698
     func testExample489() {
         let markdownTest =
@@ -3039,7 +3039,7 @@ final class EmphasisAndStrongEmphasisTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7701-7705
     func testExample490() {
         let markdownTest =

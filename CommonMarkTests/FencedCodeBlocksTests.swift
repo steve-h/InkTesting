@@ -63,7 +63,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // Here is a simple example with backticks:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1655-1664
     func testExample89() {
         let markdownTest =
@@ -92,7 +92,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // With tildes:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1669-1678
     func testExample90() {
         let markdownTest =
@@ -121,7 +121,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // Fewer than three backticks is not enough:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1682-1688
     func testExample91() {
         let markdownTest =
@@ -146,7 +146,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // fence:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1693-1702
     func testExample92() {
         let markdownTest =
@@ -173,7 +173,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1705-1714
     func testExample93() {
         let markdownTest =
@@ -202,7 +202,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // The closing code fence must be at least as long as the opening fence:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1719-1728
     func testExample94() {
         let markdownTest =
@@ -229,7 +229,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1731-1740
     func testExample95() {
         let markdownTest =
@@ -259,7 +259,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // (or the enclosing [block quote][block quotes] or [list item][list items]):
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1746-1750
     func testExample96() {
         let markdownTest =
@@ -279,7 +279,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1753-1763
     func testExample97() {
         let markdownTest =
@@ -308,7 +308,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1766-1777
     func testExample98() {
         let markdownTest =
@@ -338,7 +338,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // A code block can have all empty lines as its content:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1782-1791
     func testExample99() {
         let markdownTest =
@@ -367,7 +367,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // A code block can be empty:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1796-1801
     func testExample100() {
         let markdownTest =
@@ -392,7 +392,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // if present:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1808-1817
     func testExample101() {
         let markdownTest =
@@ -419,7 +419,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1820-1831
     func testExample102() {
         let markdownTest =
@@ -449,7 +449,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1834-1845
     func testExample103() {
         let markdownTest =
@@ -481,7 +481,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // Four spaces indentation produces an indented code block:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1850-1859
     func testExample104() {
         let markdownTest =
@@ -512,7 +512,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // need not match that of the opening fence:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1865-1872
     func testExample105() {
         let markdownTest =
@@ -536,7 +536,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1875-1882
     func testExample106() {
         let markdownTest =
@@ -562,7 +562,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // This is not a closing fence, because it is indented 4 spaces:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1887-1895
     func testExample107() {
         let markdownTest =
@@ -590,7 +590,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // Code fences (opening and closing) cannot contain internal spaces:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1901-1907
     func testExample108() {
         let markdownTest =
@@ -612,7 +612,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1910-1918
     func testExample109() {
         let markdownTest =
@@ -641,7 +641,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // directly by paragraphs, without a blank line between:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1924-1935
     func testExample110() {
         let markdownTest =
@@ -672,7 +672,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // without an intervening blank line:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1941-1953
     func testExample111() {
         let markdownTest =
@@ -708,7 +708,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // of `language-` followed by the language name.
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1963-1974
     func testExample112() {
         let markdownTest =
@@ -738,7 +738,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1977-1988
     func testExample113() {
         let markdownTest =
@@ -768,7 +768,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 1991-1996
     func testExample114() {
         let markdownTest =
@@ -791,7 +791,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // [Info strings] for backtick code blocks cannot contain backticks:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2001-2007
     func testExample115() {
         let markdownTest =
@@ -815,7 +815,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // [Info strings] for tilde code blocks can contain backticks and tildes:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2012-2019
     func testExample116() {
         let markdownTest =
@@ -840,7 +840,7 @@ final class FencedCodeBlocksTests: XCTestCase {
     // Closing code fences cannot have [info strings]:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2024-2031
     func testExample117() {
         let markdownTest =

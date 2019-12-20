@@ -25,7 +25,7 @@ final class BlankLinesTests: XCTestCase {
     // Blank lines at the beginning and end of the document are also ignored.
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3294-3306
     func testExample197() {
         let markdownTest =

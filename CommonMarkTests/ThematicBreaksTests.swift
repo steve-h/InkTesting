@@ -45,7 +45,7 @@ final class ThematicBreaksTests: XCTestCase {
     // [thematic break](@).
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 551-559
     func testExample13() {
         let markdownTest =
@@ -71,7 +71,7 @@ final class ThematicBreaksTests: XCTestCase {
     // Wrong characters:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 564-568
     func testExample14() {
         let markdownTest =
@@ -91,7 +91,7 @@ final class ThematicBreaksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 571-575
     func testExample15() {
         let markdownTest =
@@ -113,7 +113,7 @@ final class ThematicBreaksTests: XCTestCase {
     // Not enough characters:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 580-588
     func testExample16() {
         let markdownTest =
@@ -139,7 +139,7 @@ final class ThematicBreaksTests: XCTestCase {
     // One to three spaces indent are allowed:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 593-601
     func testExample17() {
         let markdownTest =
@@ -165,7 +165,7 @@ final class ThematicBreaksTests: XCTestCase {
     // Four spaces is too many:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 606-611
     func testExample18() {
         let markdownTest =
@@ -187,7 +187,7 @@ final class ThematicBreaksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 614-620
     func testExample19() {
         let markdownTest =
@@ -211,7 +211,7 @@ final class ThematicBreaksTests: XCTestCase {
     // More than three characters may be used:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 625-629
     func testExample20() {
         let markdownTest =
@@ -233,7 +233,7 @@ final class ThematicBreaksTests: XCTestCase {
     // Spaces are allowed between the characters:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 634-638
     func testExample21() {
         let markdownTest =
@@ -253,7 +253,7 @@ final class ThematicBreaksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 641-645
     func testExample22() {
         let markdownTest =
@@ -273,7 +273,7 @@ final class ThematicBreaksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 648-652
     func testExample23() {
         let markdownTest =
@@ -295,7 +295,7 @@ final class ThematicBreaksTests: XCTestCase {
     // Spaces are allowed at the end:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 657-661
     func testExample24() {
         let markdownTest =
@@ -317,7 +317,7 @@ final class ThematicBreaksTests: XCTestCase {
     // However, no other characters may occur in the line:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 666-676
     func testExample25() {
         let markdownTest =
@@ -346,7 +346,7 @@ final class ThematicBreaksTests: XCTestCase {
     // So, this is not a thematic break:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 682-686
     func testExample26() {
         let markdownTest =
@@ -368,7 +368,7 @@ final class ThematicBreaksTests: XCTestCase {
     // Thematic breaks do not need blank lines before or after:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 691-703
     func testExample27() {
         let markdownTest =
@@ -398,7 +398,7 @@ final class ThematicBreaksTests: XCTestCase {
     // Thematic breaks can interrupt a paragraph:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 708-716
     func testExample28() {
         let markdownTest =
@@ -428,7 +428,7 @@ final class ThematicBreaksTests: XCTestCase {
     // this is a setext heading, not a paragraph followed by a thematic break:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 725-732
     func testExample29() {
         let markdownTest =
@@ -454,7 +454,7 @@ final class ThematicBreaksTests: XCTestCase {
     // interpretations of a line, the thematic break takes precedence:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 738-750
     func testExample30() {
         let markdownTest =
@@ -484,7 +484,7 @@ final class ThematicBreaksTests: XCTestCase {
     // If you want a thematic break in a list item, use a different bullet:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 755-765
     func testExample31() {
         let markdownTest =

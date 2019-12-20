@@ -94,7 +94,7 @@ final class LinksTests: XCTestCase {
     // Here is a simple inline link:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7812-7816
     func testExample493() {
         let markdownTest =
@@ -116,7 +116,7 @@ final class LinksTests: XCTestCase {
     // The title may be omitted:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7821-7825
     func testExample494() {
         let markdownTest =
@@ -138,7 +138,7 @@ final class LinksTests: XCTestCase {
     // Both the title and the destination may be omitted:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7830-7834
     func testExample495() {
         let markdownTest =
@@ -158,7 +158,7 @@ final class LinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7837-7841
     func testExample496() {
         let markdownTest =
@@ -181,7 +181,7 @@ final class LinksTests: XCTestCase {
     // enclosed in pointy brackets:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7846-7850
     func testExample497() {
         let markdownTest =
@@ -201,7 +201,7 @@ final class LinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7852-7856
     func testExample498() {
         let markdownTest =
@@ -224,7 +224,7 @@ final class LinksTests: XCTestCase {
     // even if enclosed in pointy brackets:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7861-7867
     func testExample499() {
         let markdownTest =
@@ -246,7 +246,7 @@ final class LinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7869-7875
     func testExample500() {
         let markdownTest =
@@ -272,7 +272,7 @@ final class LinksTests: XCTestCase {
     // in pointy brackets:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7880-7884
     func testExample501() {
         let markdownTest =
@@ -294,7 +294,7 @@ final class LinksTests: XCTestCase {
     // Pointy brackets that enclose links must be unescaped:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7888-7892
     func testExample502() {
         let markdownTest =
@@ -317,7 +317,7 @@ final class LinksTests: XCTestCase {
     // is not matched properly:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7897-7905
     func testExample503() {
         let markdownTest =
@@ -343,7 +343,7 @@ final class LinksTests: XCTestCase {
     // Parentheses inside the link destination may be escaped:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7909-7913
     func testExample504() {
         let markdownTest =
@@ -366,7 +366,7 @@ final class LinksTests: XCTestCase {
     // balanced:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7918-7922
     func testExample505() {
         let markdownTest =
@@ -389,7 +389,7 @@ final class LinksTests: XCTestCase {
     // `<...>` form:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7927-7931
     func testExample506() {
         let markdownTest =
@@ -409,7 +409,7 @@ final class LinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7934-7938
     func testExample507() {
         let markdownTest =
@@ -432,7 +432,7 @@ final class LinksTests: XCTestCase {
     // in Markdown:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7944-7948
     func testExample508() {
         let markdownTest =
@@ -454,7 +454,7 @@ final class LinksTests: XCTestCase {
     // A link can contain fragment identifiers and queries:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7953-7963
     func testExample509() {
         let markdownTest =
@@ -483,7 +483,7 @@ final class LinksTests: XCTestCase {
     // just a backslash:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7969-7973
     func testExample510() {
         let markdownTest =
@@ -512,7 +512,7 @@ final class LinksTests: XCTestCase {
     // about how to escape or normalize URLs in the output.
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7985-7989
     func testExample511() {
         let markdownTest =
@@ -536,7 +536,7 @@ final class LinksTests: XCTestCase {
     // get unexpected results:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 7996-8000
     func testExample512() {
         let markdownTest =
@@ -558,7 +558,7 @@ final class LinksTests: XCTestCase {
     // Titles may be in single quotes, double quotes, or parentheses:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8005-8013
     func testExample513() {
         let markdownTest =
@@ -585,7 +585,7 @@ final class LinksTests: XCTestCase {
     // may be used in titles:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8019-8023
     func testExample514() {
         let markdownTest =
@@ -608,7 +608,7 @@ final class LinksTests: XCTestCase {
     // Other [Unicode whitespace] like non-breaking space doesn't work.
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8029-8033
     func testExample515() {
         let markdownTest =
@@ -630,7 +630,7 @@ final class LinksTests: XCTestCase {
     // Nested balanced quotes are not allowed without escaping:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8038-8042
     func testExample516() {
         let markdownTest =
@@ -652,7 +652,7 @@ final class LinksTests: XCTestCase {
     // But it is easy to work around this by using a different quote type:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8047-8051
     func testExample517() {
         let markdownTest =
@@ -689,7 +689,7 @@ final class LinksTests: XCTestCase {
     // [Whitespace] is allowed around the destination and title:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8071-8076
     func testExample518() {
         let markdownTest =
@@ -713,7 +713,7 @@ final class LinksTests: XCTestCase {
     // following parenthesis:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8082-8086
     func testExample519() {
         let markdownTest =
@@ -736,7 +736,7 @@ final class LinksTests: XCTestCase {
     // unless they are escaped:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8092-8096
     func testExample520() {
         let markdownTest =
@@ -756,7 +756,7 @@ final class LinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8099-8103
     func testExample521() {
         let markdownTest =
@@ -776,7 +776,7 @@ final class LinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8106-8110
     func testExample522() {
         let markdownTest =
@@ -796,7 +796,7 @@ final class LinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8113-8117
     func testExample523() {
         let markdownTest =
@@ -818,7 +818,7 @@ final class LinksTests: XCTestCase {
     // The link text may contain inline content:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8122-8126
     func testExample524() {
         let markdownTest =
@@ -838,7 +838,7 @@ final class LinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8129-8133
     func testExample525() {
         let markdownTest =
@@ -860,7 +860,7 @@ final class LinksTests: XCTestCase {
     // However, links may not contain other links, at any level of nesting.
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8138-8142
     func testExample526() {
         let markdownTest =
@@ -880,7 +880,7 @@ final class LinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8145-8149
     func testExample527() {
         let markdownTest =
@@ -900,7 +900,7 @@ final class LinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8152-8156
     func testExample528() {
         let markdownTest =
@@ -923,7 +923,7 @@ final class LinksTests: XCTestCase {
     // emphasis grouping:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8162-8166
     func testExample529() {
         let markdownTest =
@@ -943,7 +943,7 @@ final class LinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8169-8173
     func testExample530() {
         let markdownTest =
@@ -966,7 +966,7 @@ final class LinksTests: XCTestCase {
     // precedence:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8179-8183
     func testExample531() {
         let markdownTest =
@@ -989,7 +989,7 @@ final class LinksTests: XCTestCase {
     // and autolinks over link grouping:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8189-8193
     func testExample532() {
         let markdownTest =
@@ -1009,7 +1009,7 @@ final class LinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8196-8200
     func testExample533() {
         let markdownTest =
@@ -1029,7 +1029,7 @@ final class LinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8203-8207
     func testExample534() {
         let markdownTest =
@@ -1080,7 +1080,7 @@ final class LinksTests: XCTestCase {
     // Here is a simple example:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8241-8247
     func testExample535() {
         let markdownTest =
@@ -1108,7 +1108,7 @@ final class LinksTests: XCTestCase {
     // unless they are escaped:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8256-8262
     func testExample536() {
         let markdownTest =
@@ -1130,7 +1130,7 @@ final class LinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8265-8271
     func testExample537() {
         let markdownTest =
@@ -1154,7 +1154,7 @@ final class LinksTests: XCTestCase {
     // The link text may contain inline content:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8276-8282
     func testExample538() {
         let markdownTest =
@@ -1176,7 +1176,7 @@ final class LinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8285-8291
     func testExample539() {
         let markdownTest =
@@ -1200,7 +1200,7 @@ final class LinksTests: XCTestCase {
     // However, links may not contain other links, at any level of nesting.
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8296-8302
     func testExample540() {
         let markdownTest =
@@ -1222,7 +1222,7 @@ final class LinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8305-8311
     func testExample541() {
         let markdownTest =
@@ -1250,7 +1250,7 @@ final class LinksTests: XCTestCase {
     // emphasis grouping:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8320-8326
     func testExample542() {
         let markdownTest =
@@ -1272,7 +1272,7 @@ final class LinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8329-8335
     func testExample543() {
         let markdownTest =
@@ -1297,7 +1297,7 @@ final class LinksTests: XCTestCase {
     // and autolinks over link grouping:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8341-8347
     func testExample544() {
         let markdownTest =
@@ -1319,7 +1319,7 @@ final class LinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8350-8356
     func testExample545() {
         let markdownTest =
@@ -1341,7 +1341,7 @@ final class LinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8359-8365
     func testExample546() {
         let markdownTest =
@@ -1365,7 +1365,7 @@ final class LinksTests: XCTestCase {
     // Matching is case-insensitive:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8370-8376
     func testExample547() {
         let markdownTest =
@@ -1389,7 +1389,7 @@ final class LinksTests: XCTestCase {
     // Unicode case fold is used:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8381-8387
     func testExample548() {
         let markdownTest =
@@ -1414,7 +1414,7 @@ final class LinksTests: XCTestCase {
     // purposes of determining matching:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8393-8400
     func testExample549() {
         let markdownTest =
@@ -1440,7 +1440,7 @@ final class LinksTests: XCTestCase {
     // [link label]:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8406-8412
     func testExample550() {
         let markdownTest =
@@ -1462,7 +1462,7 @@ final class LinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8415-8423
     func testExample551() {
         let markdownTest =
@@ -1516,7 +1516,7 @@ final class LinksTests: XCTestCase {
     // the first is used:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8456-8464
     func testExample552() {
         let markdownTest =
@@ -1544,7 +1544,7 @@ final class LinksTests: XCTestCase {
     // labels define equivalent inline content:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8471-8477
     func testExample553() {
         let markdownTest =
@@ -1569,7 +1569,7 @@ final class LinksTests: XCTestCase {
     // backslash-escaped:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8483-8490
     func testExample554() {
         let markdownTest =
@@ -1592,7 +1592,7 @@ final class LinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8493-8500
     func testExample555() {
         let markdownTest =
@@ -1615,7 +1615,7 @@ final class LinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8503-8510
     func testExample556() {
         let markdownTest =
@@ -1638,7 +1638,7 @@ final class LinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8513-8519
     func testExample557() {
         let markdownTest =
@@ -1662,7 +1662,7 @@ final class LinksTests: XCTestCase {
     // Note that in this example `]` is not backslash-escaped:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8524-8530
     func testExample558() {
         let markdownTest =
@@ -1686,7 +1686,7 @@ final class LinksTests: XCTestCase {
     // A [link label] must contain at least one [non-whitespace character]:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8535-8542
     func testExample559() {
         let markdownTest =
@@ -1709,7 +1709,7 @@ final class LinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8545-8556
     func testExample560() {
         let markdownTest =
@@ -1745,7 +1745,7 @@ final class LinksTests: XCTestCase {
     // `[foo][]` is equivalent to `[foo][foo]`.
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8568-8574
     func testExample561() {
         let markdownTest =
@@ -1767,7 +1767,7 @@ final class LinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8577-8583
     func testExample562() {
         let markdownTest =
@@ -1791,7 +1791,7 @@ final class LinksTests: XCTestCase {
     // The link labels are case-insensitive:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8588-8594
     func testExample563() {
         let markdownTest =
@@ -1816,7 +1816,7 @@ final class LinksTests: XCTestCase {
     // allowed between the two sets of brackets:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8601-8609
     func testExample564() {
         let markdownTest =
@@ -1849,7 +1849,7 @@ final class LinksTests: XCTestCase {
     // Thus, `[foo]` is equivalent to `[foo][]`.
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8621-8627
     func testExample565() {
         let markdownTest =
@@ -1871,7 +1871,7 @@ final class LinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8630-8636
     func testExample566() {
         let markdownTest =
@@ -1893,7 +1893,7 @@ final class LinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8639-8645
     func testExample567() {
         let markdownTest =
@@ -1915,7 +1915,7 @@ final class LinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8648-8654
     func testExample568() {
         let markdownTest =
@@ -1939,7 +1939,7 @@ final class LinksTests: XCTestCase {
     // The link labels are case-insensitive:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8659-8665
     func testExample569() {
         let markdownTest =
@@ -1963,7 +1963,7 @@ final class LinksTests: XCTestCase {
     // A space after the link text should be preserved:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8670-8676
     func testExample570() {
         let markdownTest =
@@ -1988,7 +1988,7 @@ final class LinksTests: XCTestCase {
     // opening bracket to avoid links:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8682-8688
     func testExample571() {
         let markdownTest =
@@ -2013,7 +2013,7 @@ final class LinksTests: XCTestCase {
     // following closing bracket:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8694-8700
     func testExample572() {
         let markdownTest =
@@ -2038,7 +2038,7 @@ final class LinksTests: XCTestCase {
     // references:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8706-8713
     func testExample573() {
         let markdownTest =
@@ -2061,7 +2061,7 @@ final class LinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8715-8721
     func testExample574() {
         let markdownTest =
@@ -2085,7 +2085,7 @@ final class LinksTests: XCTestCase {
     // Inline links also take precedence:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8725-8731
     func testExample575() {
         let markdownTest =
@@ -2107,7 +2107,7 @@ final class LinksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8733-8739
     func testExample576() {
         let markdownTest =
@@ -2132,7 +2132,7 @@ final class LinksTests: XCTestCase {
     // `[foo]` as normal text:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8744-8750
     func testExample577() {
         let markdownTest =
@@ -2157,7 +2157,7 @@ final class LinksTests: XCTestCase {
     // `[bar]` is defined:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8756-8763
     func testExample578() {
         let markdownTest =
@@ -2183,7 +2183,7 @@ final class LinksTests: XCTestCase {
     // is followed by a link label (even though `[bar]` is not defined):
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8769-8776
     func testExample579() {
         let markdownTest =

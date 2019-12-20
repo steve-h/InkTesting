@@ -19,7 +19,7 @@ final class TablesExtensionTests: XCTestCase {
     // If there are no rows in the body, no `<tbody>` is generated in HTML output:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3502-3514
     func testExample205() {
         let markdownTest =

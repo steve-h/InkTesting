@@ -38,7 +38,7 @@ final class CodeSpansTests: XCTestCase {
     // This is a simple code span:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6151-6155
     func testExample338() {
         let markdownTest =
@@ -62,7 +62,7 @@ final class CodeSpansTests: XCTestCase {
     // trailing space:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6162-6166
     func testExample339() {
         let markdownTest =
@@ -85,7 +85,7 @@ final class CodeSpansTests: XCTestCase {
     // spaces:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6172-6176
     func testExample340() {
         let markdownTest =
@@ -107,7 +107,7 @@ final class CodeSpansTests: XCTestCase {
     // Note that only *one* space is stripped:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6180-6184
     func testExample341() {
         let markdownTest =
@@ -130,7 +130,7 @@ final class CodeSpansTests: XCTestCase {
     // sides of the string:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6189-6193
     func testExample342() {
         let markdownTest =
@@ -153,7 +153,7 @@ final class CodeSpansTests: XCTestCase {
     // stripped in this way:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6198-6202
     func testExample343() {
         let markdownTest =
@@ -175,7 +175,7 @@ final class CodeSpansTests: XCTestCase {
     // No stripping occurs if the code span contains only spaces:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6206-6212
     func testExample344() {
         let markdownTest =
@@ -199,7 +199,7 @@ final class CodeSpansTests: XCTestCase {
     // [Line endings] are treated like spaces:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6217-6225
     func testExample345() {
         let markdownTest =
@@ -223,7 +223,7 @@ final class CodeSpansTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6227-6233
     func testExample346() {
         let markdownTest =
@@ -247,7 +247,7 @@ final class CodeSpansTests: XCTestCase {
     // Interior spaces are not collapsed:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6238-6243
     func testExample347() {
         let markdownTest =
@@ -277,7 +277,7 @@ final class CodeSpansTests: XCTestCase {
     // are treated literally:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6255-6259
     func testExample348() {
         let markdownTest =
@@ -301,7 +301,7 @@ final class CodeSpansTests: XCTestCase {
     // not contain any strings of exactly *n* backtick characters.
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6266-6270
     func testExample349() {
         let markdownTest =
@@ -321,7 +321,7 @@ final class CodeSpansTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6272-6276
     func testExample350() {
         let markdownTest =
@@ -346,7 +346,7 @@ final class CodeSpansTests: XCTestCase {
     // span:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6284-6288
     func testExample351() {
         let markdownTest =
@@ -368,7 +368,7 @@ final class CodeSpansTests: XCTestCase {
     // And this is not parsed as a link:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6293-6297
     func testExample352() {
         let markdownTest =
@@ -391,7 +391,7 @@ final class CodeSpansTests: XCTestCase {
     // Thus, this is code:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6303-6307
     func testExample353() {
         let markdownTest =
@@ -413,7 +413,7 @@ final class CodeSpansTests: XCTestCase {
     // But this is an HTML tag:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6312-6316
     func testExample354() {
         let markdownTest =
@@ -435,7 +435,7 @@ final class CodeSpansTests: XCTestCase {
     // And this is code:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6321-6325
     func testExample355() {
         let markdownTest =
@@ -457,7 +457,7 @@ final class CodeSpansTests: XCTestCase {
     // But this is an autolink:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6330-6334
     func testExample356() {
         let markdownTest =
@@ -480,7 +480,7 @@ final class CodeSpansTests: XCTestCase {
     // we just have literal backticks:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6340-6344
     func testExample357() {
         let markdownTest =
@@ -500,7 +500,7 @@ final class CodeSpansTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6347-6351
     func testExample358() {
         let markdownTest =
@@ -523,7 +523,7 @@ final class CodeSpansTests: XCTestCase {
     // closing backtick strings to be equal in length:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 6356-6360
     func testExample359() {
         let markdownTest =

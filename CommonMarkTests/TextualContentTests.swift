@@ -28,7 +28,7 @@ final class TextualContentTests: XCTestCase {
     // be parsed as plain textual content.
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9866-9870
     func testExample671() {
         let markdownTest =
@@ -48,7 +48,7 @@ final class TextualContentTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9873-9877
     func testExample672() {
         let markdownTest =
@@ -70,7 +70,7 @@ final class TextualContentTests: XCTestCase {
     // Internal spaces are preserved verbatim:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9882-9886
     func testExample673() {
         let markdownTest =

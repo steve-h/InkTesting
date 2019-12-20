@@ -37,7 +37,7 @@ final class PrecedenceTests: XCTestCase {
     // two items, not a list with one item containing a code span:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 512-520
     func testExample12() {
         let markdownTest =

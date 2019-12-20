@@ -29,7 +29,7 @@ final class ImagesTests: XCTestCase {
     // this is standardly used as the image's `alt` attribute.
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8792-8796
     func testExample580() {
         let markdownTest =
@@ -49,7 +49,7 @@ final class ImagesTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8799-8805
     func testExample581() {
         let markdownTest =
@@ -71,7 +71,7 @@ final class ImagesTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8808-8812
     func testExample582() {
         let markdownTest =
@@ -91,7 +91,7 @@ final class ImagesTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8815-8819
     func testExample583() {
         let markdownTest =
@@ -118,7 +118,7 @@ final class ImagesTests: XCTestCase {
     // content is rendered, without formatting.
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8829-8835
     func testExample584() {
         let markdownTest =
@@ -140,7 +140,7 @@ final class ImagesTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8838-8844
     func testExample585() {
         let markdownTest =
@@ -162,7 +162,7 @@ final class ImagesTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8847-8851
     func testExample586() {
         let markdownTest =
@@ -182,7 +182,7 @@ final class ImagesTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8854-8858
     func testExample587() {
         let markdownTest =
@@ -202,7 +202,7 @@ final class ImagesTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8861-8865
     func testExample588() {
         let markdownTest =
@@ -222,7 +222,7 @@ final class ImagesTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8868-8872
     func testExample589() {
         let markdownTest =
@@ -244,7 +244,7 @@ final class ImagesTests: XCTestCase {
     // Reference-style:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8877-8883
     func testExample590() {
         let markdownTest =
@@ -266,7 +266,7 @@ final class ImagesTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8886-8892
     func testExample591() {
         let markdownTest =
@@ -290,7 +290,7 @@ final class ImagesTests: XCTestCase {
     // Collapsed:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8897-8903
     func testExample592() {
         let markdownTest =
@@ -312,7 +312,7 @@ final class ImagesTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8906-8912
     func testExample593() {
         let markdownTest =
@@ -336,7 +336,7 @@ final class ImagesTests: XCTestCase {
     // The labels are case-insensitive:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8917-8923
     func testExample594() {
         let markdownTest =
@@ -361,7 +361,7 @@ final class ImagesTests: XCTestCase {
     // between the two sets of brackets:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8929-8937
     func testExample595() {
         let markdownTest =
@@ -387,7 +387,7 @@ final class ImagesTests: XCTestCase {
     // Shortcut:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8942-8948
     func testExample596() {
         let markdownTest =
@@ -409,7 +409,7 @@ final class ImagesTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8951-8957
     func testExample597() {
         let markdownTest =
@@ -433,7 +433,7 @@ final class ImagesTests: XCTestCase {
     // Note that link labels cannot contain unescaped brackets:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8962-8969
     func testExample598() {
         let markdownTest =
@@ -458,7 +458,7 @@ final class ImagesTests: XCTestCase {
     // The link labels are case-insensitive:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8974-8980
     func testExample599() {
         let markdownTest =
@@ -483,7 +483,7 @@ final class ImagesTests: XCTestCase {
     // backslash-escape the opening `[`:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8986-8992
     func testExample600() {
         let markdownTest =
@@ -508,7 +508,7 @@ final class ImagesTests: XCTestCase {
     // `!`:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 8998-9004
     func testExample601() {
         let markdownTest =

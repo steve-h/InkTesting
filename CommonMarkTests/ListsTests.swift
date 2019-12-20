@@ -52,7 +52,7 @@ final class ListsTests: XCTestCase {
     // Changing the bullet or ordered list delimiter starts a new list:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5175-5187
     func testExample281() {
         let markdownTest =
@@ -80,7 +80,7 @@ final class ListsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5190-5202
     func testExample282() {
         let markdownTest =
@@ -112,7 +112,7 @@ final class ListsTests: XCTestCase {
     // list:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5209-5219
     func testExample283() {
         let markdownTest =
@@ -203,7 +203,7 @@ final class ListsTests: XCTestCase {
     // interrupt paragraphs.  Thus,
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5286-5292
     func testExample284() {
         let markdownTest =
@@ -227,7 +227,7 @@ final class ListsTests: XCTestCase {
     // We may still get an unintended result in cases like
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5296-5304
     func testExample285() {
         let markdownTest =
@@ -255,7 +255,7 @@ final class ListsTests: XCTestCase {
     // There can be any number of blank lines between items:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5310-5329
     func testExample286() {
         let markdownTest =
@@ -290,7 +290,7 @@ final class ListsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5331-5353
     func testExample287() {
         let markdownTest =
@@ -335,7 +335,7 @@ final class ListsTests: XCTestCase {
     // comment:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5361-5379
     func testExample288() {
         let markdownTest =
@@ -369,7 +369,7 @@ final class ListsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5382-5405
     func testExample289() {
         let markdownTest =
@@ -414,7 +414,7 @@ final class ListsTests: XCTestCase {
     // item:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5413-5431
     func testExample290() {
         let markdownTest =
@@ -448,7 +448,7 @@ final class ListsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5434-5452
     func testExample291() {
         let markdownTest =
@@ -486,7 +486,7 @@ final class ListsTests: XCTestCase {
     // line, because it is indented more than three spaces:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5458-5472
     func testExample292() {
         let markdownTest =
@@ -520,7 +520,7 @@ final class ListsTests: XCTestCase {
     // blank line.
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5478-5495
     func testExample293() {
         let markdownTest =
@@ -556,7 +556,7 @@ final class ListsTests: XCTestCase {
     // two of the list items:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5501-5518
     func testExample294() {
         let markdownTest =
@@ -591,7 +591,7 @@ final class ListsTests: XCTestCase {
     // So is this, with a empty second item:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5523-5538
     func testExample295() {
         let markdownTest =
@@ -626,7 +626,7 @@ final class ListsTests: XCTestCase {
     // with a blank line between them:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5545-5564
     func testExample296() {
         let markdownTest =
@@ -661,7 +661,7 @@ final class ListsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5567-5585
     func testExample297() {
         let markdownTest =
@@ -697,7 +697,7 @@ final class ListsTests: XCTestCase {
     // This is a tight list, because the blank lines are in a code block:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5590-5609
     func testExample298() {
         let markdownTest =
@@ -739,7 +739,7 @@ final class ListsTests: XCTestCase {
     // the outer list is tight:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5616-5634
     func testExample299() {
         let markdownTest =
@@ -777,7 +777,7 @@ final class ListsTests: XCTestCase {
     // block quote:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5640-5654
     func testExample300() {
         let markdownTest =
@@ -811,7 +811,7 @@ final class ListsTests: XCTestCase {
     // are not separated by blank lines:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5660-5678
     func testExample301() {
         let markdownTest =
@@ -849,7 +849,7 @@ final class ListsTests: XCTestCase {
     // A single-paragraph list is tight:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5683-5689
     func testExample302() {
         let markdownTest =
@@ -871,7 +871,7 @@ final class ListsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5692-5703
     func testExample303() {
         let markdownTest =
@@ -902,7 +902,7 @@ final class ListsTests: XCTestCase {
     // two block elements in the list item:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5709-5723
     func testExample304() {
         let markdownTest =
@@ -935,7 +935,7 @@ final class ListsTests: XCTestCase {
     // Here the outer list is loose, the inner list tight:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5728-5743
     func testExample305() {
         let markdownTest =
@@ -966,7 +966,7 @@ final class ListsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 5746-5771
     func testExample306() {
         let markdownTest =

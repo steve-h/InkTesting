@@ -384,7 +384,7 @@ final class TabsTests: XCTestCase {
     // spaces.)
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 368-373
     func testExample1() {
         let markdownTest =
@@ -406,7 +406,7 @@ final class TabsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 375-380
     func testExample2() {
         let markdownTest =
@@ -428,7 +428,7 @@ final class TabsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 382-389
     func testExample3() {
         let markdownTest =
@@ -457,7 +457,7 @@ final class TabsTests: XCTestCase {
     // as indentation with four spaces would:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 395-406
     func testExample4() {
         let markdownTest =
@@ -484,7 +484,7 @@ final class TabsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 408-420
     func testExample5() {
         let markdownTest =
@@ -522,7 +522,7 @@ final class TabsTests: XCTestCase {
     // code block starting with two spaces.
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 431-438
     func testExample6() {
         let markdownTest =
@@ -546,7 +546,7 @@ final class TabsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 440-449
     func testExample7() {
         let markdownTest =
@@ -572,7 +572,7 @@ final class TabsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 452-459
     func testExample8() {
         let markdownTest =
@@ -597,7 +597,7 @@ final class TabsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 461-477
     func testExample9() {
         let markdownTest =
@@ -631,7 +631,7 @@ final class TabsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 479-483
     func testExample10() {
         let markdownTest =
@@ -651,7 +651,7 @@ final class TabsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 485-489
     func testExample11() {
         let markdownTest =

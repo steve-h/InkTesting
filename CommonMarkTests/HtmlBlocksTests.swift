@@ -85,7 +85,7 @@ final class HtmlBlocksTests: XCTestCase {
     // will end at any blank line. This can be surprising:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2103-2118
     func testExample118() {
         let markdownTest =
@@ -130,7 +130,7 @@ final class HtmlBlocksTests: XCTestCase {
     // of type 6:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2132-2151
     func testExample119() {
         let markdownTest =
@@ -170,7 +170,7 @@ final class HtmlBlocksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2154-2162
     func testExample120() {
         let markdownTest =
@@ -198,7 +198,7 @@ final class HtmlBlocksTests: XCTestCase {
     // A block can also start with a closing tag:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2167-2173
     func testExample121() {
         let markdownTest =
@@ -223,7 +223,7 @@ final class HtmlBlocksTests: XCTestCase {
     // Here we have two HTML blocks with a Markdown paragraph between them:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2178-2188
     func testExample122() {
         let markdownTest =
@@ -252,7 +252,7 @@ final class HtmlBlocksTests: XCTestCase {
     // as it is split where there would be whitespace:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2194-2202
     func testExample123() {
         let markdownTest =
@@ -277,7 +277,7 @@ final class HtmlBlocksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2205-2213
     func testExample124() {
         let markdownTest =
@@ -303,7 +303,7 @@ final class HtmlBlocksTests: XCTestCase {
 
     // An open tag need not be closed:
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2217-2226
     func testExample125() {
         let markdownTest =
@@ -333,7 +333,7 @@ final class HtmlBlocksTests: XCTestCase {
     // in, garbage out):
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2233-2239
     func testExample126() {
         let markdownTest =
@@ -356,7 +356,7 @@ final class HtmlBlocksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2242-2248
     func testExample127() {
         let markdownTest =
@@ -382,7 +382,7 @@ final class HtmlBlocksTests: XCTestCase {
     // tag, as long as it starts like one:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2254-2260
     func testExample128() {
         let markdownTest =
@@ -408,7 +408,7 @@ final class HtmlBlocksTests: XCTestCase {
     // itself:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2266-2270
     func testExample129() {
         let markdownTest =
@@ -428,7 +428,7 @@ final class HtmlBlocksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2273-2281
     func testExample130() {
         let markdownTest =
@@ -460,7 +460,7 @@ final class HtmlBlocksTests: XCTestCase {
     // line or the end of the document is reached:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2290-2300
     func testExample131() {
         let markdownTest =
@@ -493,7 +493,7 @@ final class HtmlBlocksTests: XCTestCase {
     // itself on the first line (and it must be complete):
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2307-2315
     func testExample132() {
         let markdownTest =
@@ -521,7 +521,7 @@ final class HtmlBlocksTests: XCTestCase {
     // In type 7 blocks, the [tag name] can be anything:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2320-2328
     func testExample133() {
         let markdownTest =
@@ -547,7 +547,7 @@ final class HtmlBlocksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2331-2339
     func testExample134() {
         let markdownTest =
@@ -573,7 +573,7 @@ final class HtmlBlocksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2342-2348
     func testExample135() {
         let markdownTest =
@@ -602,7 +602,7 @@ final class HtmlBlocksTests: XCTestCase {
     // HTML block, because the `<del>` tag is on a line by itself:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2357-2365
     func testExample136() {
         let markdownTest =
@@ -632,7 +632,7 @@ final class HtmlBlocksTests: XCTestCase {
     // line).  So the contents get interpreted as CommonMark:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2372-2382
     func testExample137() {
         let markdownTest =
@@ -663,7 +663,7 @@ final class HtmlBlocksTests: XCTestCase {
     // rather than an [HTML block].)
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2390-2394
     func testExample138() {
         let markdownTest =
@@ -692,7 +692,7 @@ final class HtmlBlocksTests: XCTestCase {
     // A pre tag (type 1):
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2406-2422
     func testExample139() {
         let markdownTest =
@@ -731,7 +731,7 @@ final class HtmlBlocksTests: XCTestCase {
     // A script tag (type 1):
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2427-2441
     func testExample140() {
         let markdownTest =
@@ -767,7 +767,7 @@ final class HtmlBlocksTests: XCTestCase {
     // A style tag (type 1):
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2446-2462
     func testExample141() {
         let markdownTest =
@@ -808,7 +808,7 @@ final class HtmlBlocksTests: XCTestCase {
     // or [list item][list items]):
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2469-2479
     func testExample142() {
         let markdownTest =
@@ -837,7 +837,7 @@ final class HtmlBlocksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2482-2493
     func testExample143() {
         let markdownTest =
@@ -866,7 +866,7 @@ final class HtmlBlocksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2496-2506
     func testExample144() {
         let markdownTest =
@@ -894,7 +894,7 @@ final class HtmlBlocksTests: XCTestCase {
     // The end tag can occur on the same line as the start tag:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2511-2517
     func testExample145() {
         let markdownTest =
@@ -916,7 +916,7 @@ final class HtmlBlocksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2520-2526
     func testExample146() {
         let markdownTest =
@@ -942,7 +942,7 @@ final class HtmlBlocksTests: XCTestCase {
     // end tag will be included in the [HTML block]:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2532-2540
     func testExample147() {
         let markdownTest =
@@ -970,7 +970,7 @@ final class HtmlBlocksTests: XCTestCase {
     // A comment (type 2):
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2545-2557
     func testExample148() {
         let markdownTest =
@@ -1003,7 +1003,7 @@ final class HtmlBlocksTests: XCTestCase {
     // A processing instruction (type 3):
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2563-2577
     func testExample149() {
         let markdownTest =
@@ -1039,7 +1039,7 @@ final class HtmlBlocksTests: XCTestCase {
     // A declaration (type 4):
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2582-2586
     func testExample150() {
         let markdownTest =
@@ -1061,7 +1061,7 @@ final class HtmlBlocksTests: XCTestCase {
     // CDATA (type 5):
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2591-2619
     func testExample151() {
         let markdownTest =
@@ -1118,7 +1118,7 @@ final class HtmlBlocksTests: XCTestCase {
     // The opening tag can be indented 1-3 spaces, but not 4:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2624-2632
     func testExample152() {
         let markdownTest =
@@ -1143,7 +1143,7 @@ final class HtmlBlocksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2635-2643
     func testExample153() {
         let markdownTest =
@@ -1171,7 +1171,7 @@ final class HtmlBlocksTests: XCTestCase {
     // preceded by a blank line.
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2649-2659
     func testExample154() {
         let markdownTest =
@@ -1203,7 +1203,7 @@ final class HtmlBlocksTests: XCTestCase {
     // block]:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2666-2676
     func testExample155() {
         let markdownTest =
@@ -1234,7 +1234,7 @@ final class HtmlBlocksTests: XCTestCase {
     // HTML blocks of type 7 cannot interrupt a paragraph:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2681-2689
     func testExample156() {
         let markdownTest =
@@ -1288,7 +1288,7 @@ final class HtmlBlocksTests: XCTestCase {
     // Compare:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2722-2732
     func testExample157() {
         let markdownTest =
@@ -1314,7 +1314,7 @@ final class HtmlBlocksTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2735-2743
     func testExample158() {
         let markdownTest =
@@ -1351,7 +1351,7 @@ final class HtmlBlocksTests: XCTestCase {
     // HTML are usually followed by HTML block tags.  For example:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2757-2777
     func testExample159() {
         let markdownTest =
@@ -1393,7 +1393,7 @@ final class HtmlBlocksTests: XCTestCase {
     // an indented code block:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 2784-2805
     func testExample160() {
         let markdownTest =

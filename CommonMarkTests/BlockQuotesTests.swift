@@ -69,7 +69,7 @@ final class BlockQuotesTests: XCTestCase {
     // Here is a simple example:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3568-3578
     func testExample206() {
         let markdownTest =
@@ -97,7 +97,7 @@ final class BlockQuotesTests: XCTestCase {
     // The spaces after the `>` characters can be omitted:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3583-3593
     func testExample207() {
         let markdownTest =
@@ -125,7 +125,7 @@ final class BlockQuotesTests: XCTestCase {
     // The `>` characters can be indented 1-3 spaces:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3598-3608
     func testExample208() {
         let markdownTest =
@@ -153,7 +153,7 @@ final class BlockQuotesTests: XCTestCase {
     // Four spaces gives us a code block:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3613-3622
     func testExample209() {
         let markdownTest =
@@ -184,7 +184,7 @@ final class BlockQuotesTests: XCTestCase {
     // [paragraph continuation text]:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3628-3638
     func testExample210() {
         let markdownTest =
@@ -213,7 +213,7 @@ final class BlockQuotesTests: XCTestCase {
     // continuation lines:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3644-3654
     func testExample211() {
         let markdownTest =
@@ -250,7 +250,7 @@ final class BlockQuotesTests: XCTestCase {
     // without changing the meaning:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3668-3676
     func testExample212() {
         let markdownTest =
@@ -283,7 +283,7 @@ final class BlockQuotesTests: XCTestCase {
     // then the block quote ends after the first line:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3688-3700
     func testExample213() {
         let markdownTest =
@@ -314,7 +314,7 @@ final class BlockQuotesTests: XCTestCase {
     // subsequent lines of an indented or fenced code block:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3706-3716
     func testExample214() {
         let markdownTest =
@@ -342,7 +342,7 @@ final class BlockQuotesTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3719-3729
     func testExample215() {
         let markdownTest =
@@ -371,7 +371,7 @@ final class BlockQuotesTests: XCTestCase {
     // continuation line]:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3735-3743
     func testExample216() {
         let markdownTest =
@@ -408,7 +408,7 @@ final class BlockQuotesTests: XCTestCase {
     // A block quote can be empty:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3759-3764
     func testExample217() {
         let markdownTest =
@@ -429,7 +429,7 @@ final class BlockQuotesTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3767-3774
     func testExample218() {
         let markdownTest =
@@ -454,7 +454,7 @@ final class BlockQuotesTests: XCTestCase {
     // A block quote can have initial or final blank lines:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3779-3787
     func testExample219() {
         let markdownTest =
@@ -480,7 +480,7 @@ final class BlockQuotesTests: XCTestCase {
     // A blank line always separates block quotes:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3792-3803
     func testExample220() {
         let markdownTest =
@@ -515,7 +515,7 @@ final class BlockQuotesTests: XCTestCase {
     // we get a single block quote:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3814-3822
     func testExample221() {
         let markdownTest =
@@ -541,7 +541,7 @@ final class BlockQuotesTests: XCTestCase {
     // To get a block quote with two paragraphs, use:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3827-3836
     func testExample222() {
         let markdownTest =
@@ -568,7 +568,7 @@ final class BlockQuotesTests: XCTestCase {
     // Block quotes can interrupt paragraphs:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3841-3849
     func testExample223() {
         let markdownTest =
@@ -595,7 +595,7 @@ final class BlockQuotesTests: XCTestCase {
     // quotes:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3855-3867
     func testExample224() {
         let markdownTest =
@@ -626,7 +626,7 @@ final class BlockQuotesTests: XCTestCase {
     // a block quote and a following paragraph:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3873-3881
     func testExample225() {
         let markdownTest =
@@ -650,7 +650,7 @@ final class BlockQuotesTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3884-3893
     func testExample226() {
         let markdownTest =
@@ -675,7 +675,7 @@ final class BlockQuotesTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3896-3905
     func testExample227() {
         let markdownTest =
@@ -704,7 +704,7 @@ final class BlockQuotesTests: XCTestCase {
     // nested block quote:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3912-3924
     func testExample228() {
         let markdownTest =
@@ -732,7 +732,7 @@ final class BlockQuotesTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3927-3941
     func testExample229() {
         let markdownTest =
@@ -767,7 +767,7 @@ final class BlockQuotesTests: XCTestCase {
     // the `>`:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3949-3961
     func testExample230() {
         let markdownTest =

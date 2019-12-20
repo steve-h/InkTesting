@@ -33,7 +33,7 @@ final class AtxHeadingsTests: XCTestCase {
     // Simple headings:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 784-798
     func testExample32() {
         let markdownTest =
@@ -65,7 +65,7 @@ final class AtxHeadingsTests: XCTestCase {
     // More than six `#` characters is not a heading:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 803-807
     func testExample33() {
         let markdownTest =
@@ -93,7 +93,7 @@ final class AtxHeadingsTests: XCTestCase {
     // headings:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 818-825
     func testExample34() {
         let markdownTest =
@@ -118,7 +118,7 @@ final class AtxHeadingsTests: XCTestCase {
     // This is not a heading, because the first `#` is escaped:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 830-834
     func testExample35() {
         let markdownTest =
@@ -140,7 +140,7 @@ final class AtxHeadingsTests: XCTestCase {
     // Contents are parsed as inlines:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 839-843
     func testExample36() {
         let markdownTest =
@@ -162,7 +162,7 @@ final class AtxHeadingsTests: XCTestCase {
     // Leading and trailing [whitespace] is ignored in parsing inline content:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 848-852
     func testExample37() {
         let markdownTest =
@@ -184,7 +184,7 @@ final class AtxHeadingsTests: XCTestCase {
     // One to three spaces indentation are allowed:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 857-865
     func testExample38() {
         let markdownTest =
@@ -210,7 +210,7 @@ final class AtxHeadingsTests: XCTestCase {
     // Four spaces are too much:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 870-875
     func testExample39() {
         let markdownTest =
@@ -232,7 +232,7 @@ final class AtxHeadingsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 878-884
     func testExample40() {
         let markdownTest =
@@ -256,7 +256,7 @@ final class AtxHeadingsTests: XCTestCase {
     // A closing sequence of `#` characters is optional:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 889-895
     func testExample41() {
         let markdownTest =
@@ -280,7 +280,7 @@ final class AtxHeadingsTests: XCTestCase {
     // It need not be the same length as the opening sequence:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 900-906
     func testExample42() {
         let markdownTest =
@@ -304,7 +304,7 @@ final class AtxHeadingsTests: XCTestCase {
     // Spaces are allowed after the closing sequence:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 911-915
     func testExample43() {
         let markdownTest =
@@ -328,7 +328,7 @@ final class AtxHeadingsTests: XCTestCase {
     // heading:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 922-926
     func testExample44() {
         let markdownTest =
@@ -350,7 +350,7 @@ final class AtxHeadingsTests: XCTestCase {
     // The closing sequence must be preceded by a space:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 931-935
     func testExample45() {
         let markdownTest =
@@ -373,7 +373,7 @@ final class AtxHeadingsTests: XCTestCase {
     // of the closing sequence:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 941-949
     func testExample46() {
         let markdownTest =
@@ -400,7 +400,7 @@ final class AtxHeadingsTests: XCTestCase {
     // lines, and they can interrupt paragraphs:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 955-963
     func testExample47() {
         let markdownTest =
@@ -424,7 +424,7 @@ final class AtxHeadingsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 966-974
     func testExample48() {
         let markdownTest =
@@ -450,7 +450,7 @@ final class AtxHeadingsTests: XCTestCase {
     // ATX headings can be empty:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 979-987
     func testExample49() {
         let markdownTest =

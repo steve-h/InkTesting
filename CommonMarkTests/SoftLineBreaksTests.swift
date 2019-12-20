@@ -25,7 +25,7 @@ final class SoftLineBreaksTests: XCTestCase {
     // browsers. In the examples here, a [line ending] will be used.)
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9834-9840
     func testExample669() {
         let markdownTest =
@@ -50,7 +50,7 @@ final class SoftLineBreaksTests: XCTestCase {
     // removed:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 9846-9852
     func testExample670() {
         let markdownTest =

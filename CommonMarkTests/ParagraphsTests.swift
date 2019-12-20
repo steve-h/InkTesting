@@ -28,7 +28,7 @@ final class ParagraphsTests: XCTestCase {
     // A simple example with two paragraphs:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3187-3194
     func testExample189() {
         let markdownTest =
@@ -53,7 +53,7 @@ final class ParagraphsTests: XCTestCase {
     // Paragraphs can contain multiple lines, but no blank lines:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3199-3210
     func testExample190() {
         let markdownTest =
@@ -82,7 +82,7 @@ final class ParagraphsTests: XCTestCase {
     // Multiple blank lines between paragraph have no effect:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3215-3223
     func testExample191() {
         let markdownTest =
@@ -108,7 +108,7 @@ final class ParagraphsTests: XCTestCase {
     // Leading spaces are skipped:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3228-3234
     func testExample192() {
         let markdownTest =
@@ -133,7 +133,7 @@ final class ParagraphsTests: XCTestCase {
     // code blocks cannot interrupt paragraphs.
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3240-3248
     func testExample193() {
         let markdownTest =
@@ -160,7 +160,7 @@ final class ParagraphsTests: XCTestCase {
     // or an indented code block will be triggered:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3254-3260
     func testExample194() {
         let markdownTest =
@@ -182,7 +182,7 @@ final class ParagraphsTests: XCTestCase {
     }
 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3263-3270
     func testExample195() {
         let markdownTest =
@@ -210,7 +210,7 @@ final class ParagraphsTests: XCTestCase {
     // break]:
     // 
     //     
-    // https://github.com/commonmark/commonmark-spec
+    // https://github.com/github/cmark-gfm/blob/master/test/spec.txt
     // spec.txt lines 3277-3283
     func testExample196() {
         let markdownTest =
